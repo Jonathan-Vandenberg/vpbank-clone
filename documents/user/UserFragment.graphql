@@ -3,5 +3,4 @@ fragment User on User {
   name
   email
   createdAt
-  updatedAt
 }

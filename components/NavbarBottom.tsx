@@ -39,6 +39,7 @@ const NavbarBottom: NextPage = () => {
             alignItems: "center",
             background: "#FFFFFF",
             height: "4rem",
+            paddingBottom: 0,
           }}
         >
           <Menu.Item>
@@ -58,12 +59,13 @@ const NavbarBottom: NextPage = () => {
               alignItems: "center",
               justifyContent: "center",
               padding: "0 4rem",
+              height: "100%",
             }}
           >
             <Menu.Item
               key="retail"
               style={style}
-              onClick={() => {
+              onMouseEnter={() => {
                 setRetailDropdown(!retailDrodown);
               }}
             >
@@ -99,8 +101,15 @@ const NavbarBottom: NextPage = () => {
         </Menu>
       </div>
       {retailDrodown && (
-        <motion.div initial={{ y: 50 }} animate={{ y: 0 }}>
-          <RetailDropdown dropdownStyle={dropdownStyle} />
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ ease: "easeOut" }}
+        >
+          <RetailDropdown
+            dropdownStyle={dropdownStyle}
+            leave={() => setRetailDropdown(false)}
+          />
         </motion.div>
       )}
     </>

@@ -3,9 +3,10 @@ import { NextPage } from "next/types";
 
 interface Props {
   dropdownStyle: React.CSSProperties;
+  leave: () => void;
 }
 
-const RetailDropdown: NextPage<Props> = ({ dropdownStyle }) => {
+const RetailDropdown: NextPage<Props> = ({ dropdownStyle, leave }) => {
   return (
     <div
       style={{
@@ -16,7 +17,9 @@ const RetailDropdown: NextPage<Props> = ({ dropdownStyle }) => {
         left: "20rem",
         padding: "1rem",
         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+        zIndex: 10,
       }}
+      onMouseLeave={leave}
     >
       <div style={dropdownStyle}>
         <Link href={"/"}>

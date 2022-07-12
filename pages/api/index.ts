@@ -16,8 +16,22 @@ export type GraphQLContext = {
 const typeDefs = readFileSync(join(process.cwd(), "schema.graphql"), {encoding: "utf-8"})
 
 const resolvers: Resolvers = {
-  Query: {},
-  Mutation: {}
+  Query: {
+    user: (_, {id}, {prisma}) => {
+      return prisma.user.findUnique({where: {id}})
+    }
+  },
+  Mutation: {
+    addUser: async (_, {input}, {prisma}) => {
+      const user = await prisma.user.create({
+            data: {
+              name: input.name,
+              email: input.email
+          }
+      })
+      return user
+  } 
+}
 }
 
 const server = createServer({

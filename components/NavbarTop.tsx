@@ -5,6 +5,7 @@ import {
 } from "@ant-design/icons";
 import { Menu } from "antd";
 import Search from "antd/lib/input/Search";
+import Link from "next/link";
 
 const style = {
   color: "rgb(196,245,208)",
@@ -25,29 +26,40 @@ const NavbarTop = () => {
           background: `linear-gradient(to right, rgb(2,89,173), rgb(0,183,78))`,
         }}
       >
-        <Menu.Item key="about" style={style}>
-          About us
+        <Menu.Item key="about">
+          <Link href="/about">
+            <a style={style}>About us</a>
+          </Link>
         </Menu.Item>
-        <Menu.Item key="investor" style={style}>
-          Investor Relations
+        <Menu.Item key="investor">
+          <Link href="/investor-relations">
+            <a style={style}>Investor Relations</a>
+          </Link>
         </Menu.Item>
-        <Menu.Item key="news" style={style}>
-          News
+        <Menu.Item key="news">
+          <Link href="/news">
+            <a style={style}>News</a>
+          </Link>
         </Menu.Item>
         <Menu.Item key="recruit" style={style}>
           Recruit
         </Menu.Item>
         <Menu.Item key="contact" style={style}>
-          <Search
-            key="search"
-            placeholder="Search Keyword"
-            onSearch={onSearch}
+          <div
             style={{
-              width: 200,
-              verticalAlign: "middle",
-              borderRadius: 20,
+              width: 300,
+              borderRadius: "10px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-          />
+          >
+            <Search
+              key="search"
+              placeholder="Search Keyword"
+              onSearch={onSearch}
+            />
+          </div>
         </Menu.Item>
         <Menu.Item
           key="favourite"

@@ -12,6 +12,7 @@ class _Document extends Document {
             integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
             crossOrigin="anonymous"
           />
+          <link href="/dist/output.css" rel="stylesheet" />
         </Head>
         <body>
           <Main />

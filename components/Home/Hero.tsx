@@ -17,38 +17,14 @@ const Hero: NextPage<Props> = ({ imageUrl, slug, title }) => {
     >
       <Image src={imageUrl} width="600px" height="130px" layout="responsive" />
       <div
+        className="absolute inset-0 mx-0 w-full h-full z-1"
         style={{
-          position: "absolute",
           backgroundImage: `linear-gradient(to right, rgba(2,89,173,0.5), rgba(0,183,78,0.3))`,
-          width: "100%",
-          height: "100%",
-          zIndex: 1,
-          right: 0,
-          left: 0,
-          top: 0,
-          marginLeft: "auto",
-          marginRight: "auto",
           backfaceVisibility: "visible",
         }}
       >
-        <p
-          style={{
-            color: "white",
-            fontSize: "1.1rem",
-            marginTop: "2rem",
-            marginLeft: "10rem",
-          }}
-        >
-          Homepage {slug}
-        </p>
-        <h1
-          style={{
-            color: "white",
-            marginLeft: "9rem",
-            marginTop: "8rem",
-            fontSize: "3rem",
-          }}
-        >
+        <p className="text-white text-lg mt-10 ml-10">Homepage {slug}</p>
+        <h1 className="text-white ml-12 text-3xl ms:mt-1 md:text-5xl md:mt-12 lg:text-6xl lg:mt-12">
           {title}
         </h1>
       </div>

@@ -8,23 +8,16 @@ interface Props {
 }
 
 const navLinks = [
+  "Unsecured Loans",
+  "Secured Loans",
+  "Bank Assurance",
   "Card Services",
-  "Debit Card",
-  "Loans",
-  "Savings",
-  "Account",
-  "E_Banking Services",
-  "Insurance",
-  "Personal Services",
-  "VPBank Loyalty",
-  "VPBank Diamond",
 ];
 
-const RetailDropdown: NextPage<Props> = ({ leave }) => (
+const HouseholdDropdown: NextPage<Props> = ({ leave }) => (
   <motion.div
-    id="retailDropdown"
     onMouseLeave={leave}
-    className="dropdown sm:-w-full absolute top-10 z-10 flex h-dropdownHeight bg-white p-6 shadow-lg sm:mx-auto md:left-52 md:w-2/3 "
+    className="dropdown sm:-w-full container absolute top-10 z-10 flex h-dropdownHeight bg-white p-6 shadow-lg sm:mx-auto md:left-52 md:w-2/3 "
     initial={{ y: 50, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ ease: "easeOut" }}
@@ -43,7 +36,7 @@ const RetailDropdown: NextPage<Props> = ({ leave }) => (
     <div className="flex.col ml-60 h-full w-1/2 items-center justify-center space-y-0.5 border-l-2">
       <div className=" h-3/4  p-6">
         <Image
-          src={"https://picsum.photos/id/391/600/600"}
+          src={"https://picsum.photos/id/299/600/600"}
           width="600"
           height="600"
           layout="responsive"
@@ -58,4 +51,4 @@ const RetailDropdown: NextPage<Props> = ({ leave }) => (
   </motion.div>
 );
 
-export default RetailDropdown;
+export default HouseholdDropdown;

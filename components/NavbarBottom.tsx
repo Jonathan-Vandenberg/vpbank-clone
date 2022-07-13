@@ -1,4 +1,3 @@
-import { Menu } from "antd";
 import Image from "next/image";
 import { NextPage } from "next/types";
 import { useState } from "react";
@@ -6,112 +5,154 @@ import VPBankNeo_Logo from "../public/VPBankNeo_Logo.png";
 import VPBank_Logo from "../public/VPBank_Logo.svg";
 import RetailDropdown from "./RetailDropdown";
 import { motion } from "framer-motion";
-
-const style = {
-  color: "black",
-  fontSize: "1.1rem",
-};
-
-const dropdownStyle = {
-  color: "black",
-  fontSize: "1.1rem",
-  textDecoration: "none",
-  padding: "0.4rem 2rem",
-};
+import HouseholdDropdown from "./HouseholdDropdown";
+import SMEDropdown from "./SMEDropdown";
+import CorporateDropdown from "./CorporateDropdown";
 
 const NavbarBottom: NextPage = () => {
   const [retailDrodown, setRetailDropdown] = useState(false);
   const [householdDropdown, setHouseholdDropdown] = useState(false);
-  const [smeDropdown, setSmeDropdown] = useState(false);
+  const [sMEDropdown, setSMEDropdown] = useState(false);
   const [corporateDropdown, setCorporateDropdown] = useState(false);
 
   const onSearch = (value: string) => {};
 
   return (
     <>
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <Menu
-          mode="horizontal"
-          defaultSelectedKeys={["mail"]}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            background: "#FFFFFF",
-            height: "4rem",
-            paddingBottom: 0,
-          }}
-        >
-          <Menu.Item>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Image src={VPBank_Logo} width="150" height="37" />
-            </div>
-          </Menu.Item>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "0 4rem",
-              height: "100%",
-            }}
-          >
-            <Menu.Item
+      <nav className="sticky top-0 h-12 bg-white pt-2 sm:px-4">
+        <div className="container relative mx-auto flex h-12 items-center justify-between">
+          <div className="h-12">
+            <Image src={VPBank_Logo} width="150" height="30" />
+          </div>
+          <div className="hidden h-12 items-center justify-center space-x-12 px-16 lg:flex">
+            <a
+              id="retailLink"
               key="retail"
-              style={style}
+              className="navLink relative h-10 text-lg font-medium hover:text-hoverTextColor"
               onMouseEnter={() => {
+                setRetailDropdown(true);
+                setHouseholdDropdown(false);
+                setSMEDropdown(false);
+                setCorporateDropdown(false);
+              }}
+              onClick={() => {
                 setRetailDropdown(!retailDrodown);
+                setHouseholdDropdown(false);
+                setSMEDropdown(false);
+                setCorporateDropdown(false);
               }}
             >
               Retail
-            </Menu.Item>
-            <Menu.Item key="household" style={style}>
-              Household
-            </Menu.Item>
-            <Menu.Item key="sme" style={style}>
-              SME
-            </Menu.Item>
-            <Menu.Item key="corporate" style={style}>
-              Corporate
-            </Menu.Item>
-            <Menu.Item key="vp_bank" style={style}>
-              VPBank Diamond
-            </Menu.Item>
-          </div>
-          <Menu.Item key="neo_logo" style={style}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                borderLeft: "1px solid #E0E0E0",
-                marginLeft: "1rem",
-                padding: "0 1rem",
+            </a>
+            {retailDrodown && (
+              <div
+                id="diamond1"
+                className="absolute z-20 h-3 w-3 -translate-x-diamond1 translate-y-4 rotate-45 bg-gray-100"
+              />
+            )}
+            <a
+              id="householdLink"
+              key="household"
+              className="navLink h-10 text-lg font-medium hover:text-hoverTextColor"
+              onMouseEnter={() => {
+                setHouseholdDropdown(true);
+                setRetailDropdown(false);
+                setSMEDropdown(false);
+                setCorporateDropdown(false);
+              }}
+              onClick={() => {
+                setHouseholdDropdown(!householdDropdown);
+                setRetailDropdown(false);
+                setSMEDropdown(false);
+                setCorporateDropdown(false);
               }}
             >
-              <Image src={VPBankNeo_Logo} width="200" height="40" />
-            </div>
-          </Menu.Item>
-        </Menu>
-      </div>
-      {retailDrodown && (
-        <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ ease: "easeOut" }}
-        >
-          <RetailDropdown
-            dropdownStyle={dropdownStyle}
-            leave={() => setRetailDropdown(false)}
-          />
-        </motion.div>
-      )}
+              Household
+            </a>
+            {householdDropdown && (
+              <div
+                id="diamond2"
+                className="unhidden2 absolute z-20 mx-9  h-3 w-3 -translate-x-diamond2 translate-y-4 rotate-45 bg-gray-100 "
+              />
+            )}
+            <a
+              id="smeLink"
+              key="sme"
+              className="navLink z-20 h-10 text-lg font-medium hover:text-hoverTextColor"
+              onMouseEnter={() => {
+                setSMEDropdown(true);
+                setHouseholdDropdown(false);
+                setRetailDropdown(false);
+                setCorporateDropdown(false);
+              }}
+              onClick={() => {
+                setHouseholdDropdown(false);
+                setRetailDropdown(false);
+                setSMEDropdown(!sMEDropdown);
+                setCorporateDropdown(false);
+              }}
+            >
+              SME
+            </a>
+            {sMEDropdown && (
+              <div
+                id="diamond3"
+                className="unhidden3 absolute z-20 mx-3  h-3 w-3 -translate-x-diamond3 translate-y-4 rotate-45 bg-gray-100 "
+              />
+            )}
+            <a
+              id="corporateLink"
+              key="corporate"
+              className="navLink h-10 text-lg font-medium hover:text-hoverTextColor"
+              onMouseEnter={() => {
+                setCorporateDropdown(true);
+                setHouseholdDropdown(false);
+                setRetailDropdown(false);
+                setSMEDropdown(false);
+              }}
+              onClick={() => {
+                setHouseholdDropdown(false);
+                setRetailDropdown(false);
+                setSMEDropdown(false);
+                setCorporateDropdown(!corporateDropdown);
+              }}
+            >
+              Corporate
+            </a>
+            {corporateDropdown && (
+              <div
+                id="diamond4"
+                className="unhidden4 absolute z-20 mx-8  h-3 w-3 -translate-x-diamond4 translate-y-4 rotate-45 bg-gray-100 "
+              />
+            )}
+            <a
+              key="vp_bank"
+              className="navLink h-10 text-lg font-medium hover:text-hoverTextColor"
+              onMouseEnter={() => {
+                setCorporateDropdown(false);
+                setHouseholdDropdown(false);
+                setRetailDropdown(false);
+                setSMEDropdown(false);
+              }}
+            >
+              VPBank Diamond
+            </a>
+          </div>
+          <div className="hidden h-12 lg:block">
+            <Image src={VPBankNeo_Logo} width="150" height="30" />
+          </div>
+          {retailDrodown && (
+            <RetailDropdown leave={() => setRetailDropdown(false)} />
+          )}
+          {householdDropdown && (
+            <HouseholdDropdown leave={() => setHouseholdDropdown(false)} />
+          )}
+          {sMEDropdown && <SMEDropdown leave={() => setSMEDropdown(false)} />}
+          {corporateDropdown && (
+            <CorporateDropdown leave={() => setCorporateDropdown(false)} />
+          )}
+        </div>
+      </nav>
     </>
   );
 };

@@ -1,10 +1,3 @@
-import {
-  EnvironmentOutlined,
-  HeartOutlined,
-  QuestionCircleOutlined,
-} from "@ant-design/icons";
-import { Menu } from "antd";
-import Search from "antd/lib/input/Search";
 import Link from "next/link";
 
 const style = {
@@ -12,83 +5,41 @@ const style = {
 };
 
 const NavbarTop = () => {
-  const onSearch = (value: string) => {};
-
   return (
-    <div>
-      <Menu
-        mode="horizontal"
-        defaultSelectedKeys={["mail"]}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          background: `linear-gradient(to right, rgb(2,89,173), rgb(0,183,78))`,
-        }}
-      >
-        <Menu.Item key="about">
-          <Link href="/about">
-            <a style={style}>About us</a>
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="investor">
-          <Link href="/investor-relations">
-            <a style={style}>Investor Relations</a>
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="news">
-          <Link href="/news">
-            <a style={style}>News</a>
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="recruit" style={style}>
-          Recruit
-        </Menu.Item>
-        <Menu.Item key="contact" style={style}>
-          <div
-            style={{
-              width: 300,
-              borderRadius: "10px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Search
-              key="search"
-              placeholder="Search Keyword"
-              onSearch={onSearch}
-            />
-          </div>
-        </Menu.Item>
-        <Menu.Item
-          key="favourite"
-          style={style}
-          icon={<HeartOutlined style={{ color: "rgb(244, 247, 248)" }} />}
-        >
-          Favourite
-        </Menu.Item>
-        <Menu.Item
-          key="support"
-          style={style}
-          icon={
-            <QuestionCircleOutlined style={{ color: "rgb(244, 247, 248)" }} />
-          }
-        >
-          Support
-        </Menu.Item>
-        <Menu.Item
-          key="branches"
-          style={style}
-          icon={<EnvironmentOutlined style={{ color: "rgb(244, 247, 248)" }} />}
-        >
-          Branches & ATMs
-        </Menu.Item>
-        <Menu.Item key="language" style={style}>
-          Language
-        </Menu.Item>
-      </Menu>
-    </div>
+    <nav className="hidden bg-gradient-to-r from-startColor to-endColor px-2 py-1 sm:px-4 lg:flex">
+      <div className="container mx-auto flex-wrap items-center justify-between lg:flex">
+        <Link href="/about">
+          <a className="text-topNavColor hover:text-white ">About Us</a>
+        </Link>
+        <Link href="./investor-relations">
+          <a className="text-topNavColor hover:text-white">
+            Investor Relations
+          </a>
+        </Link>
+        <Link href="./news">
+          <a className=" text-topNavColor hover:text-white">News</a>
+        </Link>
+        <Link href="./recruit">
+          <a className="text-topNavColor hover:text-white">Recruit</a>
+        </Link>
+        <div className="input-icons flex">
+          <i className="fa fa-search icon"></i>
+          <input
+            placeholder="Search keyword"
+            className="input-field h-8 w-full rounded-md px-2 text-topNavColor hover:text-white"
+          />
+        </div>
+        <Link href="favourite">
+          <a className=" text-topNavColor hover:text-white">Favourite</a>
+        </Link>
+        <Link href="/support">
+          <a className="text-topNavColor hover:text-white">Support</a>
+        </Link>
+        <Link href="branches-and-atms">
+          <a className="text-topNavColor hover:text-white">Branches & ATMs</a>
+        </Link>
+      </div>
+    </nav>
   );
 };
 

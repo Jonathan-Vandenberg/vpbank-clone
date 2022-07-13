@@ -1,11 +1,17 @@
 import type { AppProps } from "next/app";
 import { useState } from "react";
-import "../styles/style.css";
+import "../src/input.css";
 import { ApolloProvider } from "@apollo/client";
 import { useClient } from "../lib/client";
 import NavbarTop from "../components/NavbarTop";
-import NavbarBottom from "../components/NavbarBottom";
 import NavbarAdvertise from "../components/NavbarAdvertise";
+import Head from "next/head";
+import dynamic from "next/dynamic";
+
+const NavBottom = dynamic(
+  () => import("../components/NavbarBottom"),
+  { ssr: false } // <-- not including this component on server-side
+);
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [navAdVisible, setNavAdVisible] = useState(true);
@@ -16,12 +22,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const client = useClient();
   return (
-    <ApolloProvider client={client}>
-      {navAdVisible && <NavbarAdvertise onClick={disableNavAd} />}
-      <NavbarTop />
-      <NavbarBottom />
-      <Component {...pageProps} />
-    </ApolloProvider>
+    <>
+      <Head>
+        <meta name="viewport" content="viewport-fit=cover" />
+      </Head>
+      <ApolloProvider client={client}>
+        {navAdVisible && <NavbarAdvertise onClick={disableNavAd} />}
+        <NavbarTop />
+        <NavBottom />
+        <Component {...pageProps} />
+      </ApolloProvider>
+    </>
   );
 }
 

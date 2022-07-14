@@ -18,7 +18,7 @@ module.exports = {
         diamond1: "18.5rem",
         diamond2: "11.5rem",
         diamond3: "4.3rem",
-        diamond4: "-2.5rem",
+        diamond4: "-2.2rem",
         diamond5: "-12.3rem",
         dropdownHeight: "auto",
         dropdownWidth: "auto",

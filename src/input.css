@@ -22,3 +22,9 @@
   border-right: 2px solid #e0e0e0;
 }
 
+.carousel .slide img {
+  max-height: 300px;
+  /* change this to whatever you want */
+  width: auto;
+  object-fit: cover;
+}

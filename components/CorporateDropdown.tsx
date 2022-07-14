@@ -21,7 +21,7 @@ const navLinks = [
 const CorporateDropdown: NextPage<Props> = ({ leave }) => (
   <motion.div
     onMouseLeave={leave}
-    className="dropdown sm:-w-full absolute top-10 z-10 flex h-dropdownHeight bg-white p-6 shadow-lg sm:mx-auto md:left-52 md:w-2/3 "
+    className="dropdown sm:-w-full z-100 container absolute top-10 flex h-dropdownHeight bg-white p-6 shadow-lg sm:mx-auto md:left-52 md:w-2/3 "
     initial={{ y: 50, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ ease: "easeOut" }}
@@ -40,9 +40,9 @@ const CorporateDropdown: NextPage<Props> = ({ leave }) => (
     <div className="flex.col ml-60 h-full w-1/2 items-center justify-center space-y-0.5 border-l-2">
       <div className=" h-3/4  p-6">
         <Image
-          src={"https://picsum.photos/id/269/600/600"}
-          width="600"
-          height="600"
+          src={"https://picsum.photos/id/269/300/300"}
+          width="300"
+          height="300"
           layout="responsive"
         />
       </div>

@@ -24,7 +24,7 @@ const RetailDropdown: NextPage<Props> = ({ leave }) => (
   <motion.div
     id="retailDropdown"
     onMouseLeave={leave}
-    className="dropdown sm:-w-full absolute top-10 z-10 flex h-dropdownHeight bg-white p-6 shadow-lg sm:mx-auto md:left-52 md:w-2/3 "
+    className="dropdown sm:-w-full z-100 absolute top-10 flex h-dropdownHeight bg-white p-6 shadow-lg sm:mx-auto md:left-52 md:w-2/3 "
     initial={{ y: 50, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ ease: "easeOut" }}

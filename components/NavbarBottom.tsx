@@ -19,7 +19,7 @@ const NavbarBottom: NextPage = () => {
 
   return (
     <>
-      <nav className="sticky top-0 h-12 bg-white pt-2 sm:px-4">
+      <nav className="z-100 sticky top-0 h-12 bg-white pt-2 sm:px-4">
         <div className="container relative mx-auto flex h-12 items-center justify-between">
           <div className="h-12">
             <Image src={VPBank_Logo} width="150" height="30" />
@@ -141,6 +141,8 @@ const NavbarBottom: NextPage = () => {
           <div className="hidden h-12 lg:block">
             <Image src={VPBankNeo_Logo} width="150" height="30" />
           </div>
+        </div>
+        <div className="w-1/4">
           {retailDrodown && (
             <RetailDropdown leave={() => setRetailDropdown(false)} />
           )}

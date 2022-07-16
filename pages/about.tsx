@@ -1,6 +1,7 @@
-import Hero from "../components/Home/Hero";
 import { useRouter } from "next/router";
 import Body from "../components/Body";
+import Hero from "../components/Home/Hero";
+import Tester from "../components/TESTTAILWIND";
 
 const AboutPage = () => {
   const { asPath } = useRouter();
@@ -12,6 +13,7 @@ const AboutPage = () => {
         slug={asPath}
         title="About VPBank"
       />
+      <Tester />
       <Body />
     </>
   );

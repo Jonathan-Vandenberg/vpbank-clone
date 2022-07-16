@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaHeart } from "react-icons/fa";
 
 const style = {
   color: "rgb(196,245,208)",
@@ -30,7 +31,10 @@ const NavbarTop = () => {
           />
         </div>
         <Link href="favourite">
-          <a className=" text-topNavColor hover:text-white">Favourite</a>
+          <a className=" flex items-center text-topNavColor hover:text-white">
+            <FaHeart />
+            Favourite
+          </a>
         </Link>
         <Link href="/support">
           <a className="text-topNavColor hover:text-white">Support</a>

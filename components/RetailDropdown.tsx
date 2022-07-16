@@ -24,14 +24,14 @@ const RetailDropdown: NextPage<Props> = ({ leave }) => (
   <motion.div
     id="retailDropdown"
     onMouseLeave={leave}
-    className="dropdown sm:-w-full z-100 absolute top-10 flex h-dropdownHeight bg-white p-6 shadow-lg sm:mx-auto md:left-52 md:w-2/3 "
+    className="sm:-w-full z-100 absolute top-16 flex h-dropdownHeight bg-white p-6 shadow-lg sm:mx-auto md:left-52 md:w-2/3 "
     initial={{ y: 50, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ ease: "easeOut" }}
   >
     <div className="block space-y-3">
-      {navLinks.map((link) => (
-        <div>
+      {navLinks.map((link, i) => (
+        <div key={i}>
           <Link href={`/${link}`}>
             <a className="block text-lg font-medium hover:text-hoverTextColor">
               {link}
@@ -47,6 +47,7 @@ const RetailDropdown: NextPage<Props> = ({ leave }) => (
           width="600"
           height="600"
           layout="responsive"
+          alt="dropdown-item"
         />
       </div>
 

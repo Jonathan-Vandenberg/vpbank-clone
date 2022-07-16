@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import HouseholdDropdown from "./HouseholdDropdown";
 import SMEDropdown from "./SMEDropdown";
 import CorporateDropdown from "./CorporateDropdown";
+import { useRouter } from "next/router";
 
 const NavbarBottom: NextPage = () => {
   const [retailDrodown, setRetailDropdown] = useState(false);
@@ -15,20 +16,28 @@ const NavbarBottom: NextPage = () => {
   const [sMEDropdown, setSMEDropdown] = useState(false);
   const [corporateDropdown, setCorporateDropdown] = useState(false);
 
+  const router = useRouter();
+
   const onSearch = (value: string) => {};
 
   return (
     <>
-      <nav className="z-100 sticky top-0 h-12 bg-white pt-2 sm:px-4">
-        <div className="container relative mx-auto flex h-12 items-center justify-between">
-          <div className="h-12">
-            <Image src={VPBank_Logo} width="150" height="30" />
+      <nav className="sticky top-0 z-50 h-16 bg-white pt-2 sm:px-4">
+        <div className="container relative mx-auto flex h-16 items-center justify-between">
+          <div className="h-12 hover:cursor-pointer">
+            <Image
+              src={VPBank_Logo}
+              width="150"
+              height="30"
+              alt="logo"
+              onClick={() => router.push("/")}
+            />
           </div>
           <div className="hidden h-12 items-center justify-center space-x-12 px-16 lg:flex">
             <a
               id="retailLink"
               key="retail"
-              className="navLink relative h-10 text-lg font-medium hover:text-hoverTextColor"
+              className="navLink z-1000 relative h-10 font-VarelaRound  text-lg hover:text-hoverTextColor"
               onMouseEnter={() => {
                 setRetailDropdown(true);
                 setHouseholdDropdown(false);
@@ -47,7 +56,7 @@ const NavbarBottom: NextPage = () => {
             {retailDrodown && (
               <div
                 id="diamond1"
-                className="absolute z-20 h-3 w-3 -translate-x-diamond1 translate-y-4 rotate-45 bg-gray-100"
+                className="absolute z-20 h-3 w-3 -translate-x-diamond1 translate-y-6 rotate-45 bg-gray-100"
               />
             )}
             <a
@@ -72,7 +81,7 @@ const NavbarBottom: NextPage = () => {
             {householdDropdown && (
               <div
                 id="diamond2"
-                className="unhidden2 absolute z-20 mx-9  h-3 w-3 -translate-x-diamond2 translate-y-4 rotate-45 bg-gray-100 "
+                className="unhidden2 absolute z-20 mx-9  h-3 w-3 -translate-x-diamond2 translate-y-6 rotate-45 bg-gray-100 "
               />
             )}
             <a
@@ -97,7 +106,7 @@ const NavbarBottom: NextPage = () => {
             {sMEDropdown && (
               <div
                 id="diamond3"
-                className="unhidden3 absolute z-20 mx-3  h-3 w-3 -translate-x-diamond3 translate-y-4 rotate-45 bg-gray-100 "
+                className="unhidden3 absolute z-20 mx-3  h-3 w-3 -translate-x-diamond3 translate-y-6 rotate-45 bg-gray-100 "
               />
             )}
             <a
@@ -122,7 +131,7 @@ const NavbarBottom: NextPage = () => {
             {corporateDropdown && (
               <div
                 id="diamond4"
-                className="unhidden4 absolute z-20 mx-8  h-3 w-3 -translate-x-diamond4 translate-y-4 rotate-45 bg-gray-100 "
+                className="unhidden4 absolute z-20 mx-8  h-3 w-3 -translate-x-diamond4 translate-y-6 rotate-45 bg-gray-100 "
               />
             )}
             <a
@@ -135,11 +144,11 @@ const NavbarBottom: NextPage = () => {
                 setSMEDropdown(false);
               }}
             >
-              VPBank Diamond
+              Diamond
             </a>
           </div>
           <div className="hidden h-12 lg:block">
-            <Image src={VPBankNeo_Logo} width="150" height="30" />
+            <Image src={VPBankNeo_Logo} width="150" height="30" alt="logo" />
           </div>
         </div>
         <div className="w-1/4">

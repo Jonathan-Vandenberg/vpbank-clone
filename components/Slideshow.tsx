@@ -1,8 +1,7 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
-import { StaticImageData } from "next/image";
-import Image from "next/image";
 import { NextPage } from "next";
+import Image, { StaticImageData } from "next/image";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 interface Props {
   ad1: StaticImageData;
@@ -12,13 +11,13 @@ interface Props {
 
 const Slideshow: NextPage<Props> = ({ ad1, ad2, ad3 }) => {
   return (
-    <div className="-z-100">
+    <div className="-z-50">
       <Carousel
         autoPlay
         infiniteLoop
-        interval={5000}
+        interval={3500}
         showArrows={false}
-        showIndicators={true}
+        showIndicators={false}
         showStatus={false}
         showThumbs={false}
         swipeable={false}

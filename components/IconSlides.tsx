@@ -33,18 +33,30 @@ const IconSlide: NextPage = () => {
   const [animateLength, setAnimateLength] = useState(0);
   const [screenWidth, setScreenWidth] = useState(0);
   const [iconDistance, setIconDistance] = useState(0);
+  const [buttonLocation, setButtonLocation] = useState(0);
 
   const controls = useAnimationControls();
 
   useEffect(() => {
-    let li = document.getElementById("icon0")!.getBoundingClientRect().left;
-    setIconDistance(li);
+    let lastIcon = document
+      .getElementById("icon9")!
+      .getBoundingClientRect().right;
+    setIconDistance(lastIcon);
+
+    let rb = document
+      .getElementById("rightButton")!
+      .getBoundingClientRect().left;
+    setButtonLocation(rb);
 
     setScreenWidth(window.innerWidth);
 
-    if (iconDistance > -500 && iconDistance < 500) {
-      document.getElementById("leftButton")?.classList.toggle("disableButton");
-    }
+    if (lastIcon < screenWidth + 120) {
+      document.getElementById("rightButton")!.style.pointerEvents = "none";
+    } else document.getElementById("rightButton")!.style.pointerEvents = "auto";
+
+    if (lastIcon > 1066) {
+      document.getElementById("leftButton")!.style.pointerEvents = "none";
+    } else document.getElementById("leftButton")!.style.pointerEvents = "auto";
 
     controls.start({
       x: animateLength,
@@ -55,21 +67,24 @@ const IconSlide: NextPage = () => {
       setScreenWidth(window.innerWidth);
     });
 
+    console.log(lastIcon, rb);
+
     return () => {
       document.removeEventListener("resize", () => {
         setScreenWidth(window.innerWidth);
       });
     };
-    console.log(screenWidth);
   }, [animateLength, controls, screenWidth]);
 
   return (
     <div className="mx-auto flex h-36 items-center justify-center py-12 md:h-60">
       {screenWidth < 1080 && (
         <button
-          onClick={() => setAnimateLength(animateLength + 100)}
-          className="disableButton itemes-center w-1/10 mr-0 flex justify-start px-6"
           id="leftButton"
+          onClick={() => {
+            setAnimateLength(animateLength + 111.38);
+          }}
+          className=" w-1/10 mr-0 flex items-center justify-start px-6"
         >
           <FaChevronLeft />
         </button>
@@ -105,10 +120,10 @@ const IconSlide: NextPage = () => {
           </motion.div>
         ))}
       </section>
-      {screenWidth < 1080 && iconDistance > -300 && (
+      {screenWidth < 1080 && (
         <button
-          onClick={() => setAnimateLength(animateLength - 100)}
-          className="disableButton leftButton itemes-center w-1/10 mr-0 flex justify-start px-6"
+          onClick={() => setAnimateLength(animateLength - 111.38)}
+          className="itemes-center w-1/10 mr-0 flex justify-start px-6"
           id="rightButton"
         >
           <FaChevronRight />

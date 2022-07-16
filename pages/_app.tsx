@@ -7,6 +7,7 @@ import NavbarTop from "../components/NavbarTop";
 import NavbarAdvertise from "../components/NavbarAdvertise";
 import Head from "next/head";
 import dynamic from "next/dynamic";
+import ChatIcon from "../components/ChatIcon";
 
 const NavBottom = dynamic(
   () => import("../components/NavbarBottom"),
@@ -30,6 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         {navAdVisible && <NavbarAdvertise onClick={disableNavAd} />}
         <NavbarTop />
         <NavBottom />
+        <ChatIcon />
         <Component {...pageProps} />
       </ApolloProvider>
     </>

@@ -52,11 +52,19 @@ const IconSlide: NextPage = () => {
 
     if (lastIcon < screenWidth + 120) {
       document.getElementById("rightButton")!.style.pointerEvents = "none";
-    } else document.getElementById("rightButton")!.style.pointerEvents = "auto";
+      document.getElementById("rightButton")!.style.color = "lightgrey";
+    } else {
+      document.getElementById("rightButton")!.style.pointerEvents = "auto";
+      document.getElementById("rightButton")!.style.color = "rgb(60,190,99)";
+    }
 
     if (lastIcon > 1066) {
       document.getElementById("leftButton")!.style.pointerEvents = "none";
-    } else document.getElementById("leftButton")!.style.pointerEvents = "auto";
+      document.getElementById("leftButton")!.style.color = "lightgrey";
+    } else {
+      document.getElementById("leftButton")!.style.pointerEvents = "auto";
+      document.getElementById("leftButton")!.style.color = "rgb(60,190,99)";
+    }
 
     controls.start({
       x: animateLength,
@@ -67,7 +75,7 @@ const IconSlide: NextPage = () => {
       setScreenWidth(window.innerWidth);
     });
 
-    console.log(lastIcon, rb);
+    console.log(lastIcon);
 
     return () => {
       document.removeEventListener("resize", () => {
@@ -84,7 +92,7 @@ const IconSlide: NextPage = () => {
           onClick={() => {
             setAnimateLength(animateLength + 111.38);
           }}
-          className=" w-1/10 mr-0 flex items-center justify-start px-6"
+          className=" w-1/10 mr-0 flex items-center justify-start px-6 text-green-500"
         >
           <FaChevronLeft />
         </button>

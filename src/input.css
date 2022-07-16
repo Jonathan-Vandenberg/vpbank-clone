@@ -39,10 +39,6 @@
   z-index: -100;
 }
 
-.disableButton {
-  pointer-events: none;
-}
-
 .iwantto {
   z-index: '100'
 }

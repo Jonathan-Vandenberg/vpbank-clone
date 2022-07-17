@@ -3,14 +3,15 @@ import { useState } from "react";
 import "../src/input.css";
 import { ApolloProvider } from "@apollo/client";
 import { useClient } from "../lib/client";
-import NavbarTop from "../components/NavbarTop";
-import NavbarAdvertise from "../components/NavbarAdvertise";
+import NavbarTop from "../components/Global/Navbars/NavbarTop";
+import NavbarAdvertise from "../components/Global/Navbars/NavbarAdvertise";
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import ChatIcon from "../components/ChatIcon";
+import ChatIcon from "../components/Global/ChatIcon";
+import NavbarBottom from "../components/Global/Navbars/NavbarBottom";
 
-const NavBottom = dynamic(
-  () => import("../components/NavbarBottom"),
+const ScrollToTop = dynamic(
+  () => import("../components/Global/ScrollToTopArrow"),
   { ssr: false } // <-- not including this component on server-side
 );
 
@@ -30,7 +31,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ApolloProvider client={client}>
         {navAdVisible && <NavbarAdvertise onClick={disableNavAd} />}
         <NavbarTop />
-        <NavBottom />
+        <NavbarBottom />
+        <ScrollToTop />
         <ChatIcon />
         <Component {...pageProps} />
       </ApolloProvider>

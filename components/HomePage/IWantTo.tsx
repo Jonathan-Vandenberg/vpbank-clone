@@ -4,7 +4,7 @@ import { AiOutlineDown } from "react-icons/ai";
 const IWantTo = () => {
   return (
     <div className="iwantto mx-auto">
-      <div className="min-w-1/2 z-30 mx-auto flex h-auto justify-center space-x-0 drop-shadow-xl">
+      <div className="min-w-1/2 z-30 mx-auto flex h-auto justify-center space-x-0 drop-shadow">
         <div className="font-lg z-30 h-20 self-center bg-white p-6 text-xl font-bold">
           I want to
         </div>

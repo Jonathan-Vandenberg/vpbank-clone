@@ -2,12 +2,16 @@ import Image from "next/image";
 import { NextPage } from "next/types";
 
 interface Props {
+  heroData: HeroData;
+}
+
+type HeroData = {
   imageUrl: string;
   slug: string;
   title: string;
-}
+};
 
-const Hero: NextPage<Props> = ({ imageUrl, slug, title }) => {
+const Hero: NextPage<Props> = ({ heroData }) => {
   return (
     <div
       style={{
@@ -16,7 +20,7 @@ const Hero: NextPage<Props> = ({ imageUrl, slug, title }) => {
       }}
     >
       <Image
-        src={imageUrl}
+        src={heroData.imageUrl}
         width="600px"
         height="130px"
         layout="responsive"
@@ -29,9 +33,11 @@ const Hero: NextPage<Props> = ({ imageUrl, slug, title }) => {
           backfaceVisibility: "visible",
         }}
       >
-        <p className="mt-10 ml-10 text-lg text-white">Homepage {slug}</p>
-        <h1 className="ms:mt-1 ml-12 text-3xl text-white md:mt-12 md:text-5xl lg:mt-12 lg:text-6xl">
-          {title}
+        <p className="text-md p-2 text-left text-white md:ml-6 lg:ml-10 lg:mt-5 lg:text-lg">
+          Homepage {heroData.slug}
+        </p>
+        <h1 className="ml-10 mt-0 h-auto w-auto p-2 text-left text-3xl text-white sm:mt-4 sm:text-3xl md:mt-10 md:text-4xl lg:ml-40 lg:mt-24 lg:text-5xl">
+          {heroData.title}
         </h1>
       </div>
     </div>

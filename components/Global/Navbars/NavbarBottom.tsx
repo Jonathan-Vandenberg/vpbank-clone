@@ -1,14 +1,13 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { NextPage } from "next/types";
 import { useState } from "react";
-import VPBankNeo_Logo from "../public/VPBankNeo_Logo.png";
-import VPBank_Logo from "../public/VPBank_Logo.svg";
-import RetailDropdown from "./RetailDropdown";
-import { motion } from "framer-motion";
-import HouseholdDropdown from "./HouseholdDropdown";
-import SMEDropdown from "./SMEDropdown";
-import CorporateDropdown from "./CorporateDropdown";
-import { useRouter } from "next/router";
+import VPBankNeo_Logo from "../../../public/VPBankNeo_Logo.png";
+import VPBank_Logo from "../../../public/VPBank_Logo.svg";
+import CorporateDropdown from "../Dropdowns/CorporateDropdown";
+import HouseholdDropdown from "../Dropdowns/HouseholdDropdown";
+import RetailDropdown from "../Dropdowns/RetailDropdown";
+import SMEDropdown from "../Dropdowns/SMEDropdown";
 
 const NavbarBottom: NextPage = () => {
   const [retailDrodown, setRetailDropdown] = useState(false);

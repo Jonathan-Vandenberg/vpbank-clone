@@ -1,4 +1,4 @@
-import Hero from "../components/Home/Hero";
+import Hero from "../components/UI/Hero";
 import { useRouter } from "next/router";
 
 const NewsPage = () => {

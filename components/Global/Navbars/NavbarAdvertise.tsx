@@ -1,15 +1,17 @@
 import { NextPage } from "next/types";
+import Scroll from "react-scroll";
+import { useState, useEffect } from "react";
 
-interface Props {
-  /**Closes the advertising navbar in _app.tsx */
-  onClick: () => void;
-}
+const NavbarAdvertise: NextPage = () => {
+  let scroll = Scroll.animateScroll;
 
-const NavbarAdvertise: NextPage<Props> = ({ onClick }) => {
+  const disableNavAd = () => {
+    scroll.scrollTo(32);
+  };
   return (
     <div
-      className="hidden bg-advertisingNavColor px-2 py-1 sm:px-4 lg:flex "
-      onClick={onClick}
+      className="hidden bg-advertisingNavColor px-2 py-1 sm:px-4 lg:flex"
+      onClick={disableNavAd}
     >
       <div className="container relative mx-auto flex items-center justify-center">
         <p className="mx-auto font-medium">
@@ -17,7 +19,7 @@ const NavbarAdvertise: NextPage<Props> = ({ onClick }) => {
           generation: VPBank Prime
         </p>
         <div className="ml-30">
-          <button onClick={onClick}>X</button>
+          <button onClick={disableNavAd}>X</button>
         </div>
       </div>
     </div>

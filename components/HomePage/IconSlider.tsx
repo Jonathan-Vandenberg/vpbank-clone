@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -28,15 +29,14 @@ const icons = [
   icon11,
 ];
 
-import Slider from "react-slick";
-
 function getWidth() {
   const { innerWidth: width } = window;
   return width;
 }
 
-export default function App() {
+const IconSlider = () => {
   const [width, setWidth] = useState(getWidth());
+  const [iconAmount, setIconAmount] = useState(0);
 
   useEffect(() => {
     function handleResize() {
@@ -49,15 +49,18 @@ export default function App() {
 
   const renderSlides = () =>
     icons.map((img, i) => (
-      <div key={i} className=" p-4">
+      <div
+        key={i}
+        className="lg:scale-115 p-4 sm:scale-75 sm:p-3 md:scale-90 md:p-4 lg:p-3 xl:scale-100"
+      >
         <Image src={img} width={100} height={100} alt="icons" />
       </div>
     ));
 
   return (
-    <div className="hidden md:block">
+    <div className="">
       <Slider
-        slidesToShow={width > 976 ? 8 : 6}
+        slidesToShow={width < 768 ? 4 : width < 1024 ? 6 : 8}
         slidesToScroll={2}
         autoplay={false}
         autoplaySpeed={3000}
@@ -65,10 +68,12 @@ export default function App() {
         dots={true}
         dotsClass="slick-dots"
         lazyLoad={"anticipated"}
-        className="mx-auto w-3/4"
+        className="mx-auto w-3/4 "
       >
         {renderSlides()}
       </Slider>
     </div>
   );
-}
+};
+
+export default IconSlider;

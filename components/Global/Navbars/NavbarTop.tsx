@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaHeart } from "react-icons/fa";
+import { Element } from "react-scroll";
 
 const style = {
   color: "rgb(196,245,208)",
@@ -7,7 +8,10 @@ const style = {
 
 const NavbarTop = () => {
   return (
-    <nav className="hidden bg-gradient-to-r from-startColor to-endColor px-2 py-1 sm:px-4 lg:flex">
+    <Element
+      name="navTop"
+      className="element hidden bg-gradient-to-r from-startColor to-endColor px-2 py-1 sm:px-4 lg:flex"
+    >
       <div className="container mx-auto flex-wrap items-center justify-between lg:flex">
         <Link href="/about">
           <a className="text-topNavColor hover:text-white ">About Us</a>
@@ -43,7 +47,7 @@ const NavbarTop = () => {
           <a className="text-topNavColor hover:text-white">Branches & ATMs</a>
         </Link>
       </div>
-    </nav>
+    </Element>
   );
 };
 

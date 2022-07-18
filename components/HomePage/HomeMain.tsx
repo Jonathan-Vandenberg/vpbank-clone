@@ -12,7 +12,7 @@ export const images = [image1, image2, image3];
 const HomeMain: NextPage = () => {
   return (
     <>
-      <HeroSlideshow imageData={images} />
+      <HeroSlideshow imageData={images} width={800} height={300} />
       <div className="-mt-10 ">
         <IWantTo />
       </div>

@@ -2,9 +2,12 @@ import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 import { motion } from "framer-motion";
 import { NextPage } from "next/types";
 import { useEffect, useState } from "react";
+import * as Scroll from "react-scroll";
 
 const ScrollToTopArrow: NextPage = () => {
   const [showUpArrow, setShowUpArrow] = useState(false);
+
+  let scroll = Scroll.animateScroll;
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -16,7 +19,9 @@ const ScrollToTopArrow: NextPage = () => {
     });
   }, []);
 
-  const scrollToTop = () => window.scroll({ top: 0, behavior: "smooth" });
+  const handleScroll = () => {
+    scroll.scrollToTop();
+  };
 
   return (
     <>
@@ -28,7 +33,7 @@ const ScrollToTopArrow: NextPage = () => {
         >
           <ArrowCircleUpIcon
             style={{ fontSize: 50, color: "rgb(1,183,78)" }}
-            onClick={() => scrollToTop()}
+            onClick={handleScroll}
           />
         </motion.div>
       )}

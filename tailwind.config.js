@@ -20,6 +20,7 @@ module.exports = {
         advertisingNavColor: "rgb(235, 250, 239)",
         hoverTextColor: "rgb(0,180,82)",
         iwanttoColor: "rgb(60,190,99)",
+        body: "rgb(244,247,248)",
       },
       spacing: {
         diamond1: "16.5rem",

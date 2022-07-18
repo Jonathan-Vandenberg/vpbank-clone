@@ -65,7 +65,7 @@ const IconSlider = () => {
         autoplay={false}
         autoplaySpeed={3000}
         arrows={true}
-        dots={true}
+        dots={false}
         dotsClass="slick-dots"
         lazyLoad={"anticipated"}
         className="mx-auto w-3/4 "

@@ -19,24 +19,24 @@ const Promotion = () => {
     <section className="md:container-sm mx-auto flex h-screen flex-col space-y-3 p-5  md:flex-row">
       <div className="section-1-container w-full   md:w-2/3">
         {/* IMAGE SLIDER */}
-        <div className="image-slider-container ">
+        <div className="image-slider-container pb-3">
           <HeroSlideshow imageData={images} width={600} height={400} />
         </div>
 
-        <div className="api-contact-container flex flex-col ">
+        <div className="api-contact-container flex flex-col divide-y bg-white">
           {/* BOTTOM 3 BLOCKS */}
-          <div className="h-1/3 p-3">
+          <div className="h-1/3 p-4">
             <div className="">
               <p className="text-md font-bold ">Hanoi</p>
               <p className="text-sm ">Monday, July 18, 2022</p>
             </div>
 
-            <div className="flex space-x-3">
-              <div className="flex items-center space-x-3 space-y-3  p-3">
+            <div className="flex space-x-16 p-4">
+              <div className="flex items-center space-x-3 space-y-3 ">
                 <WbSunnyIcon />
                 <p className="text-center align-middle">25C</p>
               </div>
-              <div className="flex  flex-wrap items-center space-x-3 p-3">
+              <div className="flex  flex-wrap items-center space-x-3 ">
                 <Image src={HappyIcon} width={50} height={50} alt="icons" />
                 <p>50 | US AQI</p>
               </div>
@@ -44,9 +44,9 @@ const Promotion = () => {
           </div>
 
           {/* CUSTOMER FEEBACK */}
-          <div className="flex h-1/3 flex-col  p-3">
-            <p className="p-3">Share your experience</p>
-            <p className="p-3">
+          <div className="flex h-1/3 flex-col space-y-3 p-4">
+            <p className="">Share your experience</p>
+            <p className="">
               VPBank always listens to and respects all opinions shared from
               customers to have the opportunity and motivation to bring better
               and better transaction experiences.
@@ -60,7 +60,7 @@ const Promotion = () => {
           </div>
 
           {/* PROMOTIONS */}
-          <div className="h-1/3 p-3">
+          <div className="h-1/3 p-4">
             <p>Customer care hotline</p>
             <p className="text-3xl font-semibold text-iwanttoColor">
               1900 54 54 15
@@ -70,7 +70,7 @@ const Promotion = () => {
       </div>
 
       {/* SIDE-SLIDER */}
-      <div className="section-2-container flex w-1/3 bg-sky-800 pl-3">
+      <div className="section-2-container flex w-1/3 bg-sky-800">
         <div className="promotions-slider-container grow bg-cyan-500">
           vertical slider
         </div>

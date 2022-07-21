@@ -6,11 +6,11 @@ const NavbarAdvertise: NextPage = () => {
   let scroll = Scroll.animateScroll;
 
   const disableNavAd = () => {
-    scroll.scrollTo(32);
+    scroll.scrollTo(48);
   };
   return (
     <div
-      className="hidden bg-advertisingNavColor px-2 py-1 sm:px-4 lg:flex"
+      className="hidden h-12 bg-advertisingNavColor px-4 py-1 sm:px-6 lg:flex"
       onClick={disableNavAd}
     >
       <div className="container relative mx-auto flex items-center justify-center">

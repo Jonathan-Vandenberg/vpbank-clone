@@ -29,23 +29,17 @@ const icons = [
   icon11,
 ];
 
-function getWidth() {
-  const { innerWidth: width } = window;
-  return width;
-}
-
 const IconSlider = () => {
-  const [width, setWidth] = useState(getWidth());
-  const [iconAmount, setIconAmount] = useState(0);
+  const [width, setWidth] = useState(786);
 
   useEffect(() => {
+    const { innerWidth: screenWidth } = window;
     function handleResize() {
-      setWidth(getWidth());
+      setWidth(screenWidth);
     }
-
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    // return () => window.removeEventListener("resize", handleResize);
+  }, [width]);
 
   const renderSlides = () =>
     icons.map((img, i) => (

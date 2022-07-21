@@ -29,6 +29,7 @@
     "@prisma/client": "^4.0.0",
     "@types/react-scroll": "^1.8.3",
     "@types/react-slick": "^0.23.10",
+    "axios": "^0.27.2",
     "font-awesome": "^4.7.0",
     "framer-motion": "^6.4.3",
     "graphql": "^16.5.0",

@@ -8,7 +8,7 @@ module.exports = {
     screens: {
       sm: "480px",
       md: "768px",
-      lg: "976px",
+      lg: "992px",
       xl: "1440px",
     },
     extend: {
@@ -29,6 +29,8 @@ module.exports = {
         diamond4: "-4.2rem",
         dropdownHeight: "auto",
         dropdownWidth: "auto",
+        promotionsHeight: "565px",
+        apiSectionHeight: "200px",
       },
       fontFamily: {
         DM: ["DM", "monospace"],

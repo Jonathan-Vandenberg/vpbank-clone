@@ -7,31 +7,47 @@ import HeroSlideshow from "../UI/HeroSlideshow";
 import { NextPage } from "next/types";
 import Promotion from "./Promotion";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 const IconSlider = dynamic(
   () => import("./IconSlider"),
   { ssr: false } // <-- not including this component on server-side
 );
 
+interface Props {
+  temperature: number;
+  weatherIcon: string;
+  aqi: number;
+}
+
 export const images = [image1, image2, image3];
 
-const HomeMain: NextPage = () => {
+const HomeMain: NextPage<Props> = ({ temperature, weatherIcon, aqi }) => {
   return (
     <>
-      <HeroSlideshow imageData={images} width={800} height={300} />
-      <div className="-mt-10 ">
+      <HeroSlideshow
+        imageData={images}
+        width={800}
+        height={300}
+        scaleOnHover={false}
+      />
+      <div className="-mt-10">
         <IWantTo />
       </div>
 
-      <body className="bg-body">
-        <section className="mx-auto md:container">
-          <h2 className="indexTitle ml-6 bg-gradient-to-r from-startColor  to-endColor bg-clip-text pt-8 text-4xl font-bold text-transparent">
-            Retail Banking
-          </h2>
-          <IconSlider />
-          <Promotion />
-        </section>
-      </body>
+      <div className="lg:pb-0">
+        <p className="indexTitle bg-gradient-to-r from-startColor  to-endColor bg-clip-text pt-8 text-3xl font-bold text-transparent">
+          Individual Customers
+        </p>
+        <IconSlider />
+        <div className="bg-body">
+          <Promotion
+            temperature={temperature}
+            weatherIcon={weatherIcon}
+            aqi={aqi}
+          />
+        </div>
+      </div>
     </>
   );
 };

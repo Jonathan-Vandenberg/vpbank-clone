@@ -1,78 +1,135 @@
-import HeroSlideshow from "../UI/HeroSlideshow";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import HappyIcon from "../../public/happyIcon.svg";
-import Image from "next/image";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
-// import { images } from "../HomePage/HomeMain";
-import RetailDropdown from "../Global/Dropdowns/RetailDropdown";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import { IconButton } from "@mui/material";
+import axios, { AxiosResponse } from "axios";
+import { getDisplayName } from "next/dist/shared/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import { NextPage } from "next/types";
+import { useEffect, useState } from "react";
+import ad1 from "../../public/adsHomePage/ad1.png";
+import ad2 from "../../public/adsHomePage/ad2.png";
+import ad3 from "../../public/adsHomePage/ad3.png";
+import ad4 from "../../public/adsHomePage/ad4.png";
+import ad5 from "../../public/adsHomePage/ad5.png";
+import HappyIcon from "../../public/happyIcon.svg";
+import HeroSlideshow from "../UI/HeroSlideshow";
+import WeatherDropdown from "./WeatherDropdown";
 
-const images = [
-  "http://picsum.photos/id/23/300/200",
-  "http://picsum.photos/id/112/300/200",
-  "http://picsum.photos/id/117/300/200",
+const images = [ad1, ad2, ad3, ad4, ad5];
+
+interface Props {
+  temperature: number;
+  weatherIcon: string;
+  aqi: number;
+}
+
+const weekday = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
 ];
 
-const Promotion = () => {
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const d = new Date();
+let day = weekday[d.getDay()];
+let month = months[d.getMonth()];
+
+const Promotion: NextPage<Props> = ({ temperature, weatherIcon, aqi }) => {
   return (
-    <section className="md:container-sm mx-auto flex h-screen flex-col space-y-3 p-5  md:flex-row">
-      <div className="section-1-container w-full   md:w-2/3">
-        {/* IMAGE SLIDER */}
-        <div className="image-slider-container pb-3">
-          <HeroSlideshow imageData={images} width={600} height={400} />
-        </div>
-
-        <div className="api-contact-container flex flex-col divide-y bg-white">
-          {/* BOTTOM 3 BLOCKS */}
-          <div className="h-1/3 p-4">
-            <div className="">
-              <p className="text-md font-bold ">Hanoi</p>
-              <p className="text-sm ">Monday, July 18, 2022</p>
-            </div>
-
-            <div className="flex space-x-16 p-4">
-              <div className="flex items-center space-x-3 space-y-3 ">
-                <WbSunnyIcon />
-                <p className="text-center align-middle">25C</p>
-              </div>
-              <div className="flex  flex-wrap items-center space-x-3 ">
-                <Image src={HappyIcon} width={50} height={50} alt="icons" />
-                <p>50 | US AQI</p>
-              </div>
-            </div>
-          </div>
-
-          {/* CUSTOMER FEEBACK */}
-          <div className="flex h-1/3 flex-col space-y-3 p-4">
-            <p className="">Share your experience</p>
-            <p className="">
-              VPBank always listens to and respects all opinions shared from
-              customers to have the opportunity and motivation to bring better
-              and better transaction experiences.
-            </p>
-
-            <div className="align-center flex">
-              <IconButton className="space-x-3">
-                Send Feedback <ArrowForwardIcon />
-              </IconButton>
-            </div>
-          </div>
-
-          {/* PROMOTIONS */}
-          <div className="h-1/3 p-4">
-            <p>Customer care hotline</p>
-            <p className="text-3xl font-semibold text-iwanttoColor">
-              1900 54 54 15
-            </p>
-          </div>
+    <section className="lg:container-lg mx-auto md:container md:max-h-promotionsHeight">
+      <div className="flex-col md:container md:mx-auto md:flex md:flex-row md:items-center md:justify-between">
+        <h2 className="indexTitle bg-gradient-to-r from-startColor  to-endColor bg-clip-text pt-8 text-3xl font-bold text-transparent">
+          Retail Banking
+        </h2>
+        <div className="ml-6 pt-6 text-iwanttoColor">
+          <Link href="/">see more</Link>
         </div>
       </div>
+      <div className="h-promotionHeight grid-cols-3 pb-10 md:flex-col lg:grid lg:gap-2">
+        <div className="md:col-span-2 md:flex-col">
+          <HeroSlideshow
+            imageData={images}
+            height={300}
+            width={600}
+            scaleOnHover={true}
+          />
+          <div className="mt-2 flex flex-col bg-white py-2 md:flex-row">
+            <div className="p-4 md:w-1/3 ">
+              <WeatherDropdown />
+              <p className="text-sm">
+                {day}, {month} {d.getDate()} {d.getFullYear()}
+              </p>
+              <div className="flex items-center justify-around md:justify-evenly">
+                {/* <Weather /?\> */}
+                <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col">
+                  <Image
+                    src={`https://openweathermap.org/img/wn/${weatherIcon}.png`}
+                    width={75}
+                    height={75}
+                    alt="weather icon"
+                  />
+                  <p className="text-2xl font-bold">{temperature}˚C</p>
+                </div>
+                <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col">
+                  <p className="p-2 text-center md:text-xs">US|AQI</p>
+                  <p className="text-center text-2xl font-bold">{aqi}</p>
+                </div>
+              </div>
+            </div>
 
-      {/* SIDE-SLIDER */}
-      <div className="section-2-container flex w-1/3 bg-sky-800">
-        <div className="promotions-slider-container grow bg-cyan-500">
-          vertical slider
+            <div className="border-y-2 p-4 md:w-1/3 md:border-x-2 md:border-y-0">
+              <p className="pb-2 font-semibold">Share your story</p>
+              <p className="font-lighter md:text-xs">
+                VPBank luôn lắng nghe và trân trọng mọi ý kiến chia sẻ từ Khách
+                hàng để có cơ hội và động lực mang tới những trải nghiệm giao
+                dịch ngày một tuyệt vời hơn.
+              </p>
+              <IconButton className="gap-1 pt-3 text-xl text-iwanttoColor">
+                Share Now <ArrowForwardIcon />
+              </IconButton>
+            </div>
+
+            <div className="p-4 md:w-1/3">
+              <p className="pb-2">Contact us hotline</p>
+              <Link href={"/"}>
+                <p className="text-3xl text-iwanttoColor">0872348273</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="max-h-promotionsHeight overflow-auto">
+          <div className=" md:grid md:grid-cols-1">
+            {images.map((el, i) => (
+              <div className="contain py-2" key={i}>
+                <Image
+                  src={el}
+                  width={600}
+                  height={300}
+                  alt="VPBank Image"
+                  layout="responsive"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

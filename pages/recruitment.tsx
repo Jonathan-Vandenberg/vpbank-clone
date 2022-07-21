@@ -1,18 +1,16 @@
 const RecruitmentPage = () => {
   return (
     <>
-      <div className={`h-screen grid grid-cols-1 md:grid-cols-2`}>
-        <div
-          className={`hidden flex md:flex justify-center items-center md:block`}
-        ></div>
-        <div className={`w-full bg-white flex justify-center items-center`}>
-          <div className={`w-96 text-center px-5`}>
-            <div className={`font-semibold text-2xl`}>Welcome to App</div>
-            <div className={`text-sm my-5`}>
+      <div className={`grid h-screen grid-cols-1 md:grid-cols-2`}>
+        <div></div>
+        <div className={`flex w-full items-center justify-center bg-white`}>
+          <div className={`w-96 px-5 text-center`}>
+            <div className={`text-2xl font-semibold`}>Welcome to App</div>
+            <div className={`my-5 text-sm`}>
               Sign up or login to your account
             </div>
             <div className={`mt-10`}>
-              <button className={`w-full mb-2 cursor-pointer`}>Google</button>
+              <button className={`mb-2 w-full cursor-pointer`}>Google</button>
               <button className={`w-full cursor-pointer`}>Facebook</button>
             </div>
           </div>

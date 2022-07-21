@@ -9,6 +9,10 @@ const ScrollToTopArrow: NextPage = () => {
 
   let scroll = Scroll.animateScroll;
 
+  const handleScroll = () => {
+    scroll.scrollToTop();
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 300) {
@@ -18,10 +22,6 @@ const ScrollToTopArrow: NextPage = () => {
       }
     });
   }, []);
-
-  const handleScroll = () => {
-    scroll.scrollToTop();
-  };
 
   return (
     <>

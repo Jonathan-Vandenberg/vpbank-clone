@@ -2,17 +2,20 @@ import axios, { AxiosRequestHeaders, AxiosRequestConfig } from "axios";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import HomeMain from "../components/HomePage/HomeMain";
+import { useAppSelector } from "../redux-hooks/hooks";
 
 const Home: NextPage = () => {
   const [temperature, setTemperature] = useState(0);
   const [weatherIcon, setWeatherIcon] = useState("");
   const [aqi, setAqi] = useState(0);
 
+  const { value: city } = useAppSelector((state) => state.city);
+
   useEffect(() => {
     const aqiOptions: AxiosRequestConfig = {
       method: "GET",
       url: "https://air-quality-by-api-ninjas.p.rapidapi.com/v1/airquality",
-      params: { city: "Hanoi", country: "Vietnam" },
+      params: { city: city, country: "Vietnam" },
       headers: {
         "X-RapidAPI-Key": process.env.NEXT_PUBLIC_AIR_QUALITY_API_KEY,
         "X-RapidAPI-Host": "air-quality-by-api-ninjas.p.rapidapi.com",
@@ -23,7 +26,7 @@ const Home: NextPage = () => {
       method: "GET",
       url: "https://community-open-weather-map.p.rapidapi.com/weather",
       params: {
-        q: "Saigon,vn",
+        q: `${city},vn`,
         units: "metric",
       },
       headers: {
@@ -57,7 +60,9 @@ const Home: NextPage = () => {
       .catch(function (error) {
         console.error(error);
       });
-  }, [weatherIcon]);
+  }, [city]);
+
+  console.log("index: ", city);
 
   return (
     <HomeMain temperature={temperature} weatherIcon={weatherIcon} aqi={aqi} />

@@ -1,13 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { NextPage } from "next/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import VPBankNeo_Logo from "../../../public/VPBankNeo_Logo.png";
 import VPBank_Logo from "../../../public/VPBank_Logo.svg";
 import CorporateDropdown from "../Dropdowns/CorporateDropdown";
 import HouseholdDropdown from "../Dropdowns/HouseholdDropdown";
 import RetailDropdown from "../Dropdowns/RetailDropdown";
 import SMEDropdown from "../Dropdowns/SMEDropdown";
+import { useRef } from "react";
+import { useAppSelector } from "../../../redux-hooks/hooks";
+import showDropdownSlice from "../../../slices/showDropdownSlice";
 
 const NavbarBottom: NextPage = () => {
   const [retailDrodown, setRetailDropdown] = useState(false);
@@ -15,13 +19,47 @@ const NavbarBottom: NextPage = () => {
   const [sMEDropdown, setSMEDropdown] = useState(false);
   const [corporateDropdown, setCorporateDropdown] = useState(false);
 
+  const { value: toggleDropdown } = useAppSelector(
+    (state) => state.showDropdown
+  );
+
+  if (toggleDropdown) {
+    setRetailDropdown(false);
+    setHouseholdDropdown(false);
+    setSMEDropdown(false);
+    setCorporateDropdown(false);
+  }
+
+  console.log(toggleDropdown ? "toggle true" : "toggle false");
+
+  const btnRef = useRef<HTMLButtonElement>();
+  const menuRef = useRef<HTMLDivElement>();
+
+  const openMenu = () => {
+    btnRef?.current?.classList.toggle("open");
+    menuRef?.current?.classList.add("flex");
+    menuRef?.current?.classList.toggle("hidden");
+  };
+
   const router = useRouter();
+
+  useEffect(() => {
+    const menuButton = document.getElementById(
+      "menu-btn"
+    ) as HTMLButtonElement | null;
+    const menu = document.getElementById("menu") as HTMLDivElement | null;
+    menuButton?.addEventListener("click", () => {
+      menuButton?.classList.toggle("open");
+      menu?.classList.toggle("flex");
+      menu?.classList.toggle("hidden");
+    });
+  }, []);
 
   const onSearch = (value: string) => {};
 
   return (
     <>
-      <nav className="sticky top-0 z-50 h-16 bg-white pt-2 sm:px-4">
+      <nav className="sticky top-0 z-50 flex h-16 items-center justify-center bg-white pt-2 sm:px-4">
         <div className="container relative mx-auto flex h-16 items-center justify-between">
           <div className="h-12 hover:cursor-pointer">
             <Image
@@ -162,7 +200,30 @@ const NavbarBottom: NextPage = () => {
             <CorporateDropdown leave={() => setCorporateDropdown(false)} />
           )}
         </div>
+        <button
+          ref={btnRef as any}
+          onClick={openMenu}
+          id="menu-btn"
+          className="open hamburger z-50 block focus:outline-none md:hidden"
+        >
+          <span className="hamburger-top z-50"></span>
+          <span className="hamburger-middle"></span>
+          <span className="hamburger-bottom"></span>
+        </button>
       </nav>
+      <div className="md:hidden">
+        <div
+          ref={menuRef as any}
+          id="menu"
+          className="absolute left-6 right-6 z-50 mt-12 hidden flex-col items-center space-y-6 self-end bg-white py-8 font-bold drop-shadow-md sm:w-auto sm:self-center"
+        >
+          <Link href={"/individual"}>Individual</Link>
+          <Link href={"/household-business"}>HouseHold Business</Link>
+          <Link href={"/smes"}>SMEs</Link>
+          <Link href={"/big-business"}>Big Business</Link>
+          <Link href={"vpbank-diamond"}>VPBank Diamond</Link>
+        </div>
+      </div>
     </>
   );
 };

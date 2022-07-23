@@ -4,25 +4,35 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { useState } from "react";
+import { useAppDispatch } from "../../redux-hooks/hooks";
+import { cityValue } from "../../slices/citySlice";
 
 const WeatherDropdown = () => {
   const [city, setCity] = useState("Hanoi");
+  const dispatch = useAppDispatch();
 
   const handleChange = (event: SelectChangeEvent) => {
-    setCity(event.target.value as string);
+    setCity(event.target.value);
+    dispatch(cityValue(city));
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl variant="standard" margin="none">
+    <Box>
+      <FormControl variant="standard" margin="none" fullWidth>
+        <InputLabel id="weather-label">
+          <p className="text-iwanttoColor">
+            {city === "Saigon" ? "Ho Chi Minh City" : "Hanoi"}
+          </p>
+        </InputLabel>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
+          labelId=""
+          id="weather-label"
           value={city}
-          label="City"
           onChange={handleChange}
         >
-          <MenuItem value="Hanoi">Hanoi</MenuItem>
+          <MenuItem selected value="Hanoi">
+            Hanoi
+          </MenuItem>
           <MenuItem value="Saigon">Ho Chi Minh City</MenuItem>
         </Select>
       </FormControl>

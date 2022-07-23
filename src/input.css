@@ -64,4 +64,59 @@
   color: rgb(60, 190, 99) !important;
 }
 
-/* Home Page */
+/* Hamburger */
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative; 
+}
+
+.hamburger-top,
+.hamburger-middle
+ {
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background-color: black;
+  position: absolute;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-bottom{
+    width: 12px;
+    height: 2px;
+    top: 12px;
+    left: 12px;
+    background-color: black;
+    position: absolute;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px)
+
+}
+
+.open .hamburger-top{
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(135deg) translateY(12px) translateX(-12px) translate(18px);
+  width: 24px;
+}

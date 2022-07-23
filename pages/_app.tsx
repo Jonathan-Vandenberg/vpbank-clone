@@ -1,12 +1,13 @@
 import { ApolloProvider } from "@apollo/client";
 import { motion, useAnimationControls } from "framer-motion";
 import type { AppProps } from "next/app";
+import { Provider } from "react-redux";
+import store from "../store/store";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import ChatIcon from "../components/Global/ChatIcon";
 import NavbarAdvertise from "../components/Global/Navbars/NavbarAdvertise";
-import NavbarBottom from "../components/Global/Navbars/NavbarBottom";
 import NavbarTop from "../components/Global/Navbars/NavbarTop";
 import { useClient } from "../lib/client";
 import "../src/input.css";
@@ -14,6 +15,11 @@ import "../src/input.css";
 const ScrollToTop = dynamic(
   () => import("../components/Global/ScrollToTopArrow"),
   { ssr: false } // <-- not including this component on server-side
+);
+
+const NavbarBottom = dynamic(
+  () => import("../components/Global/Navbars/NavbarBottom"),
+  { ssr: false }
 );
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -33,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <>
+    <Provider store={store}>
       <Head>
         <meta name="viewport" content="viewport-fit=cover" />
       </Head>
@@ -47,7 +53,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </motion.div>
       </ApolloProvider>
-    </>
+    </Provider>
   );
 }
 

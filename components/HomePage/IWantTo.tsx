@@ -4,8 +4,8 @@ import { FaAngleDown } from "react-icons/fa";
 
 const IWantTo = () => {
   return (
-    <div className="iwantto mx-auto ">
-      <div className="max-w-1/3 z-30 mx-auto flex h-auto items-center justify-center space-x-0 drop-shadow">
+    <div className="iwantto left-12 right-12 scale-75 md:scale-90 lg:scale-100">
+      <div className=" z-30 flex h-auto items-center justify-center space-x-0 drop-shadow">
         <div className="z-30 h-20 self-center bg-white p-6 text-lg font-bold md:text-xl">
           I want
         </div>
@@ -20,7 +20,7 @@ const IWantTo = () => {
                 ease: "easeInOut",
               },
             }}
-            className="z-30 overflow-hidden bg-white px-6 "
+            className="z-30 overflow-hidden bg-white px-2"
           >
             <div className="p-6 text-lg font-bold text-iwanttoColor md:text-xl">
               Register a Card

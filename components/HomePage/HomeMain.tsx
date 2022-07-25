@@ -36,7 +36,7 @@ const HomeMain: NextPage<Props> = ({ temperature, weatherIcon, aqi }) => {
       </div>
 
       <div className="lg:pb-0">
-        <p className="indexTitle bg-gradient-to-r from-startColor  to-endColor bg-clip-text pt-8 text-3xl font-bold text-transparent">
+        <p className="ml-6 flex-col bg-gradient-to-r from-startColor to-endColor bg-clip-text pt-8 text-3xl font-bold text-transparent  md:container md:mx-auto md:flex md:flex-row md:items-center md:justify-between ">
           Individual Customers
         </p>
         <IconSlider />

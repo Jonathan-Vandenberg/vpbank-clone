@@ -204,14 +204,14 @@ const NavbarBottom: NextPage = () => {
           ref={btnRef as any}
           onClick={openMenu}
           id="menu-btn"
-          className="open hamburger z-50 block focus:outline-none md:hidden"
+          className="open hamburger z-50 block focus:outline-none lg:hidden"
         >
           <span className="hamburger-top z-50"></span>
           <span className="hamburger-middle"></span>
           <span className="hamburger-bottom"></span>
         </button>
       </nav>
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <div
           ref={menuRef as any}
           id="menu"

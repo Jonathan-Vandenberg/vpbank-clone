@@ -57,10 +57,10 @@ const Promotion: NextPage<Props> = ({ temperature, weatherIcon, aqi }) => {
   return (
     <section className="lg:container-lg mx-auto md:container ">
       <div className="ml-6 flex-col md:container md:mx-auto md:flex md:flex-row md:items-center md:justify-between">
-        <h2 className="indexTitle bg-gradient-to-r from-startColor  to-endColor bg-clip-text pt-8 text-3xl font-bold text-transparent">
+        <h2 className="indexTitle bg-gradient-to-r from-startColor  to-endColor bg-clip-text text-3xl font-bold text-transparent md:p-4">
           Retail Banking
         </h2>
-        <div className="pt-4 pb-4 text-iwanttoColor">
+        <div className="text-iwanttoColor">
           <Link href="/">see more</Link>
         </div>
       </div>
@@ -75,7 +75,7 @@ const Promotion: NextPage<Props> = ({ temperature, weatherIcon, aqi }) => {
           <div className="mt-2 flex flex-col bg-white py-2 md:flex-row">
             <div className="p-4 md:w-1/3 ">
               <WeatherDropdown />
-              <p className="text-sm">
+              <p className="text-sm text-slate-600">
                 {day}, {month} {d.getDate()} {d.getFullYear()}
               </p>
               <div className="flex items-center justify-around md:justify-evenly">
@@ -98,7 +98,7 @@ const Promotion: NextPage<Props> = ({ temperature, weatherIcon, aqi }) => {
 
             <div className="border-y-2 p-4 md:w-1/3 md:border-x-2 md:border-y-0">
               <p className="pb-2 font-semibold">Share your story</p>
-              <p className="font-lighter md:text-xs">
+              <p className="font-lighter text-slate-600 md:text-xs">
                 VPBank luôn lắng nghe và trân trọng mọi ý kiến chia sẻ từ Khách
                 hàng để có cơ hội và động lực mang tới những trải nghiệm giao
                 dịch ngày một tuyệt vời hơn.
@@ -109,7 +109,7 @@ const Promotion: NextPage<Props> = ({ temperature, weatherIcon, aqi }) => {
             </div>
 
             <div className="p-4 md:w-1/3">
-              <p className="pb-2">Contact us hotline</p>
+              <p className="pb-2 font-semibold">Contact us hotline</p>
               <Link href={"/"}>
                 <p className="text-3xl text-iwanttoColor">0872348273</p>
               </Link>

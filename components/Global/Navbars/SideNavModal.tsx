@@ -7,8 +7,12 @@ import Link from "next/link";
 import router from "next/router";
 import { NextPage } from "next/types";
 import * as React from "react";
-import logo from "/Users/jonathanvandenberg/2022/VPBank/public/VPBank_logo.svg";
+import logo from "/Users/jonathanvandenberg/2022/VPBank/public/VPBank_Logo.svg";
 import Image from "next/image";
+import { FaMobileAlt } from "react-icons/fa";
+import { BsSearch } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
 
 interface Props {
   menuRef: React.RefObject<HTMLDivElement>;
@@ -19,12 +23,10 @@ const style = {
   position: "absolute" as "absolute",
   top: 0,
   left: 0,
-  width: 400,
+  width: "85vw",
   height: "100vh",
   bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
+  border: "none",
 };
 
 const SideNavModal: NextPage = () => {
@@ -53,8 +55,8 @@ const SideNavModal: NextPage = () => {
   };
 
   return (
-    <div className="sticky top-0 z-50 flex h-12 items-center justify-between bg-white pt-2 sm:px-4 lg:hidden">
-      <div className="p-10">
+    <div className="sticky top-0 z-50 flex items-center justify-between bg-white pt-2 sm:px-4 lg:hidden">
+      <div className="">
         <Image
           src={logo}
           width="150"
@@ -63,17 +65,25 @@ const SideNavModal: NextPage = () => {
           onClick={() => router.push("/")}
         />
       </div>
+      <div className="flex h-full items-center justify-end space-x-6">
+        <div className="">
+          <BsSearch />
+        </div>
+        <div className=" divide-slate-300 border-x-2 px-6 text-2xl">
+          <FaMobileAlt />
+        </div>
+        <button
+          ref={btnRef as any}
+          onClick={openMenu}
+          id="menu-btn"
+          className="hamburger align-center z-50 flex flex-col justify-center focus:outline-none lg:hidden"
+        >
+          <span className="hamburger-top z-50"></span>
+          <span className="hamburger-middle"></span>
+          <span className="hamburger-bottom"></span>
+        </button>
+      </div>
 
-      <button
-        ref={btnRef as any}
-        onClick={openMenu}
-        id="menu-btn"
-        className="hamburger z-50 block focus:outline-none lg:hidden"
-      >
-        <span className="hamburger-top z-50"></span>
-        <span className="hamburger-middle"></span>
-        <span className="hamburger-bottom"></span>
-      </button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -85,15 +95,55 @@ const SideNavModal: NextPage = () => {
           timeout: 500,
         }}
       >
-        <Fade in={open}>
+        <Fade easing={"enter"} in={open}>
           <Box sx={style}>
-            <div ref={menuRef as any} id="menu">
-              <Link href={"/individual"}>Individual</Link>
-              <Link href={"/household-business"}>HouseHold Business</Link>
-              <Link href={"/smes"}>SMEs</Link>
-              <Link href={"/big-business"}>Big Business</Link>
-              <Link href={"/vpbank-diamond"}>VPBank Diamond</Link>
-            </div>
+            <motion.div
+              initial={{ x: -80 }}
+              animate={{
+                x: 0,
+                transition: {
+                  duration: 0.5,
+                },
+              }}
+              ref={menuRef as any}
+              id="menu"
+              className="items-left mt-4 flex flex-col justify-center space-y-4"
+            >
+              <div className="flex items-center justify-between">
+                <div className="pl-4 font-semibold">Retail</div>
+                <div className="px-4">
+                  <MdOutlineArrowForwardIos />
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div className="pl-4 font-semibold">HouseHold Business</div>
+                <div className="px-4">
+                  <MdOutlineArrowForwardIos />
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div className="pl-4 font-semibold">SMEs</div>
+                <div className="px-4">
+                  <MdOutlineArrowForwardIos />
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div className="pl-4 font-semibold">Big Business</div>
+                <div className="px-4">
+                  <MdOutlineArrowForwardIos />
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div className="pl-4 font-semibold">VPBank Diamond</div>
+                <div className="px-4">
+                  <MdOutlineArrowForwardIos />
+                </div>
+              </div>
+            </motion.div>
           </Box>
         </Fade>
       </Modal>

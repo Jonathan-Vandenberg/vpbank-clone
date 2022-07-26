@@ -44,18 +44,20 @@ const HeroSlideshow: NextPage<Props> = ({
       </div>
     ));
   return (
-    <Slider
-      slidesToShow={1}
-      slidesToScroll={1}
-      autoplay={true}
-      autoplaySpeed={3000}
-      arrows={false}
-      dots={true}
-      dotsClass="slick-dots"
-      className="mx-auto"
-    >
-      {renderSlides()}
-    </Slider>
+    <div className="mt-12 md:mt-0">
+      <Slider
+        slidesToShow={1}
+        slidesToScroll={1}
+        autoplay={true}
+        autoplaySpeed={3000}
+        arrows={false}
+        dots={true}
+        dotsClass="slick-dots"
+        className="mx-auto"
+      >
+        {renderSlides()}
+      </Slider>
+    </div>
   );
 };
 

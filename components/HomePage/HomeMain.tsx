@@ -31,12 +31,12 @@ const HomeMain: NextPage<Props> = ({ temperature, weatherIcon, aqi }) => {
         height={300}
         scaleOnHover={false}
       />
-      <div className="-mt-10">
+      <div className="-mt-12">
         <IWantTo />
       </div>
 
       <div className="lg:pb-0">
-        <p className="ml-6 flex-col bg-gradient-to-r from-startColor to-endColor bg-clip-text pt-8 text-3xl font-bold text-transparent  md:container md:mx-auto md:flex md:flex-row md:items-center md:justify-between ">
+        <p className="flex-col bg-gradient-to-r from-startColor to-endColor bg-clip-text pl-4 pt-4 text-3xl font-bold text-transparent md:container md:mx-auto">
           Individual Customers
         </p>
         <IconSlider />

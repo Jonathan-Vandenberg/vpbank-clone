@@ -1,14 +1,19 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { NextPage } from "next/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import VPBankNeo_Logo from "../../../public/VPBankNeo_Logo.png";
 import VPBank_Logo from "../../../public/VPBank_Logo.svg";
-import { useAppSelector } from "../../../redux-hooks/hooks";
 import CorporateDropdown from "../Dropdowns/CorporateDropdown";
 import HouseholdDropdown from "../Dropdowns/HouseholdDropdown";
 import RetailDropdown from "../Dropdowns/RetailDropdown";
 import SMEDropdown from "../Dropdowns/SMEDropdown";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { BsSearch } from "react-icons/bs";
+import { FaHeart, FaMobileAlt, FaRegQuestionCircle } from "react-icons/fa";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 
 const NavbarBottom: NextPage = () => {
   const [retailDrodown, setRetailDropdown] = useState(false);
@@ -16,25 +21,30 @@ const NavbarBottom: NextPage = () => {
   const [sMEDropdown, setSMEDropdown] = useState(false);
   const [corporateDropdown, setCorporateDropdown] = useState(false);
 
-  const { value: toggleDropdown } = useAppSelector(
-    (state) => state.showDropdown
-  );
+  const [height, setHeight] = useState(0);
+  const [fullBottomNav, setFullBottomNav] = useState(false);
 
-  if (toggleDropdown) {
-    setRetailDropdown(false);
-    setHouseholdDropdown(false);
-    setSMEDropdown(false);
-    setCorporateDropdown(false);
-  }
-
-  console.log(toggleDropdown ? "toggle true" : "toggle false");
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setHeight(window.scrollY);
+    });
+    const bottomNav = document.getElementById("bottom-nav");
+    if (bottomNav?.getBoundingClientRect().top === 0) {
+      setFullBottomNav(true);
+    } else {
+      setFullBottomNav(false);
+    }
+  }, [height]);
 
   const router = useRouter();
 
   const onSearch = (value: string) => {};
 
   return (
-    <nav className="sticky  z-50  hidden bg-white pt-2 lg:block">
+    <nav
+      id="bottom-nav"
+      className="sticky top-0 z-50  hidden bg-white lg:block"
+    >
       <div className="relative flex h-16 items-center justify-around">
         <div className="hover:cursor-pointer">
           <Image
@@ -159,9 +169,48 @@ const NavbarBottom: NextPage = () => {
             Diamond
           </a>
         </div>
-        <div className="hover:cursor-pointer">
-          <Image src={VPBankNeo_Logo} width="190" height="35" alt="logo" />
-        </div>
+        {fullBottomNav ? (
+          <motion.div
+            initial={{ y: -10 }}
+            animate={{
+              y: 0,
+              transition: {
+                duration: 0.5,
+              },
+            }}
+            className="flex items-center justify-center space-x-8 p-2"
+          >
+            <Link href={""}>
+              <div className="text-semibold">
+                <BsSearch />
+              </div>
+            </Link>
+            <Link href={""}>
+              <div className="text-xl text-red-400">
+                <FaHeart />
+              </div>
+            </Link>
+            <Link href={""}>
+              <div className="text-xl">
+                <FaRegQuestionCircle />
+              </div>
+            </Link>
+            <Link href={""}>
+              <div className="text-2xl ">
+                <HiOutlineLocationMarker />
+              </div>
+            </Link>
+            <Link href={""}>
+              <div className="text-xl">
+                <FaMobileAlt />
+              </div>
+            </Link>
+          </motion.div>
+        ) : (
+          <div className="hover:cursor-pointer">
+            <Image src={VPBankNeo_Logo} width="190" height="35" alt="logo" />
+          </div>
+        )}
       </div>
       <div className="w-1/4">
         {retailDrodown && (

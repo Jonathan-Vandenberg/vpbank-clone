@@ -55,7 +55,7 @@ let month = months[d.getMonth()];
 
 const Promotion: NextPage<Props> = ({ temperature, weatherIcon, aqi }) => {
   return (
-    <section className="lg:container-lg mx-auto md:container md:max-h-promotionsHeight">
+    <section className="lg:container-lg mx-auto md:container ">
       <div className="ml-6 flex-col md:container md:mx-auto md:flex md:flex-row md:items-center md:justify-between">
         <h2 className="indexTitle bg-gradient-to-r from-startColor  to-endColor bg-clip-text pt-8 text-3xl font-bold text-transparent">
           Retail Banking

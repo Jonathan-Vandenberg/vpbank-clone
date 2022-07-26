@@ -11,6 +11,7 @@ import NavbarAdvertise from "../components/Global/Navbars/NavbarAdvertise";
 import NavbarTop from "../components/Global/Navbars/NavbarTop";
 import { useClient } from "../lib/client";
 import "../src/input.css";
+import SideNavModal from "../components/Global/Navbars/SideNavModal";
 
 const ScrollToTop = dynamic(
   () => import("../components/Global/ScrollToTopArrow"),
@@ -48,6 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <motion.div initial={{ y: -48 }} animate={controls}>
           <NavbarTop />
           <NavbarBottom />
+          <SideNavModal />
           <ScrollToTop />
           <ChatIcon />
           <Component {...pageProps} />

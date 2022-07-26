@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { FaHeart } from "react-icons/fa";
+import { FaHeart, FaRegQuestionCircle } from "react-icons/fa";
 import { useAppDispatch } from "../../../redux-hooks/hooks";
 import { hide } from "../../../slices/showDropdownSlice";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 
 const style = {
   color: "rgb(196,245,208)",
@@ -15,7 +16,7 @@ const NavbarTop = () => {
       onClick={() => dispatch(hide(true))}
       className="element hidden bg-gradient-to-r from-startColor to-endColor px-2 py-1 sm:px-4 lg:flex"
     >
-      <div className="container mx-auto flex-wrap items-center justify-between lg:flex">
+      <div className="container mx-auto flex-wrap items-center justify-evenly lg:flex">
         <Link href="/about">
           <a className="text-topNavColor hover:text-white ">About Us</a>
         </Link>
@@ -30,7 +31,7 @@ const NavbarTop = () => {
         <Link href="./recruit">
           <a className="text-topNavColor hover:text-white">Recruit</a>
         </Link>
-        <div className="input-icons flex">
+        <div className="input-icons flex px-4">
           <i className="fa fa-search icon"></i>
           <input
             placeholder="Search keyword"
@@ -38,16 +39,28 @@ const NavbarTop = () => {
           />
         </div>
         <Link href="favourite">
-          <a className=" flex items-center text-topNavColor hover:text-white">
-            <FaHeart />
+          <a className="flex items-center text-topNavColor hover:text-white">
+            <div className="px-2 text-white">
+              <FaHeart />
+            </div>
             Favourite
           </a>
         </Link>
         <Link href="/support">
-          <a className="text-topNavColor hover:text-white">Support</a>
+          <a className="flex items-center text-topNavColor hover:text-white">
+            <div className="p-2 text-lg text-white">
+              <FaRegQuestionCircle />
+            </div>
+            Support
+          </a>
         </Link>
         <Link href="branches-and-atms">
-          <a className="text-topNavColor hover:text-white">Branches & ATMs</a>
+          <a className="flex items-center justify-center text-topNavColor hover:text-white">
+            <div className="p-2 text-xl text-white">
+              <HiOutlineLocationMarker />
+            </div>
+            Branches & ATMs
+          </a>
         </Link>
       </div>
     </div>

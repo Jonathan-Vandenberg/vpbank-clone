@@ -40,7 +40,7 @@ const HomeMain: NextPage<Props> = ({ temperature, weatherIcon, aqi }) => {
           Individual Customers
         </p>
         <IconSlider />
-        <div className="bg-body">
+        <div className=" bg-body">
           <Promotion
             temperature={temperature}
             weatherIcon={weatherIcon}

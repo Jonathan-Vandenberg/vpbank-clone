@@ -29,7 +29,7 @@ const ScrollToTopArrow: NextPage = () => {
         <motion.div
           initial={{ y: 60 }}
           animate={{ y: 0, transition: { ease: "easeInOut", duration: 1 } }}
-          className="px1 fixed bottom-20 right-7 z-50 p-2"
+          className="fixed bottom-20 right-7 z-50 p-2"
         >
           <ArrowCircleUpIcon
             style={{ fontSize: 50, color: "rgb(1,183,78)" }}

@@ -22,12 +22,13 @@ const NavbarBottom: NextPage = () => {
   const [corporateDropdown, setCorporateDropdown] = useState(false);
 
   const [height, setHeight] = useState(0);
-  const [fullBottomNav, setFullBottomNav] = useState(false);
+  const [fullBottomNav, setFullBottomNav] = useState(true);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setHeight(window.scrollY);
     });
+
     const bottomNav = document.getElementById("bottom-nav");
     if (bottomNav?.getBoundingClientRect().top === 0) {
       setFullBottomNav(true);
@@ -56,106 +57,114 @@ const NavbarBottom: NextPage = () => {
           />
         </div>
         <div className="flex items-center justify-evenly space-x-16">
-          <a
-            id="retailLink"
-            key="retail"
-            className="text-lg font-medium hover:text-hoverTextColor"
-            onMouseEnter={() => {
-              setRetailDropdown(true);
-              setHouseholdDropdown(false);
-              setSMEDropdown(false);
-              setCorporateDropdown(false);
-            }}
-            onClick={() => {
-              setRetailDropdown(!retailDrodown);
-              setHouseholdDropdown(false);
-              setSMEDropdown(false);
-              setCorporateDropdown(false);
-            }}
-          >
-            Retail
-          </a>
-          {retailDrodown && (
-            <div
-              id="diamond1"
-              className="absolute z-20 h-3 w-3 -translate-x-diamond1 translate-y-6 rotate-45 bg-gray-100"
-            />
-          )}
-          <a
-            id="householdLink"
-            key="household"
-            className="text-lg font-medium hover:text-hoverTextColor"
-            onMouseEnter={() => {
-              setHouseholdDropdown(true);
-              setRetailDropdown(false);
-              setSMEDropdown(false);
-              setCorporateDropdown(false);
-            }}
-            onClick={() => {
-              setHouseholdDropdown(!householdDropdown);
-              setRetailDropdown(false);
-              setSMEDropdown(false);
-              setCorporateDropdown(false);
-            }}
-          >
-            Household
-          </a>
-          {householdDropdown && (
-            <div
-              id="diamond2"
-              className="unhidden2 absolute z-20 mx-9  h-3 w-3 -translate-x-diamond2 translate-y-6 rotate-45 bg-gray-100 "
-            />
-          )}
-          <a
-            id="smeLink"
-            key="sme"
-            className="text-lg font-medium hover:text-hoverTextColor"
-            onMouseEnter={() => {
-              setSMEDropdown(true);
-              setHouseholdDropdown(false);
-              setRetailDropdown(false);
-              setCorporateDropdown(false);
-            }}
-            onClick={() => {
-              setHouseholdDropdown(false);
-              setRetailDropdown(false);
-              setSMEDropdown(!sMEDropdown);
-              setCorporateDropdown(false);
-            }}
-          >
-            SME
-          </a>
-          {sMEDropdown && (
-            <div
-              id="diamond3"
-              className="unhidden3 absolute z-20 mx-3  h-3 w-3 -translate-x-diamond3 translate-y-6 rotate-45 bg-gray-100 "
-            />
-          )}
-          <a
-            id="corporateLink"
-            key="corporate"
-            className="text-lg font-medium hover:text-hoverTextColor"
-            onMouseEnter={() => {
-              setCorporateDropdown(true);
-              setHouseholdDropdown(false);
-              setRetailDropdown(false);
-              setSMEDropdown(false);
-            }}
-            onClick={() => {
-              setHouseholdDropdown(false);
-              setRetailDropdown(false);
-              setSMEDropdown(false);
-              setCorporateDropdown(!corporateDropdown);
-            }}
-          >
-            Corporate
-          </a>
-          {corporateDropdown && (
-            <div
-              id="diamond4"
-              className="unhidden4 absolute z-20 mx-8  h-3 w-3 -translate-x-diamond4 translate-y-6 rotate-45 bg-gray-100 "
-            />
-          )}
+          <div className="relative flex flex-col items-center justify-center">
+            <a
+              id="retailLink"
+              key="retail"
+              className="text-lg font-medium hover:text-hoverTextColor"
+              onMouseEnter={() => {
+                setRetailDropdown(true);
+                setHouseholdDropdown(false);
+                setSMEDropdown(false);
+                setCorporateDropdown(false);
+              }}
+              onClick={() => {
+                setRetailDropdown(!retailDrodown);
+                setHouseholdDropdown(false);
+                setSMEDropdown(false);
+                setCorporateDropdown(false);
+              }}
+            >
+              Retail
+            </a>
+            {retailDrodown && (
+              <div
+                id="diamond1"
+                className="unhidden4 absolute z-20 h-3 w-3 translate-y-8 rotate-45 bg-gray-100 "
+              />
+            )}
+          </div>
+          <div className="relative flex flex-col items-center justify-center">
+            <a
+              id="householdLink"
+              key="household"
+              className="text-lg font-medium hover:text-hoverTextColor"
+              onMouseEnter={() => {
+                setHouseholdDropdown(true);
+                setRetailDropdown(false);
+                setSMEDropdown(false);
+                setCorporateDropdown(false);
+              }}
+              onClick={() => {
+                setHouseholdDropdown(!householdDropdown);
+                setRetailDropdown(false);
+                setSMEDropdown(false);
+                setCorporateDropdown(false);
+              }}
+            >
+              Household
+            </a>
+            {householdDropdown && (
+              <div
+                id="diamond2"
+                className="unhidden4 absolute z-20 h-3 w-3 translate-y-8 rotate-45 bg-gray-100 "
+              />
+            )}
+          </div>
+          <div className="relative flex flex-col items-center justify-center">
+            <a
+              id="smeLink"
+              key="sme"
+              className="text-lg font-medium hover:text-hoverTextColor"
+              onMouseEnter={() => {
+                setSMEDropdown(true);
+                setHouseholdDropdown(false);
+                setRetailDropdown(false);
+                setCorporateDropdown(false);
+              }}
+              onClick={() => {
+                setHouseholdDropdown(false);
+                setRetailDropdown(false);
+                setSMEDropdown(!sMEDropdown);
+                setCorporateDropdown(false);
+              }}
+            >
+              SME
+            </a>
+            {sMEDropdown && (
+              <div
+                id="diamond3"
+                className="unhidden4 absolute z-20 h-3 w-3 translate-y-8 rotate-45 bg-gray-100 "
+              />
+            )}
+          </div>
+          <div className="relative flex flex-col items-center justify-center">
+            <a
+              id="corporateLink"
+              key="corporate"
+              className="text-lg font-medium hover:text-hoverTextColor"
+              onMouseEnter={() => {
+                setCorporateDropdown(true);
+                setHouseholdDropdown(false);
+                setRetailDropdown(false);
+                setSMEDropdown(false);
+              }}
+              onClick={() => {
+                setHouseholdDropdown(false);
+                setRetailDropdown(false);
+                setSMEDropdown(false);
+                setCorporateDropdown(!corporateDropdown);
+              }}
+            >
+              Corporate
+            </a>
+            {corporateDropdown && (
+              <div
+                id="diamond4"
+                className="unhidden4 absolute z-20 h-3 w-3 translate-y-8 rotate-45 bg-gray-100"
+              />
+            )}
+          </div>
           <a
             key="vp_bank"
             className="text-lg font-medium hover:text-hoverTextColor"

@@ -1,18 +1,23 @@
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Fade from "@mui/material/Fade";
 import Modal from "@mui/material/Modal";
-import Link from "next/link";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import router from "next/router";
 import { NextPage } from "next/types";
 import * as React from "react";
-import logo from "/Users/jonathanvandenberg/2022/VPBank/public/VPBank_Logo.svg";
-import Image from "next/image";
-import { FaMobileAlt } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
-import { motion } from "framer-motion";
-import { MdOutlineArrowForwardIos } from "react-icons/md";
+import { FaHeart, FaMobileAlt, FaRegQuestionCircle } from "react-icons/fa";
+import {
+  MdOutlineArrowForwardIos,
+  MdOutlineArrowBackIos,
+} from "react-icons/md";
+import logo from "/Users/jonathanvandenberg/2022/VPBank/public/VPBank_Logo.svg";
+import neoLogo from "/Users/jonathanvandenberg/2022/VPBank/public/VPBankNeo_Logo.png";
+import Link from "next/link";
+import { HiOutlineLocationMarker } from "react-icons/hi";
+import { useState } from "react";
 
 interface Props {
   menuRef: React.RefObject<HTMLDivElement>;
@@ -26,15 +31,25 @@ const style = {
   width: "85vw",
   height: "100vh",
   bgcolor: "background.paper",
-  border: "none",
+  outline: "none",
 };
 
 const SideNavModal: NextPage = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
-    setOpen(false), openMenu();
+    setOpen(false),
+      openMenu(),
+      setShowCorporate(false),
+      setShowRetail(false),
+      setShowHouseholdMenu(false),
+      setShowSMEMenu(false);
   };
+
+  const [showRetail, setShowRetail] = useState(false);
+  const [showHouseholdMenu, setShowHouseholdMenu] = useState(false);
+  const [showSMEMenu, setShowSMEMenu] = useState(false);
+  const [showCorporate, setShowCorporate] = useState(false);
 
   React.useEffect(() => {
     const menuButton = document.getElementById(
@@ -54,9 +69,190 @@ const SideNavModal: NextPage = () => {
     btnRef?.current?.classList.toggle("open");
   };
 
+  const MainMenu = () => (
+    <>
+      <div className="flex items-center justify-between">
+        <div className="pl-4 font-semibold">Retail</div>
+        <div
+          className="px-4"
+          onClick={() => {
+            setShowRetail(!showRetail);
+          }}
+        >
+          <MdOutlineArrowForwardIos />
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between">
+        <div className="pl-4 font-semibold">HouseHold Business</div>
+        <div
+          className="px-4"
+          onClick={() => setShowHouseholdMenu(!showHouseholdMenu)}
+        >
+          <MdOutlineArrowForwardIos />
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between">
+        <div className="pl-4 font-semibold">SMEs</div>
+        <div className="px-4" onClick={() => setShowSMEMenu(!showSMEMenu)}>
+          <MdOutlineArrowForwardIos />
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between">
+        <div className="pl-4 font-semibold">Corporate</div>
+        <div className="px-4" onClick={() => setShowCorporate(!showCorporate)}>
+          <MdOutlineArrowForwardIos />
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between">
+        <div className="pl-4 font-semibold">VPBank Diamond</div>
+      </div>
+
+      <div className="flex items-center justify-center px-4">
+        <input
+          placeholder="Search keyword"
+          className="input-field h-8 w-full rounded-md border-2 px-2"
+        />
+      </div>
+
+      <div className="flex items-center justify-between p-4">
+        <Image src={neoLogo} width="150" height="30" alt="logo" />
+      </div>
+
+      <Link href="/about">
+        <a className="px-4">About Us</a>
+      </Link>
+
+      <Link href="./investor-relations">
+        <a className="px-4">Investor Relations</a>
+      </Link>
+
+      <Link href="./news">
+        <a className="px-4">News</a>
+      </Link>
+
+      <Link href="./recruit">
+        <a className="px-4">Recruit</a>
+      </Link>
+
+      <Link href={""}>
+        <div className="flex items-center justify-start space-x-2 px-4 pt-4">
+          <div className="text-xl text-red-400">
+            <FaHeart />
+          </div>
+          <p>favourites</p>
+        </div>
+      </Link>
+
+      <Link href={""}>
+        <div className="flex items-center justify-start space-x-2 px-4">
+          <div className="text-xl">
+            <FaRegQuestionCircle />
+          </div>
+          <p>Support</p>
+        </div>
+      </Link>
+
+      <Link href={""}>
+        <div className="flex items-center justify-start space-x-2 px-4">
+          <div className="text-xl">
+            <HiOutlineLocationMarker />
+          </div>
+          <p>Branches & ATMs</p>
+        </div>
+      </Link>
+    </>
+  );
+
+  const RetailMenu = () => (
+    <>
+      <div className="flex items-center justify-start">
+        <div onClick={() => setShowRetail(!showRetail)} className="p-2">
+          <MdOutlineArrowBackIos />
+        </div>
+        <div className="p-2 font-semibold text-iwanttoColor">Retail</div>
+      </div>
+
+      <div className="ml-3">Card Services</div>
+      <div className="ml-3">Debit Card</div>
+      <div className="ml-3">Loans</div>
+      <div className="ml-3">Savings</div>
+      <div className="ml-3">Account</div>
+      <div className="ml-3">E-Banking Services</div>
+      <div className="ml-3">Insurance</div>
+      <div className="ml-3">Personal Services</div>
+      <div className="ml-3">VPBank Loyalty</div>
+      <div className="ml-3">VPBank Diamond</div>
+    </>
+  );
+
+  const HouseholdMenu = () => (
+    <>
+      <div className="flex items-center justify-start">
+        <div
+          onClick={() => setShowHouseholdMenu(!showHouseholdMenu)}
+          className="p-2"
+        >
+          <MdOutlineArrowBackIos />
+        </div>
+        <div className="p-2 font-semibold text-iwanttoColor">Household</div>
+      </div>
+
+      <div className="ml-3">Unsecured Loan</div>
+      <div className="ml-3">Secured Loans</div>
+      <div className="ml-3">Bank Assurance</div>
+      <div className="ml-3">Card Services</div>
+    </>
+  );
+
+  const SMEMenu = () => (
+    <>
+      <div className="flex items-center justify-start">
+        <div onClick={() => setShowSMEMenu(!showSMEMenu)} className="p-2">
+          <MdOutlineArrowBackIos />
+        </div>
+        <div className="p-2 font-semibold text-iwanttoColor">SME</div>
+      </div>
+
+      <div className="ml-3">Account Service</div>
+      <div className="ml-3">Business Loans</div>
+      <div className="ml-3">VPBIZ Payment Card</div>
+      <div className="ml-3">Card Payment Services</div>
+      <div className="ml-3">Payment Service</div>
+      <div className="ml-3">Trade Finance</div>
+      <div className="ml-3">Deposit Products</div>
+      <div className="ml-3">Online Chiropractic</div>
+      <div className="ml-3">Online Disbursement</div>
+      <div className="ml-3">Business Account Online</div>
+    </>
+  );
+
+  const CorporateMenu = () => (
+    <>
+      <div className="flex items-center justify-start">
+        <div onClick={() => setShowCorporate(!showCorporate)} className="p-2">
+          <MdOutlineArrowBackIos />
+        </div>
+        <div className="p-2 font-semibold text-iwanttoColor">Corporate</div>
+      </div>
+
+      <div className="ml-3">Guarantee</div>
+      <div className="ml-3">Loans</div>
+      <div className="ml-3">Services and Trade Finance</div>
+      <div className="ml-3">Account services</div>
+      <div className="ml-3">Card Services</div>
+      <div className="ml-3">Financial Market Products</div>
+      <div className="ml-3">Internet Banking</div>
+      <div className="ml-3">Email Transactions</div>
+    </>
+  );
+
   return (
     <div className="sticky top-0 z-50 flex items-center justify-between bg-white pt-2 sm:px-4 lg:hidden">
-      <div className="">
+      <div className="p-1">
         <Image
           src={logo}
           width="150"
@@ -66,17 +262,17 @@ const SideNavModal: NextPage = () => {
         />
       </div>
       <div className="flex h-full items-center justify-end space-x-6">
-        <div className="">
+        <div className="text-xl text-iwanttoColor">
           <BsSearch />
         </div>
-        <div className=" divide-slate-300 border-x-2 px-6 text-2xl">
+        <div className="divide-slate-300 border-x-2 px-6 text-2xl text-iwanttoColor">
           <FaMobileAlt />
         </div>
         <button
           ref={btnRef as any}
           onClick={openMenu}
           id="menu-btn"
-          className="hamburger align-center z-50 flex flex-col justify-center focus:outline-none lg:hidden"
+          className="hamburger align-center top-1 right-1 z-50 flex flex-col justify-center focus:outline-none lg:hidden"
         >
           <span className="hamburger-top z-50"></span>
           <span className="hamburger-middle"></span>
@@ -107,42 +303,16 @@ const SideNavModal: NextPage = () => {
               }}
               ref={menuRef as any}
               id="menu"
-              className="items-left mt-4 flex flex-col justify-center space-y-4"
+              className="items-left mt-4 flex flex-col justify-center space-y-4 overflow-y-auto"
             >
-              <div className="flex items-center justify-between">
-                <div className="pl-4 font-semibold">Retail</div>
-                <div className="px-4">
-                  <MdOutlineArrowForwardIos />
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="pl-4 font-semibold">HouseHold Business</div>
-                <div className="px-4">
-                  <MdOutlineArrowForwardIos />
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="pl-4 font-semibold">SMEs</div>
-                <div className="px-4">
-                  <MdOutlineArrowForwardIos />
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="pl-4 font-semibold">Big Business</div>
-                <div className="px-4">
-                  <MdOutlineArrowForwardIos />
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="pl-4 font-semibold">VPBank Diamond</div>
-                <div className="px-4">
-                  <MdOutlineArrowForwardIos />
-                </div>
-              </div>
+              {!showRetail &&
+                !showHouseholdMenu &&
+                !showSMEMenu &&
+                !showCorporate && <MainMenu />}
+              {showRetail && <RetailMenu />}
+              {showHouseholdMenu && <HouseholdMenu />}
+              {showSMEMenu && <SMEMenu />}
+              {showCorporate && <CorporateMenu />}
             </motion.div>
           </Box>
         </Fade>

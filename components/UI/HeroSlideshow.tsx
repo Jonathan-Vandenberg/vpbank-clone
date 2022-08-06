@@ -1,9 +1,8 @@
+import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Image, { StaticImageData } from "next/image";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider from "react-slick";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 interface Props {
   /**Array of image links or imports */
@@ -27,7 +26,7 @@ const HeroSlideshow: NextPage<Props> = ({
       <div key={i}>
         <motion.div
           whileHover={{
-            scale: scaleOnHover ? 1.05 : 1,
+            scale: scaleOnHover ? 1.02 : 1,
             transition: { duration: 0.3 },
           }}
           key={img.toString()}
@@ -44,7 +43,7 @@ const HeroSlideshow: NextPage<Props> = ({
       </div>
     ));
   return (
-    <div className="mt-12 md:mt-0">
+    <div>
       <Slider
         slidesToShow={1}
         slidesToScroll={1}

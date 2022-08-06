@@ -1,0 +1,7 @@
+# import User from "./UserFragment"
+
+query GetUser($id: ID!) {
+  user(id: $id) {
+    ...User
+  }
+}

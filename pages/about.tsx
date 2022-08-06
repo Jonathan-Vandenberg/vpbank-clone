@@ -1,7 +1,11 @@
 import AboutMain from "../components/AboutPage/AboutMain";
 
 const AboutPage = () => {
-  return <AboutMain />;
+  return (
+    <>
+      <AboutMain />
+    </>
+  );
 };
 
 export default AboutPage;

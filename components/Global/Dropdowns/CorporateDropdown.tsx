@@ -26,18 +26,18 @@ const CorporateDropdown: NextPage<Props> = ({ leave }) => (
     animate={{ y: 0, opacity: 1 }}
     transition={{ ease: "easeOut" }}
   >
-    <div className="block space-y-3">
+    <div className="block w-1/2 space-y-3">
       {navLinks.map((link, i) => (
         <div key={i}>
           <Link href={`/${link}`}>
-            <a className="block text-lg font-medium hover:text-hoverTextColor">
+            <a className="block whitespace-nowrap text-lg font-medium hover:text-hoverTextColor">
               {link}
             </a>
           </Link>
         </div>
       ))}
     </div>
-    <div className="flex.col ml-60 h-full w-1/2 items-center justify-center space-y-0.5 border-l-2">
+    <div className="flex.col h-full w-1/2 items-center justify-center space-y-0.5 border-l-2">
       <div className=" h-3/4  p-6">
         <Image
           src={"https://picsum.photos/id/269/300/300"}

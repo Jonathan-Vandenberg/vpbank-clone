@@ -25,8 +25,9 @@ const resolvers: Resolvers = {
     addUser: async (_, {input}, {prisma}) => {
       const user = await prisma.user.create({
             data: {
-              name: input.name,
-              email: input.email
+              id: input?.id,
+              name: input?.name,
+              email: input?.email
           }
       })
       return user

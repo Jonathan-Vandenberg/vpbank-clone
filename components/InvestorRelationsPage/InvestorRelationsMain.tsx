@@ -1,4 +1,4 @@
-import Hero from "../UI/Hero";
+import Hero from "../UI/HeroStatic";
 import { useRouter } from "next/router";
 
 const InvestorRelationsMain = () => {

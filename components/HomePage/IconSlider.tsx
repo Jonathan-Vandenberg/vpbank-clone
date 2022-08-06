@@ -1,36 +1,35 @@
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
-import icon1 from "/Users/jonathanvandenberg/2022/VPBank/public/icons8-approval-100.png";
-import icon2 from "/Users/jonathanvandenberg/2022/VPBank/public/icons8-combo-chart-100.png";
-import icon4 from "/Users/jonathanvandenberg/2022/VPBank/public/icons8-idea-bank-100.png";
-import icon5 from "/Users/jonathanvandenberg/2022/VPBank/public/icons8-money-transfer-100.png";
-import icon6 from "/Users/jonathanvandenberg/2022/VPBank/public/icons8-new-contact-100.png";
-import icon8 from "/Users/jonathanvandenberg/2022/VPBank/public/icons8-reseller-100.png";
-import icon9 from "/Users/jonathanvandenberg/2022/VPBank/public/icons8-school-100.png";
-import icon10 from "/Users/jonathanvandenberg/2022/VPBank/public/icons8-teamwork-100.png";
-import icon11 from "/Users/jonathanvandenberg/2022/VPBank/public/icons8-visa-stamp-100.png";
-import icon3 from "/Users/jonathanvandenberg/2022/VPBank/public/retail-icon-3.png";
+import icon1 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-1.png";
+import icon2 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-2.png";
+import icon3 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-3.png";
+import icon4 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-4.png";
+import icon5 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-5.png";
+import icon6 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-6.png";
+import icon7 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-7.png";
+import icon8 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-8.png";
+import icon9 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-9.png";
 
 const icons = [
-  icon1,
-  icon2,
-  icon3,
-  icon4,
-  icon5,
-  icon6,
-  icon8,
-  icon9,
-  icon10,
-  icon11,
+  { image: icon1, title: "Card Services" },
+  { image: icon2, title: "Debit Card" },
+  { image: icon3, title: "Loans" },
+  { image: icon4, title: "Savings" },
+  { image: icon5, title: "Account" },
+  { image: icon6, title: "E-Banking" },
+  { image: icon7, title: "Insurance" },
+  { image: icon8, title: "Personal Services" },
+  { image: icon9, title: "VPBank Loyalty" },
+  { image: icon9, title: "VPBank Diamond" },
 ];
 
 const IconSlider = () => {
-  const [width, setWidth] = useState(786);
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     const { innerWidth: screenWidth } = window;
@@ -42,27 +41,32 @@ const IconSlider = () => {
   }, [width]);
 
   const renderSlides = () =>
-    icons.map((img, i) => (
+    icons.map((el, i) => (
       <div
         key={i}
-        className="lg:scale-115 p-4 sm:scale-75 sm:p-3 md:scale-90 md:p-4 lg:p-3 xl:scale-100"
+        className="lg:scale-115 flex flex-col items-center justify-center p-4 sm:scale-75 sm:p-3 md:scale-90 md:p-4 lg:p-3 xl:scale-100"
       >
-        <Image src={img} width={100} height={100} alt="icons" />
+        <div className="flex items-center justify-center">
+          <Image src={el.image} width={100} height={100} alt="icons" />
+        </div>
+        <p className="pt-2 text-center text-xs text-slate-600 md:text-sm">
+          {el.title}
+        </p>
       </div>
     ));
 
   return (
     <div className="">
       <Slider
-        slidesToShow={width < 768 ? 4 : width < 1024 ? 6 : 8}
-        slidesToScroll={2}
+        slidesToShow={width < 768 ? 4 : width < 1024 ? 6 : 9}
+        slidesToScroll={width < 768 ? 4 : 2}
         autoplay={false}
         autoplaySpeed={3000}
         arrows={true}
         dots={false}
         dotsClass="slick-dots"
         lazyLoad={"anticipated"}
-        className="mx-auto w-3/4 "
+        className="mx-auto w-3/4"
       >
         {renderSlides()}
       </Slider>

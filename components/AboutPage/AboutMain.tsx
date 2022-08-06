@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Timeline from "../UI/Timeline";
-import Hero from "../UI/Hero";
+import Hero from "../UI/HeroStatic";
 
 const timelineData = [
   {

@@ -1,15 +1,22 @@
 import { motion } from "framer-motion";
-import { FaHeart } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
+import IWantModal from "../Global/Dropdowns/IWantModal";
+
+import { useState } from "react";
 
 const IWantTo = () => {
+  const [dropDown, setDropDown] = useState(false);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <div className="iwantto left-12 right-12 scale-75 md:scale-90 lg:scale-100">
-      <div className=" z-30 flex h-auto items-center justify-center space-x-0 drop-shadow">
-        <div className="z-30 h-20 self-center bg-white p-6 text-lg font-bold md:text-xl">
-          I want
+      <div className="relative z-30 flex items-center justify-center space-x-0 drop-shadow">
+        <div className="z-30 h-20 self-center whitespace-nowrap bg-white p-6 text-lg font-bold md:text-xl">
+          <p>I want</p>
         </div>
-        <div className="z-30 h-20 self-center overflow-hidden bg-white py-10">
+        <div className="z-30 h-20 self-center overflow-hidden whitespace-nowrap bg-white py-10">
           <motion.div
             animate={{
               opacity: [1.1, 0, 1.1, 0, 1.1, 0, 1.1, 0, 1.1, 0, 1.1, 0, 1.1],
@@ -39,9 +46,13 @@ const IWantTo = () => {
             </div>
           </motion.div>
         </div>
-        <div className="jsutify-center flex h-20 items-center bg-white px-6 text-2xl">
+        <div
+          className="jsutify-center flex h-20 items-center bg-white px-6 text-2xl"
+          onClick={handleOpen}
+        >
           <FaAngleDown className=" text-iwanttoColor" />
         </div>
+        <IWantModal open={open} handleClose={handleClose} />
       </div>
     </div>
   );

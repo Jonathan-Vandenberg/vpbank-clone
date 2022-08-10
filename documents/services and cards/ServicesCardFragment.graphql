@@ -1,0 +1,28 @@
+fragment ServicesCard on ServicesCard {
+  id
+  image
+  content
+  title
+  cardType
+  type
+  title
+  creditLimit
+  interestRate
+  transactionLimit
+  annualFees
+  rewardPoints
+  refund
+  freeFlightTickets
+  mobiphone
+  seperateOffer
+  freeCashWithdrawal
+  freeAnnualFees
+  globalPayments
+  cardProtectionWith3DSecureText
+  fourtyFiveDaysMaximumInterestFree
+  upTo50PercentOff
+  installmentPlanWithInterestOf1Percent
+  withdrawMoneyUpTo85Percent
+  generalConditions
+  income
+}

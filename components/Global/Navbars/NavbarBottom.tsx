@@ -4,10 +4,10 @@ import { NextPage } from "next/types";
 import { useEffect, useState } from "react";
 import VPBankNeo_Logo from "../../../public/VPBankNeo_Logo.png";
 import VPBank_Logo from "../../../public/VPBank_Logo.svg";
-import CorporateDropdown from "../Dropdowns/CorporateDropdown";
-import HouseholdDropdown from "../Dropdowns/HouseholdDropdown";
-import RetailDropdown from "../Dropdowns/RetailDropdown";
-import SMEDropdown from "../Dropdowns/SMEDropdown";
+import CorporateDropdown from "./Dropdowns/CorporateDropdown";
+import HouseholdDropdown from "./Dropdowns/HouseholdDropdown";
+import RetailDropdown from "./Dropdowns/RetailDropdown";
+import SMEDropdown from "./Dropdowns/SMEDropdown";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -39,13 +39,8 @@ const NavbarBottom: NextPage = () => {
 
   const router = useRouter();
 
-  const onSearch = (value: string) => {};
-
   return (
-    <nav
-      id="bottom-nav"
-      className="sticky top-0 z-50  hidden bg-white lg:block"
-    >
+    <nav id="bottom-nav" className="sticky top-0 z-50 hidden bg-white lg:block">
       <div className="relative flex h-16 items-center justify-around">
         <div className="hover:cursor-pointer">
           <Image
@@ -194,8 +189,8 @@ const NavbarBottom: NextPage = () => {
                 <BsSearch />
               </div>
             </Link>
-            <Link href={""}>
-              <div className="text-xl text-red-400">
+            <Link href={"/favorites"}>
+              <div className="cursor-pointer text-xl text-red-400">
                 <FaHeart />
               </div>
             </Link>

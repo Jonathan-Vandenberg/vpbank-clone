@@ -5,13 +5,14 @@ import { Provider } from "react-redux";
 import store from "../store/store";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ChatIcon from "../components/Global/ChatIcon";
 import NavbarAdvertise from "../components/Global/Navbars/NavbarAdvertise";
 import NavbarTop from "../components/Global/Navbars/NavbarTop";
 import { useClient } from "../lib/client";
 import "../src/input.css";
 import SideNavModal from "../components/Global/Navbars/SideNavModal";
+import Footer from "../components/Global/Footer/Footer";
 
 const ScrollToTop = dynamic(
   () => import("../components/Global/ScrollToTopArrow"),
@@ -37,6 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           },
         })
       : null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -53,6 +55,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ScrollToTop />
           <ChatIcon />
           <Component {...pageProps} />
+          <Footer />
         </motion.div>
       </ApolloProvider>
     </Provider>

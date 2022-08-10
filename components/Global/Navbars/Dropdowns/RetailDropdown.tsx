@@ -8,16 +8,16 @@ interface Props {
 }
 
 const navLinks = [
-  "Card Services",
-  "Debit Card",
-  "Loans",
-  "Savings",
-  "Account",
-  "E_Banking Services",
-  "Insurance",
-  "Personal Services",
-  "VPBank Loyalty",
-  "VPBank Diamond",
+  { title: "Card Services", href: "/cardservices" },
+  { title: "Debit Card", href: "/DebitCard" },
+  { title: "Loans", href: "/Loans" },
+  { title: "Savings", href: "/Savings" },
+  { title: "Account", href: "/Account" },
+  { title: "E_Banking Services", href: "/E_BankingServices" },
+  { title: "Insurance", href: "/Insurance" },
+  { title: "Personal Services", href: "/PersonalServices" },
+  { title: "VPBank Loyalty", href: "/VPBankLoyalty" },
+  { title: "VPBank Diamond", href: "/VPBankDiamond" },
 ];
 
 const RetailDropdown: NextPage<Props> = ({ leave }) => (
@@ -32,9 +32,9 @@ const RetailDropdown: NextPage<Props> = ({ leave }) => (
     <div className="block w-1/2 space-y-3">
       {navLinks.map((link, i) => (
         <div key={i}>
-          <Link href={`/${link}`}>
+          <Link href={`/${link.href}`}>
             <a className="block whitespace-nowrap text-lg font-medium hover:text-hoverTextColor">
-              {link}
+              {link.title}
             </a>
           </Link>
         </div>

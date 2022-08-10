@@ -1,20 +1,93 @@
 type Query {
-  user(id: ID!): User
+  promotion(id: ID!): Promotion
+  promotions: [Promotion]
+  servicesCard(id: ID!): ServicesCard
+  servicesCards: [ServicesCard]
+  servicesFullDetails(id: ID!): ServicesCard
 }
 
 type Mutation {
-  addUser(input: UserInput): User
+  addPromotion(input: PromotionInput!): Promotion
+  removePromotion(id: ID!): Promotion
+  addServicesCard(input: ServicesCardInput!): ServicesCard
+  removeServicesCard(id: ID!): ServicesCard
 }
 
-type User {
+type Promotion {
   id: ID!
-  name: String
-  email: String
-  createdAt: String
+  image: String!
+  title: String!
+  content: String!
+  customer: String!
+  type: FavoritesEnum!
 }
 
-input UserInput {
-  name: String
-  email: String
+input PromotionInput {
   id: ID!
+  image: String!
+  title: String!
+  content: String!
+  customer: String!
+  type: FavoritesEnum!
+}
+
+enum FavoritesEnum {
+  PROMOTION
+  SERVICESCARD
+}
+
+type ServicesCard {
+  id: ID!
+  image: String!
+  title: String!
+  content: String!
+  cardType: String!
+  type: FavoritesEnum!
+  creditLimit: String
+  interestRate: String
+  transactionLimit: String
+  annualFees: String
+  rewardPoints: Boolean
+  refund: String
+  freeFlightTickets: Boolean
+  mobiphone: Boolean
+  seperateOffer: String
+  freeCashWithdrawal: Boolean
+  freeAnnualFees: String
+  globalPayments: Boolean
+  cardProtectionWith3DSecureText: Boolean
+  fourtyFiveDaysMaximumInterestFree: Boolean
+  upTo50PercentOff: Boolean
+  installmentPlanWithInterestOf1Percent: Boolean
+  withdrawMoneyUpTo85Percent: Boolean
+  generalConditions: String
+  income: String
+}
+
+input ServicesCardInput {
+  id: ID!
+  image: String!
+  title: String!
+  content: String!
+  cardType: String!
+  type: FavoritesEnum!
+  creditLimit: String
+  interestRate: String
+  transactionLimit: String
+  annualFees: String
+  rewardPoints: Boolean
+  refund: String
+  freeFlightTickets: Boolean
+  mobiphone: Boolean
+  seperateOffer: String
+  freeCashWithdrawal: Boolean
+  freeAnnualFees: String
+  globalPayments: Boolean
+  cardProtectionWith3DSecureText: Boolean
+  fourtyFiveDaysMaximumInterestFree: Boolean
+  upTo50PercentOff: Boolean
+  installmentPlanWithInterestOf1Percent: Boolean
+  withdrawMoneyUpTo85Percent: Boolean
+  generalConditions: String
+  income: String
 }

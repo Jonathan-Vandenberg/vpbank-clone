@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import { FaAngleDown } from "react-icons/fa";
-import IWantModal from "../Global/Dropdowns/IWantModal";
+import IWantModal from "../Global/Navbars/Dropdowns/IWantModal";
 
 import { useState } from "react";
 
 const IWantTo = () => {
-  const [dropDown, setDropDown] = useState(false);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

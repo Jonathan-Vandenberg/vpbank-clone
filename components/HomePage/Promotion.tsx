@@ -5,14 +5,15 @@ import Link from "next/link";
 import { NextPage } from "next/types";
 import { useEffect, useState } from "react";
 import { FaHeart, FaSun } from "react-icons/fa";
+import { getFromStorage, setToStorage } from "../../lib/localStorageHelper";
 import ad1 from "../../public/adsHomePage/ad1.png";
 import ad2 from "../../public/adsHomePage/ad2.png";
 import ad3 from "../../public/adsHomePage/ad3.png";
 import ad4 from "../../public/adsHomePage/ad4.png";
 import ad5 from "../../public/adsHomePage/ad5.png";
+import { usePromotionsQuery } from "../../types";
 import HeroSlideshow from "../UI/HeroSlideshow";
 import happyIcon from "/Users/jonathanvandenberg/2022/VPBank/public/happyIcon.svg";
-import { getFromStorage, setToStorage } from "../../lib/localStorageHelper";
 
 const heroImages = [ad1, ad2, ad3, ad4, ad5];
 const images = [
@@ -82,9 +83,9 @@ const Promotion: NextPage = () => {
   };
 
   return (
-    <section className="lg:container-lg mx-auto md:container">
-      <div className="ml-6 mt-4 flex-col pt-4 md:container md:mx-auto md:flex md:flex-row md:items-center md:justify-between md:pt-2">
-        <h2 className="indexTitle bg-gradient-to-r from-startColor  to-endColor bg-clip-text text-3xl font-bold text-transparent md:p-4">
+    <section className="mx-auto">
+      <div className="flex-col py-4 md:flex md:flex-row md:items-center md:justify-between">
+        <h2 className="indexTitle bg-gradient-to-r from-startColor to-endColor  bg-clip-text py-4 text-3xl font-bold text-transparent">
           Retail Banking
         </h2>
         <div className="text-iwanttoColor">
@@ -116,6 +117,7 @@ const Promotion: NextPage = () => {
                     width={50}
                     height={50}
                     alt="weather icon"
+                    priority
                   />
                   <p className="p-1 md:text-xs">AQI</p>
                   <p className="text-center text-2xl font-bold">50</p>
@@ -125,20 +127,24 @@ const Promotion: NextPage = () => {
 
             <div className="border-y-2 p-4 md:w-1/3 md:border-x-2 md:border-y-0">
               <p className="pb-2 font-semibold">Share your story</p>
-              <p className="font-lighter text-slate-600 md:text-xs">
+              <p className="font-lighter lg:text-md text-slate-600 md:text-xs xl:text-xl">
                 VPBank luôn lắng nghe và trân trọng mọi ý kiến chia sẻ từ Khách
                 hàng để có cơ hội và động lực mang tới những trải nghiệm giao
                 dịch ngày một tuyệt vời hơn.
               </p>
-              <IconButton className="gap-1 pt-3 text-xl text-iwanttoColor">
+              <IconButton className="gap-1 whitespace-nowrap pt-3 text-xl text-iwanttoColor">
                 Share Now <ArrowForwardIcon />
               </IconButton>
             </div>
 
-            <div className="p-4 md:w-1/3">
-              <p className="pb-2 font-semibold">Contact us hotline</p>
+            <div className="flex flex-col items-center justify-center p-4 md:w-1/3">
+              <p className="whitespace-nowrap pb-2 font-semibold">
+                Contact us hotline
+              </p>
               <Link href={"/"}>
-                <p className="text-3xl text-iwanttoColor">0872348273</p>
+                <p className="text-3xl text-iwanttoColor lg:text-2xl">
+                  0872348273
+                </p>
               </Link>
             </div>
           </div>
@@ -147,15 +153,11 @@ const Promotion: NextPage = () => {
           {showScrollableAds ? (
             <ScrollableAds
               handleLocalStorage={handleLocalStorage}
-              setLocalStorageChange={setLocalStorageChange}
-              localStorageChange={localStorageChange}
               localStorageKeys={localStorageKeys}
             />
           ) : (
             <StaticAds
               handleLocalStorage={handleLocalStorage}
-              setLocalStorageChange={setLocalStorageChange}
-              localStorageChange={localStorageChange}
               localStorageKeys={localStorageKeys}
             />
           )}
@@ -169,39 +171,47 @@ export default Promotion;
 
 interface AdsProps {
   handleLocalStorage: (data: string) => void;
-  setLocalStorageChange: (data: boolean) => void;
-  localStorageChange: boolean;
-  localStorageKeys: string[];
+  localStorageKeys: string[] | undefined;
 }
 
-const ScrollableAds = ({
-  handleLocalStorage,
-  setLocalStorageChange,
-  localStorageChange,
-  localStorageKeys,
-}: AdsProps) => {
+const ScrollableAds = ({ handleLocalStorage, localStorageKeys }: AdsProps) => {
+  const { data } = usePromotionsQuery();
+
   return (
     <div className="h-96 space-y-2 pr-2 md:grid md:grid-cols-1">
-      {images.map((el, i) => (
+      {data?.promotions?.map((el, i) => (
         <div className="contain relative" key={i}>
           <Image
-            src={el.img}
+            src={el!.image}
             width={600}
             height={300}
             alt="VPBank Image"
             layout="responsive"
+            priority
           />
-          <div
-            className="absolute bottom-[10px] left-[10px] rounded-full bg-white p-2"
-            onClick={() => {
-              handleLocalStorage(el.id);
-              setLocalStorageChange(!localStorageChange);
-            }}
-          >
-            <FaHeart
-              size={20}
-              color={localStorageKeys.includes(el.id) ? "red" : "green"}
-            />
+          <div className="absolute top-0 left-0 right-0 bottom-0 h-full w-full">
+            <div className="flex h-full flex-col items-start justify-between p-2">
+              <p className="text-sm font-semibold">{el!.title}</p>
+              <h2 className="w-3/5 text-xs xl:text-lg">{el!.content}</h2>
+              <div className="flex items-end justify-start space-x-3">
+                <div
+                  onClick={() => {
+                    handleLocalStorage(`${el!.type} - ${el!.id}`);
+                  }}
+                  className="rounded-full bg-white p-2"
+                >
+                  <FaHeart
+                    size={20}
+                    color={
+                      localStorageKeys?.includes(`${el!.type} - ${el!.id}`)
+                        ? "red"
+                        : "green"
+                    }
+                  />
+                </div>
+                <p className="text-sm">{el!.customer}</p>
+              </div>
+            </div>
           </div>
         </div>
       ))}
@@ -209,34 +219,35 @@ const ScrollableAds = ({
   );
 };
 
-const StaticAds = ({
-  handleLocalStorage,
-  setLocalStorageChange,
-  localStorageChange,
-  localStorageKeys,
-}: AdsProps) => {
+const StaticAds = ({ handleLocalStorage, localStorageKeys }: AdsProps) => {
+  const { data } = usePromotionsQuery();
+
   return (
     <div className="space-y-2">
-      {images
-        .map((el, i) => (
+      {data?.promotions
+        ?.map((el, i) => (
           <div className="contain relative" key={i}>
             <Image
-              src={el.img}
+              src={el!.image}
               width={600}
               height={300}
               alt="VPBank Image"
               layout="responsive"
+              priority
             />
             <div
               className="absolute bottom-[10px] left-[10px] rounded-full bg-white p-2"
               onClick={() => {
-                handleLocalStorage(el.id);
-                setLocalStorageChange(!localStorageChange);
+                handleLocalStorage(`${el!.type} - ${el!.id}`);
               }}
             >
               <FaHeart
                 size={20}
-                color={localStorageKeys.includes(el.id) ? "red" : "green"}
+                color={
+                  localStorageKeys?.includes(`${el!.type} - ${el!.id}`)
+                    ? "red"
+                    : "green"
+                }
               />
             </div>
           </div>

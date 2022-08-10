@@ -8,8 +8,12 @@ const nextConfig = {
       "tailwindcss.com",
       "trolyao.vpbank.com.vn",
       "openweathermap.org",
+      "localhost",
     ],
   },
 };
+
+const withImages = require("next-images");
+module.exports = withImages();
 
 module.exports = nextConfig;

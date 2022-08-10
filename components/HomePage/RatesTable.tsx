@@ -1,5 +1,4 @@
 import { ArrowForward } from "@mui/icons-material";
-import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -57,7 +56,7 @@ const rowsExchange = [
 
 const GoldTable = () => {
   return (
-    <TableContainer>
+    <TableContainer className="flex h-full flex-col items-center justify-between">
       <Table sx={{ minWidth: 250 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -82,7 +81,11 @@ const GoldTable = () => {
           {rowsGold.map((row) => (
             <TableRow
               key={row.typeGold}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              sx={{
+                "&:last-child td, &:last-child th": {
+                  border: 0,
+                },
+              }}
             >
               <TableCell
                 className="whitespace-nowrap font-semibold text-iwanttoColor"
@@ -101,6 +104,17 @@ const GoldTable = () => {
           ))}
         </TableBody>
       </Table>
+      <div className="block">
+        <div className="flex items-center justify-center p-2">
+          <div>
+            <p className="text-md mr-3 cursor-pointer text-iwanttoColor">
+              View All
+            </p>
+          </div>
+
+          <ArrowForward className="text-iwanttoColor" />
+        </div>
+      </div>
     </TableContainer>
   );
 };
@@ -160,6 +174,14 @@ const ExchangeTable = () => {
           ))}
         </TableBody>
       </Table>
+      <div className="flex items-center justify-center p-2">
+        <div>
+          <p className="text-md mr-3 cursor-pointer text-iwanttoColor">
+            View All
+          </p>
+        </div>
+        <ArrowForward className="text-iwanttoColor" />
+      </div>
     </TableContainer>
   );
 };
@@ -228,6 +250,14 @@ const InterestTable = () => {
           ))}
         </TableBody>
       </Table>
+      <div className="flex items-center justify-center p-2">
+        <div>
+          <p className="text-md mr-3 cursor-pointer text-iwanttoColor">
+            View All
+          </p>
+        </div>
+        <ArrowForward className="text-iwanttoColor" />
+      </div>
     </TableContainer>
   );
 };
@@ -258,8 +288,8 @@ const Nav: NextPage<Props> = ({
     : "font-semibold text-gray-400 text-center w-1/3 p-2 cursor-pointer";
 
   const styleExchange = exchangeState
-    ? "font-semibold border-b-2 border-iwanttoColor text-iwanttoColor w-1/3 text-center p-2 cursor-pointer"
-    : "font-semibold text-gray-400 text-center w-1/3 p-2 cursor-pointer";
+    ? "font-semibold border-b-2 border-iwanttoColor text-iwanttoColor w-1/3 text-center p-2 cursor-pointer whitespace-nowrap"
+    : "font-semibold text-gray-400 text-center w-1/3 p-2 cursor-pointer whitespace-nowrap";
 
   return (
     <div className="flex items-center justify-evenly md:text-sm">
@@ -282,7 +312,7 @@ export default function RatesTable() {
   const [enableInterestTable, setEnableInterestTable] = useState(true);
 
   return (
-    <div className="shadow">
+    <div className="h-full shadow">
       <Nav
         handleInterest={function (): void {
           setEnableInterestTable(true);
@@ -303,37 +333,31 @@ export default function RatesTable() {
         goldState={enableGoldTable}
         exchangeState={enableExchangeTable}
       />
-      {enableGoldTable && (
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-        >
-          <GoldTable />
-        </motion.div>
-      )}
-      {enableInterestTable && (
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-        >
-          <InterestTable />
-        </motion.div>
-      )}
-      {enableExchangeTable && (
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-        >
-          <ExchangeTable />
-        </motion.div>
-      )}
-      <div className="flex items-center justify-center p-2">
-        <div>
-          <p className="text-md mr-3 cursor-pointer text-iwanttoColor">
-            View All
-          </p>
-        </div>
-        <ArrowForward className="text-iwanttoColor" />
+      <div className="flex h-full flex-col items-center justify-between">
+        {enableGoldTable && (
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
+          >
+            <GoldTable />
+          </motion.div>
+        )}
+        {enableInterestTable && (
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
+          >
+            <InterestTable />
+          </motion.div>
+        )}
+        {enableExchangeTable && (
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
+          >
+            <ExchangeTable />
+          </motion.div>
+        )}
       </div>
     </div>
   );

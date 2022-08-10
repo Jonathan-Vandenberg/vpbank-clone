@@ -1,0 +1,7 @@
+# import Promotion from "./PromotionFragment"
+
+query Promotions {
+  promotions {
+    ...Promotion
+  }
+}

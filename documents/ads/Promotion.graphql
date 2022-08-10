@@ -1,0 +1,7 @@
+# import Promotion from "./PromotionFragment.graphql"
+
+query Promotion($id: ID!) {
+  promotion(id: $id) {
+    ...Promotion
+  }
+}

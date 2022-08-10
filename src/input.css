@@ -102,6 +102,8 @@
   height: 24px;
   transition: all 0.25s;
   position: relative; 
+  outline: none;
+  border: none;
 }
 
 .hamburger-top,
@@ -116,6 +118,8 @@
   position: absolute;
   transform: rotate(0);
   transition: all 0.5s;
+  outline: none;
+  border: none;
 }
 
 .hamburger-middle {
@@ -128,7 +132,7 @@
 
 .open {
   transform: rotate(90deg);
-  transform: translateY(0px)
+  transform: translateY(0px);
 
 }
 
@@ -161,4 +165,26 @@
 ::-webkit-scrollbar-thumb {
   border-radius: 100px;
   background: rgb(202, 201, 201);
+}
+
+/* Footer Collapsible Arrow Rotate */
+
+.Collapsible__trigger.is-open svg {
+  transform: rotate(90deg);
+}
+
+/* grid-favorites */
+
+.grid-favorites {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 1rem;
+  margin-top: 1rem;
+}
+
+.grid-favorites-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  margin-top: 1rem;
 }

@@ -17,21 +17,68 @@ const typeDefs = readFileSync(join(process.cwd(), "schema.graphql"), {encoding: 
 
 const resolvers: Resolvers = {
   Query: {
-    user: (_, {id}, {prisma}) => {
-      return prisma.user.findUnique({where: {id}})
+    promotion: (_, {id}, {prisma}) => {
+      return prisma.promotion.findUnique({where: {id}})
+    },
+    promotions: (_, __, {prisma}) => {
+      return prisma.promotion.findMany()
+    },
+    servicesCard: (_, {id}, {prisma}) => {
+      return prisma.servicesCard.findUnique({where: {id}})
+    },
+    servicesCards: (_, __, {prisma}) => {
+      return prisma.servicesCard.findMany()
+    },
+    servicesFullDetails: (_, {id}, {prisma}) => {
+      return prisma.servicesCard.findUnique({where: {id}})
     }
   },
   Mutation: {
-    addUser: async (_, {input}, {prisma}) => {
-      const user = await prisma.user.create({
-            data: {
-              id: input?.id,
-              name: input?.name,
-              email: input?.email
-          }
-      })
-      return user
-  } 
+  addPromotion: async (_, {input}, {prisma}) => {
+    const promotion = await prisma.promotion.create({
+      data: {
+        id: input?.id,
+        image: input?.image,
+        title: input?.title,
+        content: input?.content,
+        customer: input?.customer,
+        type: input?.type,
+      }
+    })
+    return promotion
+  },
+  addServicesCard: async (_, {input}, {prisma}) => {
+    const servicesCard = await prisma.servicesCard.create({
+      data: {
+        id: input?.id,
+        image: input?.image,
+        title: input?.title,
+        content: input?.content,
+        cardType: input?.cardType,
+        type: input?.type,
+        creditLimit: input?.creditLimit,
+        interestRate: input?.interestRate,
+        transactionLimit: input?.transactionLimit,
+        annualFees: input?.annualFees,
+        rewardPoints: input?.rewardPoints,
+        refund: input?.refund,
+        freeFlightTickets: input?.freeFlightTickets,
+        mobiphone: input?.mobiphone,
+        seperateOffer: input?.seperateOffer,
+        freeCashWithdrawal: input?.freeCashWithdrawal,
+        freeAnnualFees: input?.freeAnnualFees,
+        globalPayments: input?.globalPayments,
+        cardProtectionWith3DSecureText: input?.cardProtectionWith3DSecureText,
+        fourtyFiveDaysMaximumInterestFree: input?.fourtyFiveDaysMaximumInterestFree,
+        upTo50PercentOff: input?.upTo50PercentOff,
+        installmentPlanWithInterestOf1Percent: input?.installmentPlanWithInterestOf1Percent,
+        withdrawMoneyUpTo85Percent: input?.withdrawMoneyUpTo85Percent,
+        generalConditions: input?.generalConditions,
+        income: input?.income,
+      }
+    })
+    return servicesCard
+  }
 }
 }
 

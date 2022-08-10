@@ -1,0 +1,7 @@
+# import ServicesCard from "./ServicesCardFragment"
+
+query ServicesCards {
+  servicesCards {
+    ...ServicesCard
+  }
+}

@@ -1,5 +1,5 @@
 // This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// learn more about it in the docs https//pris.ly/d/prisma-schema
 
 generator client {
   provider = "prisma-client-js"
@@ -10,9 +10,44 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id        String   @id @default(cuid())
-  name      String?
-  email     String?
-  createdAt DateTime @default(now())
+model Promotion {
+  id       String @id @default(cuid())
+  image    String
+  title    String
+  content  String
+  customer String
+  type     String
+}
+
+model ServicesCard {
+  id                                    String        @id @default(cuid())
+  image                                 String
+  title                                 String
+  content                               String
+  cardType                              String
+  type                                  FavoritesEnum
+  creditLimit                           String?
+  interestRate                          String?
+  transactionLimit                      String?
+  annualFees                            String?
+  rewardPoints                          Boolean?
+  refund                                String?
+  freeFlightTickets                     Boolean?
+  mobiphone                             Boolean?
+  seperateOffer                         String?
+  freeCashWithdrawal                    Boolean?
+  freeAnnualFees                        String?
+  globalPayments                        Boolean?
+  cardProtectionWith3DSecureText        Boolean?
+  fourtyFiveDaysMaximumInterestFree     Boolean?
+  upTo50PercentOff                      Boolean?
+  installmentPlanWithInterestOf1Percent Boolean?
+  withdrawMoneyUpTo85Percent            Boolean?
+  generalConditions                     String?
+  income                                String?
+}
+
+enum FavoritesEnum {
+  PROMOTION
+  SERVICESCARD
 }

@@ -1,0 +1,8 @@
+fragment Promotion on Promotion {
+  id
+  image
+  content
+  title
+  customer
+  type
+}

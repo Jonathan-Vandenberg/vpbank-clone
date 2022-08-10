@@ -1,0 +1,7 @@
+# import ServicesCard from "./ServicesCardFragment.graphql"
+
+query ServicesCard($id: ID!) {
+  servicesCard(id: $id) {
+    ...ServicesCard
+  }
+}

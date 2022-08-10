@@ -1,5 +1,5 @@
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { NextPage } from "next/types";
 import { useEffect, useState } from "react";
 import * as Scroll from "react-scroll";
@@ -21,20 +21,37 @@ const ScrollToTopArrow: NextPage = () => {
         setShowUpArrow(false);
       }
     });
-  }, []);
+  }, [showUpArrow]);
+
+  const controls = useAnimation();
+
+  showUpArrow
+    ? controls.start({
+        y: 0,
+        transition: { ease: "easeInOut", duration: 1 },
+      })
+    : controls.start({ y: 60, transition: { ease: "easeInOut", duration: 1 } });
 
   return (
     <>
       {showUpArrow && (
         <motion.div
           initial={{ y: 60 }}
-          animate={{ y: 0, transition: { ease: "easeInOut", duration: 1 } }}
-          className="fixed bottom-20 right-7 z-50 p-2"
+          animate={controls}
+          className="fixed  bottom-24 right-9 z-50 h-[34px] w-[34px] rounded-full bg-white"
         >
-          <ArrowCircleUpIcon
-            style={{ fontSize: 50, color: "rgb(1,183,78)" }}
-            onClick={handleScroll}
-          />
+          <div className="relative">
+            <ArrowCircleUpIcon
+              style={{
+                fontSize: 48,
+                color: "rgb(1,183,78)",
+                position: "absolute",
+                top: "-7px",
+                left: "-7px",
+              }}
+              onClick={handleScroll}
+            />
+          </div>
         </motion.div>
       )}
     </>

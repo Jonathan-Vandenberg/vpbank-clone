@@ -28,7 +28,7 @@ const style = {
   position: "absolute" as "absolute",
   top: 0,
   left: 0,
-  width: "85vw",
+  maxWidth: "415px",
   height: "100vh",
   bgcolor: "background.paper",
   outline: "none",
@@ -70,7 +70,7 @@ const SideNavModal: NextPage = () => {
   };
 
   const MainMenu = () => (
-    <>
+    <div className="max-w-[415px] space-y-4">
       <div className="flex items-center justify-between">
         <div className="pl-4 font-semibold">Retail</div>
         <div
@@ -122,21 +122,23 @@ const SideNavModal: NextPage = () => {
         <Image src={neoLogo} width="150" height="30" alt="logo" />
       </div>
 
-      <Link href="/about">
-        <a className="px-4">About Us</a>
-      </Link>
+      <div className="flex items-center justify-evenly whitespace-nowrap">
+        <Link href="/about">
+          <a className="px-4">About Us</a>
+        </Link>
 
-      <Link href="./investor-relations">
-        <a className="px-4">Investor Relations</a>
-      </Link>
+        <Link href="./investor-relations">
+          <a className="px-4">Investor Relations</a>
+        </Link>
 
-      <Link href="./news">
-        <a className="px-4">News</a>
-      </Link>
+        <Link href="./news">
+          <a className="px-4">News</a>
+        </Link>
 
-      <Link href="./recruit">
-        <a className="px-4">Recruit</a>
-      </Link>
+        <Link href="./recruit">
+          <a className="px-4">Recruit</a>
+        </Link>
+      </div>
 
       <Link href={""}>
         <div className="flex items-center justify-start space-x-2 px-4 pt-4">
@@ -164,11 +166,11 @@ const SideNavModal: NextPage = () => {
           <p>Branches & ATMs</p>
         </div>
       </Link>
-    </>
+    </div>
   );
 
   const RetailMenu = () => (
-    <>
+    <div className="w-[415px]">
       <div className="flex items-center justify-start">
         <div onClick={() => setShowRetail(!showRetail)} className="p-2">
           <MdOutlineArrowBackIos />
@@ -176,21 +178,23 @@ const SideNavModal: NextPage = () => {
         <div className="p-2 font-semibold text-iwanttoColor">Retail</div>
       </div>
 
-      <div className="ml-3">Card Services</div>
-      <div className="ml-3">Debit Card</div>
-      <div className="ml-3">Loans</div>
-      <div className="ml-3">Savings</div>
-      <div className="ml-3">Account</div>
-      <div className="ml-3">E-Banking Services</div>
-      <div className="ml-3">Insurance</div>
-      <div className="ml-3">Personal Services</div>
-      <div className="ml-3">VPBank Loyalty</div>
-      <div className="ml-3">VPBank Diamond</div>
-    </>
+      <div className="space-y-3 px-5">
+        <div className="ml-3">Card Services</div>
+        <div className="ml-3">Debit Card</div>
+        <div className="ml-3">Loans</div>
+        <div className="ml-3">Savings</div>
+        <div className="ml-3">Account</div>
+        <div className="ml-3">E-Banking Services</div>
+        <div className="ml-3">Insurance</div>
+        <div className="ml-3">Personal Services</div>
+        <div className="ml-3">VPBank Loyalty</div>
+        <div className="ml-3">VPBank Diamond</div>
+      </div>
+    </div>
   );
 
   const HouseholdMenu = () => (
-    <>
+    <div className="w-[415px]">
       <div className="flex items-center justify-start">
         <div
           onClick={() => setShowHouseholdMenu(!showHouseholdMenu)}
@@ -201,15 +205,17 @@ const SideNavModal: NextPage = () => {
         <div className="p-2 font-semibold text-iwanttoColor">Household</div>
       </div>
 
-      <div className="ml-3">Unsecured Loan</div>
-      <div className="ml-3">Secured Loans</div>
-      <div className="ml-3">Bank Assurance</div>
-      <div className="ml-3">Card Services</div>
-    </>
+      <div className="space-y-3 px-5">
+        <div className="ml-3">Unsecured Loan</div>
+        <div className="ml-3">Secured Loans</div>
+        <div className="ml-3">Bank Assurance</div>
+        <div className="ml-3">Card Services</div>
+      </div>
+    </div>
   );
 
   const SMEMenu = () => (
-    <>
+    <div className="w-[415px]">
       <div className="flex items-center justify-start">
         <div onClick={() => setShowSMEMenu(!showSMEMenu)} className="p-2">
           <MdOutlineArrowBackIos />
@@ -217,21 +223,23 @@ const SideNavModal: NextPage = () => {
         <div className="p-2 font-semibold text-iwanttoColor">SME</div>
       </div>
 
-      <div className="ml-3">Account Service</div>
-      <div className="ml-3">Business Loans</div>
-      <div className="ml-3">VPBIZ Payment Card</div>
-      <div className="ml-3">Card Payment Services</div>
-      <div className="ml-3">Payment Service</div>
-      <div className="ml-3">Trade Finance</div>
-      <div className="ml-3">Deposit Products</div>
-      <div className="ml-3">Online Chiropractic</div>
-      <div className="ml-3">Online Disbursement</div>
-      <div className="ml-3">Business Account Online</div>
-    </>
+      <div className="space-y-3 px-5">
+        <div className="ml-3">Account Service</div>
+        <div className="ml-3">Business Loans</div>
+        <div className="ml-3">VPBIZ Payment Card</div>
+        <div className="ml-3">Card Payment Services</div>
+        <div className="ml-3">Payment Service</div>
+        <div className="ml-3">Trade Finance</div>
+        <div className="ml-3">Deposit Products</div>
+        <div className="ml-3">Online Chiropractic</div>
+        <div className="ml-3">Online Disbursement</div>
+        <div className="ml-3">Business Account Online</div>
+      </div>
+    </div>
   );
 
   const CorporateMenu = () => (
-    <>
+    <div className="w-[415px]">
       <div className="flex items-center justify-start">
         <div onClick={() => setShowCorporate(!showCorporate)} className="p-2">
           <MdOutlineArrowBackIos />
@@ -239,15 +247,17 @@ const SideNavModal: NextPage = () => {
         <div className="p-2 font-semibold text-iwanttoColor">Corporate</div>
       </div>
 
-      <div className="ml-3">Guarantee</div>
-      <div className="ml-3">Loans</div>
-      <div className="ml-3">Services and Trade Finance</div>
-      <div className="ml-3">Account services</div>
-      <div className="ml-3">Card Services</div>
-      <div className="ml-3">Financial Market Products</div>
-      <div className="ml-3">Internet Banking</div>
-      <div className="ml-3">Email Transactions</div>
-    </>
+      <div className="space-y-3 px-5">
+        <div className="ml-3">Guarantee</div>
+        <div className="ml-3">Loans</div>
+        <div className="ml-3">Services and Trade Finance</div>
+        <div className="ml-3">Account services</div>
+        <div className="ml-3">Card Services</div>
+        <div className="ml-3">Financial Market Products</div>
+        <div className="ml-3">Internet Banking</div>
+        <div className="ml-3">Email Transactions</div>
+      </div>
+    </div>
   );
 
   return (
@@ -298,7 +308,7 @@ const SideNavModal: NextPage = () => {
               animate={{
                 x: 0,
                 transition: {
-                  duration: 0.5,
+                  duration: 0.3,
                 },
               }}
               ref={menuRef as any}

@@ -1,0 +1,7 @@
+# import ServicesCard from './ServicesCardFragment.graphql'
+
+mutation AddServicesCard($input: ServicesCardInput!) {
+  addServicesCard(input: $input) {
+    ...ServicesCard
+  }
+}

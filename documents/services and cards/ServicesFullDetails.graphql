@@ -1,0 +1,7 @@
+# import ServicesFullDetails from "./ServicesFullDetailsFragment.graphql"
+
+query ServicesFullDetails($id: ID!) {
+  servicesFullDetails(id: $id) {
+    ...ServicesFullDetails
+  }
+}

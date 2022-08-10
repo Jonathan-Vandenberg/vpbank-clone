@@ -2,11 +2,11 @@ import Modal from "@mui/material/Modal";
 import Image from "next/image";
 import { NextPage } from "next/types";
 
-import iWantToIcon1 from "../../../public/i-want-icons/iWantToIcon1.png";
-import iWantToIcon2 from "../../../public/i-want-icons/iWantToIcon2.png";
-import iWantToIcon3 from "../../../public/i-want-icons/iWantToIcon3.png";
-import iWantToIcon4 from "../../../public/i-want-icons/iWantToIcon4.png";
-import iWantToIcon5 from "../../../public/i-want-icons/iWantToIcon5.png";
+import iWantToIcon1 from "../../../../public/i-want-icons/iWantToIcon1.png";
+import iWantToIcon2 from "../../../../public/i-want-icons/iWantToIcon2.png";
+import iWantToIcon3 from "../../../../public/i-want-icons/iWantToIcon3.png";
+import iWantToIcon4 from "../../../../public/i-want-icons/iWantToIcon4.png";
+import iWantToIcon5 from "../../../../public/i-want-icons/iWantToIcon5.png";
 
 interface Props {
   open: boolean;

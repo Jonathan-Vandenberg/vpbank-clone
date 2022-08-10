@@ -7,7 +7,9 @@ generates:
       enumValues: true
       mapperTypeSuffix: Model
       mappers:
-        User: "@prisma/client#User"
+        Promotion: "@prisma/client#Promotion"
+        ServicesCard: "@prisma/client#ServicesCard"
+        FavoritesEnum: "@prisma/client#FavoritesEnum"
       contextType: ./pages/api/index#GraphQLContext
     plugins:
       - "typescript"

@@ -31,7 +31,11 @@ export default function FavoritesHeader({
 
       <div className="col-span-1 md:grid">
         <Link href={findMoreLink}>
-          <p className="cursor-pointer text-iwanttoColor">find more</p>
+          {localStorageKeys.length === 0 ? (
+            <p className="cursor-pointer text-iwanttoColor">find some</p>
+          ) : (
+            <p className="cursor-pointer text-iwanttoColor">find more</p>
+          )}
         </Link>
       </div>
     </div>

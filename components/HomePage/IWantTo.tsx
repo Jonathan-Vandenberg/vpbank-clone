@@ -46,7 +46,7 @@ const IWantTo = () => {
           </motion.div>
         </div>
         <div
-          className="jsutify-center flex h-20 items-center bg-white px-6 text-2xl"
+          className="jsutify-center flex h-20 cursor-pointer items-center bg-white px-6 text-2xl"
           onClick={handleOpen}
         >
           <FaAngleDown className=" text-iwanttoColor" />

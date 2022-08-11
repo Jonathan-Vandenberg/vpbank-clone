@@ -36,6 +36,8 @@ const IconSlider = () => {
     function handleResize() {
       setWidth(screenWidth);
     }
+    handleResize();
+
     window.addEventListener("resize", handleResize);
     // return () => window.removeEventListener("resize", handleResize);
   }, [width]);
@@ -44,7 +46,7 @@ const IconSlider = () => {
     icons.map((el, i) => (
       <div
         key={i}
-        className="lg:scale-115 flex flex-col items-center justify-center p-4 sm:scale-75 sm:p-3 md:scale-90 md:p-4 lg:p-3 xl:scale-100"
+        className="lg:scale-115 flex cursor-pointer flex-col items-center justify-center p-4 sm:scale-75 sm:p-3 md:scale-90 md:p-4 lg:p-3 xl:scale-100"
       >
         <div className="flex items-center justify-center">
           <Image src={el.image} width={100} height={100} alt="icons" />

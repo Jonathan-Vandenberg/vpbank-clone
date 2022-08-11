@@ -2,20 +2,17 @@ import Link from "next/link";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { FaHeart, FaRegQuestionCircle } from "react-icons/fa";
 import { useAppDispatch } from "../../../redux-hooks/hooks";
-import { hide } from "../../../slices/showDropdownSlice";
 import { FaMobileAlt } from "react-icons/fa";
 
 const style = {
   color: "rgb(196,245,208)",
 };
 
-const NavbarTop = () => {
-  const dispatch = useAppDispatch();
-
+const NavbarTop = ({ onMouseEnter }: any) => {
   return (
     <div
-      onClick={() => dispatch(hide(true))}
       className="bg-gradient-to-r from-startColor to-endColor"
+      onMouseEnter={onMouseEnter}
     >
       <div className="hidden lg:grid lg:grid-cols-3">
         <div className="flex items-center justify-evenly  whitespace-nowrap text-sm ">

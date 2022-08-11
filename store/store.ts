@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import cardIdReducer from '../slices/cardIdSlice'
-import showDropdownReducer from '../slices/showDropdownSlice'
+import compareCardsReducer from '../slices/compareDrawerSlice'
 
 const store = configureStore({
   reducer: {
     cardId: cardIdReducer,
-    showDropdown: showDropdownReducer,
+    changeDrawerState: compareCardsReducer,
   }
 })
 

@@ -20,4 +20,4 @@ export const cardIdSlice = createSlice({
 export const { addCard, removeCard } = cardIdSlice.actions
 export default cardIdSlice.reducer
 // Other code such as selectors can use the imported `RootState` type
-export const selectCardId1 = (state: RootState) => state.cardId.cardId
+export const selectCardId = (state: RootState) => state.cardId.cardId

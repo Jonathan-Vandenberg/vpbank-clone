@@ -178,7 +178,7 @@ const ScrollableAds = ({ handleLocalStorage, localStorageKeys }: AdsProps) => {
   const { data } = usePromotionsQuery();
 
   return (
-    <div className="h-96 space-y-2 pr-2 md:grid md:grid-cols-1">
+    <div className="flex h-96 flex-col space-y-3 pr-2">
       {data?.promotions?.map((el, i) => (
         <div className="contain relative" key={i}>
           <Image
@@ -192,13 +192,13 @@ const ScrollableAds = ({ handleLocalStorage, localStorageKeys }: AdsProps) => {
           <div className="absolute top-0 left-0 right-0 bottom-0 h-full w-full">
             <div className="flex h-full flex-col items-start justify-between p-2">
               <p className="text-sm font-semibold">{el!.title}</p>
-              <h2 className="w-3/5 text-xs xl:text-lg">{el!.content}</h2>
+              <h2 className="w-3/5 xl:text-lg">{el!.content}</h2>
               <div className="flex items-end justify-start space-x-3">
                 <div
                   onClick={() => {
                     handleLocalStorage(`${el!.type} - ${el!.id}`);
                   }}
-                  className="rounded-full bg-white p-2"
+                  className="cursor-pointer rounded-full bg-white p-2 "
                 >
                   <FaHeart
                     size={20}

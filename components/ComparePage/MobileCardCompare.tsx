@@ -1,6 +1,6 @@
 import { NextPage } from "next/types";
 import { ServicesCardsQuery } from "../../types";
-import CreditCardSlider from "../UI/CreditCardSlider";
+import CreditCardSlider from "./ChosenCards/ChosenCard";
 
 interface IProps {
   data: ServicesCardsQuery | undefined;

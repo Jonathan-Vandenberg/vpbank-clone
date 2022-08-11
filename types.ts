@@ -98,59 +98,61 @@ export type QueryServicesFullDetailsArgs = {
 
 export type ServicesCard = {
   __typename?: 'ServicesCard';
-  annualFees?: Maybe<Scalars['String']>;
-  cardProtectionWith3DSecureText?: Maybe<Scalars['Boolean']>;
+  annualFees: Scalars['String'];
+  cardProtectionWith3DSecureText: Scalars['Boolean'];
   cardType: Scalars['String'];
   content: Scalars['String'];
-  creditLimit?: Maybe<Scalars['String']>;
-  fourtyFiveDaysMaximumInterestFree?: Maybe<Scalars['Boolean']>;
-  freeAnnualFees?: Maybe<Scalars['String']>;
-  freeCashWithdrawal?: Maybe<Scalars['Boolean']>;
-  freeFlightTickets?: Maybe<Scalars['Boolean']>;
-  generalConditions?: Maybe<Scalars['String']>;
-  globalPayments?: Maybe<Scalars['Boolean']>;
+  creditLimit: Scalars['String'];
+  fourtyFiveDaysMaximumInterestFree: Scalars['Boolean'];
+  freeAnnualFees: Scalars['String'];
+  freeCashWithdrawal: Scalars['Boolean'];
+  freeFlightTickets: Scalars['Boolean'];
+  generalConditions: Scalars['String'];
+  globalPayments: Scalars['Boolean'];
   id: Scalars['ID'];
   image: Scalars['String'];
-  income?: Maybe<Scalars['String']>;
-  installmentPlanWithInterestOf1Percent?: Maybe<Scalars['Boolean']>;
-  interestRate?: Maybe<Scalars['String']>;
-  mobiphone?: Maybe<Scalars['Boolean']>;
-  refund?: Maybe<Scalars['String']>;
-  rewardPoints?: Maybe<Scalars['Boolean']>;
-  seperateOffer?: Maybe<Scalars['String']>;
+  income: Scalars['String'];
+  installmentPlanWithInterestOf1Percent: Scalars['Boolean'];
+  interestRate: Scalars['String'];
+  mobiphone: Scalars['Boolean'];
+  pureCardImage: Scalars['String'];
+  refund: Scalars['String'];
+  rewardPoints: Scalars['Boolean'];
+  seperateOffer: Scalars['String'];
   title: Scalars['String'];
-  transactionLimit?: Maybe<Scalars['String']>;
+  transactionLimit: Scalars['String'];
   type: FavoritesEnum;
-  upTo50PercentOff?: Maybe<Scalars['Boolean']>;
-  withdrawMoneyUpTo85Percent?: Maybe<Scalars['Boolean']>;
+  upTo50PercentOff: Scalars['Boolean'];
+  withdrawMoneyUpTo85Percent: Scalars['Boolean'];
 };
 
 export type ServicesCardInput = {
-  annualFees?: InputMaybe<Scalars['String']>;
-  cardProtectionWith3DSecureText?: InputMaybe<Scalars['Boolean']>;
+  annualFees: Scalars['String'];
+  cardProtectionWith3DSecureText: Scalars['Boolean'];
   cardType: Scalars['String'];
   content: Scalars['String'];
   creditLimit?: InputMaybe<Scalars['String']>;
-  fourtyFiveDaysMaximumInterestFree?: InputMaybe<Scalars['Boolean']>;
-  freeAnnualFees?: InputMaybe<Scalars['String']>;
-  freeCashWithdrawal?: InputMaybe<Scalars['Boolean']>;
-  freeFlightTickets?: InputMaybe<Scalars['Boolean']>;
-  generalConditions?: InputMaybe<Scalars['String']>;
-  globalPayments?: InputMaybe<Scalars['Boolean']>;
+  fourtyFiveDaysMaximumInterestFree: Scalars['Boolean'];
+  freeAnnualFees: Scalars['String'];
+  freeCashWithdrawal: Scalars['Boolean'];
+  freeFlightTickets: Scalars['Boolean'];
+  generalConditions: Scalars['String'];
+  globalPayments: Scalars['Boolean'];
   id: Scalars['ID'];
   image: Scalars['String'];
-  income?: InputMaybe<Scalars['String']>;
-  installmentPlanWithInterestOf1Percent?: InputMaybe<Scalars['Boolean']>;
-  interestRate?: InputMaybe<Scalars['String']>;
-  mobiphone?: InputMaybe<Scalars['Boolean']>;
-  refund?: InputMaybe<Scalars['String']>;
-  rewardPoints?: InputMaybe<Scalars['Boolean']>;
-  seperateOffer?: InputMaybe<Scalars['String']>;
+  income: Scalars['String'];
+  installmentPlanWithInterestOf1Percent: Scalars['Boolean'];
+  interestRate: Scalars['String'];
+  mobiphone: Scalars['Boolean'];
+  pureCardImage: Scalars['String'];
+  refund: Scalars['String'];
+  rewardPoints: Scalars['Boolean'];
+  seperateOffer: Scalars['String'];
   title: Scalars['String'];
-  transactionLimit?: InputMaybe<Scalars['String']>;
+  transactionLimit: Scalars['String'];
   type: FavoritesEnum;
-  upTo50PercentOff?: InputMaybe<Scalars['Boolean']>;
-  withdrawMoneyUpTo85Percent?: InputMaybe<Scalars['Boolean']>;
+  upTo50PercentOff: Scalars['Boolean'];
+  withdrawMoneyUpTo85Percent: Scalars['Boolean'];
 };
 
 
@@ -275,31 +277,32 @@ export type QueryResolvers<ContextType = GraphQLContext, ParentType extends Reso
 };
 
 export type ServicesCardResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['ServicesCard'] = ResolversParentTypes['ServicesCard']> = {
-  annualFees?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  cardProtectionWith3DSecureText?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  annualFees?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  cardProtectionWith3DSecureText?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   cardType?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   content?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  creditLimit?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  fourtyFiveDaysMaximumInterestFree?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
-  freeAnnualFees?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  freeCashWithdrawal?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
-  freeFlightTickets?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
-  generalConditions?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  globalPayments?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  creditLimit?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  fourtyFiveDaysMaximumInterestFree?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  freeAnnualFees?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  freeCashWithdrawal?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  freeFlightTickets?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  generalConditions?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  globalPayments?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   image?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  income?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  installmentPlanWithInterestOf1Percent?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
-  interestRate?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  mobiphone?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
-  refund?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  rewardPoints?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
-  seperateOffer?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  income?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  installmentPlanWithInterestOf1Percent?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  interestRate?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  mobiphone?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  pureCardImage?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  refund?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  rewardPoints?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  seperateOffer?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  transactionLimit?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  transactionLimit?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   type?: Resolver<ResolversTypes['FavoritesEnum'], ParentType, ContextType>;
-  upTo50PercentOff?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
-  withdrawMoneyUpTo85Percent?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  upTo50PercentOff?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  withdrawMoneyUpTo85Percent?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -350,6 +353,7 @@ export const ServicesCardFragmentDoc = gql`
   withdrawMoneyUpTo85Percent
   generalConditions
   income
+  pureCardImage
 }
     `;
 export const ServicesFullDetailsFragmentDoc = gql`
@@ -380,6 +384,7 @@ export const ServicesFullDetailsFragmentDoc = gql`
   withdrawMoneyUpTo85Percent
   generalConditions
   income
+  pureCardImage
 }
     `;
 export const AddPromotionDocument = gql`
@@ -647,27 +652,27 @@ export type AddServicesCardMutationVariables = Exact<{
 }>;
 
 
-export type AddServicesCardMutation = { __typename?: 'Mutation', addServicesCard?: { __typename?: 'ServicesCard', id: string, image: string, content: string, title: string, cardType: string, type: FavoritesEnum, creditLimit?: string | null, interestRate?: string | null, transactionLimit?: string | null, annualFees?: string | null, rewardPoints?: boolean | null, refund?: string | null, freeFlightTickets?: boolean | null, mobiphone?: boolean | null, seperateOffer?: string | null, freeCashWithdrawal?: boolean | null, freeAnnualFees?: string | null, globalPayments?: boolean | null, cardProtectionWith3DSecureText?: boolean | null, fourtyFiveDaysMaximumInterestFree?: boolean | null, upTo50PercentOff?: boolean | null, installmentPlanWithInterestOf1Percent?: boolean | null, withdrawMoneyUpTo85Percent?: boolean | null, generalConditions?: string | null, income?: string | null } | null };
+export type AddServicesCardMutation = { __typename?: 'Mutation', addServicesCard?: { __typename?: 'ServicesCard', id: string, image: string, content: string, title: string, cardType: string, type: FavoritesEnum, creditLimit: string, interestRate: string, transactionLimit: string, annualFees: string, rewardPoints: boolean, refund: string, freeFlightTickets: boolean, mobiphone: boolean, seperateOffer: string, freeCashWithdrawal: boolean, freeAnnualFees: string, globalPayments: boolean, cardProtectionWith3DSecureText: boolean, fourtyFiveDaysMaximumInterestFree: boolean, upTo50PercentOff: boolean, installmentPlanWithInterestOf1Percent: boolean, withdrawMoneyUpTo85Percent: boolean, generalConditions: string, income: string, pureCardImage: string } | null };
 
 export type ServicesCardQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
 
 
-export type ServicesCardQuery = { __typename?: 'Query', servicesCard?: { __typename?: 'ServicesCard', id: string, image: string, content: string, title: string, cardType: string, type: FavoritesEnum, creditLimit?: string | null, interestRate?: string | null, transactionLimit?: string | null, annualFees?: string | null, rewardPoints?: boolean | null, refund?: string | null, freeFlightTickets?: boolean | null, mobiphone?: boolean | null, seperateOffer?: string | null, freeCashWithdrawal?: boolean | null, freeAnnualFees?: string | null, globalPayments?: boolean | null, cardProtectionWith3DSecureText?: boolean | null, fourtyFiveDaysMaximumInterestFree?: boolean | null, upTo50PercentOff?: boolean | null, installmentPlanWithInterestOf1Percent?: boolean | null, withdrawMoneyUpTo85Percent?: boolean | null, generalConditions?: string | null, income?: string | null } | null };
+export type ServicesCardQuery = { __typename?: 'Query', servicesCard?: { __typename?: 'ServicesCard', id: string, image: string, content: string, title: string, cardType: string, type: FavoritesEnum, creditLimit: string, interestRate: string, transactionLimit: string, annualFees: string, rewardPoints: boolean, refund: string, freeFlightTickets: boolean, mobiphone: boolean, seperateOffer: string, freeCashWithdrawal: boolean, freeAnnualFees: string, globalPayments: boolean, cardProtectionWith3DSecureText: boolean, fourtyFiveDaysMaximumInterestFree: boolean, upTo50PercentOff: boolean, installmentPlanWithInterestOf1Percent: boolean, withdrawMoneyUpTo85Percent: boolean, generalConditions: string, income: string, pureCardImage: string } | null };
 
-export type ServicesCardFragment = { __typename?: 'ServicesCard', id: string, image: string, content: string, title: string, cardType: string, type: FavoritesEnum, creditLimit?: string | null, interestRate?: string | null, transactionLimit?: string | null, annualFees?: string | null, rewardPoints?: boolean | null, refund?: string | null, freeFlightTickets?: boolean | null, mobiphone?: boolean | null, seperateOffer?: string | null, freeCashWithdrawal?: boolean | null, freeAnnualFees?: string | null, globalPayments?: boolean | null, cardProtectionWith3DSecureText?: boolean | null, fourtyFiveDaysMaximumInterestFree?: boolean | null, upTo50PercentOff?: boolean | null, installmentPlanWithInterestOf1Percent?: boolean | null, withdrawMoneyUpTo85Percent?: boolean | null, generalConditions?: string | null, income?: string | null };
+export type ServicesCardFragment = { __typename?: 'ServicesCard', id: string, image: string, content: string, title: string, cardType: string, type: FavoritesEnum, creditLimit: string, interestRate: string, transactionLimit: string, annualFees: string, rewardPoints: boolean, refund: string, freeFlightTickets: boolean, mobiphone: boolean, seperateOffer: string, freeCashWithdrawal: boolean, freeAnnualFees: string, globalPayments: boolean, cardProtectionWith3DSecureText: boolean, fourtyFiveDaysMaximumInterestFree: boolean, upTo50PercentOff: boolean, installmentPlanWithInterestOf1Percent: boolean, withdrawMoneyUpTo85Percent: boolean, generalConditions: string, income: string, pureCardImage: string };
 
 export type ServicesCardsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ServicesCardsQuery = { __typename?: 'Query', servicesCards?: Array<{ __typename?: 'ServicesCard', id: string, image: string, content: string, title: string, cardType: string, type: FavoritesEnum, creditLimit?: string | null, interestRate?: string | null, transactionLimit?: string | null, annualFees?: string | null, rewardPoints?: boolean | null, refund?: string | null, freeFlightTickets?: boolean | null, mobiphone?: boolean | null, seperateOffer?: string | null, freeCashWithdrawal?: boolean | null, freeAnnualFees?: string | null, globalPayments?: boolean | null, cardProtectionWith3DSecureText?: boolean | null, fourtyFiveDaysMaximumInterestFree?: boolean | null, upTo50PercentOff?: boolean | null, installmentPlanWithInterestOf1Percent?: boolean | null, withdrawMoneyUpTo85Percent?: boolean | null, generalConditions?: string | null, income?: string | null } | null> | null };
+export type ServicesCardsQuery = { __typename?: 'Query', servicesCards?: Array<{ __typename?: 'ServicesCard', id: string, image: string, content: string, title: string, cardType: string, type: FavoritesEnum, creditLimit: string, interestRate: string, transactionLimit: string, annualFees: string, rewardPoints: boolean, refund: string, freeFlightTickets: boolean, mobiphone: boolean, seperateOffer: string, freeCashWithdrawal: boolean, freeAnnualFees: string, globalPayments: boolean, cardProtectionWith3DSecureText: boolean, fourtyFiveDaysMaximumInterestFree: boolean, upTo50PercentOff: boolean, installmentPlanWithInterestOf1Percent: boolean, withdrawMoneyUpTo85Percent: boolean, generalConditions: string, income: string, pureCardImage: string } | null> | null };
 
 export type ServicesFullDetailsQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
 
 
-export type ServicesFullDetailsQuery = { __typename?: 'Query', servicesFullDetails?: { __typename?: 'ServicesCard', id: string, image: string, content: string, title: string, cardType: string, type: FavoritesEnum, creditLimit?: string | null, interestRate?: string | null, transactionLimit?: string | null, annualFees?: string | null, rewardPoints?: boolean | null, refund?: string | null, freeFlightTickets?: boolean | null, mobiphone?: boolean | null, seperateOffer?: string | null, freeCashWithdrawal?: boolean | null, freeAnnualFees?: string | null, globalPayments?: boolean | null, cardProtectionWith3DSecureText?: boolean | null, fourtyFiveDaysMaximumInterestFree?: boolean | null, upTo50PercentOff?: boolean | null, installmentPlanWithInterestOf1Percent?: boolean | null, withdrawMoneyUpTo85Percent?: boolean | null, generalConditions?: string | null, income?: string | null } | null };
+export type ServicesFullDetailsQuery = { __typename?: 'Query', servicesFullDetails?: { __typename?: 'ServicesCard', id: string, image: string, content: string, title: string, cardType: string, type: FavoritesEnum, creditLimit: string, interestRate: string, transactionLimit: string, annualFees: string, rewardPoints: boolean, refund: string, freeFlightTickets: boolean, mobiphone: boolean, seperateOffer: string, freeCashWithdrawal: boolean, freeAnnualFees: string, globalPayments: boolean, cardProtectionWith3DSecureText: boolean, fourtyFiveDaysMaximumInterestFree: boolean, upTo50PercentOff: boolean, installmentPlanWithInterestOf1Percent: boolean, withdrawMoneyUpTo85Percent: boolean, generalConditions: string, income: string, pureCardImage: string } | null };
 
-export type ServicesFullDetailsFragment = { __typename?: 'ServicesCard', id: string, image: string, content: string, title: string, cardType: string, type: FavoritesEnum, creditLimit?: string | null, interestRate?: string | null, transactionLimit?: string | null, annualFees?: string | null, rewardPoints?: boolean | null, refund?: string | null, freeFlightTickets?: boolean | null, mobiphone?: boolean | null, seperateOffer?: string | null, freeCashWithdrawal?: boolean | null, freeAnnualFees?: string | null, globalPayments?: boolean | null, cardProtectionWith3DSecureText?: boolean | null, fourtyFiveDaysMaximumInterestFree?: boolean | null, upTo50PercentOff?: boolean | null, installmentPlanWithInterestOf1Percent?: boolean | null, withdrawMoneyUpTo85Percent?: boolean | null, generalConditions?: string | null, income?: string | null };
+export type ServicesFullDetailsFragment = { __typename?: 'ServicesCard', id: string, image: string, content: string, title: string, cardType: string, type: FavoritesEnum, creditLimit: string, interestRate: string, transactionLimit: string, annualFees: string, rewardPoints: boolean, refund: string, freeFlightTickets: boolean, mobiphone: boolean, seperateOffer: string, freeCashWithdrawal: boolean, freeAnnualFees: string, globalPayments: boolean, cardProtectionWith3DSecureText: boolean, fourtyFiveDaysMaximumInterestFree: boolean, upTo50PercentOff: boolean, installmentPlanWithInterestOf1Percent: boolean, withdrawMoneyUpTo85Percent: boolean, generalConditions: string, income: string, pureCardImage: string };

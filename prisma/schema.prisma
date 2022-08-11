@@ -26,25 +26,26 @@ model ServicesCard {
   content                               String
   cardType                              String
   type                                  FavoritesEnum
-  creditLimit                           String?
-  interestRate                          String?
-  transactionLimit                      String?
-  annualFees                            String?
-  rewardPoints                          Boolean?
-  refund                                String?
-  freeFlightTickets                     Boolean?
-  mobiphone                             Boolean?
-  seperateOffer                         String?
-  freeCashWithdrawal                    Boolean?
-  freeAnnualFees                        String?
-  globalPayments                        Boolean?
-  cardProtectionWith3DSecureText        Boolean?
-  fourtyFiveDaysMaximumInterestFree     Boolean?
-  upTo50PercentOff                      Boolean?
-  installmentPlanWithInterestOf1Percent Boolean?
-  withdrawMoneyUpTo85Percent            Boolean?
-  generalConditions                     String?
-  income                                String?
+  creditLimit                           String
+  interestRate                          String
+  transactionLimit                      String
+  annualFees                            String
+  rewardPoints                          Boolean
+  refund                                String
+  freeFlightTickets                     Boolean
+  mobiphone                             Boolean
+  seperateOffer                         String
+  freeCashWithdrawal                    Boolean
+  freeAnnualFees                        String
+  globalPayments                        Boolean
+  cardProtectionWith3DSecureText        Boolean
+  fourtyFiveDaysMaximumInterestFree     Boolean
+  upTo50PercentOff                      Boolean
+  installmentPlanWithInterestOf1Percent Boolean
+  withdrawMoneyUpTo85Percent            Boolean
+  generalConditions                     String
+  income                                String
+  pureCardImage                         String
 }
 
 enum FavoritesEnum {

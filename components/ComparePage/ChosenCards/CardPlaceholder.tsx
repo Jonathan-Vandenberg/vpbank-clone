@@ -2,9 +2,13 @@ import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
 import Image from "next/image";
 import { FaPlus } from "react-icons/fa";
-import creditcardPlcaeholder from "../../public/cardPlaceholder.png";
+import creditcardPlaceholder from "../../../public/cardPlaceholder.png";
+import { useAppDispatch } from "../../../redux-hooks/hooks";
+import { changeDrawerState } from "../../../slices/compareDrawerSlice";
 
 export default function CardPlaceholder() {
+  const dispatch = useAppDispatch();
+
   return (
     <Stack className="items-left relative flex h-full w-full flex-col justify-start bg-body outline-none">
       <div className="absolute left-[10px] top-[px] z-10 rounded text-sm">
@@ -12,7 +16,7 @@ export default function CardPlaceholder() {
       </div>
       <div className="mx-16 mt-16">
         <Image
-          src={creditcardPlcaeholder}
+          src={creditcardPlaceholder}
           width={450}
           height={270}
           alt="vpBank - Card"
@@ -34,9 +38,18 @@ export default function CardPlaceholder() {
         </div>
       </div>
       <div className="flex flex-col justify-end pt-5">
-        <div className="mx-12 block w-auto rounded-full border-[1px] border-iwanttoColor">
-          <div className="flex items-center justify-center space-x-3 p-3 text-iwanttoColor">
-            <p className="whitespace-nowrap text-sm">Find Cards</p>
+        <div className="hidden space-y-2 p-4 md:block">
+          <Skeleton variant="rectangular" className="h-5 w-10/12" />
+          <Skeleton variant="rectangular" className="h-5 w-3/4" />
+          <Skeleton variant="rectangular" className="h-5 w-1/2" />
+        </div>
+
+        <div className="z-10 mx-12 my-2 block w-auto rounded-full border-[1px] border-iwanttoColor  ">
+          <div
+            onClick={() => dispatch(changeDrawerState(true))}
+            className="flex cursor-pointer items-center justify-center space-x-3 p-3 text-iwanttoColor"
+          >
+            <p className="whitespace-nowrap text-sm">Add</p>
             <FaPlus />
           </div>
         </div>
@@ -49,6 +62,7 @@ export default function CardPlaceholder() {
           </div>
         </div>
       </div>
+      <div className="placeholder-overlay"></div>
     </Stack>
   );
 }

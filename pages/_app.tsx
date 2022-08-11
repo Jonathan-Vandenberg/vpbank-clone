@@ -49,7 +49,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ApolloProvider client={client}>
         <NavbarAdvertise />
         <motion.div initial={{ y: -48 }} animate={controls}>
-          <NavbarTop />
           <NavbarBottom />
           <SideNavModal />
           <ScrollToTop />

@@ -59,7 +59,7 @@ const NewsCard = () => {
         <h2 className="bg-gradient-to-r from-startColor to-endColor bg-clip-text  text-xl font-bold text-transparent md:text-2xl">
           News
         </h2>
-        <p className="text-iwanttoColor">see more</p>
+        <p className="cursor-pointer text-iwanttoColor">see more</p>
       </div>
 
       <div className="md:flex md:items-center md:justify-between">
@@ -74,7 +74,7 @@ const NewsCard = () => {
           </div>
           <div className="flex items-center justify-center p-2">
             <Link href={"/news"}>
-              <h3 className="text-lg font-semibold hover:text-iwanttoColor">
+              <h3 className="cursor-pointer text-lg font-semibold hover:text-iwanttoColor">
                 VPBank recommends customers to be vigilant against Covid-19
                 subsidy scams
               </h3>

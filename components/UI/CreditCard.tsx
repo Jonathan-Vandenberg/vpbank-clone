@@ -1,11 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaArrowRight, FaHeart, FaPlus } from "react-icons/fa";
 import { getFromStorage, setToStorage } from "../../lib/localStorageHelper";
+import { useRouter } from "next/router";
 
 const CreditCard = ({ data }: any) => {
   const [localStorageChange, setLocalStorageChange] = useState(false);
   const [localStorageKeys, setLocalStorageKeys] = useState([""]);
+
+  const router = useRouter();
 
   useEffect(() => {
     const allKeys = Object.keys(localStorage);
@@ -70,10 +74,13 @@ const CreditCard = ({ data }: any) => {
         <p>{data?.content}</p>
       </div>
       <div className="flex flex-col justify-end">
-        <div className="flex items-center justify-start space-x-3 p-6">
-          <input type="checkbox" />
-          <p className="font-thin">ADD TO COMPARE CARD</p>
+        <div
+          className="mx-10 flex cursor-pointer items-center justify-center space-x-3 rounded-full border-[1px] border-iwanttoColor p-3 text-iwanttoColor"
+          onClick={() => router.push("/compare")}
+        >
+          <p>Compare Cards</p>
         </div>
+
         <div className="flex items-center justify-between p-2">
           <div className="flex items-center justify-center space-x-3 p-3 text-iwanttoColor">
             <p>Apply Now</p>

@@ -26,7 +26,7 @@ const IWantModal: NextPage<Props> = ({ open, handleClose }) => {
           id="iWantDropdown"
           className="absolute top-36 z-50 w-full items-center rounded bg-white outline-none md:left-1/4 md:right-1/4  md:w-1/2"
         >
-          <div className="justify-left flex h-14  items-center space-x-8 rounded p-1 pt-2 hover:bg-slate-100 hover:text-iwanttoColor">
+          <div className="justify-left flex h-14 cursor-pointer  items-center space-x-8 rounded p-1 pt-2 hover:bg-slate-100 hover:text-iwanttoColor">
             <div className="flex items-center justify-center pl-3">
               <Image src={iWantToIcon1} width="30" height="30" alt="icon1" />
             </div>
@@ -35,7 +35,7 @@ const IWantModal: NextPage<Props> = ({ open, handleClose }) => {
             </div>
           </div>
 
-          <div className="justify-left flex h-14 items-center space-x-8 p-1 hover:bg-slate-100 hover:text-iwanttoColor">
+          <div className="justify-left flex h-14 cursor-pointer items-center space-x-8 p-1 hover:bg-slate-100 hover:text-iwanttoColor">
             <div className="flex items-center justify-center pl-3">
               <Image src={iWantToIcon2} width="30" height="30" alt="icon1" />
             </div>
@@ -44,7 +44,7 @@ const IWantModal: NextPage<Props> = ({ open, handleClose }) => {
             </div>
           </div>
 
-          <div className="justify-left flex h-14 items-center space-x-8 p-1 hover:bg-slate-100 hover:text-iwanttoColor">
+          <div className="justify-left flex h-14 cursor-pointer items-center space-x-8 p-1 hover:bg-slate-100 hover:text-iwanttoColor">
             <div className="flex items-center justify-center pl-3">
               <Image src={iWantToIcon3} width="30" height="30" alt="icon1" />
             </div>
@@ -53,7 +53,7 @@ const IWantModal: NextPage<Props> = ({ open, handleClose }) => {
             </div>
           </div>
 
-          <div className="justify-left flex h-14 items-center space-x-8 p-1 hover:bg-slate-100 hover:text-iwanttoColor">
+          <div className="justify-left flex h-14 cursor-pointer items-center space-x-8 p-1 hover:bg-slate-100 hover:text-iwanttoColor">
             <div className="flex items-center justify-center pl-3">
               <Image src={iWantToIcon4} width="30" height="30" alt="icon1" />
             </div>
@@ -62,7 +62,7 @@ const IWantModal: NextPage<Props> = ({ open, handleClose }) => {
             </div>
           </div>
 
-          <div className="justify-left flex h-14 items-center space-x-8 rounded p-1 hover:bg-slate-100 hover:text-iwanttoColor">
+          <div className="justify-left flex h-14 cursor-pointer items-center space-x-8 rounded p-1 hover:bg-slate-100 hover:text-iwanttoColor">
             <div className="flex items-center justify-center pl-3">
               <Image src={iWantToIcon5} width="30" height="30" alt="icon1" />
             </div>

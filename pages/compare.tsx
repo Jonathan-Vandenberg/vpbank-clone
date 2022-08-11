@@ -1,16 +1,7 @@
-import Compare from "../components/ComparePage/Compare";
-import ServicesSlider from "../components/ComparePage/ServicesSlider";
-import { useServicesCardsQuery } from "../types";
+import CompareMain from "../components/ComparePage/CompareMain";
 
 const App = () => {
-  const { data, loading, error } = useServicesCardsQuery();
-
-  return (
-    <>
-      <Compare />
-      <ServicesSlider data={data} />
-    </>
-  );
+  return <CompareMain />;
 };
 
 export default App;

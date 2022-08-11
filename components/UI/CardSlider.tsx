@@ -80,7 +80,7 @@ const HeroSlideshow: NextPage<Props> = ({
             </div>
             <div className="flex items-center justify-start ">
               <div
-                className="rounded-full bg-white p-2 hover:scale-105 hover:drop-shadow"
+                className="cursor-pointer rounded-full bg-white p-2 hover:scale-105 hover:drop-shadow"
                 onClick={() => {
                   handleLocalStorage(el.id);
                   setLocalStorageChange(!localStorageChange);
@@ -102,7 +102,7 @@ const HeroSlideshow: NextPage<Props> = ({
         <h2 className="bg-gradient-to-r from-startColor to-endColor bg-clip-text p-5 text-xl font-bold text-transparent md:text-2xl">
           Tips and Stories
         </h2>
-        <p className="mr-2 text-iwanttoColor">see more</p>
+        <p className="mr-2 cursor-pointer text-iwanttoColor">see more</p>
       </div>
       <Slider
         slidesToShow={1}

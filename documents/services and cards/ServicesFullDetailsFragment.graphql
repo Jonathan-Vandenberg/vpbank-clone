@@ -25,4 +25,5 @@ fragment ServicesFullDetails on ServicesCard {
   withdrawMoneyUpTo85Percent
   generalConditions
   income
+  pureCardImage
 }

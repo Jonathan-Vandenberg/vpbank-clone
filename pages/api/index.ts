@@ -31,6 +31,12 @@ const resolvers: Resolvers = {
     },
     servicesFullDetails: (_, {id}, {prisma}) => {
       return prisma.servicesCard.findUnique({where: {id}})
+    },
+    promoSlide: (_, {id}, {prisma}) => {
+      return prisma.promoSlide.findUnique({where: {id}})
+    },
+    promoSlides: (_, __, {prisma}) => {
+      return prisma.promoSlide.findMany()
     }
   },
   Mutation: {

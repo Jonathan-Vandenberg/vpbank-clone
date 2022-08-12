@@ -4,8 +4,13 @@ import { FaArrowRight, FaHeart, FaMinus, FaPlus } from "react-icons/fa";
 import { getFromStorage, setToStorage } from "../../../lib/localStorageHelper";
 import { useAppDispatch, useAppSelector } from "../../../redux-hooks/hooks";
 import { addCard, removeCard } from "../../../slices/cardIdSlice";
+import { ServicesCard } from "../../../types";
 
-const ChosenCard = ({ singleCardData }: any) => {
+const ChosenCard = ({
+  singleCardData,
+}: {
+  singleCardData: ServicesCard | null | undefined;
+}) => {
   const [localStorageChange, setLocalStorageChange] = useState(false);
   const [localStorageKeys, setLocalStorageKeys] = useState([""]);
 
@@ -58,7 +63,7 @@ const ChosenCard = ({ singleCardData }: any) => {
           <div
             onClick={() => {
               handleLocalStorage(
-                `${singleCardData!.type} - ${singleCardData!.id}`
+                `${singleCardData?.type} - ${singleCardData?.id}`
               );
             }}
             className="cursor-pointer rounded-full bg-white p-2"
@@ -67,7 +72,7 @@ const ChosenCard = ({ singleCardData }: any) => {
               size={20}
               color={
                 localStorageKeys?.includes(
-                  `${singleCardData!.type} - ${singleCardData!.id}`
+                  `${singleCardData?.type} - ${singleCardData?.id}`
                 )
                   ? "red"
                   : "green"
@@ -83,14 +88,15 @@ const ChosenCard = ({ singleCardData }: any) => {
         <div>{singleCardData?.content}</div>
       </div>
       <div className="flex w-full flex-col items-center justify-end">
-        {cardId.includes(singleCardData?.id) ? (
+        {cardId?.includes(singleCardData!.id) ? (
           <div className="flex items-center justify-center">
             <button
-              onClick={() => dispatch(removeCard(singleCardData?.id))}
+              onClick={() => {
+                dispatch(removeCard(singleCardData!.id));
+              }}
               className="flex cursor-pointer flex-col items-center justify-center px-5 pt-2"
-              disabled={cardId.length > 2 && cardId === singleCardData?.id}
             >
-              <div className="flex items-center justify-center space-x-2 rounded-full border-[1px] border-red-300 p-3 text-sm font-semibold text-red-400">
+              <div className="flex items-center justify-center space-x-2 rounded-full border-[1px] border-red-200 p-3 text-sm text-red-400">
                 <p>Remove</p>
                 <FaMinus />
               </div>
@@ -99,7 +105,7 @@ const ChosenCard = ({ singleCardData }: any) => {
         ) : (
           <div className="flex items-center justify-center">
             <button
-              onClick={() => dispatch(addCard(singleCardData?.id))}
+              onClick={() => dispatch(addCard(singleCardData!.id))}
               className="flex cursor-pointer flex-col items-center justify-center px-5 pt-2"
               disabled={cardId.length > 2}
             >

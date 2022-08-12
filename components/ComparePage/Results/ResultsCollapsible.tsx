@@ -1,11 +1,20 @@
 import { ArrowForwardIos } from "@mui/icons-material";
 import Collapsible from "react-collapsible";
+import { ServicesCardQuery } from "../../../types";
 import BenifitsTable from "./Tables/BenifitsTable";
 import ConditionsTable from "./Tables/ConditionsTable";
 import FeaturesTable from "./Tables/FeaturesTable";
 import OverviewTable from "./Tables/OverviewTable";
 
-const ResultsCollapsible = ({ data, data1, data2 }: any) => {
+const ResultsCollapsible = ({
+  data,
+  data1,
+  data2,
+}: {
+  data: ServicesCardQuery | undefined | null;
+  data1: ServicesCardQuery | undefined | null;
+  data2: ServicesCardQuery | undefined | null;
+}) => {
   return (
     <div className="mt-12 divide-y-[1px]">
       <Collapsible

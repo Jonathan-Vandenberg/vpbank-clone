@@ -32,14 +32,12 @@ const IconSlider = () => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
+    window.addEventListener("resize", () => handleResize());
     const { innerWidth: screenWidth } = window;
     function handleResize() {
       setWidth(screenWidth);
     }
     handleResize();
-
-    window.addEventListener("resize", handleResize);
-    // return () => window.removeEventListener("resize", handleResize);
   }, [width]);
 
   const renderSlides = () =>
@@ -51,7 +49,7 @@ const IconSlider = () => {
         <div className="flex items-center justify-center">
           <Image src={el.image} width={100} height={100} alt="icons" />
         </div>
-        <p className="pt-2 text-center text-xs text-slate-600 md:text-sm">
+        <p className="md:text pt-2 text-center text-sm text-slate-600 xl:text-lg">
           {el.title}
         </p>
       </div>

@@ -1,0 +1,7 @@
+# import PromoSlide from "./PromoSlideFragment.graphql"
+
+query PromoSlide($id: ID!) {
+  promoSlide(id: $id) {
+    ...PromoSlide
+  }
+}

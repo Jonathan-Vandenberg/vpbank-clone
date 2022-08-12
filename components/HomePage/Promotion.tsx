@@ -11,8 +11,8 @@ import ad2 from "../../public/adsHomePage/ad2.png";
 import ad3 from "../../public/adsHomePage/ad3.png";
 import ad4 from "../../public/adsHomePage/ad4.png";
 import ad5 from "../../public/adsHomePage/ad5.png";
-import { usePromotionsQuery } from "../../types";
-import HeroSlideshow from "../UI/HeroSlideshow";
+import { usePromoSlidesQuery, usePromotionsQuery } from "../../types";
+import PromoSlider from "../UI/PromoSlider";
 import happyIcon from "/Users/jonathanvandenberg/2022/VPBank/public/happyIcon.svg";
 
 const heroImages = [ad1, ad2, ad3, ad4, ad5];
@@ -59,6 +59,8 @@ const Promotion: NextPage = () => {
   const [width, setWidth] = useState(0);
   const [showScrollableAds, setShowScrollableAds] = useState(false);
 
+  const { data, loading, error } = usePromoSlidesQuery();
+
   useEffect(() => {
     const { innerWidth: screenWidth } = window;
 
@@ -94,12 +96,7 @@ const Promotion: NextPage = () => {
       </div>
       <div className="md:h-promotionHeight grid-cols-3 space-y-8 md:flex-col lg:grid lg:space-y-0">
         <div className="md-space-x-4 space-y-8 md:col-span-2 md:flex-col  lg:space-y-3">
-          <HeroSlideshow
-            imageData={heroImages}
-            height={300}
-            width={600}
-            scaleOnHover={true}
-          />
+          <PromoSlider data={data} />
           <div className="flex flex-col bg-white py-2 md:flex-row">
             <div className="p-4 md:w-1/3 ">
               <p className="text-xl font-semibold">Ha Noi</p>

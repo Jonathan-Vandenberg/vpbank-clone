@@ -51,7 +51,7 @@ const NewsCard = () => {
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
     setWidth(window.innerWidth);
-  }, []);
+  }, [width]);
 
   return (
     <div className="max-h-[580px] bg-body p-2">
@@ -62,8 +62,8 @@ const NewsCard = () => {
         <p className="cursor-pointer text-iwanttoColor">see more</p>
       </div>
 
-      <div className="md:flex md:items-center md:justify-between">
-        <div className="flex flex-col items-center justify-center space-y-5 md:w-5/12 md:p-5">
+      <div className="md:flex md:items-start md:justify-center">
+        <div className="flex flex-col items-center justify-center space-y-5 md:w-5/12">
           <div className="">
             <Image
               src={"https://picsum.photos/id/95/600/350"}
@@ -83,7 +83,7 @@ const NewsCard = () => {
         </div>
 
         {width > 768 && (
-          <div className="max-h-[420px] w-7/12 overflow-auto border-l-2 p-6">
+          <div className="max-h-[280px] w-7/12 overflow-auto border-l-2 p-6">
             {newsData.map((el, i) => (
               <div key={i} className="space-y-2 border-b-2">
                 <Link href={`/${el.title}`}>

@@ -1,9 +1,8 @@
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { Pagination, PaginationItem } from "@mui/material";
-import { motion } from "framer-motion";
-import { ReactElement, ReactFragment, ReactPortal, useState } from "react";
+import { ReactNode } from "react";
 import * as Scroll from "react-scroll";
-import CreditCard from "./CreditCard";
+import { ServicesCardsQuery } from "../../types";
 
 const ArrowLeft = () => (
   <div className="text-iwanttoColor">
@@ -17,23 +16,18 @@ const ArrowRight = () => (
   </div>
 );
 
-interface IPaginationCardProps {
-  children: ReactElement | ReactFragment | ReactPortal | null;
-  data: any;
+interface IProps {
+  children: ReactNode;
+  data: ServicesCardsQuery | undefined | null;
   pageValue: number;
   setPageValue: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const App = ({
-  data,
-  children,
-  pageValue,
-  setPageValue,
-}: IPaginationCardProps) => {
+const App = ({ data, children, pageValue, setPageValue }: IProps) => {
   let scroll = Scroll.animateScroll;
 
   const handleScroll = () => {
-    scroll.scrollToTop();
+    scroll.scrollTo(48);
   };
 
   return (
@@ -43,7 +37,9 @@ const App = ({
       </div>
       <div className="flex items-center justify-center p-6">
         <Pagination
-          count={Math.ceil(data?.servicesCards?.length / 6) || 3}
+          count={Math.ceil(
+            data?.servicesCards ? data.servicesCards.length / 6 : 3
+          )}
           page={pageValue}
           onChange={(event, val) => {
             setPageValue(val), handleScroll();

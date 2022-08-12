@@ -1,4 +1,4 @@
-fragment Promotion on Promotion {
+fragment PromoSlide on PromoSlide {
   id
   image
   content

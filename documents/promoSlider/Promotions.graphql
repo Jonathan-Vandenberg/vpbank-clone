@@ -1,0 +1,7 @@
+# import PromoSlide from "./PromoSlideFragment"
+
+query PromoSlides {
+  promoSlides {
+    ...PromoSlide
+  }
+}

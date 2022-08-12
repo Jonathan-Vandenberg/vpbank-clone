@@ -1,5 +1,5 @@
 import { GraphQLResolveInfo } from 'graphql';
-import { Promotion as PromotionModel, ServicesCard as ServicesCardModel, FavoritesEnum as FavoritesEnumModel } from '@prisma/client';
+import { Promotion as PromotionModel, ServicesCard as ServicesCardModel, FavoritesEnum as FavoritesEnumModel, PromoSlide as PromoSlideModel } from '@prisma/client';
 import { GraphQLContext } from './pages/api/index';
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
@@ -27,10 +27,17 @@ export enum FavoritesEnum {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  addPromoSlide?: Maybe<PromoSlide>;
   addPromotion?: Maybe<Promotion>;
   addServicesCard?: Maybe<ServicesCard>;
+  removePromoSlide?: Maybe<PromoSlide>;
   removePromotion?: Maybe<Promotion>;
   removeServicesCard?: Maybe<ServicesCard>;
+};
+
+
+export type MutationAddPromoSlideArgs = {
+  input: PromoSlideInput;
 };
 
 
@@ -44,6 +51,11 @@ export type MutationAddServicesCardArgs = {
 };
 
 
+export type MutationRemovePromoSlideArgs = {
+  id: Scalars['ID'];
+};
+
+
 export type MutationRemovePromotionArgs = {
   id: Scalars['ID'];
 };
@@ -53,10 +65,31 @@ export type MutationRemoveServicesCardArgs = {
   id: Scalars['ID'];
 };
 
+export type PromoSlide = {
+  __typename?: 'PromoSlide';
+  content: Scalars['String'];
+  customer: Scalars['String'];
+  darkImage?: Maybe<Scalars['Boolean']>;
+  id: Scalars['ID'];
+  image: Scalars['String'];
+  title: Scalars['String'];
+  type: FavoritesEnum;
+};
+
+export type PromoSlideInput = {
+  content: Scalars['String'];
+  customer: Scalars['String'];
+  id: Scalars['ID'];
+  image: Scalars['String'];
+  title: Scalars['String'];
+  type: FavoritesEnum;
+};
+
 export type Promotion = {
   __typename?: 'Promotion';
   content: Scalars['String'];
   customer: Scalars['String'];
+  darkImage?: Maybe<Scalars['Boolean']>;
   id: Scalars['ID'];
   image: Scalars['String'];
   title: Scalars['String'];
@@ -74,11 +107,18 @@ export type PromotionInput = {
 
 export type Query = {
   __typename?: 'Query';
+  promoSlide?: Maybe<PromoSlide>;
+  promoSlides?: Maybe<Array<Maybe<PromoSlide>>>;
   promotion?: Maybe<Promotion>;
   promotions?: Maybe<Array<Maybe<Promotion>>>;
   servicesCard?: Maybe<ServicesCard>;
   servicesCards?: Maybe<Array<Maybe<ServicesCard>>>;
   servicesFullDetails?: Maybe<ServicesCard>;
+};
+
+
+export type QueryPromoSlideArgs = {
+  id: Scalars['ID'];
 };
 
 
@@ -131,7 +171,7 @@ export type ServicesCardInput = {
   cardProtectionWith3DSecureText: Scalars['Boolean'];
   cardType: Scalars['String'];
   content: Scalars['String'];
-  creditLimit?: InputMaybe<Scalars['String']>;
+  creditLimit: Scalars['String'];
   fourtyFiveDaysMaximumInterestFree: Scalars['Boolean'];
   freeAnnualFees: Scalars['String'];
   freeCashWithdrawal: Scalars['Boolean'];
@@ -228,6 +268,8 @@ export type ResolversTypes = {
   FavoritesEnum: ResolverTypeWrapper<FavoritesEnumModel>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   Mutation: ResolverTypeWrapper<{}>;
+  PromoSlide: ResolverTypeWrapper<PromoSlideModel>;
+  PromoSlideInput: PromoSlideInput;
   Promotion: ResolverTypeWrapper<PromotionModel>;
   PromotionInput: PromotionInput;
   Query: ResolverTypeWrapper<{}>;
@@ -241,6 +283,8 @@ export type ResolversParentTypes = {
   Boolean: Scalars['Boolean'];
   ID: Scalars['ID'];
   Mutation: {};
+  PromoSlide: PromoSlideModel;
+  PromoSlideInput: PromoSlideInput;
   Promotion: PromotionModel;
   PromotionInput: PromotionInput;
   Query: {};
@@ -252,15 +296,29 @@ export type ResolversParentTypes = {
 export type FavoritesEnumResolvers = EnumResolverSignature<{ PROMOTION?: any, SERVICESCARD?: any }, ResolversTypes['FavoritesEnum']>;
 
 export type MutationResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  addPromoSlide?: Resolver<Maybe<ResolversTypes['PromoSlide']>, ParentType, ContextType, RequireFields<MutationAddPromoSlideArgs, 'input'>>;
   addPromotion?: Resolver<Maybe<ResolversTypes['Promotion']>, ParentType, ContextType, RequireFields<MutationAddPromotionArgs, 'input'>>;
   addServicesCard?: Resolver<Maybe<ResolversTypes['ServicesCard']>, ParentType, ContextType, RequireFields<MutationAddServicesCardArgs, 'input'>>;
+  removePromoSlide?: Resolver<Maybe<ResolversTypes['PromoSlide']>, ParentType, ContextType, RequireFields<MutationRemovePromoSlideArgs, 'id'>>;
   removePromotion?: Resolver<Maybe<ResolversTypes['Promotion']>, ParentType, ContextType, RequireFields<MutationRemovePromotionArgs, 'id'>>;
   removeServicesCard?: Resolver<Maybe<ResolversTypes['ServicesCard']>, ParentType, ContextType, RequireFields<MutationRemoveServicesCardArgs, 'id'>>;
+};
+
+export type PromoSlideResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['PromoSlide'] = ResolversParentTypes['PromoSlide']> = {
+  content?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  customer?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  darkImage?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  image?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  type?: Resolver<ResolversTypes['FavoritesEnum'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type PromotionResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Promotion'] = ResolversParentTypes['Promotion']> = {
   content?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   customer?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  darkImage?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   image?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -269,6 +327,8 @@ export type PromotionResolvers<ContextType = GraphQLContext, ParentType extends 
 };
 
 export type QueryResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  promoSlide?: Resolver<Maybe<ResolversTypes['PromoSlide']>, ParentType, ContextType, RequireFields<QueryPromoSlideArgs, 'id'>>;
+  promoSlides?: Resolver<Maybe<Array<Maybe<ResolversTypes['PromoSlide']>>>, ParentType, ContextType>;
   promotion?: Resolver<Maybe<ResolversTypes['Promotion']>, ParentType, ContextType, RequireFields<QueryPromotionArgs, 'id'>>;
   promotions?: Resolver<Maybe<Array<Maybe<ResolversTypes['Promotion']>>>, ParentType, ContextType>;
   servicesCard?: Resolver<Maybe<ResolversTypes['ServicesCard']>, ParentType, ContextType, RequireFields<QueryServicesCardArgs, 'id'>>;
@@ -309,6 +369,7 @@ export type ServicesCardResolvers<ContextType = GraphQLContext, ParentType exten
 export type Resolvers<ContextType = GraphQLContext> = {
   FavoritesEnum?: FavoritesEnumResolvers;
   Mutation?: MutationResolvers<ContextType>;
+  PromoSlide?: PromoSlideResolvers<ContextType>;
   Promotion?: PromotionResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   ServicesCard?: ServicesCardResolvers<ContextType>;
@@ -323,6 +384,18 @@ export const PromotionFragmentDoc = gql`
   title
   customer
   type
+  darkImage
+}
+    `;
+export const PromoSlideFragmentDoc = gql`
+    fragment PromoSlide on PromoSlide {
+  id
+  image
+  content
+  title
+  customer
+  type
+  darkImage
 }
     `;
 export const ServicesCardFragmentDoc = gql`
@@ -489,6 +562,108 @@ export function usePromotionsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions
 export type PromotionsQueryHookResult = ReturnType<typeof usePromotionsQuery>;
 export type PromotionsLazyQueryHookResult = ReturnType<typeof usePromotionsLazyQuery>;
 export type PromotionsQueryResult = Apollo.QueryResult<PromotionsQuery, PromotionsQueryVariables>;
+export const AddPromoSlideDocument = gql`
+    mutation AddPromoSlide($input: PromoSlideInput!) {
+  addPromoSlide(input: $input) {
+    ...PromoSlide
+  }
+}
+    ${PromoSlideFragmentDoc}`;
+export type AddPromoSlideMutationFn = Apollo.MutationFunction<AddPromoSlideMutation, AddPromoSlideMutationVariables>;
+
+/**
+ * __useAddPromoSlideMutation__
+ *
+ * To run a mutation, you first call `useAddPromoSlideMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddPromoSlideMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addPromoSlideMutation, { data, loading, error }] = useAddPromoSlideMutation({
+ *   variables: {
+ *      input: // value for 'input'
+ *   },
+ * });
+ */
+export function useAddPromoSlideMutation(baseOptions?: Apollo.MutationHookOptions<AddPromoSlideMutation, AddPromoSlideMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<AddPromoSlideMutation, AddPromoSlideMutationVariables>(AddPromoSlideDocument, options);
+      }
+export type AddPromoSlideMutationHookResult = ReturnType<typeof useAddPromoSlideMutation>;
+export type AddPromoSlideMutationResult = Apollo.MutationResult<AddPromoSlideMutation>;
+export type AddPromoSlideMutationOptions = Apollo.BaseMutationOptions<AddPromoSlideMutation, AddPromoSlideMutationVariables>;
+export const PromoSlideDocument = gql`
+    query PromoSlide($id: ID!) {
+  promoSlide(id: $id) {
+    ...PromoSlide
+  }
+}
+    ${PromoSlideFragmentDoc}`;
+
+/**
+ * __usePromoSlideQuery__
+ *
+ * To run a query within a React component, call `usePromoSlideQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePromoSlideQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = usePromoSlideQuery({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function usePromoSlideQuery(baseOptions: Apollo.QueryHookOptions<PromoSlideQuery, PromoSlideQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<PromoSlideQuery, PromoSlideQueryVariables>(PromoSlideDocument, options);
+      }
+export function usePromoSlideLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PromoSlideQuery, PromoSlideQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<PromoSlideQuery, PromoSlideQueryVariables>(PromoSlideDocument, options);
+        }
+export type PromoSlideQueryHookResult = ReturnType<typeof usePromoSlideQuery>;
+export type PromoSlideLazyQueryHookResult = ReturnType<typeof usePromoSlideLazyQuery>;
+export type PromoSlideQueryResult = Apollo.QueryResult<PromoSlideQuery, PromoSlideQueryVariables>;
+export const PromoSlidesDocument = gql`
+    query PromoSlides {
+  promoSlides {
+    ...PromoSlide
+  }
+}
+    ${PromoSlideFragmentDoc}`;
+
+/**
+ * __usePromoSlidesQuery__
+ *
+ * To run a query within a React component, call `usePromoSlidesQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePromoSlidesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = usePromoSlidesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function usePromoSlidesQuery(baseOptions?: Apollo.QueryHookOptions<PromoSlidesQuery, PromoSlidesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<PromoSlidesQuery, PromoSlidesQueryVariables>(PromoSlidesDocument, options);
+      }
+export function usePromoSlidesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PromoSlidesQuery, PromoSlidesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<PromoSlidesQuery, PromoSlidesQueryVariables>(PromoSlidesDocument, options);
+        }
+export type PromoSlidesQueryHookResult = ReturnType<typeof usePromoSlidesQuery>;
+export type PromoSlidesLazyQueryHookResult = ReturnType<typeof usePromoSlidesLazyQuery>;
+export type PromoSlidesQueryResult = Apollo.QueryResult<PromoSlidesQuery, PromoSlidesQueryVariables>;
 export const AddServicesCardDocument = gql`
     mutation AddServicesCard($input: ServicesCardInput!) {
   addServicesCard(input: $input) {
@@ -631,21 +806,42 @@ export type AddPromotionMutationVariables = Exact<{
 }>;
 
 
-export type AddPromotionMutation = { __typename?: 'Mutation', addPromotion?: { __typename?: 'Promotion', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum } | null };
+export type AddPromotionMutation = { __typename?: 'Mutation', addPromotion?: { __typename?: 'Promotion', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage?: boolean | null } | null };
 
 export type PromotionQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
 
 
-export type PromotionQuery = { __typename?: 'Query', promotion?: { __typename?: 'Promotion', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum } | null };
+export type PromotionQuery = { __typename?: 'Query', promotion?: { __typename?: 'Promotion', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage?: boolean | null } | null };
 
-export type PromotionFragment = { __typename?: 'Promotion', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum };
+export type PromotionFragment = { __typename?: 'Promotion', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage?: boolean | null };
 
 export type PromotionsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PromotionsQuery = { __typename?: 'Query', promotions?: Array<{ __typename?: 'Promotion', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum } | null> | null };
+export type PromotionsQuery = { __typename?: 'Query', promotions?: Array<{ __typename?: 'Promotion', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage?: boolean | null } | null> | null };
+
+export type AddPromoSlideMutationVariables = Exact<{
+  input: PromoSlideInput;
+}>;
+
+
+export type AddPromoSlideMutation = { __typename?: 'Mutation', addPromoSlide?: { __typename?: 'PromoSlide', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage?: boolean | null } | null };
+
+export type PromoSlideQueryVariables = Exact<{
+  id: Scalars['ID'];
+}>;
+
+
+export type PromoSlideQuery = { __typename?: 'Query', promoSlide?: { __typename?: 'PromoSlide', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage?: boolean | null } | null };
+
+export type PromoSlideFragment = { __typename?: 'PromoSlide', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage?: boolean | null };
+
+export type PromoSlidesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PromoSlidesQuery = { __typename?: 'Query', promoSlides?: Array<{ __typename?: 'PromoSlide', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage?: boolean | null } | null> | null };
 
 export type AddServicesCardMutationVariables = Exact<{
   input: ServicesCardInput;

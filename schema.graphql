@@ -4,6 +4,8 @@ type Query {
   servicesCard(id: ID!): ServicesCard
   servicesCards: [ServicesCard]
   servicesFullDetails(id: ID!): ServicesCard
+  promoSlide(id: ID!): PromoSlide
+  promoSlides: [PromoSlide]
 }
 
 type Mutation {
@@ -11,6 +13,8 @@ type Mutation {
   removePromotion(id: ID!): Promotion
   addServicesCard(input: ServicesCardInput!): ServicesCard
   removeServicesCard(id: ID!): ServicesCard
+  addPromoSlide(input: PromoSlideInput!): PromoSlide
+  removePromoSlide(id: ID!): PromoSlide
 }
 
 type Promotion {
@@ -20,6 +24,17 @@ type Promotion {
   content: String!
   customer: String!
   type: FavoritesEnum!
+  darkImage: Boolean
+}
+
+type PromoSlide {
+  id: ID!
+  image: String!
+  title: String!
+  content: String!
+  customer: String!
+  type: FavoritesEnum!
+  darkImage: Boolean
 }
 
 input PromotionInput {
@@ -29,11 +44,6 @@ input PromotionInput {
   content: String!
   customer: String!
   type: FavoritesEnum!
-}
-
-enum FavoritesEnum {
-  PROMOTION
-  SERVICESCARD
 }
 
 type ServicesCard {
@@ -65,6 +75,20 @@ type ServicesCard {
   pureCardImage: String!
 }
 
+enum FavoritesEnum {
+  PROMOTION
+  SERVICESCARD
+}
+
+input PromoSlideInput {
+  id: ID!
+  image: String!
+  title: String!
+  content: String!
+  customer: String!
+  type: FavoritesEnum!
+}
+
 input ServicesCardInput {
   id: ID!
   image: String!
@@ -72,7 +96,7 @@ input ServicesCardInput {
   content: String!
   cardType: String!
   type: FavoritesEnum!
-  creditLimit: String
+  creditLimit: String!
   interestRate: String!
   transactionLimit: String!
   annualFees: String!

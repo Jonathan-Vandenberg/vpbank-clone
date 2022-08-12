@@ -1,6 +1,10 @@
 import { createSlice, PayloadAction, TaskAbortError } from '@reduxjs/toolkit'
 import type { RootState } from '../store/store'
 
+interface CardIdState {
+  cardId: string[] | undefined
+}
+
 export const cardIdSlice = createSlice({
   name: 'cardId',
   initialState: {
@@ -8,8 +12,8 @@ export const cardIdSlice = createSlice({
     cardId: [ "cl6kptcbl0248fv0grlcp6z1f", "cl6kptcbl0244fv0gkto9tcjs", "cl6kptcbk0230fv0gt59l6iu7"],
   },
   reducers: {
-    addCard: (state, action: PayloadAction<string>) => {
-      state.cardId.includes(action.payload) ? null : state.cardId.push(action.payload)
+    addCard: (state: CardIdState, action: PayloadAction<string>) => {
+      state.cardId?.includes(action.payload) ? null : state.cardId?.push(action.payload)
     },
     removeCard: (state, action: PayloadAction<string>) => {
       state.cardId = state.cardId.filter(card => card !== action.payload)

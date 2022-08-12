@@ -6,12 +6,12 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { ServicesCardQuery } from "../../types";
+import { ServicesCardQuery } from "../../../../types";
 
 interface IProps {
-  data: ServicesCardQuery | undefined;
-  data1: ServicesCardQuery | undefined;
-  data2: ServicesCardQuery | undefined;
+  data: ServicesCardQuery | undefined | null;
+  data1: ServicesCardQuery | undefined | null;
+  data2: ServicesCardQuery | undefined | null;
 }
 
 export default function BasicTable({ data, data1, data2 }: IProps) {

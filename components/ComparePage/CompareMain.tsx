@@ -1,14 +1,11 @@
+import { NextPage } from "next/types";
 import { useAppSelector } from "../../redux-hooks/hooks";
-import { ServicesCardsQuery, useServicesCardQuery } from "../../types";
+import { useServicesCardQuery } from "../../types";
 import CardsDrawer from "./ChooseCardsDrawer/CardsDrawer";
 import ChosenCards from "./ChosenCards/ChosenCards";
 import ResultsCollapsible from "./Results/ResultsCollapsible";
 
-interface IProps {
-  allCards: ServicesCardsQuery | undefined;
-}
-
-const CompareMain = () => {
+const CompareMain: NextPage = () => {
   const { cardId } = useAppSelector((state) => state.cardId);
 
   const { data, loading, error } = useServicesCardQuery({
@@ -45,7 +42,11 @@ const CompareMain = () => {
           Add and remove cards to compare
         </p>
       </div>
-      <ChosenCards data={data} data1={data1} data2={data2} />
+      <ChosenCards
+        data={data?.servicesCard}
+        data1={data1?.servicesCard}
+        data2={data2?.servicesCard}
+      />
       <ResultsCollapsible data={data} data1={data1} data2={data2} />
       <CardsDrawer />
     </>

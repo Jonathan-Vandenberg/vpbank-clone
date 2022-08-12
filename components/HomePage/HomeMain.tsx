@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import dynamic from "next/dynamic";
 import HeroSlideshow from "../UI/HeroSlideshow";
 import NewsCard from "../UI/NewsCard";
@@ -24,7 +23,7 @@ const IWantTo = dynamic(
 
 export const images = [image1, image2, image3, image4, image5];
 
-const HomeMain: NextPage = () => {
+const HomeMain = () => {
   return (
     <>
       <div>

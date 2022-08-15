@@ -10,7 +10,7 @@ generates:
         Promotion: "@prisma/client#Promotion"
         ServicesCard: "@prisma/client#ServicesCard"
         FavoritesEnum: "@prisma/client#FavoritesEnum"
-        PromoSlide: "@prisma/client#PromoSlide"
+        MonthlyDeal: "@prisma/client#MonthlyDeal"
       contextType: ./pages/api/index#GraphQLContext
     plugins:
       - "typescript"

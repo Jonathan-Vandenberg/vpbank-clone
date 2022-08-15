@@ -1,7 +1,7 @@
-# import PromoSlide from "./PromoSlideFragment"
+# import MonthlyDeal from "./MonthlyDealFragment"
 
-query PromoSlides {
-  promoSlides {
-    ...PromoSlide
+query MonthlyDeals {
+  monthlyDeals {
+    ...MonthlyDeal
   }
 }

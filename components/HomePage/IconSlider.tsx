@@ -32,12 +32,8 @@ const IconSlider = () => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    window.addEventListener("resize", () => handleResize());
-    const { innerWidth: screenWidth } = window;
-    function handleResize() {
-      setWidth(screenWidth);
-    }
-    handleResize();
+    setWidth(window.innerWidth);
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, [width]);
 
   const renderSlides = () =>
@@ -67,6 +63,7 @@ const IconSlider = () => {
         dotsClass="slick-dots"
         lazyLoad={"anticipated"}
         className="mx-auto w-3/4"
+        infinite={false}
       >
         {renderSlides()}
       </Slider>

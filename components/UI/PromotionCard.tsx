@@ -2,16 +2,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { getFromStorage, setToStorage } from "../../lib/localStorageHelper";
+import { MonthlyDeal, Promotion } from "../../types";
 
 interface IProps {
-  title: string;
-  content: string;
-  image: string;
-  data: any;
-  customer: string;
+  data: MonthlyDeal | Promotion | undefined | null;
 }
 
-const PromotionCard = ({ title, content, data, customer, image }: IProps) => {
+const PromotionCard: React.FC<IProps> = ({ data }) => {
   const [localStorageKeys, setLocalStorageKeys] = useState([""]);
   const [localStorageChange, setLocalStorageChange] = useState(false);
 
@@ -38,36 +35,51 @@ const PromotionCard = ({ title, content, data, customer, image }: IProps) => {
   return (
     <div className="contain relative">
       <Image
-        src={image}
+        src={data!.image}
         width={600}
         height={300}
         alt="VPBank Image"
         layout="responsive"
+        className="object-cover"
         priority
       />
-
       <div className="absolute top-0 left-0 right-0 bottom-0 h-full w-full">
-        <div className="flex h-full flex-col items-start justify-between p-2">
-          <p className="text-sm font-semibold">{title}</p>
-          <h2 className="w-3/5 text-xs xl:text-lg">{content}</h2>
-          <div className="m-3 flex items-end justify-start space-x-3">
+        <div className="flex h-full flex-col items-start justify-between p-3">
+          {data?.darkImage ? (
+            <p className="text-white md:text-xl">{data!.title}</p>
+          ) : (
+            <p className="md:text-xl">{data!.title}</p>
+          )}
+          {data?.darkImage ? (
+            <h2 className="w-3/5 text-2xl font-bold text-white md:text-lg lg:text-2xl xl:text-2xl">
+              {data!.content}
+            </h2>
+          ) : (
+            <h2 className="w-3/5  text-2xl font-bold md:text-lg lg:text-2xl xl:text-2xl">
+              {data!.content}
+            </h2>
+          )}
+          <div className="flex items-end justify-start space-x-3">
             <div
               onClick={() => {
-                handleLocalStorage(`${data.type} - ${data.id}`);
+                handleLocalStorage(`${data!.type} - ${data!.id}`);
               }}
-              className="rounded-full bg-white p-2"
+              className="cursor-pointer rounded-full bg-white p-2 "
             >
               <FaHeart
-                className="cursor-pointer"
                 size={20}
                 color={
-                  localStorageKeys?.includes(`${data.type} - ${data.id}`)
+                  localStorageKeys?.includes(`${data!.type} - ${data!.id}`)
                     ? "red"
                     : "green"
                 }
               />
             </div>
-            <p className="text-sm font-semibold">{customer}</p>
+            {data?.darkImage ? (
+              <p className="text-white lg:text-lg ">{data!.customer}</p>
+            ) : (
+              <p className="lg:text-lg">{data!.customer}</p>
+            )}
           </div>
         </div>
       </div>

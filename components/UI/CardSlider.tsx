@@ -50,8 +50,8 @@ const HeroSlideshow: NextPage<Props> = ({
 
   const renderSlides = () =>
     data.map((el, i) => (
-      <div key={i} className="p-4">
-        <div className="md:flex md:flex-row-reverse md:items-start md:justify-evenly">
+      <div key={i} className="p-5">
+        <div className="md:flex md:flex-row-reverse md:items-start md:justify-between">
           <div className="md:w-1/2">
             <motion.div
               whileHover={{
@@ -66,7 +66,7 @@ const HeroSlideshow: NextPage<Props> = ({
                   alt="VPBank Hero Image"
                   width={width}
                   height={height}
-                  className="rounded-2xl object-cover"
+                  className=" object-cover"
                 />
               </div>
             </motion.div>
@@ -75,7 +75,7 @@ const HeroSlideshow: NextPage<Props> = ({
             <div className="p-3 text-xl font-semibold md:p-0 md:pb-3 md:text-2xl">
               <p>{el.title}</p>
             </div>
-            <div className="p-3 text-sm text-gray-600 md:p-0 md:py-4 md:pr-4 md:text-[16px]">
+            <div className="mb-3 p-3 text-gray-600 md:p-0 md:py-4 md:pr-4 md:text-[16px]">
               <p>{el.content}</p>
             </div>
             <div className="flex items-center justify-start ">
@@ -110,7 +110,7 @@ const HeroSlideshow: NextPage<Props> = ({
         autoplay={true}
         autoplaySpeed={7000}
         arrows={false}
-        dots={true}
+        dots={false}
         dotsClass="slick-dots"
         className="h-2/3"
       >

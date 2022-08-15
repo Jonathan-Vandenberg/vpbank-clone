@@ -56,11 +56,15 @@ const rowsExchange = [
 
 const GoldTable = () => {
   return (
-    <TableContainer className="flex h-full flex-col items-center justify-between">
-      <Table sx={{ minWidth: 250 }} aria-label="simple table">
+    <TableContainer className="flex w-full flex-col items-center justify-between">
+      <Table
+        sx={{ minWidth: 250 }}
+        aria-label="simple table"
+        className="w-full"
+      >
         <TableHead>
           <TableRow>
-            <TableCell className="text-lg font-semibold md:text-sm">
+            <TableCell className="text-center text-lg font-semibold md:text-sm">
               Type
             </TableCell>
             <TableCell
@@ -88,7 +92,7 @@ const GoldTable = () => {
               }}
             >
               <TableCell
-                className="whitespace-nowrap font-semibold text-iwanttoColor"
+                className="whitespace-nowrap text-center font-semibold text-iwanttoColor"
                 component="th"
                 scope="row"
               >
@@ -105,11 +109,9 @@ const GoldTable = () => {
         </TableBody>
       </Table>
       <div className="block">
-        <div className="flex items-center justify-center p-2">
+        <div className="flex items-center justify-center space-x-3 p-4">
           <div>
-            <p className="text-md mr-3 cursor-pointer text-iwanttoColor">
-              View All
-            </p>
+            <p className="text-md cursor-pointer text-iwanttoColor">View All</p>
           </div>
 
           <ArrowForward className="text-iwanttoColor" />
@@ -125,7 +127,7 @@ const ExchangeTable = () => {
       <Table sx={{ minWidth: 250 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell className="text-lg font-bold md:text-sm">
+            <TableCell className="text-center text-lg font-bold md:text-sm">
               Currency
             </TableCell>
             <TableCell
@@ -157,7 +159,7 @@ const ExchangeTable = () => {
               <TableCell
                 component="th"
                 scope="row"
-                className="font-semibold text-iwanttoColor"
+                className="text-center font-semibold text-iwanttoColor"
               >
                 {row.currency}
               </TableCell>
@@ -174,7 +176,7 @@ const ExchangeTable = () => {
           ))}
         </TableBody>
       </Table>
-      <div className="flex items-center justify-center p-2">
+      <div className="flex items-center justify-center space-x-3 p-4">
         <div>
           <p className="text-md mr-3 cursor-pointer text-iwanttoColor">
             View All
@@ -192,7 +194,7 @@ const InterestTable = () => {
       <Table sx={{ minWidth: 250 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell className="text-lg font-semibold md:text-sm">
+            <TableCell className="text-center text-lg font-semibold md:text-sm">
               Term
             </TableCell>
             <TableCell
@@ -230,7 +232,7 @@ const InterestTable = () => {
               <TableCell
                 component="th"
                 scope="row"
-                className="whitespace-nowrap font-semibold text-iwanttoColor"
+                className="whitespace-nowrap text-center font-semibold text-iwanttoColor"
               >
                 {row.termOne}
               </TableCell>
@@ -250,7 +252,7 @@ const InterestTable = () => {
           ))}
         </TableBody>
       </Table>
-      <div className="flex items-center justify-center p-2">
+      <div className="flex items-center justify-center space-x-3 p-4">
         <div>
           <p className="text-md mr-3 cursor-pointer text-iwanttoColor">
             View All
@@ -333,7 +335,7 @@ export default function RatesTable() {
         goldState={enableGoldTable}
         exchangeState={enableExchangeTable}
       />
-      <div className="flex h-full flex-col items-center justify-between">
+      <>
         {enableGoldTable && (
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -358,7 +360,7 @@ export default function RatesTable() {
             <ExchangeTable />
           </motion.div>
         )}
-      </div>
+      </>
     </div>
   );
 }

@@ -32,11 +32,11 @@ const resolvers: Resolvers = {
     servicesFullDetails: (_, {id}, {prisma}) => {
       return prisma.servicesCard.findUnique({where: {id}})
     },
-    promoSlide: (_, {id}, {prisma}) => {
-      return prisma.promoSlide.findUnique({where: {id}})
+    monthlyDeal: (_, {id}, {prisma}) => {
+      return prisma.monthlyDeal.findUnique({where: {id}})
     },
-    promoSlides: (_, __, {prisma}) => {
-      return prisma.promoSlide.findMany()
+    monthlyDeals: (_, __, {prisma}) => {
+      return prisma.monthlyDeal.findMany()
     }
   },
   Mutation: {
@@ -49,6 +49,7 @@ const resolvers: Resolvers = {
         content: input!.content,
         customer: input!.customer,
         type: input!.type,
+        darkImage: input!.darkImage,
       }
     })
     return promotion

@@ -24,12 +24,6 @@ module.exports = {
         cardBg: "rgb(244, 247, 248)",
       },
       spacing: {
-        diamond1: "15.5rem",
-        diamond2: "12.8rem",
-        diamond3: "4.7rem",
-        diamond4: "-3.2rem",
-        dropdownHeight: "auto",
-        dropdownWidth: "auto",
         promotionsHeight: "565px",
         apiSectionHeight: "200px",
       },

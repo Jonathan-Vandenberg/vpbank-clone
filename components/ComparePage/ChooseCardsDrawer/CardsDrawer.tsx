@@ -96,7 +96,7 @@ export default function SwipeableEdgeDrawer() {
             overflow: "auto",
           }}
         >
-          <div className="">
+          <div className="lg:container lg:mx-auto lg:pt-12">
             <CardsScroller data={data} />
           </div>
         </StyledBox>

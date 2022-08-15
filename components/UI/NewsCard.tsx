@@ -54,7 +54,7 @@ const NewsCard = () => {
   }, [width]);
 
   return (
-    <div className="max-h-[580px] bg-body p-2">
+    <div className="max-h-[580px] bg-body p-5">
       <div className="mb-6 flex items-center justify-between border-b-2 p-5 pb-6 pt-4">
         <h2 className="bg-gradient-to-r from-startColor to-endColor bg-clip-text  text-xl font-bold text-transparent md:text-2xl">
           News
@@ -64,7 +64,7 @@ const NewsCard = () => {
 
       <div className="md:flex md:items-start md:justify-center">
         <div className="flex flex-col items-center justify-center space-y-5 md:w-5/12">
-          <div className="">
+          <div className="mr-2">
             <Image
               src={"https://picsum.photos/id/95/600/350"}
               width={600}
@@ -72,7 +72,7 @@ const NewsCard = () => {
               alt="image"
             />
           </div>
-          <div className="flex items-center justify-center p-2">
+          <div className="flex items-center justify-center py-2">
             <Link href={"/news"}>
               <h3 className="cursor-pointer text-lg font-semibold hover:text-iwanttoColor">
                 VPBank recommends customers to be vigilant against Covid-19
@@ -86,11 +86,9 @@ const NewsCard = () => {
           <div className="max-h-[280px] w-7/12 overflow-auto border-l-2 p-6">
             {newsData.map((el, i) => (
               <div key={i} className="space-y-2 border-b-2">
-                <Link href={`/${el.title}`}>
-                  <h3 className="text-md cursor-pointer pt-2 font-semibold hover:text-iwanttoColor">
-                    {el.title}
-                  </h3>
-                </Link>
+                <h3 className="text-md cursor-pointer pt-2 font-semibold hover:text-iwanttoColor">
+                  {el.title}
+                </h3>
                 <p className="pb-6 text-sm text-gray-600">{el.content}</p>
               </div>
             ))}

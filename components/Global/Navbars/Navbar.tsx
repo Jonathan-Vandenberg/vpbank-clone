@@ -56,7 +56,7 @@ const NavbarBottom: NextPage = () => {
         onMouseLeave={handleCloseDropdowns}
       >
         <div className="relative flex h-16 items-center justify-around">
-          <div className="hover:cursor-pointer">
+          <div className="cursor-pointer">
             <Image
               src={VPBank_Logo}
               width="150"
@@ -111,7 +111,7 @@ const NavbarBottom: NextPage = () => {
                   setCorporateDropdown(false);
                 }}
               >
-                Household
+                Lorem
               </a>
               {householdDropdown && (
                 <div
@@ -138,7 +138,7 @@ const NavbarBottom: NextPage = () => {
                   setCorporateDropdown(false);
                 }}
               >
-                SME
+                Lorem
               </a>
               {sMEDropdown && (
                 <div
@@ -165,7 +165,7 @@ const NavbarBottom: NextPage = () => {
                   setCorporateDropdown(!corporateDropdown);
                 }}
               >
-                Corporate
+                Lorem
               </a>
               {corporateDropdown && (
                 <div
@@ -199,34 +199,26 @@ const NavbarBottom: NextPage = () => {
               }}
               className="flex items-center justify-center space-x-8 p-2"
             >
-              <Link href={""}>
-                <div className="text-semibold cursor-pointer">
-                  <BsSearch />
-                </div>
-              </Link>
+              <div className="text-semibold">
+                <BsSearch />
+              </div>
               <Link href={"/favorites"}>
                 <div className="cursor-pointer text-xl text-red-400">
                   <FaHeart />
                 </div>
               </Link>
-              <Link href={""}>
-                <div className="cursor-pointer text-xl">
-                  <FaRegQuestionCircle />
-                </div>
-              </Link>
-              <Link href={""}>
-                <div className="cursor-pointer text-2xl ">
-                  <HiOutlineLocationMarker />
-                </div>
-              </Link>
-              <Link href={""}>
-                <div className="cursor-pointer text-xl">
-                  <FaMobileAlt />
-                </div>
-              </Link>
+              <div className="text-xl">
+                <FaRegQuestionCircle />
+              </div>
+              <div className="text-2xl ">
+                <HiOutlineLocationMarker />
+              </div>
+              <div className="text-xl">
+                <FaMobileAlt />
+              </div>
             </motion.div>
           ) : (
-            <div className="hover:cursor-pointer">
+            <div className="cursor-pointer">
               <Image src={VPBankNeo_Logo} width="190" height="35" alt="logo" />
             </div>
           )}

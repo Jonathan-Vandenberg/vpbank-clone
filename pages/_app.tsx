@@ -1,24 +1,15 @@
 import { ApolloProvider } from "@apollo/client";
-import {
-  AnimatePresence,
-  motion,
-  useAnimation,
-  useAnimationControls,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import type { AppProps } from "next/app";
-import { Provider } from "react-redux";
-import store from "../store/store";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import ChatIcon from "../components/Global/ChatIcon";
-import NavbarAdvertise from "../components/Global/Navbars/NavbarAdvertise";
-import NavbarTop from "../components/Global/Navbars/NavbarTop";
+import { Provider } from "react-redux";
 import { useClient } from "../lib/client";
-import "../src/input.css";
-import SideNavModal from "../components/Global/Navbars/SideNavModal";
+import ChatIcon from "../components/Global/ChatIcon";
 import Footer from "../components/Global/Footer/Footer";
-import Scroll from "react-scroll";
+import SideNavModal from "../components/Global/Navbars/SideNavModal";
+import "../styles/input.css";
+import store from "../store/store";
 
 const ScrollToTop = dynamic(
   () => import("../components/Global/ScrollToTopArrow"),

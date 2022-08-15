@@ -2,7 +2,7 @@ import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
 import Image from "next/image";
 import { FaPlus } from "react-icons/fa";
-import creditcardPlaceholder from "../../../public/cardPlaceholder.png";
+import creditcardPlaceholder from "/Users/jonathanvandenberg/2022/VPBank/public/cardPlaceholder.png";
 import { useAppDispatch } from "../../../redux-hooks/hooks";
 import { changeDrawerState } from "../../../slices/compareDrawerSlice";
 
@@ -10,15 +10,15 @@ export default function CardPlaceholder() {
   const dispatch = useAppDispatch();
 
   return (
-    <Stack className="items-left relative flex h-full w-full flex-col justify-start bg-body outline-none">
+    <Stack className="items-left relative flex flex-col justify-start bg-body outline-none">
       <div className="absolute left-[10px] top-[px] z-10 rounded text-sm">
         <Skeleton className="h-14 w-20" />
       </div>
-      <div className="mx-16 mt-16">
+      <div className="mt-16 flex items-center justify-center px-16">
         <Image
           src={creditcardPlaceholder}
-          width={450}
-          height={270}
+          width={270}
+          height={190}
           alt="vpBank - Card"
         />
       </div>
@@ -28,7 +28,7 @@ export default function CardPlaceholder() {
             <div className=" text-iwanttoColor">
               <Skeleton className="h-8 w-20" />
             </div>
-            <div className=" text-sm font-bold">
+            <div className="text-sm font-bold">
               <Skeleton variant="rectangular" className="h-8 w-36" />
             </div>
           </div>

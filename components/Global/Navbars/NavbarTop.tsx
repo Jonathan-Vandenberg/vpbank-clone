@@ -1,8 +1,6 @@
 import Link from "next/link";
+import { FaHeart, FaMobileAlt, FaRegQuestionCircle } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
-import { FaHeart, FaRegQuestionCircle } from "react-icons/fa";
-import { useAppDispatch } from "../../../redux-hooks/hooks";
-import { FaMobileAlt } from "react-icons/fa";
 
 const style = {
   color: "rgb(196,245,208)",
@@ -17,22 +15,18 @@ const NavbarTop = ({ onMouseEnter }: any) => {
       <div className="hidden lg:grid lg:grid-cols-3">
         <div className="flex items-center justify-evenly  whitespace-nowrap text-sm ">
           <Link href="/about">
-            <a className="text-topNavColor hover:text-white ">About Us</a>
-          </Link>
-
-          <Link href="./investor-relations">
-            <a className="text-topNavColor hover:text-white">
-              Investor Relations
+            <a className="cursor-pointer text-topNavColor hover:text-white">
+              About Us
             </a>
           </Link>
+
+          <a className="text-topNavColor hover:text-white">Lorem</a>
 
           <Link href="./news">
             <a className=" text-topNavColor hover:text-white">News</a>
           </Link>
 
-          <Link href="./recruit">
-            <a className="text-topNavColor hover:text-white">Recruit</a>
-          </Link>
+          <a className="text-topNavColor hover:text-white">Lorem</a>
         </div>
 
         <input
@@ -46,33 +40,27 @@ const NavbarTop = ({ onMouseEnter }: any) => {
               <div className="px-2 text-white">
                 <FaHeart />
               </div>
-              Favourite
+              Favorites
             </a>
           </Link>
 
-          <Link href="/support">
-            <a className="flex items-center text-topNavColor hover:text-white">
-              <div className="p-2 text-lg text-white">
-                <FaRegQuestionCircle />
-              </div>
-              Support
-            </a>
-          </Link>
-
-          <Link href="branches-and-atms">
-            <a className="flex items-center justify-center text-topNavColor hover:text-white">
-              <div className="p-2 text-xl text-white">
-                <HiOutlineLocationMarker />
-              </div>
-              Branches & ATMs
-            </a>
-          </Link>
-
-          <Link href="/mobile">
-            <div className="p-2 text-xl text-white">
-              <FaMobileAlt />
+          <a className="flex items-center text-topNavColor hover:text-white">
+            <div className="p-2 text-lg text-white">
+              <FaRegQuestionCircle />
             </div>
-          </Link>
+            Lorem
+          </a>
+
+          <a className="flex items-center justify-center text-topNavColor hover:text-white">
+            <div className="p-2 text-xl text-white">
+              <HiOutlineLocationMarker />
+            </div>
+            Lorem
+          </a>
+
+          <div className="p-2 text-xl text-white">
+            <FaMobileAlt />
+          </div>
         </div>
       </div>
     </div>

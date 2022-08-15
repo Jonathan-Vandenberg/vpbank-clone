@@ -28,7 +28,7 @@ const style = {
   position: "absolute" as "absolute",
   top: 0,
   left: 0,
-  maxWidth: "415px",
+  maxWidth: "420px",
   height: "100vh",
   bgcolor: "background.paper",
   outline: "none",
@@ -70,7 +70,7 @@ const SideNavModal: NextPage = () => {
   };
 
   const MainMenu = () => (
-    <div className="max-w-[415px] space-y-4">
+    <div className="mx-1 max-w-[420px] space-y-4">
       <div className="flex items-center justify-between">
         <div className="pl-4 font-semibold">Retail</div>
         <div
@@ -107,9 +107,7 @@ const SideNavModal: NextPage = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
-        <div className="pl-4 font-semibold">VPBank Diamond</div>
-      </div>
+      <div className="pl-4 pb-4 font-semibold">VPBank Diamond</div>
 
       <div className="flex items-center justify-center px-4">
         <input
@@ -261,8 +259,8 @@ const SideNavModal: NextPage = () => {
   );
 
   return (
-    <div className="sticky top-0 z-50 flex items-center justify-between bg-white pt-2 sm:px-4 lg:hidden">
-      <div className="p-1">
+    <div className="sticky top-0 z-50 flex items-center justify-between bg-white p-2 sm:px-4 lg:hidden">
+      <div className="cursor-pointer p-1">
         <Image
           src={logo}
           width="150"

@@ -1,4 +1,4 @@
-fragment PromoSlide on PromoSlide {
+fragment MonthlyDeal on MonthlyDeal {
   id
   image
   content

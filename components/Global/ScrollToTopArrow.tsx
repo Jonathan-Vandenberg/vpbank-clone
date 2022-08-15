@@ -38,7 +38,7 @@ const ScrollToTopArrow: NextPage = () => {
         <motion.div
           initial={{ y: 60 }}
           animate={controls}
-          className="fixed  bottom-24 right-9 z-50 h-[34px] w-[34px] rounded-full bg-white"
+          className="fixed  bottom-24 right-9 z-40 h-[34px] w-[34px] rounded-full bg-white"
         >
           <div className="relative">
             <ArrowCircleUpIcon

@@ -26,9 +26,7 @@ const data = [
 
 const TipsStories = () => {
   return (
-    <div className="">
-      <CardSlider data={data} width={300} height={300} scaleOnHover={true} />
-    </div>
+    <CardSlider data={data} width={300} height={300} scaleOnHover={true} />
   );
 };
 

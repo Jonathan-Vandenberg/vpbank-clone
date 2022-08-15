@@ -1,7 +1,0 @@
-# import PromoSlide from './PromoSlideFragment.graphql'
-
-mutation AddPromoSlide($input: PromoSlideInput!) {
-  addPromoSlide(input: $input) {
-    ...PromoSlide
-  }
-}

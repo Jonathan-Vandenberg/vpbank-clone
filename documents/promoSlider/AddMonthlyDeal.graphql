@@ -1,0 +1,7 @@
+# import MonthlyDeal from './MonthlyDealFragment.graphql'
+
+mutation AddMonthlyDeal($input: MonthlyDealInput!) {
+  addMonthlyDeal(input: $input) {
+    ...MonthlyDeal
+  }
+}

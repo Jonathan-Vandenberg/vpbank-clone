@@ -55,7 +55,7 @@ const App = () => {
           <p className="text-md py-3 font-semibold">Savings Account</p>
         </div>
         <p className="cursor-pointer py-1 text-sm text-gray-600 hover:text-iwanttoColor">
-          regular Savings
+          Regular Savings
         </p>
         <p className="cursor-pointer py-1 text-sm  text-gray-600 hover:text-iwanttoColor ">
           Easy Savings

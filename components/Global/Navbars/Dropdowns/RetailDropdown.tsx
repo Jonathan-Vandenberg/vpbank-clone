@@ -9,15 +9,15 @@ interface Props {
 
 const navLinks = [
   { title: "Card Services", href: "/cardservices" },
-  { title: "Debit Card", href: "/DebitCard" },
-  { title: "Loans", href: "/Loans" },
-  { title: "Savings", href: "/Savings" },
-  { title: "Account", href: "/Account" },
-  { title: "E_Banking Services", href: "/E_BankingServices" },
-  { title: "Insurance", href: "/Insurance" },
-  { title: "Personal Services", href: "/PersonalServices" },
-  { title: "VPBank Loyalty", href: "/VPBankLoyalty" },
-  { title: "VPBank Diamond", href: "/VPBankDiamond" },
+  { title: "lorem", href: "/" },
+  { title: "lorem", href: "/" },
+  { title: "lorem", href: "/" },
+  { title: "lorem", href: "/" },
+  { title: "lorem", href: "/" },
+  { title: "lorem", href: "/" },
+  { title: "lorem", href: "/" },
+  { title: "lorem", href: "/" },
+  { title: "lorem", href: "/" },
 ];
 
 const RetailDropdown: NextPage<Props> = ({ leave }) => (

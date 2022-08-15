@@ -11,23 +11,23 @@ datasource db {
 }
 
 model Promotion {
-  id        String   @id @default(cuid())
+  id        String  @id @default(cuid())
   image     String
   title     String
-  content   String
+  content   String  @db.MediumText
   customer  String
   type      String
-  darkImage Boolean?
+  darkImage Boolean
 }
 
-model PromoSlide {
-  id        String   @id @default(cuid())
+model MonthlyDeal {
+  id        String  @id @default(cuid())
   image     String
   title     String
   content   String
   customer  String
   type      String
-  darkImage Boolean?
+  darkImage Boolean
 }
 
 model ServicesCard {
@@ -62,4 +62,5 @@ model ServicesCard {
 enum FavoritesEnum {
   PROMOTION
   SERVICESCARD
+  MONTHLYDEAL
 }

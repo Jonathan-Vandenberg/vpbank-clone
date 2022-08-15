@@ -1,7 +1,7 @@
-# import PromoSlide from "./PromoSlideFragment.graphql"
+# import MonthlyDeal from "./MonthlyDealFragment.graphql"
 
-query PromoSlide($id: ID!) {
-  promoSlide(id: $id) {
-    ...PromoSlide
+query MonthlyDeal($id: ID!) {
+  monthlyDeal(id: $id) {
+    ...MonthlyDeal
   }
 }

@@ -1,14 +1,6 @@
-import {
-  ArrowForwardIos,
-  HdrPlusOutlined,
-  PlusOne,
-  PlusOneOutlined,
-} from "@mui/icons-material";
 import { useState } from "react";
 import Collapsible from "react-collapsible";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
-import { BsFileMinus, BsPlusCircle } from "react-icons/bs";
-import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 import { ServicesCardQuery } from "../../../types";
 import BenifitsTable from "./Tables/BenifitsTable";
 import ConditionsTable from "./Tables/ConditionsTable";
@@ -30,7 +22,7 @@ const ResultsCollapsible = ({
   const [minusConditions, setMinusConditions] = useState(false);
 
   return (
-    <div className="divide-y-[1px]  lg:container lg:mx-auto">
+    <div className="divide-y-[1px]  lg:container lg:mx-auto xl:mt-20">
       <div onClick={() => setMinusOverview(!minusOverview)} className="px-4">
         <Collapsible
           transitionTime={200}
@@ -77,7 +69,7 @@ const ResultsCollapsible = ({
             </div>
           }
         >
-          <OverviewTable data={data} data1={data1} data2={data2} />
+          <BenifitsTable data={data} data1={data1} data2={data2} />
         </Collapsible>
       </div>
 
@@ -102,7 +94,7 @@ const ResultsCollapsible = ({
             </div>
           }
         >
-          <OverviewTable data={data} data1={data1} data2={data2} />
+          <FeaturesTable data={data} data1={data1} data2={data2} />
         </Collapsible>
       </div>
 
@@ -130,7 +122,7 @@ const ResultsCollapsible = ({
             </div>
           }
         >
-          <OverviewTable data={data} data1={data1} data2={data2} />
+          <ConditionsTable data={data} data1={data1} data2={data2} />
         </Collapsible>
       </div>
     </div>

@@ -44,8 +44,8 @@ const MonthlyDealCard: React.FC<IProps> = ({ deal }) => {
   console.log(daysUntilEndOfMonth);
 
   return (
-    <div>
-      <div className="flex items-center justify-center space-x-1 bg-body p-3">
+    <div className="shadow">
+      <div className="flex items-center justify-center space-x-1 bg-body p-3 ">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: [1.1, 0, 1.1] }}
@@ -66,7 +66,7 @@ const MonthlyDealCard: React.FC<IProps> = ({ deal }) => {
             src={deal!.image}
             alt="VPBank Hero Image"
             width={650}
-            height={260}
+            height={300}
             layout="responsive"
             className="object-cover"
           />
@@ -108,7 +108,7 @@ const MonthlyDealCard: React.FC<IProps> = ({ deal }) => {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center space-x-1 bg-body p-4">
+      <div className="flex items-center justify-center space-x-1 bg-body p-4 ">
         <div className="flex items-center justify-center space-x-2 rounded-full border-[1px] border-iwanttoColor p-3">
           <p className="text-iwanttoColor">More Information</p>
           <FaPlus className="text-iwanttoColor" />

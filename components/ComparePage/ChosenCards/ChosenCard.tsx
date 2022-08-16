@@ -45,7 +45,7 @@ const ChosenCard = ({
   return (
     <div
       key={singleCardData?.id}
-      className="mt-2 flex h-full flex-col items-center justify-between shadow-lg"
+      className="mt-2 flex h-full flex-col items-center justify-between shadow-card"
     >
       <div className="relative">
         <div className="relative">

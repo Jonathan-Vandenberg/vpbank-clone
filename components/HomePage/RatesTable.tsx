@@ -314,7 +314,7 @@ export default function RatesTable() {
   const [enableInterestTable, setEnableInterestTable] = useState(true);
 
   return (
-    <div className="h-full shadow">
+    <div className="h-full shadow-card">
       <Nav
         handleInterest={function (): void {
           setEnableInterestTable(true);

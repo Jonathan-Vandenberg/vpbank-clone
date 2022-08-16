@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
@@ -38,17 +39,19 @@ const IconSlider = () => {
 
   const renderSlides = () =>
     icons.map((el, i) => (
-      <div
+      <motion.div
+        whileHover={{ scale: 1.03, y: -10, transition: { duration: 0.3 } }}
+        whileTap={{ scale: 0.97 }}
         key={i}
         className="lg:scale-115 flex cursor-pointer flex-col items-center justify-center p-4 sm:scale-75 sm:p-3 md:scale-90 md:p-4 lg:p-3 xl:scale-100"
       >
         <div className="flex items-center justify-center">
           <Image src={el.image} width={100} height={100} alt="icons" />
         </div>
-        <p className="md:text pt-2 text-center text-sm text-slate-600 xl:text-lg">
+        <p className="pt-2 text-center  text-slate-600 xl:text-lg">
           {el.title}
         </p>
-      </div>
+      </motion.div>
     ));
 
   return (

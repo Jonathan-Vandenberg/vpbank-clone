@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import CardHeader from "./Cardheader";
 
 const newsData = [
   {
@@ -54,17 +55,12 @@ const NewsCard = () => {
   }, [width]);
 
   return (
-    <div className="max-h-[580px] bg-body p-5">
-      <div className="mb-6 flex items-center justify-between border-b-2 p-5 pb-6 pt-4">
-        <h2 className="bg-gradient-to-r from-startColor to-endColor bg-clip-text  text-xl font-bold text-transparent md:text-2xl">
-          News
-        </h2>
-        <p className="cursor-pointer text-iwanttoColor">see more</p>
-      </div>
+    <div className="max-h-[580px] bg-body">
+      <CardHeader className={""} title={"News"} />
 
-      <div className="md:flex md:items-start md:justify-center">
-        <div className="flex flex-col items-center justify-center space-y-5 md:w-5/12">
-          <div className="mr-2">
+      <div className="p-2 md:flex md:items-start md:justify-center">
+        <div className="flex flex-col items-center justify-center space-y-5 p-3 md:w-5/12">
+          <div className="">
             <Image
               src={"https://picsum.photos/id/95/600/350"}
               width={600}
@@ -72,7 +68,7 @@ const NewsCard = () => {
               alt="image"
             />
           </div>
-          <div className="flex items-center justify-center py-2">
+          <div className="flex items-center justify-center">
             <Link href={"/news"}>
               <h3 className="cursor-pointer text-lg font-semibold hover:text-iwanttoColor">
                 VPBank recommends customers to be vigilant against Covid-19
@@ -83,7 +79,7 @@ const NewsCard = () => {
         </div>
 
         {width > 768 && (
-          <div className="max-h-[280px] w-7/12 overflow-auto border-l-2 p-6">
+          <div className="mt-3 max-h-[280px] w-7/12 overflow-auto border-l-2 p-3">
             {newsData.map((el, i) => (
               <div key={i} className="space-y-2 border-b-2">
                 <h3 className="text-md cursor-pointer pt-2 font-semibold hover:text-iwanttoColor">

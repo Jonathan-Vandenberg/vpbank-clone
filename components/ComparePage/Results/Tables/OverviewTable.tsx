@@ -63,14 +63,14 @@ export default function BasicTable({ data, data1, data2 }: IProps) {
         <TableHead>
           <TableRow>
             <TableCell></TableCell>
-            <TableCell align="center" className="font-semibold">
-              {data?.servicesCard?.title}
+            <TableCell align="center">
+              <p className="font-semibold">{data?.servicesCard?.title}</p>
             </TableCell>
-            <TableCell align="center" className="font-semibold">
-              {data1?.servicesCard?.title}
+            <TableCell align="center">
+              <p className="font-semibold">{data1?.servicesCard?.title}</p>
             </TableCell>
-            <TableCell align="center" className="font-semibold">
-              {data2?.servicesCard?.title}
+            <TableCell align="center">
+              <p className="font-semibold">{data2?.servicesCard?.title}</p>
             </TableCell>
           </TableRow>
         </TableHead>
@@ -80,8 +80,8 @@ export default function BasicTable({ data, data1, data2 }: IProps) {
               key={row.name}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell component="th" scope="row" className="font-bold">
-                {row.name}
+              <TableCell component="th" scope="row">
+                <p className="font-semibold">{row.name}</p>
               </TableCell>
               <TableCell align="center" className="text-gray-500">
                 {row.compare1}

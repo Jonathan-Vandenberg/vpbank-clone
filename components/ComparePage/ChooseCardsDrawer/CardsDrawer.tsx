@@ -74,6 +74,7 @@ export default function SwipeableEdgeDrawer() {
             visibility: "visible",
             right: 0,
             left: 0,
+            boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
           }}
         >
           <Typography sx={{ p: 2, color: "text.secondary" }}>

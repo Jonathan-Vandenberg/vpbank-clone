@@ -32,6 +32,9 @@ module.exports = {
         Quicksand: ["Quicksand", "sans-serif"],
         VarelaRound: ["VarelaRound", "sans-serif"],
       },
+      boxShadow: {
+        card: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+      },
     },
   },
   plugins: [],

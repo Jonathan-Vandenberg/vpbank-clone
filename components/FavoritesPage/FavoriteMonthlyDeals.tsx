@@ -24,12 +24,12 @@ const FavoriteMonthlyDeals = () => {
     <>
       <FavoritesHeader
         localStorageKeys={localStorageKeys}
-        favoriteType="Monthly deal favorite"
+        favoriteType="Monthly Deal"
         findMoreLink="/"
       />
-      <div className="lg:container-lg md:px-12 lg:mx-auto">
+      <div className="md:px-12 lg:container lg:mx-auto lg:px-0">
         {localStorageKeys.length > 0 ? (
-          <div className="grid grid-cols-1 gap-5 space-y-8 p-6 md:grid-cols-2 md:space-y-0 md:p-0 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-10 p-6 md:grid-cols-2 md:p-0 xl:grid-cols-3">
             {data?.monthlyDeals?.map((deal) =>
               localStorageKeys.includes(`${deal!.type} - ${deal!.id}`) ? (
                 <MonthlyDealCard deal={deal} />

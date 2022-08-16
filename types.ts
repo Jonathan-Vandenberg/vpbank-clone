@@ -597,40 +597,6 @@ export function useAddMonthlyDealMutation(baseOptions?: Apollo.MutationHookOptio
 export type AddMonthlyDealMutationHookResult = ReturnType<typeof useAddMonthlyDealMutation>;
 export type AddMonthlyDealMutationResult = Apollo.MutationResult<AddMonthlyDealMutation>;
 export type AddMonthlyDealMutationOptions = Apollo.BaseMutationOptions<AddMonthlyDealMutation, AddMonthlyDealMutationVariables>;
-export const MonthlyDealsDocument = gql`
-    query MonthlyDeals {
-  monthlyDeals {
-    ...MonthlyDeal
-  }
-}
-    ${MonthlyDealFragmentDoc}`;
-
-/**
- * __useMonthlyDealsQuery__
- *
- * To run a query within a React component, call `useMonthlyDealsQuery` and pass it any options that fit your needs.
- * When your component renders, `useMonthlyDealsQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useMonthlyDealsQuery({
- *   variables: {
- *   },
- * });
- */
-export function useMonthlyDealsQuery(baseOptions?: Apollo.QueryHookOptions<MonthlyDealsQuery, MonthlyDealsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<MonthlyDealsQuery, MonthlyDealsQueryVariables>(MonthlyDealsDocument, options);
-      }
-export function useMonthlyDealsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MonthlyDealsQuery, MonthlyDealsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<MonthlyDealsQuery, MonthlyDealsQueryVariables>(MonthlyDealsDocument, options);
-        }
-export type MonthlyDealsQueryHookResult = ReturnType<typeof useMonthlyDealsQuery>;
-export type MonthlyDealsLazyQueryHookResult = ReturnType<typeof useMonthlyDealsLazyQuery>;
-export type MonthlyDealsQueryResult = Apollo.QueryResult<MonthlyDealsQuery, MonthlyDealsQueryVariables>;
 export const MonthlyDealDocument = gql`
     query MonthlyDeal($id: ID!) {
   monthlyDeal(id: $id) {
@@ -666,6 +632,40 @@ export function useMonthlyDealLazyQuery(baseOptions?: Apollo.LazyQueryHookOption
 export type MonthlyDealQueryHookResult = ReturnType<typeof useMonthlyDealQuery>;
 export type MonthlyDealLazyQueryHookResult = ReturnType<typeof useMonthlyDealLazyQuery>;
 export type MonthlyDealQueryResult = Apollo.QueryResult<MonthlyDealQuery, MonthlyDealQueryVariables>;
+export const MonthlyDealsDocument = gql`
+    query MonthlyDeals {
+  monthlyDeals {
+    ...MonthlyDeal
+  }
+}
+    ${MonthlyDealFragmentDoc}`;
+
+/**
+ * __useMonthlyDealsQuery__
+ *
+ * To run a query within a React component, call `useMonthlyDealsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useMonthlyDealsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useMonthlyDealsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useMonthlyDealsQuery(baseOptions?: Apollo.QueryHookOptions<MonthlyDealsQuery, MonthlyDealsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<MonthlyDealsQuery, MonthlyDealsQueryVariables>(MonthlyDealsDocument, options);
+      }
+export function useMonthlyDealsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MonthlyDealsQuery, MonthlyDealsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<MonthlyDealsQuery, MonthlyDealsQueryVariables>(MonthlyDealsDocument, options);
+        }
+export type MonthlyDealsQueryHookResult = ReturnType<typeof useMonthlyDealsQuery>;
+export type MonthlyDealsLazyQueryHookResult = ReturnType<typeof useMonthlyDealsLazyQuery>;
+export type MonthlyDealsQueryResult = Apollo.QueryResult<MonthlyDealsQuery, MonthlyDealsQueryVariables>;
 export const AddServicesCardDocument = gql`
     mutation AddServicesCard($input: ServicesCardInput!) {
   addServicesCard(input: $input) {
@@ -831,19 +831,19 @@ export type AddMonthlyDealMutationVariables = Exact<{
 
 export type AddMonthlyDealMutation = { __typename?: 'Mutation', addMonthlyDeal?: { __typename?: 'MonthlyDeal', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage: boolean } | null };
 
-export type MonthlyDealFragment = { __typename?: 'MonthlyDeal', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage: boolean };
-
-export type MonthlyDealsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type MonthlyDealsQuery = { __typename?: 'Query', monthlyDeals?: Array<{ __typename?: 'MonthlyDeal', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage: boolean } | null> | null };
-
 export type MonthlyDealQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
 
 
 export type MonthlyDealQuery = { __typename?: 'Query', monthlyDeal?: { __typename?: 'MonthlyDeal', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage: boolean } | null };
+
+export type MonthlyDealFragment = { __typename?: 'MonthlyDeal', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage: boolean };
+
+export type MonthlyDealsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type MonthlyDealsQuery = { __typename?: 'Query', monthlyDeals?: Array<{ __typename?: 'MonthlyDeal', id: string, image: string, content: string, title: string, customer: string, type: FavoritesEnum, darkImage: boolean } | null> | null };
 
 export type AddServicesCardMutationVariables = Exact<{
   input: ServicesCardInput;

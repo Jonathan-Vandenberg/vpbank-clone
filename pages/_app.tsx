@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <motion.div
           initial={{ y: -48 }}
           animate={{ y: 0 }}
-          transition={{ delay: 0.5, duration: 1 }}
+          transition={{ delay: 2, duration: 1 }}
         >
           <Navbar />
           <SideNavModal />

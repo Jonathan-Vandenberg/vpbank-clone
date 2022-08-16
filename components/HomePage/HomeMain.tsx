@@ -19,7 +19,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export const images = [image1, image2, image3, image4, image5];
 
-const HomeMain = () => {
+const HomeMain = ({ weather }: any) => {
   const [addPromotion] = useAddPromotionMutation();
 
   return (

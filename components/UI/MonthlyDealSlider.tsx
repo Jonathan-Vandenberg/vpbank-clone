@@ -37,7 +37,7 @@ const MonthlyDealSlider = ({ data }: IProps) => {
             src={deal!.image}
             alt="VPBank Hero Image"
             width={650}
-            height={260}
+            height={300}
             layout="responsive"
             className="object-cover"
           />

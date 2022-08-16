@@ -1,9 +1,11 @@
+const axios = require("axios");
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { IconButton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { NextPage } from "next/types";
 import { useEffect, useState } from "react";
+import { AiOutlineConsoleSql } from "react-icons/ai";
 import { FaHeart, FaSun } from "react-icons/fa";
 import { getFromStorage, setToStorage } from "../../lib/localStorageHelper";
 import { useMonthlyDealsQuery, usePromotionsQuery } from "../../types";
@@ -40,7 +42,7 @@ const d = new Date();
 let day = weekday[d.getDay()];
 let month = months[d.getMonth()];
 
-const Promotion: NextPage = () => {
+const Promotion: NextPage = ({ weather }: any) => {
   const [localStorageChange, setLocalStorageChange] = useState(false);
   const [localStorageKeys, setLocalStorageKeys] = useState([""]);
 
@@ -59,6 +61,8 @@ const Promotion: NextPage = () => {
 
     setLocalStorageChange(!localStorageChange);
   };
+
+  console.log(weather);
 
   return (
     <section className="mx-auto">
@@ -80,10 +84,7 @@ const Promotion: NextPage = () => {
             />
           </div>
           <div className="block lg:hidden">
-            <StaticAds
-              handleLocalStorage={handleLocalStorage}
-              localStorageKeys={localStorageKeys}
-            />
+            <StaticAds />
           </div>
         </div>
       </div>
@@ -138,29 +139,46 @@ const ShareYourStory: React.FC = () => {
 };
 
 const Weather: React.FC = () => {
+  const [temp, setTemp] = useState("");
+
+  const options = {
+    method: "GET",
+    url: "https://weatherbit-v1-mashape.p.rapidapi.com/current",
+    params: { lon: "106.6297", lat: "10.823" },
+    headers: {
+      "X-RapidAPI-Key": "238f019ceamsh555090a8d52cec6p1178e5jsn2e7cd458b6c3",
+      "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
+    },
+  };
+
+  axios
+    .request(options)
+    .then(function (response: any) {
+      const temperature = JSON.stringify(response.data.data[0].temp);
+      setTemp(temperature);
+    })
+    .catch(function (error: any) {
+      console.error(error);
+    });
+
   return (
-    <div className="p-4 md:w-1/3">
-      <div className="p-2">
-        <p className="text-xl font-semibold">Hanoi</p>
+    <div className="p-2 md:w-1/3">
+      <div className="w-full p-4">
+        <p className="text-xl font-semibold">Ho Chi Minh City</p>
         <p className="text-sm text-slate-600">
           {day}, {month} {d.getDate()} {d.getFullYear()}
         </p>
       </div>
-      <div className="flex items-center justify-evenly md:justify-evenly">
+      <div className="mt-2 flex items-center justify-evenly">
         <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col">
-          <FaSun className="text-6xl text-yellow-300" />
-          <p className="p-1 text-center text-2xl font-bold">25˚C</p>
+          <FaSun className="text-5xl text-yellow-300" />
+          <p className="p-1 text-center text-2xl font-bold">{temp || "27"}˚C</p>
         </div>
-        <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col">
-          <Image
-            src={happyIcon}
-            width={50}
-            height={50}
-            alt="weather icon"
-            priority
-          />
-          <p className="p-1 md:text-xs">AQI</p>
-          <p className="text-center text-2xl font-bold">50</p>
+        <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col md:items-center md:justify-center md:space-x-0">
+          <p className="border-r-[1px] p-5 text-xl font-thin md:border-r-0 md:border-b-[1px] md:p-[6px] md:text-2xl">
+            AQI
+          </p>
+          <p className="p-1 text-center text-2xl font-bold">50</p>
         </div>
       </div>
     </div>
@@ -233,18 +251,18 @@ const ScrollableAds = ({ handleLocalStorage, localStorageKeys }: AdsProps) => {
   );
 };
 
-const StaticAds = ({ handleLocalStorage, localStorageKeys }: AdsProps) => {
+const StaticAds = () => {
   const { data } = usePromotionsQuery();
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-5 md:grid md:grid-cols-2 md:gap-5 md:space-y-0">
       {data?.promotions
         ?.map((el, i) => (
-          <div className="" key={i}>
+          <div key={i}>
             <PromotionCard data={el} />
           </div>
         ))
-        .slice(0, 3)}
+        .slice(0, 2)}
     </div>
   );
 };

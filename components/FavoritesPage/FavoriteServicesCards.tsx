@@ -23,12 +23,12 @@ const FavoriteServicesCards = () => {
     <>
       <FavoritesHeader
         localStorageKeys={localStorageKeys}
-        favoriteType="Services and Card favorite"
+        favoriteType="Services and Card Favorite"
         findMoreLink="/cardservices"
       />
-      <div className="lg:container-lg p-4 md:px-28 lg:mx-auto">
+      <div className="md:px-12 lg:container lg:mx-auto lg:px-0">
         {localStorageKeys.length > 0 ? (
-          <div className="grid-favorites">
+          <div className="grid-favorites p-6 md:p-0">
             {data?.servicesCards?.map((card) =>
               localStorageKeys.includes(`${card!.type} - ${card!.id}`) ? (
                 <CreditCard data={card} />

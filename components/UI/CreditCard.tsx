@@ -81,17 +81,17 @@ const CreditCard = ({ data }: any) => {
           <p>Compare Cards</p>
         </div>
 
-        <div className="flex items-center justify-between p-2">
-          <div className="flex items-center justify-center space-x-3 p-3 text-iwanttoColor">
-            <p>Apply Now</p>
-            <div>
-              <FaArrowRight />
-            </div>
-          </div>
+        <div className="flex items-center justify-between p-4">
           <div className="flex items-center justify-center space-x-3 p-3 text-iwanttoColor">
             <p>More Information</p>
             <div>
               <FaPlus />
+            </div>
+          </div>
+          <div className="flex items-center justify-center space-x-3 p-3 text-iwanttoColor">
+            <p>Apply Now</p>
+            <div>
+              <FaArrowRight />
             </div>
           </div>
         </div>

@@ -12,6 +12,10 @@
   src: local('VarelaRound'), url(../public/fonts/VarelaRound-Regular.ttf) format('woff2');
 }
 
+*{
+  font-family: "Quicksand", sans-serif;
+}
+
 .input-icons i {
   position: absolute;
 }
@@ -184,7 +188,7 @@
 .grid-favorites {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 2.5rem;
   margin-top: 1rem;
 }
 

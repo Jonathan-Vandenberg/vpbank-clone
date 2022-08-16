@@ -38,7 +38,7 @@ const CardsScroller = ({ data }: any) => {
       {data?.servicesCards?.map((el: any, i: number) => (
         <div
           key={i}
-          className="flex h-full flex-col items-center justify-between shadow-lg"
+          className="flex h-full flex-col items-center justify-between shadow-card"
         >
           <div className="relative">
             <div>

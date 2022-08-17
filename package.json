@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build tailwindcss ./styles/input.css ./dist/output.css",
+    "build": "next build && next export",
     "watch": "next build tailwindcss -i ./input.css -o ./dist/output.css --watch",
     "start": "next start",
     "lint": "next lint",
     "codegen": "graphql-codegen --config codegen.yml",
     "generate": "prisma generate",
     "migrate": "prisma migrate dev",
-    "studio": "prisma studio"
+    "studio": "prisma studio",
+    "deploy": "next build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
@@ -25,7 +26,7 @@
     "@mui/lab": "^5.0.0-alpha.90",
     "@mui/material": "^5.9.0",
     "@mui/system": "^5.9.0",
-    "@next/swc-darwin-arm64": "^12.2.5",
+    "@next/swc-darwin-arm64": "^12.2.2",
     "@prisma/client": "^4.2.1",
     "@reduxjs/toolkit": "^1.8.3",
     "axios": "^0.27.2",

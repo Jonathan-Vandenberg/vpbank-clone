@@ -13,6 +13,10 @@ const nextConfig = {
   },
 };
 
+module.exports = {
+  basePath: "/vpbank-clone",
+};
+
 const withImages = require("next-images");
 module.exports = withImages();
 

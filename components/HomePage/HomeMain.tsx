@@ -7,11 +7,11 @@ import Prize from "./Prize";
 import Promotion from "./Promotion";
 import RatesTable from "./RatesTable";
 import TipsStories from "./TipsAndStories";
-import image1 from "../public/hero/vpHero1.jpeg";
-import image2 from "../public/hero/vpHero2.jpeg";
-import image3 from "../public/hero/vpHero3.jpeg";
-import image4 from "../public/hero/vpHero4.jpeg";
-import image5 from "../public/hero/vpHero5.jpeg";
+import image1 from "../../public/hero/vpHero1.jpeg";
+import image2 from "../../public/hero/vpHero2.jpeg";
+import image3 from "../../public/hero/vpHero3.jpeg";
+import image4 from "../../public/hero/vpHero4.jpeg";
+import image5 from "../../public/hero/vpHero5.jpeg";
 
 import { useAddPromotionMutation } from "../../types";
 import { FavoritesEnum } from "../../types";

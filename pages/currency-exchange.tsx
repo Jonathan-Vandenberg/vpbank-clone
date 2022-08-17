@@ -26,23 +26,23 @@ interface IOptions {
 
 const key = process.env.RAPID_API_KEY;
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const options: IOptions = {
-    params: { from: "USD", to: "VND", q: "1.0" },
-    headers: {
-      "X-RapidAPI-Key": "",
-      "X-RapidAPI-Host": "currency-exchange.p.rapidapi.com",
-    },
-  };
+// export const getServerSideProps: GetServerSideProps = async () => {
+//   const options: IOptions = {
+//     params: { from: "USD", to: "VND", q: "1.0" },
+//     headers: {
+//       "X-RapidAPI-Key": "",
+//       "X-RapidAPI-Host": "currency-exchange.p.rapidapi.com",
+//     },
+//   };
 
-  const exchange = await axios.get(
-    "https://currency-exchange.p.rapidapi.com/exchange",
-    options
-  );
+//   const exchange = await axios.get(
+//     "https://currency-exchange.p.rapidapi.com/exchange",
+//     options
+//   );
 
-  return {
-    props: {
-      exchange: exchange.data,
-    },
-  };
-};
+//   return {
+//     props: {
+//       exchange: exchange.data,
+//     },
+//   };
+// };

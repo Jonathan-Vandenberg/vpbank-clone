@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import HeroSlideshow from "../UI/HeroSlideshow";
 import NewsCard from "../UI/NewsCard";
 import IconSlider from "./IconSlider";
@@ -14,8 +13,6 @@ import image4 from "../../public/hero/vpHero4.jpeg";
 import image5 from "../../public/hero/vpHero5.jpeg";
 
 import { useAddPromotionMutation } from "../../types";
-import { FavoritesEnum } from "../../types";
-import { v4 as uuidv4 } from "uuid";
 
 export const images = [image1, image2, image3, image4, image5];
 

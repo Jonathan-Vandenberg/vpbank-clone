@@ -1,7 +1,3 @@
-import React from "react";
-import div from "react-collapsible";
-import { FaAngleRight } from "react-icons/fa";
-
 const App = () => {
   return (
     <div className="hidden border-b-2 py-8 px-28 md:container md:mx-auto md:grid md:grid-cols-3 md:px-0 lg:flex lg:items-start lg:justify-evenly">

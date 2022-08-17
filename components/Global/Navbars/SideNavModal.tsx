@@ -13,8 +13,8 @@ import {
   MdOutlineArrowForwardIos,
   MdOutlineArrowBackIos,
 } from "react-icons/md";
-import logo from "/Users/jonathanvandenberg/2022/VPBank/public/VPBank_Logo.svg";
-import neoLogo from "/Users/jonathanvandenberg/2022/VPBank/public/VPBankNeo_Logo.png";
+import logo from "/Users/jonathanvandenberg/2022/VPBank/public/logos/VPBank_Logo.svg";
+import neoLogo from "/Users/jonathanvandenberg/2022/VPBank/public/logos/VPBankNeo_Logo.png";
 import Link from "next/link";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { useState } from "react";

@@ -2,7 +2,7 @@ import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
 import Image from "next/image";
 import { FaPlus } from "react-icons/fa";
-import creditcardPlaceholder from "../../../public/cardPlaceholder.png";
+import creditcardPlaceholder from "../../../public/placeholders/cardPlaceholder.png";
 import { useAppDispatch } from "../../../redux-hooks/hooks";
 import { changeDrawerState } from "../../../slices/compareDrawerSlice";
 

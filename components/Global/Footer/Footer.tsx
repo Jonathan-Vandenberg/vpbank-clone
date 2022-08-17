@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillTelephoneOutboundFill } from "react-icons/bs";
 import { GrMapLocation } from "react-icons/gr";
-import VPBank_Logo from "../../../public/VPBank_Logo.svg";
+import VPBank_Logo from "/Users/jonathanvandenberg/2022/VPBank/public/logos/VPBank_Logo.svg";
 import CollapseMenus from "./CollapseMenus";
 import UnCollapassedMenu from "./UnCollapassedMenu";
 import facebookLogo from "../../../public/social-media/facebook.svg";

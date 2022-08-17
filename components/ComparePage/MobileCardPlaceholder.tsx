@@ -4,7 +4,7 @@ import Image from "next/image";
 import { BsPlus } from "react-icons/bs";
 import { useAppDispatch } from "../../redux-hooks/hooks";
 import { changeDrawerState } from "../../slices/compareDrawerSlice";
-import placeholder from "../../public/cardPlaceholder.png";
+import placeholder from "../../public/placeholders/cardPlaceholder.png";
 
 const MobileCardPlaceholder = () => {
   const dispatch = useAppDispatch();

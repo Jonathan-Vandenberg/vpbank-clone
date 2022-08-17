@@ -1,5 +1,5 @@
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
-import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { NextPage } from "next/types";
 import { useEffect, useState } from "react";
 import * as Scroll from "react-scroll";

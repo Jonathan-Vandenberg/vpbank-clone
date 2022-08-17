@@ -30,7 +30,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const options: IOptions = {
     params: { from: "USD", to: "VND", q: "1.0" },
     headers: {
-      "X-RapidAPI-Key": "238f019ceamsh555090a8d52cec6p1178e5jsn2e7cd458b6c3",
+      "X-RapidAPI-Key": "",
       "X-RapidAPI-Host": "currency-exchange.p.rapidapi.com",
     },
   };

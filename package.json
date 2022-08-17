@@ -4,15 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "watch": "next build tailwindcss -i ./input.css -o ./dist/output.css --watch",
     "start": "next start",
     "lint": "next lint",
     "codegen": "graphql-codegen --config codegen.yml",
     "generate": "prisma generate",
     "migrate": "prisma migrate dev",
-    "studio": "prisma studio",
-    "deploy": "next build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages"
+    "studio": "prisma studio"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",

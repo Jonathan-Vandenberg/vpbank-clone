@@ -64,7 +64,6 @@
     "@types/react-slick": "^0.23.10",
     "@types/uuid": "^8.3.4",
     "autoprefixer": "^10.4.8",
-    "babel-loader": "^8.2.5",
     "eslint": "8.19.0",
     "eslint-config-next": "12.2.2",
     "jest": "^28.1.3",

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { getFromStorage, setToStorage } from "../../lib/localStorageHelper";
-import placeholder from "../../public/placeholders/cardPlaceholder.png";
+import placeholder from "../../public/placeholder.png";
 import { useAppSelector, useAppDispatch } from "../../redux-hooks/hooks";
 import { removeCard } from "../../slices/cardIdSlice";
 import { ServicesCard } from "../../types";

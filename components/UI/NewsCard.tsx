@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import CardHeader from "./Cardheader";
+import CardHeader from "./CardHeader";
 
 const newsData = [
   {

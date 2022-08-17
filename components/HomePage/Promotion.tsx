@@ -5,13 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { NextPage } from "next/types";
 import { useEffect, useState } from "react";
-import { AiOutlineConsoleSql } from "react-icons/ai";
 import { FaHeart, FaSun } from "react-icons/fa";
 import { getFromStorage, setToStorage } from "../../lib/localStorageHelper";
 import { useMonthlyDealsQuery, usePromotionsQuery } from "../../types";
 import MonthlyDealSlider from "../UI/MonthlyDealSlider";
 import PromotionCard from "../UI/PromotionCard";
-import happyIcon from "/Users/jonathanvandenberg/2022/VPBank/public/happyIcon.svg";
 
 const weekday = [
   "Sunday",
@@ -70,7 +68,7 @@ const Promotion: NextPage = ({ weather }: any) => {
       <div className="md:h-promotionHeight grid-cols-3 space-y-8 md:flex-col lg:grid lg:space-y-0">
         <div className="md-space-x-4 space-y-8 md:col-span-2 md:flex-col  lg:space-y-3">
           <MonthlyDealSlider data={data} />
-          <div className="flex flex-col divide-y-[1px] bg-white md:flex-row md:divide-x-[1px]">
+          <div className="flex flex-col divide-y-[1px] bg-white md:flex-row md:divide-y-0 md:divide-x-[1px]">
             <Weather />
             <ShareYourStory />
             <ContactUs />
@@ -141,25 +139,27 @@ const ShareYourStory: React.FC = () => {
 const Weather: React.FC = () => {
   const [temp, setTemp] = useState("");
 
-  const options = {
-    method: "GET",
-    url: "https://weatherbit-v1-mashape.p.rapidapi.com/current",
-    params: { lon: "106.6297", lat: "10.823" },
-    headers: {
-      "X-RapidAPI-Key": "238f019ceamsh555090a8d52cec6p1178e5jsn2e7cd458b6c3",
-      "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
-    },
-  };
+  useEffect(() => {
+    const options = {
+      method: "GET",
+      url: "https://weatherbit-v1-mashape.p.rapidapi.com/current",
+      params: { lon: "106.6297", lat: "10.823" },
+      headers: {
+        "X-RapidAPI-Key": "238f019ceamsh555090a8d52cec6p1178e5jsn2e7cd458b6c3",
+        "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
+      },
+    };
 
-  axios
-    .request(options)
-    .then(function (response: any) {
-      const temperature = JSON.stringify(response.data.data[0].temp);
-      setTemp(temperature);
-    })
-    .catch(function (error: any) {
-      console.error(error);
-    });
+    axios
+      .request(options)
+      .then(function (response: any) {
+        const temperature = JSON.stringify(response.data.data[0].temp);
+        setTemp(temperature);
+      })
+      .catch(function (error: any) {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <div className="p-2 md:w-1/3">
@@ -172,7 +172,7 @@ const Weather: React.FC = () => {
       <div className="mt-2 flex items-center justify-evenly">
         <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col">
           <FaSun className="text-5xl text-yellow-300" />
-          <p className="p-1 text-center text-2xl font-bold">{temp || "27"}˚C</p>
+          <p className="p-1 text-center text-2xl font-bold">{temp || ""}˚C</p>
         </div>
         <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col md:items-center md:justify-center md:space-x-0">
           <p className="border-r-[1px] p-5 text-xl font-thin md:border-r-0 md:border-b-[1px] md:p-[6px] md:text-2xl">

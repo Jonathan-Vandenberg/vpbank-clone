@@ -1,7 +1,6 @@
-import type { NextPage } from "next";
 import HomeMain from "../components/HomePage/HomeMain";
 
-const Home: NextPage = () => {
+const App = () => {
   return (
     <>
       <HomeMain />
@@ -9,4 +8,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default App;

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import CardHeader from "../UI/Cardheader";
+import CardHeader from "../UI/CardHeader";
 import HeroSlideshow from "../UI/HeroSlideshow";
 
 const Prize = () => {

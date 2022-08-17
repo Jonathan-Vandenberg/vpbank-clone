@@ -5,7 +5,7 @@ interface IProps {
   title: string;
 }
 
-const CardHeader: React.FC<IProps> = ({ className, title }) => {
+const App: React.FC<IProps> = ({ className, title }) => {
   return (
     <div className={className}>
       <div className="flex items-center justify-between border-b-2 p-5">
@@ -18,4 +18,4 @@ const CardHeader: React.FC<IProps> = ({ className, title }) => {
   );
 };
 
-export default CardHeader;
+export default App;

@@ -6,6 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { NextPage } from "next/types";
 import { useState } from "react";
 
@@ -110,9 +111,11 @@ const GoldTable = () => {
       </Table>
       <div className="block">
         <div className="flex items-center justify-center space-x-3 p-4">
-          <div>
-            <p className="text-md cursor-pointer text-iwanttoColor">View All</p>
-          </div>
+          <Link href={"/currency-exchange"}>
+            <p className="text-md cursor-pointer text-iwanttoColor">
+              Currency Exchange
+            </p>
+          </Link>
 
           <ArrowForward className="text-iwanttoColor" />
         </div>
@@ -177,11 +180,11 @@ const ExchangeTable = () => {
         </TableBody>
       </Table>
       <div className="flex items-center justify-center space-x-3 p-4">
-        <div>
-          <p className="text-md mr-3 cursor-pointer text-iwanttoColor">
-            View All
+        <Link href={"/currency-exchange"}>
+          <p className="text-md cursor-pointer text-iwanttoColor">
+            Currency Exchange
           </p>
-        </div>
+        </Link>
         <ArrowForward className="text-iwanttoColor" />
       </div>
     </TableContainer>
@@ -253,11 +256,11 @@ const InterestTable = () => {
         </TableBody>
       </Table>
       <div className="flex items-center justify-center space-x-3 p-4">
-        <div>
-          <p className="text-md mr-3 cursor-pointer text-iwanttoColor">
-            View All
+        <Link href={"/currency-exchange"}>
+          <p className="text-md cursor-pointer text-iwanttoColor">
+            Currency Exchange
           </p>
-        </div>
+        </Link>
         <ArrowForward className="text-iwanttoColor" />
       </div>
     </TableContainer>

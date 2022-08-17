@@ -1,7 +1,7 @@
 import { createServer } from "@graphql-yoga/node"
 import { join } from "path"
 import { readFileSync } from "fs"
-import { prisma } from '../../lib/prisma'
+import prisma from '../../lib/prisma'
 import type { PrismaClient } from '@prisma/client'
 import { Resolvers } from '../../types'
 

@@ -1,5 +1,5 @@
 import { Menu } from "@mui/icons-material";
-import Skeleton from "@mui/lab/Skeleton";
+import Skeleton from "@mui/material/Skeleton";
 import Image from "next/image";
 import { BsPlus } from "react-icons/bs";
 import { useAppDispatch } from "../../redux-hooks/hooks";

@@ -6,7 +6,7 @@ import { FaHeart } from "react-icons/fa";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider from "react-slick";
 import { getFromStorage, setToStorage } from "../../lib/localStorageHelper";
-import CardHeader from "./Cardheader";
+import CardHeader from "./CardHeader";
 
 interface Props {
   /**Array of objects containing an image, id, title and content */

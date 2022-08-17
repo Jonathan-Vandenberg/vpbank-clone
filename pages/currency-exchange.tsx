@@ -12,19 +12,19 @@ const CurrencyExchange = ({ exchange }: any) => {
 
 export default CurrencyExchange;
 
-interface IOptions {
-  params: {
-    from: string;
-    to: string;
-    q: string;
-  };
-  headers: {
-    "X-RapidAPI-Key": string;
-    "X-RapidAPI-Host": string;
-  };
-}
+// interface IOptions {
+//   params: {
+//     from: string;
+//     to: string;
+//     q: string;
+//   };
+//   headers: {
+//     "X-RapidAPI-Key": string;
+//     "X-RapidAPI-Host": string;
+//   };
+// }
 
-const key = process.env.RAPID_API_KEY;
+// const key = process.env.RAPID_API_KEY;
 
 // export const getServerSideProps: GetServerSideProps = async () => {
 //   const options: IOptions = {

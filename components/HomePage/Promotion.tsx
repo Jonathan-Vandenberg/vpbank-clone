@@ -145,7 +145,7 @@ const Weather: React.FC = () => {
       url: "https://weatherbit-v1-mashape.p.rapidapi.com/current",
       params: { lon: "106.6297", lat: "10.823" },
       headers: {
-        "X-RapidAPI-Key": `${process.env.RAPID_API_KEY}`,
+        "X-RapidAPI-Key": process.env.RAPID_API_KEY,
         "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
       },
     };

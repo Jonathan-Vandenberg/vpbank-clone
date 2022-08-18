@@ -83,37 +83,31 @@ const SideNavModal: NextPage = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
-        <div
-          onClick={() => setShowHouseholdMenu(!showHouseholdMenu)}
-          className="pl-4 font-semibold"
-        >
-          HouseHold Business
-        </div>
+      <div
+        onClick={() => setShowHouseholdMenu(!showHouseholdMenu)}
+        className="flex items-center justify-between"
+      >
+        <div className="pl-4 font-semibold">HouseHold Business</div>
         <div className="px-4">
           <MdOutlineArrowForwardIos />
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
-        <div
-          onClick={() => setShowSMEMenu(!showSMEMenu)}
-          className="pl-4 font-semibold"
-        >
-          SMEs
-        </div>
+      <div
+        onClick={() => setShowSMEMenu(!showSMEMenu)}
+        className="flex items-center justify-between"
+      >
+        <div className="pl-4 font-semibold">SMEs</div>
         <div className="px-4">
           <MdOutlineArrowForwardIos />
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
-        <div
-          onClick={() => setShowCorporate(!showCorporate)}
-          className="pl-4 font-semibold"
-        >
-          Corporate
-        </div>
+      <div
+        onClick={() => setShowCorporate(!showCorporate)}
+        className="flex items-center justify-between"
+      >
+        <div className="pl-4 font-semibold">Corporate</div>
         <div className="px-4">
           <MdOutlineArrowForwardIos />
         </div>
@@ -193,7 +187,9 @@ const SideNavModal: NextPage = () => {
       </div>
 
       <div className="space-y-3 px-5">
-        <div className="ml-3">Card Services</div>
+        <div className="ml-3 space-y-3" onClick={() => handleClose()}>
+          <Link href={"/cardservices"}>Card Services</Link>
+        </div>
         <div className="ml-3">Debit Card</div>
         <div className="ml-3">Loans</div>
         <div className="ml-3">Savings</div>

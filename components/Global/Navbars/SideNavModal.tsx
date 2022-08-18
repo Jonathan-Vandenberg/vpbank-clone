@@ -70,12 +70,12 @@ const SideNavModal: NextPage = () => {
   };
 
   const MainMenu = () => (
-    <div className="mx-1 w-[80vw] space-y-4">
+    <div className="mx-1 w-[80vw] space-y-5">
       <div
         onClick={() => {
           setShowRetail(!showRetail);
         }}
-        className="flex items-center justify-between"
+        className="flex items-center justify-between pt-2"
       >
         <div className="pl-4 font-semibold">Retail</div>
         <div className="px-4">
@@ -122,7 +122,7 @@ const SideNavModal: NextPage = () => {
         />
       </div>
 
-      <div className="flex items-center justify-center p-4">
+      <div className="flex items-center justify-center p-2">
         <Image src={neoLogo} width="150" height="30" alt="logo" />
       </div>
 
@@ -189,12 +189,8 @@ const SideNavModal: NextPage = () => {
       </div>
 
       <div className="flex flex-col items-start justify-center">
-        <Link
-          href={"/cardservices"}
-          className="w-full px-3 pl-6 pt-9 font-semibold"
-          onClick={() => handleClose()}
-        >
-          Card Services
+        <Link href={"/cardservices"} onClick={() => handleClose()}>
+          <p className="w-full px-3 pl-6 pt-9 font-semibold">Card Services</p>
         </Link>
         <div
           className="w-full p-3 pl-6 font-semibold"

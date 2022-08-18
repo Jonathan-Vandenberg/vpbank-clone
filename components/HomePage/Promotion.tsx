@@ -139,27 +139,27 @@ const ShareYourStory: React.FC = () => {
 const Weather: React.FC = () => {
   const [temp, setTemp] = useState("");
 
-  // useEffect(() => {
-  //   const options = {
-  //     method: "GET",
-  //     url: "https://weatherbit-v1-mashape.p.rapidapi.com/current",
-  //     params: { lon: "106.6297", lat: "10.823" },
-  //     headers: {
-  //       "X-RapidAPI-Key": "",
-  //       "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
-  //     },
-  //   };
+  useEffect(() => {
+    const options = {
+      method: "GET",
+      url: "https://weatherbit-v1-mashape.p.rapidapi.com/current",
+      params: { lon: "106.6297", lat: "10.823" },
+      headers: {
+        "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+        "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
+      },
+    };
 
-  //   axios
-  //     .request(options)
-  //     .then(function (response: any) {
-  //       const temperature = JSON.stringify(response.data.data[0].temp);
-  //       setTemp(temperature);
-  //     })
-  //     .catch(function (error: any) {
-  //       console.error(error);
-  //     });
-  // }, []);
+    axios
+      .request(options)
+      .then(function (response: any) {
+        const temperature = JSON.stringify(response.data.data[0].temp);
+        setTemp(temperature);
+      })
+      .catch(function (error: any) {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <div className="p-2 md:w-1/3">

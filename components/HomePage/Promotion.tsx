@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { IconButton } from "@mui/material";
 import Image from "next/image";
@@ -139,27 +139,26 @@ const ShareYourStory: React.FC = () => {
 const Weather: React.FC = () => {
   const [temp, setTemp] = useState("");
 
-  useEffect(() => {
-    const options = {
-      method: "GET",
-      url: "https://weatherbit-v1-mashape.p.rapidapi.com/current",
-      params: { lon: "106.6297", lat: "10.823" },
-      headers: {
-        "X-RapidAPI-Key": process.env.RAPID_API_KEY,
-        "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
-      },
-    };
+  // const options = {
+  //   method: "GET",
+  //   url: "https://weatherbit-v1-mashape.p.rapidapi.com/current",
+  //   params: { lon: "106.6297", lat: "10.823" },
+  //   headers: {
+  //     //@ts-ignore
+  //     "X-RapidAPI-Key": "",
+  //     "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
+  //   },
+  // };
 
-    axios
-      .request(options)
-      .then(function (response: any) {
-        const temperature = JSON.stringify(response.data.data[0].temp);
-        setTemp(temperature);
-      })
-      .catch(function (error: any) {
-        console.error(error);
-      });
-  }, []);
+  // axios
+  //   .request(options)
+  //   .then(function (response: any) {
+  //     const temperature = JSON.stringify(response.data.data[0].temp);
+  //     setTemp(temperature);
+  //   })
+  //   .catch(function (error: any) {
+  //     console.error(error);
+  //   });
 
   return (
     <div className="p-2 md:w-1/3">
@@ -172,7 +171,7 @@ const Weather: React.FC = () => {
       <div className="mt-2 flex items-center justify-evenly">
         <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col">
           <FaSun className="text-5xl text-yellow-300" />
-          <p className="p-1 text-center text-2xl font-bold">{temp || ""}˚C</p>
+          <p className="p-1 text-center text-2xl font-bold">{temp || 27}˚C</p>
         </div>
         <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col md:items-center md:justify-center md:space-x-0">
           <p className="border-r-[1px] p-5 text-xl font-thin md:border-r-0 md:border-b-[1px] md:p-[6px] md:text-2xl">

@@ -70,7 +70,7 @@ const SideNavModal: NextPage = () => {
   };
 
   const MainMenu = () => (
-    <div className="mx-1 max-w-[420px] space-y-4">
+    <div className="mx-1 w-[80vw] space-y-4">
       <div
         onClick={() => {
           setShowRetail(!showRetail);
@@ -122,7 +122,7 @@ const SideNavModal: NextPage = () => {
         />
       </div>
 
-      <div className="flex items-center justify-between p-4">
+      <div className="flex items-center justify-center p-4">
         <Image src={neoLogo} width="150" height="30" alt="logo" />
       </div>
 
@@ -189,34 +189,65 @@ const SideNavModal: NextPage = () => {
       </div>
 
       <div className="flex flex-col items-start justify-center">
-        <div className="w-full p-4 pt-9" onClick={() => handleClose()}>
-          <Link href={"/cardservices"}>Card Services</Link>
-        </div>
-        <div className="w-full p-4" onClick={() => handleClose()}>
+        <Link
+          href={"/cardservices"}
+          className="w-full px-3 pl-6 pt-9 font-semibold"
+          onClick={() => handleClose()}
+        >
+          Card Services
+        </Link>
+        <div
+          className="w-full p-3 pl-6 font-semibold"
+          onClick={() => handleClose()}
+        >
           Debit Card
         </div>
-        <div className="w-full p-4" onClick={() => handleClose()}>
+        <div
+          className="w-full p-3 pl-6 font-semibold"
+          onClick={() => handleClose()}
+        >
           Loans
         </div>
-        <div className="w-full p-4" onClick={() => handleClose()}>
+        <div
+          className="w-full p-3 pl-6 font-semibold"
+          onClick={() => handleClose()}
+        >
           Savings
         </div>
-        <div className="w-full p-4" onClick={() => handleClose()}>
+        <div
+          className="w-full p-3 pl-6 font-semibold"
+          onClick={() => handleClose()}
+        >
           Account
         </div>
-        <div className="w-full p-4" onClick={() => handleClose()}>
+        <div
+          className="w-full p-3 pl-6 font-semibold"
+          onClick={() => handleClose()}
+        >
           E-Banking Services
         </div>
-        <div className="w-full p-4" onClick={() => handleClose()}>
+        <div
+          className="w-full p-3 pl-6 font-semibold"
+          onClick={() => handleClose()}
+        >
           Insurance
         </div>
-        <div className="w-full p-4" onClick={() => handleClose()}>
+        <div
+          className="w-full p-3 pl-6 font-semibold"
+          onClick={() => handleClose()}
+        >
           Personal Services
         </div>
-        <div className="w-full p-4" onClick={() => handleClose()}>
+        <div
+          className="w-full p-3 pl-6 font-semibold"
+          onClick={() => handleClose()}
+        >
           VPBank Loyalty
         </div>
-        <div className="w-full p-4" onClick={() => handleClose()}>
+        <div
+          className="w-full p-3 pl-6 font-semibold"
+          onClick={() => handleClose()}
+        >
           VPBank Diamond
         </div>
       </div>

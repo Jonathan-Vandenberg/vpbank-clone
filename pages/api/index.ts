@@ -4,6 +4,7 @@ import { readFileSync } from "fs"
 import prisma from '../../lib/prisma'
 import type { PrismaClient } from '@prisma/client'
 import { Resolvers } from '../../types'
+import { NextApiRequest, NextApiResponse } from "next"
 
 export async function createContext(): Promise<GraphQLContext>{
   return { prisma }
@@ -90,7 +91,7 @@ const resolvers: Resolvers = {
 }
 }
 
-const server = createServer({
+const server = createServer<{req: NextApiRequest; res: NextApiResponse;}>({
   endpoint: "/api",
   schema: {
     typeDefs,

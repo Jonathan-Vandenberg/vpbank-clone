@@ -26,7 +26,7 @@ model MonthlyDeal {
   id        String  @id @default(cuid())
   image     String
   title     String
-  content   String
+  content   String  @db.MediumText
   customer  String
   type      String
   darkImage Boolean
@@ -36,27 +36,27 @@ model ServicesCard {
   id                                    String        @id @default(cuid())
   image                                 String
   title                                 String
-  content                               String
+  content                               String        @db.MediumText
   cardType                              String
   type                                  FavoritesEnum
   creditLimit                           String
   interestRate                          String
   transactionLimit                      String
-  annualFees                            String
+  annualFees                            String        @db.MediumText
   rewardPoints                          Boolean
-  refund                                String
+  refund                                String        @db.MediumText
   freeFlightTickets                     Boolean
   mobiphone                             Boolean
   seperateOffer                         String
   freeCashWithdrawal                    Boolean
-  freeAnnualFees                        String
+  freeAnnualFees                        String        @db.MediumText
   globalPayments                        Boolean
   cardProtectionWith3DSecureText        Boolean
   fourtyFiveDaysMaximumInterestFree     Boolean
   upTo50PercentOff                      Boolean
   installmentPlanWithInterestOf1Percent Boolean
   withdrawMoneyUpTo85Percent            Boolean
-  generalConditions                     String
+  generalConditions                     String        @db.MediumText
   income                                String
   pureCardImage                         String
 }

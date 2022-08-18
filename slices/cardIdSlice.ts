@@ -9,7 +9,7 @@ export const cardIdSlice = createSlice({
   name: 'cardId',
   initialState: {
     // Default cards being show on page load
-    cardId: [ "cl6kptcbl0248fv0grlcp6z1f", "cl6kptcbl0244fv0gkto9tcjs", "cl6kptcbk0230fv0gt59l6iu7"],
+    cardId: [ "cl6yuqjs60041vo0giip2zhp5", "cl6yv8jlh0058vo0ghvqeu1hy", "cl6yvf2z80075vo0g4y9gu1k0"],
   },
   reducers: {
     addCard: (state: CardIdState, action: PayloadAction<string>) => {

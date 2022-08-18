@@ -6,15 +6,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
-import icon1 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-1.png";
-import icon2 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-2.png";
-import icon3 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-3.png";
-import icon4 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-4.png";
-import icon5 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-5.png";
-import icon6 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-6.png";
-import icon7 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-7.png";
-import icon8 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-8.png";
-import icon9 from "/Users/jonathanvandenberg/2022/VPBank/public/sideScrollIcons/retail-icon-9.png";
+import icon1 from "../../public/scollIcons/icon-1.png";
+import icon2 from "../../public/scollIcons/icon-2.png";
+import icon3 from "../../public/scollIcons/icon-3.png";
+import icon4 from "../../public/scollIcons/icon-4.png";
+import icon5 from "../../public/scollIcons/icon-5.png";
+import icon6 from "../../public/scollIcons/icon-6.png";
+import icon7 from "../../public/scollIcons/icon-7.png";
+import icon8 from "../../public/scollIcons/icon-8.png";
+import icon9 from "../../public/scollIcons/icon-9.png";
 
 const icons = [
   { image: icon1, title: "Card Services" },

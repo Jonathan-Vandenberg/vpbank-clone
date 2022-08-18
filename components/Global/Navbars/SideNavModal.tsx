@@ -148,14 +148,16 @@ const SideNavModal: NextPage = () => {
         </div>
       </div>
 
-      <Link href={"/favorites"}>
-        <div className="flex items-center justify-start space-x-2 px-4 pt-1">
-          <div className="text-xl text-red-400">
-            <FaHeart />
+      <div onClick={() => handleClose()}>
+        <Link href={"/favorites"}>
+          <div className="flex items-center justify-start space-x-2 px-4 pt-1">
+            <div className="text-xl text-red-400">
+              <FaHeart />
+            </div>
+            <p>Favorites</p>
           </div>
-          <p>Favorites</p>
-        </div>
-      </Link>
+        </Link>
+      </div>
 
       <Link href={""}>
         <div className="flex items-center justify-start space-x-2 px-4">
@@ -347,7 +349,7 @@ const SideNavModal: NextPage = () => {
         </div>
         <button
           ref={btnRef as any}
-          onClick={openMenu}
+          onClick={() => openMenu()}
           id="menu-btn"
           className="hamburger align-center top-1 right-1 z-50 flex flex-col justify-center focus:outline-none lg:hidden"
         >

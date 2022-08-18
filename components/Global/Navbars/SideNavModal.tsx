@@ -28,7 +28,7 @@ const style = {
   position: "absolute" as "absolute",
   top: 0,
   left: 0,
-  maxWidth: "420px",
+  maxWidth: "80vw",
   height: "100vh",
   bgcolor: "background.paper",
   outline: "none",
@@ -121,24 +121,28 @@ const SideNavModal: NextPage = () => {
       </div>
 
       <div className="flex items-center justify-evenly whitespace-nowrap">
+        <Link href="/compare">
+          <a className="px-4">Compare Cards</a>
+        </Link>
+
         <Link href="/about">
           <a className="px-4">About Us</a>
         </Link>
 
-        <Link href="./investor-relations">
+        <div>
           <a className="px-4">Investor Relations</a>
-        </Link>
+        </div>
 
-        <Link href="./news">
+        <div>
           <a className="px-4">News</a>
-        </Link>
+        </div>
 
-        <Link href="./recruit">
+        <div>
           <a className="px-4">Recruit</a>
-        </Link>
+        </div>
       </div>
 
-      <Link href={""}>
+      <Link href={"/favorites"}>
         <div className="flex items-center justify-start space-x-2 px-4 pt-4">
           <div className="text-xl text-red-400">
             <FaHeart />

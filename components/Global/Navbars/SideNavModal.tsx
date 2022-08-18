@@ -87,7 +87,7 @@ const SideNavModal: NextPage = () => {
         onClick={() => setShowHouseholdMenu(!showHouseholdMenu)}
         className="flex items-center justify-between"
       >
-        <div className="pl-4 font-semibold">HouseHold Business</div>
+        <div className="pl-4 font-semibold">Lorem HouseHold Business</div>
         <div className="px-4">
           <MdOutlineArrowForwardIos />
         </div>
@@ -97,7 +97,7 @@ const SideNavModal: NextPage = () => {
         onClick={() => setShowSMEMenu(!showSMEMenu)}
         className="flex items-center justify-between"
       >
-        <div className="pl-4 font-semibold">SMEs</div>
+        <div className="pl-4 font-semibold">Lorem SMEs</div>
         <div className="px-4">
           <MdOutlineArrowForwardIos />
         </div>
@@ -107,13 +107,13 @@ const SideNavModal: NextPage = () => {
         onClick={() => setShowCorporate(!showCorporate)}
         className="flex items-center justify-between"
       >
-        <div className="pl-4 font-semibold">Corporate</div>
+        <div className="pl-4 font-semibold">Lorem Corporate</div>
         <div className="px-4">
           <MdOutlineArrowForwardIos />
         </div>
       </div>
 
-      <div className="pl-4 pb-1 font-semibold">VPBank Diamond</div>
+      <div className="pl-4 pb-1 font-semibold">Lorem VPBank Diamond</div>
 
       <div className="flex items-center justify-center px-4">
         <input
@@ -136,7 +136,7 @@ const SideNavModal: NextPage = () => {
         </Link>
 
         <div>
-          <a className="px-4">Investor Relations</a>
+          <a className="px-4">Lorem Investor Relations</a>
         </div>
 
         <div>
@@ -144,16 +144,16 @@ const SideNavModal: NextPage = () => {
         </div>
 
         <div>
-          <a className="px-4">Recruit</a>
+          <a className="px-4">Lorem Recruit</a>
         </div>
       </div>
 
       <Link href={"/favorites"}>
-        <div className="flex items-center justify-start space-x-2 px-4 pt-4">
+        <div className="flex items-center justify-start space-x-2 px-4 pt-1">
           <div className="text-xl text-red-400">
             <FaHeart />
           </div>
-          <p>favourites</p>
+          <p>Favorites</p>
         </div>
       </Link>
 
@@ -162,7 +162,7 @@ const SideNavModal: NextPage = () => {
           <div className="text-xl">
             <FaRegQuestionCircle />
           </div>
-          <p>Support</p>
+          <p>Lorem Support</p>
         </div>
       </Link>
 
@@ -171,7 +171,7 @@ const SideNavModal: NextPage = () => {
           <div className="text-xl">
             <HiOutlineLocationMarker />
           </div>
-          <p>Branches & ATMs</p>
+          <p>Lorem Branches & ATMs</p>
         </div>
       </Link>
     </div>
@@ -189,62 +189,68 @@ const SideNavModal: NextPage = () => {
       </div>
 
       <div className="flex flex-col items-start justify-center">
-        <Link href={"/cardservices"} onClick={() => handleClose()}>
-          <p className="w-full p-3 pl-6 pt-6 font-semibold">Card Services</p>
-        </Link>
+        <div
+          onClick={() => handleClose()}
+          className="w-full p-3 pl-6 pt-6 font-semibold"
+        >
+          <Link href={"/cardservices"}>
+            <p className="font-semibold">Card Services</p>
+          </Link>
+        </div>
+
         <div
           className="w-full p-3 pl-6 font-semibold"
           onClick={() => handleClose()}
         >
-          Debit Card
+          Lorem Debit Card
         </div>
         <div
           className="w-full p-3 pl-6 font-semibold"
           onClick={() => handleClose()}
         >
-          Loans
+          Lorem Loans
         </div>
         <div
           className="w-full p-3 pl-6 font-semibold"
           onClick={() => handleClose()}
         >
-          Savings
+          Lorem Savings
         </div>
         <div
           className="w-full p-3 pl-6 font-semibold"
           onClick={() => handleClose()}
         >
-          Account
+          Lorem Account
         </div>
         <div
           className="w-full p-3 pl-6 font-semibold"
           onClick={() => handleClose()}
         >
-          E-Banking Services
+          Lorem E-Banking Services
         </div>
         <div
           className="w-full p-3 pl-6 font-semibold"
           onClick={() => handleClose()}
         >
-          Insurance
+          Lorem Insurance
         </div>
         <div
           className="w-full p-3 pl-6 font-semibold"
           onClick={() => handleClose()}
         >
-          Personal Services
+          Lorem Personal Services
         </div>
         <div
           className="w-full p-3 pl-6 font-semibold"
           onClick={() => handleClose()}
         >
-          VPBank Loyalty
+          Lorem VPBank Loyalty
         </div>
         <div
           className="w-full p-3 pl-6 font-semibold"
           onClick={() => handleClose()}
         >
-          VPBank Diamond
+          Lorem VPBank Diamond
         </div>
       </div>
     </div>
@@ -259,14 +265,16 @@ const SideNavModal: NextPage = () => {
         >
           <MdOutlineArrowBackIos />
         </div>
-        <div className="p-2 font-semibold text-iwanttoColor">Household</div>
+        <div className="p-2 font-semibold text-iwanttoColor">
+          Lorem Household
+        </div>
       </div>
 
       <div className="space-y-3 px-5">
-        <div className="ml-3">Unsecured Loan</div>
-        <div className="ml-3">Secured Loans</div>
-        <div className="ml-3">Bank Assurance</div>
-        <div className="ml-3">Card Services</div>
+        <div className="ml-3">Lorem Unsecured Loan</div>
+        <div className="ml-3">Lorem Secured Loans</div>
+        <div className="ml-3">Lorem Bank Assurance</div>
+        <div className="ml-3">Lorem Card Services</div>
       </div>
     </div>
   );
@@ -277,20 +285,20 @@ const SideNavModal: NextPage = () => {
         <div onClick={() => setShowSMEMenu(!showSMEMenu)} className="p-2">
           <MdOutlineArrowBackIos />
         </div>
-        <div className="p-2 font-semibold text-iwanttoColor">SME</div>
+        <div className="p-2 font-semibold text-iwanttoColor">Lorem SME</div>
       </div>
 
       <div className="space-y-3 px-5">
-        <div className="ml-3">Account Service</div>
-        <div className="ml-3">Business Loans</div>
-        <div className="ml-3">VPBIZ Payment Card</div>
-        <div className="ml-3">Card Payment Services</div>
-        <div className="ml-3">Payment Service</div>
-        <div className="ml-3">Trade Finance</div>
-        <div className="ml-3">Deposit Products</div>
-        <div className="ml-3">Online Chiropractic</div>
-        <div className="ml-3">Online Disbursement</div>
-        <div className="ml-3">Business Account Online</div>
+        <div className="ml-3">Lorem Account Service</div>
+        <div className="ml-3">Lorem Business Loans</div>
+        <div className="ml-3">Lorem VPBIZ Payment Card</div>
+        <div className="ml-3">Lorem Card Payment Services</div>
+        <div className="ml-3">Lorem Payment Service</div>
+        <div className="ml-3">Lorem Trade Finance</div>
+        <div className="ml-3">Lorem Deposit Products</div>
+        <div className="ml-3">Lorem Online Chiropractic</div>
+        <div className="ml-3">Lorem Online Disbursement</div>
+        <div className="ml-3">Lorem Business Account Online</div>
       </div>
     </div>
   );
@@ -301,18 +309,20 @@ const SideNavModal: NextPage = () => {
         <div onClick={() => setShowCorporate(!showCorporate)} className="p-2">
           <MdOutlineArrowBackIos />
         </div>
-        <div className="p-2 font-semibold text-iwanttoColor">Corporate</div>
+        <div className="p-2 font-semibold text-iwanttoColor">
+          Lorem Corporate
+        </div>
       </div>
 
       <div className="space-y-3 px-5">
-        <div className="ml-3">Guarantee</div>
-        <div className="ml-3">Loans</div>
-        <div className="ml-3">Services and Trade Finance</div>
-        <div className="ml-3">Account services</div>
-        <div className="ml-3">Card Services</div>
-        <div className="ml-3">Financial Market Products</div>
-        <div className="ml-3">Internet Banking</div>
-        <div className="ml-3">Email Transactions</div>
+        <div className="ml-3">Lorem Guarantee</div>
+        <div className="ml-3">Lorem Loans</div>
+        <div className="ml-3">Lorem Services and Trade Finance</div>
+        <div className="ml-3">Lorem Account services</div>
+        <div className="ml-3">Lorem Card Services</div>
+        <div className="ml-3">Lorem Financial Market Products</div>
+        <div className="ml-3">Lorem Internet Banking</div>
+        <div className="ml-3">Lorem Email Transactions</div>
       </div>
     </div>
   );

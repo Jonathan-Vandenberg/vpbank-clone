@@ -70,7 +70,7 @@ const SideNavModal: NextPage = () => {
   };
 
   const MainMenu = () => (
-    <div className="mx-1 w-[80vw] space-y-5">
+    <div className="h-[screen] w-[80vw] space-y-5">
       <div
         onClick={() => {
           setShowRetail(!showRetail);
@@ -113,7 +113,7 @@ const SideNavModal: NextPage = () => {
         </div>
       </div>
 
-      <div className="pl-4 pb-4 font-semibold">VPBank Diamond</div>
+      <div className="pl-4 pb-1 font-semibold">VPBank Diamond</div>
 
       <div className="flex items-center justify-center px-4">
         <input
@@ -122,7 +122,7 @@ const SideNavModal: NextPage = () => {
         />
       </div>
 
-      <div className="flex items-center justify-center p-2">
+      <div className="flex items-center justify-center">
         <Image src={neoLogo} width="150" height="30" alt="logo" />
       </div>
 
@@ -190,7 +190,7 @@ const SideNavModal: NextPage = () => {
 
       <div className="flex flex-col items-start justify-center">
         <Link href={"/cardservices"} onClick={() => handleClose()}>
-          <p className="w-full px-3 pl-6 pt-9 font-semibold">Card Services</p>
+          <p className="w-full p-3 pl-6 pt-6 font-semibold">Card Services</p>
         </Link>
         <div
           className="w-full p-3 pl-6 font-semibold"

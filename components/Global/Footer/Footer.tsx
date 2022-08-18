@@ -19,9 +19,8 @@ const Footer = () => {
     <>
       <motion.div
         className="pt-12"
-        initial={{ y: 20, opacity: 0 }}
+        initial={{ opacity: 0 }}
         whileInView={{
-          y: 0,
           opacity: 1,
           transition: {
             duration: 0.6,

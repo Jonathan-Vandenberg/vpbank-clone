@@ -38,7 +38,7 @@ const IWantTo = () => {
               Unsecured Loans
             </div>
             <div className="p-6 text-lg font-bold text-iwanttoColor md:text-xl ">
-              Register an Account and Ebank
+              Register an Account
             </div>
             <div className="p-6 text-lg font-bold text-iwanttoColor md:text-xl ">
               Support Now

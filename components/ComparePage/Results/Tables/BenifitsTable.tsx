@@ -27,9 +27,9 @@ export default function BasicTable({ data, data1, data2 }: IProps) {
   const rows = [
     createData(
       "Reward Points",
-      data?.servicesCard?.rewardPoints ? "Yes" : "No",
-      data1?.servicesCard?.rewardPoints ? "Yes" : "No",
-      data2?.servicesCard?.rewardPoints ? "Yes" : "No"
+      data ? (data1?.servicesCard?.rewardPoints ? "Yes" : "No") : null,
+      data1 ? (data1?.servicesCard?.rewardPoints ? "Yes" : "No") : null,
+      data2 ? (data1?.servicesCard?.rewardPoints ? "Yes" : "No") : null
     ),
     createData(
       "Refund",
@@ -39,15 +39,15 @@ export default function BasicTable({ data, data1, data2 }: IProps) {
     ),
     createData(
       "Free Flight Tickets",
-      data?.servicesCard?.freeFlightTickets ? "Yes" : "No",
-      data1?.servicesCard?.freeFlightTickets ? "Yes" : "No",
-      data2?.servicesCard?.freeFlightTickets ? "Yes" : "No"
+      data ? (data?.servicesCard?.freeFlightTickets ? "Yes" : "No") : null,
+      data1 ? (data?.servicesCard?.freeFlightTickets ? "Yes" : "No") : null,
+      data2 ? (data?.servicesCard?.freeFlightTickets ? "Yes" : "No") : null
     ),
     createData(
       "Mobifone",
-      data?.servicesCard?.mobiphone ? "Yes" : "No",
-      data1?.servicesCard?.mobiphone ? "Yes" : "No",
-      data2?.servicesCard?.mobiphone ? "Yes" : "No"
+      data ? (data?.servicesCard?.mobiphone ? "Yes" : "No") : null,
+      data1 ? (data?.servicesCard?.mobiphone ? "Yes" : "No") : null,
+      data2 ? (data?.servicesCard?.mobiphone ? "Yes" : "No") : null
     ),
     createData(
       "Separate Offer",
@@ -57,9 +57,9 @@ export default function BasicTable({ data, data1, data2 }: IProps) {
     ),
     createData(
       "Free Cash Withdrawal",
-      data?.servicesCard?.freeCashWithdrawal ? "Yes" : "No",
-      data1?.servicesCard?.freeCashWithdrawal ? "Yes" : "No",
-      data2?.servicesCard?.freeCashWithdrawal ? "Yes" : "No"
+      data ? (data?.servicesCard?.freeCashWithdrawal ? "Yes" : "No") : null,
+      data1 ? (data?.servicesCard?.freeCashWithdrawal ? "Yes" : "No") : null,
+      data2 ? (data?.servicesCard?.freeCashWithdrawal ? "Yes" : "No") : null
     ),
     createData(
       "Free Annual Fee",

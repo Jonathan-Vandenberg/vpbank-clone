@@ -27,39 +27,87 @@ export default function BasicTable({ data, data1, data2 }: IProps) {
   const rows = [
     createData(
       "Global Payment",
-      data?.servicesCard?.globalPayments ? "Yes" : "No",
-      data1?.servicesCard?.globalPayments ? "Yes" : "No",
-      data2?.servicesCard?.globalPayments ? "Yes" : "No"
+      data ? (data?.servicesCard?.globalPayments ? "Yes" : "No") : null,
+      data1 ? (data?.servicesCard?.globalPayments ? "Yes" : "No") : null,
+      data2 ? (data?.servicesCard?.globalPayments ? "Yes" : "No") : null
     ),
     createData(
       "Card Protection With 3D Secure Text",
-      data?.servicesCard?.cardProtectionWith3DSecureText ? "Yes" : "No",
-      data1?.servicesCard?.cardProtectionWith3DSecureText ? "Yes" : "No",
-      data2?.servicesCard?.cardProtectionWith3DSecureText ? "Yes" : "No"
+      data
+        ? data?.servicesCard?.cardProtectionWith3DSecureText
+          ? "Yes"
+          : "No"
+        : null,
+      data1
+        ? data?.servicesCard?.cardProtectionWith3DSecureText
+          ? "Yes"
+          : "No"
+        : null,
+      data2
+        ? data?.servicesCard?.cardProtectionWith3DSecureText
+          ? "Yes"
+          : "No"
+        : null
     ),
     createData(
       "45 Days Maximum Interest Free",
-      data?.servicesCard?.fourtyFiveDaysMaximumInterestFree ? "Yes" : "No",
-      data1?.servicesCard?.fourtyFiveDaysMaximumInterestFree ? "Yes" : "No",
-      data2?.servicesCard?.fourtyFiveDaysMaximumInterestFree ? "Yes" : "No"
+      data
+        ? data?.servicesCard?.fourtyFiveDaysMaximumInterestFree
+          ? "Yes"
+          : "No"
+        : null,
+      data1
+        ? data?.servicesCard?.fourtyFiveDaysMaximumInterestFree
+          ? "Yes"
+          : "No"
+        : null,
+      data2
+        ? data?.servicesCard?.fourtyFiveDaysMaximumInterestFree
+          ? "Yes"
+          : "No"
+        : null
     ),
     createData(
       "Up To 50 Percent Off",
-      data?.servicesCard?.upTo50PercentOff ? "Yes" : "No",
-      data1?.servicesCard?.upTo50PercentOff ? "Yes" : "No",
-      data2?.servicesCard?.upTo50PercentOff ? "Yes" : "No"
+      data ? (data?.servicesCard?.upTo50PercentOff ? "Yes" : "No") : null,
+      data1 ? (data?.servicesCard?.upTo50PercentOff ? "Yes" : "No") : null,
+      data2 ? (data?.servicesCard?.upTo50PercentOff ? "Yes" : "No") : null
     ),
     createData(
       "Installment Plan With Interest Of 1 Percent",
-      data?.servicesCard?.installmentPlanWithInterestOf1Percent ? "Yes" : "No",
-      data1?.servicesCard?.installmentPlanWithInterestOf1Percent ? "Yes" : "No",
-      data2?.servicesCard?.installmentPlanWithInterestOf1Percent ? "Yes" : "No"
+      data
+        ? data?.servicesCard?.installmentPlanWithInterestOf1Percent
+          ? "Yes"
+          : "No"
+        : null,
+      data1
+        ? data1?.servicesCard?.installmentPlanWithInterestOf1Percent
+          ? "Yes"
+          : "No"
+        : null,
+      data2
+        ? data2?.servicesCard?.installmentPlanWithInterestOf1Percent
+          ? "Yes"
+          : "No"
+        : null
     ),
     createData(
       "Withdraw Money Up To 85 Percents",
-      data?.servicesCard?.withdrawMoneyUpTo85Percent ? "Yes" : "No",
-      data1?.servicesCard?.withdrawMoneyUpTo85Percent ? "Yes" : "No",
-      data2?.servicesCard?.withdrawMoneyUpTo85Percent ? "Yes" : "No"
+      data
+        ? data?.servicesCard?.withdrawMoneyUpTo85Percent
+          ? "Yes"
+          : "No"
+        : null,
+      data1
+        ? data1?.servicesCard?.withdrawMoneyUpTo85Percent
+          ? "Yes"
+          : "No"
+        : null,
+      data2
+        ? data2?.servicesCard?.withdrawMoneyUpTo85Percent
+          ? "Yes"
+          : "No"
+        : null
     ),
   ];
 

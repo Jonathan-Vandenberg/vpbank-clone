@@ -71,38 +71,50 @@ const SideNavModal: NextPage = () => {
 
   const MainMenu = () => (
     <div className="mx-1 max-w-[420px] space-y-4">
-      <div className="flex items-center justify-between">
+      <div
+        onClick={() => {
+          setShowRetail(!showRetail);
+        }}
+        className="flex items-center justify-between"
+      >
         <div className="pl-4 font-semibold">Retail</div>
-        <div
-          className="px-4"
-          onClick={() => {
-            setShowRetail(!showRetail);
-          }}
-        >
+        <div className="px-4">
           <MdOutlineArrowForwardIos />
         </div>
       </div>
 
       <div className="flex items-center justify-between">
-        <div className="pl-4 font-semibold">HouseHold Business</div>
         <div
-          className="px-4"
           onClick={() => setShowHouseholdMenu(!showHouseholdMenu)}
+          className="pl-4 font-semibold"
         >
+          HouseHold Business
+        </div>
+        <div className="px-4">
           <MdOutlineArrowForwardIos />
         </div>
       </div>
 
       <div className="flex items-center justify-between">
-        <div className="pl-4 font-semibold">SMEs</div>
-        <div className="px-4" onClick={() => setShowSMEMenu(!showSMEMenu)}>
+        <div
+          onClick={() => setShowSMEMenu(!showSMEMenu)}
+          className="pl-4 font-semibold"
+        >
+          SMEs
+        </div>
+        <div className="px-4">
           <MdOutlineArrowForwardIos />
         </div>
       </div>
 
       <div className="flex items-center justify-between">
-        <div className="pl-4 font-semibold">Corporate</div>
-        <div className="px-4" onClick={() => setShowCorporate(!showCorporate)}>
+        <div
+          onClick={() => setShowCorporate(!showCorporate)}
+          className="pl-4 font-semibold"
+        >
+          Corporate
+        </div>
+        <div className="px-4">
           <MdOutlineArrowForwardIos />
         </div>
       </div>
@@ -120,7 +132,7 @@ const SideNavModal: NextPage = () => {
         <Image src={neoLogo} width="150" height="30" alt="logo" />
       </div>
 
-      <div className="flex items-center justify-evenly whitespace-nowrap">
+      <div className="flex flex-col items-center justify-evenly space-y-2 whitespace-nowrap">
         <Link href="/compare">
           <a className="px-4">Compare Cards</a>
         </Link>

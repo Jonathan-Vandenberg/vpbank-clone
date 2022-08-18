@@ -23,11 +23,14 @@ const ResultsCollapsible = ({
 
   return (
     <div className="divide-y-[1px]  lg:container lg:mx-auto xl:mt-20">
-      <div onClick={() => setMinusOverview(!minusOverview)} className="px-4">
+      <div className="px-4">
         <Collapsible
           transitionTime={200}
           trigger={
-            <div className="flex items-center justify-between space-x-3 px-8 py-4">
+            <div
+              className="flex items-center justify-between space-x-3 px-8 py-4"
+              onClick={() => setMinusOverview(!minusOverview)}
+            >
               <p className="py-4 text-xl font-bold text-iwanttoColor md:text-2xl lg:text-3xl">
                 Overview
               </p>
@@ -48,11 +51,14 @@ const ResultsCollapsible = ({
         </Collapsible>
       </div>
 
-      <div onClick={() => setMinusBenefits(!minusBenefits)} className="px-4">
+      <div className="px-4">
         <Collapsible
           transitionTime={200}
           trigger={
-            <div className="flex items-center justify-between space-x-3 px-8 py-4">
+            <div
+              className="flex items-center justify-between space-x-3 px-8 py-4"
+              onClick={() => setMinusBenefits(!minusBenefits)}
+            >
               <p className="py-4 text-xl font-bold text-iwanttoColor md:text-2xl lg:text-3xl">
                 Benefits
               </p>
@@ -73,11 +79,14 @@ const ResultsCollapsible = ({
         </Collapsible>
       </div>
 
-      <div onClick={() => setMinusFeatures(!minusFeatures)} className="px-4">
+      <div className="px-4">
         <Collapsible
           transitionTime={200}
           trigger={
-            <div className="flex items-center justify-between space-x-3 px-8 py-4">
+            <div
+              className="flex items-center justify-between space-x-3 px-8 py-4"
+              onClick={() => setMinusFeatures(!minusFeatures)}
+            >
               <p className="py-4 text-xl font-bold text-iwanttoColor md:text-2xl lg:text-3xl">
                 Features
               </p>
@@ -98,14 +107,14 @@ const ResultsCollapsible = ({
         </Collapsible>
       </div>
 
-      <div
-        onClick={() => setMinusConditions(!minusConditions)}
-        className="px-4"
-      >
+      <div className="px-4">
         <Collapsible
           transitionTime={200}
           trigger={
-            <div className="flex items-center justify-between space-x-3 px-8 py-4">
+            <div
+              className="flex items-center justify-between space-x-3 px-8 py-4"
+              onClick={() => setMinusConditions(!minusConditions)}
+            >
               <p className="py-4 text-xl font-bold text-iwanttoColor md:text-2xl lg:text-3xl">
                 Conditions
               </p>

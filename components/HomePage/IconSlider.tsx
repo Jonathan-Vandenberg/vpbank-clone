@@ -57,8 +57,8 @@ const IconSlider = () => {
   return (
     <div className="">
       <Slider
-        slidesToShow={width < 768 ? 4 : width < 1024 ? 6 : 9}
-        slidesToScroll={width < 768 ? 4 : 2}
+        slidesToShow={width < 768 ? 3 : width < 1024 ? 6 : 9}
+        slidesToScroll={width < 768 ? 3 : 2}
         autoplay={false}
         autoplaySpeed={3000}
         arrows={true}

@@ -1,5 +1,6 @@
 import Hero from "../components/UI/HeroStatic";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const NewsPage = () => {
   const { asPath } = useRouter();
@@ -10,7 +11,15 @@ const NewsPage = () => {
     slug: asPath,
   };
 
-  return <Hero heroData={heroData} />;
+  return (
+    <main>
+      <Head>
+        <title>News</title>
+        <meta name="description" content="VPBank News and Updates" />
+      </Head>
+      <Hero heroData={heroData} />
+    </main>
+  );
 };
 
 export default NewsPage;

@@ -26,21 +26,18 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <Head>
+        <meta charSet="UTF-8" />
+        <meta name="keywords" content="title, meta, nextjs" />
+        <meta name="author" content="Jonathan van den berg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <ApolloProvider client={client}>
-        <motion.div
-          initial={{ y: -48 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 2, duration: 1 }}
-        >
-          <Navbar />
-          <SideNavModal />
-          <ScrollToTop />
-          <ChatIcon />
-          <Component {...pageProps} />
-          <Footer />
-        </motion.div>
+        <Navbar />
+        <SideNavModal />
+        <ScrollToTop />
+        <ChatIcon />
+        <Component {...pageProps} />
+        <Footer />
       </ApolloProvider>
     </Provider>
   );

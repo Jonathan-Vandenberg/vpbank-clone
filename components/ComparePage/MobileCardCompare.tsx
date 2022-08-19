@@ -53,7 +53,7 @@ const MobileCardCompare = ({
       : "flex items-center justify-center space-x-2 rounded-full border-[1px] border-iwanttoColor p-3 text-sm font-semibold text-iwanttoColor";
 
   return (
-    <div className="container mx-auto mt-4">
+    <div className="container mx-auto md:mt-4">
       <motion.div className="">
         {data?.pureCardImage ? (
           <>

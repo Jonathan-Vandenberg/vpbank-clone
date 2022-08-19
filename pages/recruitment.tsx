@@ -1,6 +1,15 @@
+import Head from "next/head";
+
 const RecruitmentPage = () => {
   return (
-    <>
+    <main>
+      <Head>
+        <title>Recruitment</title>
+        <meta
+          name="description"
+          content="VPBank is looking for talented people to join our team"
+        />
+      </Head>
       <div className={`grid h-screen grid-cols-1 md:grid-cols-2`}>
         <div></div>
         <div className={`flex w-full items-center justify-center bg-white`}>
@@ -16,7 +25,7 @@ const RecruitmentPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </main>
   );
 };
 

@@ -2,12 +2,24 @@ import CurrencyExchangeMain from "../components/CurrencyExchange/CurrencyExchang
 import axios from "axios";
 import { useState } from "react";
 import { GetServerSideProps } from "next/types";
+import Head from "next/head";
 
 const CurrencyExchange = ({ exchange }: any) => {
   const [currencyA, setCurrencyA] = useState("USD");
   const [currencyB, setCurrencyB] = useState("VND");
 
-  return <CurrencyExchangeMain exchange={exchange} />;
+  return (
+    <main>
+      <Head>
+        <title>Currency Exchange</title>
+        <meta
+          name="description"
+          content="Find the latest currency exchange rates"
+        />
+      </Head>
+      <CurrencyExchangeMain exchange={exchange} />
+    </main>
+  );
 };
 
 export default CurrencyExchange;

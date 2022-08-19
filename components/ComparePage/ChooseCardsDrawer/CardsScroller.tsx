@@ -49,23 +49,6 @@ const CardsScroller = ({ data }: any) => {
                 alt="Credit Card"
               />
             </div>
-            <div className="absolute bottom-0 left-0 block self-start p-3">
-              <div
-                onClick={() => {
-                  handleLocalStorage(`${el!.type} - ${el!.id}`);
-                }}
-                className="cursor-pointer rounded-full bg-white p-2"
-              >
-                <FaHeart
-                  size={20}
-                  color={
-                    localStorageKeys?.includes(`${el!.type} - ${el!.id}`)
-                      ? "red"
-                      : "green"
-                  }
-                />
-              </div>
-            </div>
           </div>
           <div className="mx-3 p-3 text-center font-semibold">
             <div>{el?.title}</div>
@@ -109,6 +92,23 @@ const CardsScroller = ({ data }: any) => {
                 <p>Apply Now</p>
                 <div>
                   <FaArrowRight />
+                </div>
+              </div>
+              <div className="rounded-full shadow-card">
+                <div
+                  onClick={() => {
+                    handleLocalStorage(`${el!.type} - ${el!.id}`);
+                  }}
+                  className="cursor-pointer rounded-full bg-white p-2"
+                >
+                  <FaHeart
+                    size={20}
+                    color={
+                      localStorageKeys?.includes(`${el!.type} - ${el!.id}`)
+                        ? "red"
+                        : "green"
+                    }
+                  />
                 </div>
               </div>
               <div className="flex cursor-pointer items-center justify-center space-x-2 p-1 text-iwanttoColor">

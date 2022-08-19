@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Head from "next/head";
 import { useState } from "react";
 import CreditCard from "../components/UI/CreditCard";
 import PaginationCards from "../components/UI/PaginationCards";
@@ -11,7 +12,14 @@ const CardServices = () => {
 
   const CreditCards = () => {
     return (
-      <>
+      <main>
+        <Head>
+          <title>Card Services</title>
+          <meta
+            name="description"
+            content="Find credit cards to suit your needs"
+          />
+        </Head>
         {data?.servicesCards
           ?.map((el) => (
             <motion.div
@@ -24,7 +32,7 @@ const CardServices = () => {
             </motion.div>
           ))
           .slice((pageValue - 1) * 6, pageValue * 6)}
-      </>
+      </main>
     );
   };
 

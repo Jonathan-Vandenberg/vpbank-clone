@@ -12,14 +12,7 @@ const CardServices = () => {
 
   const CreditCards = () => {
     return (
-      <main>
-        <Head>
-          <title>Card Services</title>
-          <meta
-            name="description"
-            content="Find credit cards to suit your needs"
-          />
-        </Head>
+      <>
         {data?.servicesCards
           ?.map((el) => (
             <motion.div
@@ -32,18 +25,24 @@ const CardServices = () => {
             </motion.div>
           ))
           .slice((pageValue - 1) * 6, pageValue * 6)}
-      </main>
+      </>
     );
   };
 
   return (
-    <PaginationCards
-      data={data}
-      pageValue={pageValue}
-      setPageValue={setPageValue}
-    >
-      <CreditCards />
-    </PaginationCards>
+    <main>
+      <Head>
+        <title>Card Services</title>
+        <meta name="description" content="Find the latest card services" />
+      </Head>
+      <PaginationCards
+        data={data}
+        pageValue={pageValue}
+        setPageValue={setPageValue}
+      >
+        <CreditCards />
+      </PaginationCards>
+    </main>
   );
 };
 

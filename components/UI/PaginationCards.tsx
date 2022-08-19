@@ -23,7 +23,7 @@ interface IProps {
   setPageValue: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const App = ({ data, children, pageValue, setPageValue }: IProps) => {
+const App: React.FC<IProps> = ({ data, children, pageValue, setPageValue }) => {
   let scroll = Scroll.animateScroll;
 
   const handleScroll = () => {

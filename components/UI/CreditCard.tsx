@@ -1,11 +1,15 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaArrowRight, FaHeart, FaPlus } from "react-icons/fa";
 import { getFromStorage, setToStorage } from "../../lib/localStorageHelper";
 import { useRouter } from "next/router";
+import { ServicesCard } from "../../types";
 
-const CreditCard = ({ data }: any) => {
+interface IProps {
+  data: ServicesCard | null | undefined;
+}
+
+const CreditCard: React.FC<IProps> = ({ data }) => {
   const [localStorageChange, setLocalStorageChange] = useState(false);
   const [localStorageKeys, setLocalStorageKeys] = useState([""]);
 
@@ -38,7 +42,7 @@ const CreditCard = ({ data }: any) => {
       </div>
       <div>
         <Image
-          src={data?.image}
+          src={data!.image}
           layout="responsive"
           width={450}
           height={270}

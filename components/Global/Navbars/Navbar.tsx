@@ -50,7 +50,7 @@ const NavbarBottom: NextPage = () => {
   return (
     <>
       <NavbarTop onMouseEnter={handleCloseDropdowns} />
-      <nav
+      <div
         id="bottom-nav"
         className="sticky top-0 z-50 hidden bg-white lg:block"
         onMouseLeave={handleCloseDropdowns}
@@ -235,7 +235,7 @@ const NavbarBottom: NextPage = () => {
             <CorporateDropdown leave={() => setCorporateDropdown(false)} />
           )}
         </div>
-      </nav>
+      </div>
     </>
   );
 };

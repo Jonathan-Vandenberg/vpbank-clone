@@ -59,22 +59,20 @@ const IconSlider = () => {
     ));
 
   return (
-    <div className="">
-      <Slider
-        slidesToShow={width < 768 ? 3 : width < 1024 ? 6 : 9}
-        slidesToScroll={width < 768 ? 3 : 2}
-        autoplay={false}
-        autoplaySpeed={3000}
-        arrows={true}
-        dots={false}
-        dotsClass="slick-dots"
-        lazyLoad={"anticipated"}
-        className="mx-auto w-3/4"
-        infinite={false}
-      >
-        {renderSlides()}
-      </Slider>
-    </div>
+    <Slider
+      slidesToShow={width < 768 ? 3 : width < 1024 ? 6 : 9}
+      slidesToScroll={width < 768 ? 3 : 2}
+      autoplay={false}
+      autoplaySpeed={3000}
+      arrows={true}
+      dots={false}
+      dotsClass="slick-dots"
+      lazyLoad={"anticipated"}
+      className="mx-auto w-3/4"
+      infinite={false}
+    >
+      {renderSlides()}
+    </Slider>
   );
 };
 

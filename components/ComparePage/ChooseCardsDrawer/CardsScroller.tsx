@@ -1,37 +1,11 @@
-import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { FaArrowRight, FaHeart, FaMinus, FaPlus } from "react-icons/fa";
-import { getFromStorage, setToStorage } from "../../../lib/localStorageHelper";
+import { FaArrowRight, FaMinus, FaPlus } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "../../../redux-hooks/hooks";
 import { addCard, removeCard } from "../../../slices/cardIdSlice";
 
 const CardsScroller = ({ data }: any) => {
-  const [localStorageChange, setLocalStorageChange] = useState(false);
-  const [localStorageKeys, setLocalStorageKeys] = useState([""]);
-
   const dispatch = useAppDispatch();
   const { cardId } = useAppSelector((state) => state.cardId);
-
-  useEffect(() => {
-    const allKeys = Object.keys(localStorage);
-    let favoriteCards: string[] = [];
-    allKeys.map((key) => {
-      if (key.includes("SERVICESCARD")) {
-        favoriteCards.push(key);
-      }
-    });
-    setLocalStorageKeys(favoriteCards);
-  }, [localStorageChange]);
-
-  const handleLocalStorage = (storage: string) => {
-    const favorited = getFromStorage(storage);
-    if (favorited) {
-      localStorage.removeItem(storage);
-    } else setToStorage(storage, storage);
-
-    setLocalStorageChange(!localStorageChange);
-  };
 
   return (
     <div className="grid-favorites-compare">
@@ -94,23 +68,7 @@ const CardsScroller = ({ data }: any) => {
                   <FaArrowRight />
                 </div>
               </div>
-              <div className="rounded-full shadow-card">
-                <div
-                  onClick={() => {
-                    handleLocalStorage(`${el!.type} - ${el!.id}`);
-                  }}
-                  className="cursor-pointer rounded-full bg-white p-2"
-                >
-                  <FaHeart
-                    size={20}
-                    color={
-                      localStorageKeys?.includes(`${el!.type} - ${el!.id}`)
-                        ? "red"
-                        : "green"
-                    }
-                  />
-                </div>
-              </div>
+
               <div className="flex cursor-pointer items-center justify-center space-x-2 p-1 text-iwanttoColor">
                 <p>More Info</p>
                 <div>

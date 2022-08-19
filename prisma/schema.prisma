@@ -47,7 +47,7 @@ model ServicesCard {
   refund                                String        @db.MediumText
   freeFlightTickets                     Boolean
   mobiphone                             Boolean
-  seperateOffer                         String
+  seperateOffer                         String        @db.MediumText
   freeCashWithdrawal                    Boolean
   freeAnnualFees                        String        @db.MediumText
   globalPayments                        Boolean

@@ -8,8 +8,8 @@ import { useEffect, useState } from "react";
 import { FaHeart, FaSun } from "react-icons/fa";
 import { getFromStorage, setToStorage } from "../../lib/localStorageHelper";
 import { useMonthlyDealsQuery, usePromotionsQuery } from "../../types";
-import MonthlyDealSlider from "../UI/MonthlyDealSlider";
-import PromotionCard from "../UI/PromotionCard";
+import MonthlyDealSlider from "./MonthlyDealSlider";
+import PromotionCard from "./PromotionCard";
 
 const weekday = [
   "Sunday",

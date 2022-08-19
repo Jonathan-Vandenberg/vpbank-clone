@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 
 const IconSlider = dynamic(
-  () => import("./IconSlider"),
+  () => import("../UI/IconSlider"),
   { ssr: false } // <-- not including this component on server-side
 );
 

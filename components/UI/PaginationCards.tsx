@@ -27,14 +27,12 @@ const App: React.FC<IProps> = ({ data, children, pageValue, setPageValue }) => {
   let scroll = Scroll.animateScroll;
 
   const handleScroll = () => {
-    scroll.scrollTo(48);
+    scroll.scrollTo(600);
   };
 
   return (
     <>
-      <div className="grid-favorites lg:container-lg overflow-hidden p-4 md:px-28 lg:mx-auto">
-        {children}
-      </div>
+      <div className="grid-favorites overflow-hidden">{children}</div>
       <div className="flex items-center justify-center p-6">
         <Pagination
           count={Math.ceil(

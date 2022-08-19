@@ -8,7 +8,7 @@ interface Props {
 }
 
 const navLinks = [
-  { title: "Card Services", href: "/cardservices" },
+  { title: "Card Services", href: "/card-services" },
   { title: "lorem", href: "/" },
   { title: "lorem", href: "/" },
   { title: "lorem", href: "/" },

@@ -84,31 +84,25 @@ const MonthlyDealCard: React.FC<IProps> = ({ deal }) => {
           ) : (
             <p className="text-2xl font-bold md:text-xl">{deal?.content}</p>
           )}
-          <div className="flex items-center justify-end space-x-3">
-            <div
-              className="cursor-pointer rounded-full bg-white p-2"
-              onClick={() => {
-                handleLocalStorage(`${deal!.type} - ${deal!.id}`);
-              }}
-            >
-              <FaHeart
-                size={20}
-                color={
-                  localStorageKeys?.includes(`${deal!.type} - ${deal!.id}`)
-                    ? "red"
-                    : "green"
-                }
-              />
-            </div>
-            {deal?.darkImage ? (
-              <p className="t text-white">{deal?.customer}</p>
-            ) : (
-              <p>{deal?.customer}</p>
-            )}
-          </div>
+          <div className="flex items-center justify-end space-x-3"></div>
         </div>
       </div>
-      <div className="flex items-center justify-center space-x-1 bg-body p-4 ">
+      <div className="flex items-center justify-between bg-body p-4 ">
+        <div
+          className="cursor-pointer rounded-full bg-white p-2"
+          onClick={() => {
+            handleLocalStorage(`${deal!.type} - ${deal!.id}`);
+          }}
+        >
+          <FaHeart
+            size={20}
+            color={
+              localStorageKeys?.includes(`${deal!.type} - ${deal!.id}`)
+                ? "red"
+                : "green"
+            }
+          />
+        </div>
         <div className="flex items-center justify-center space-x-2 rounded-full border-[1px] border-iwanttoColor p-3">
           <p className="text-iwanttoColor">More Information</p>
           <FaPlus className="text-iwanttoColor" />

@@ -63,7 +63,7 @@ const Promotion: NextPage = ({ weather }: any) => {
   console.log(weather);
 
   return (
-    <section className="mx-auto">
+    <section className="mx-auto pb-10">
       <PromotionsHeader />
       <div className="md:h-promotionHeight grid-cols-3 space-y-8 px-4 md:flex-col md:px-0 lg:grid lg:space-y-0">
         <div className="md-space-x-4 space-y-8 md:col-span-2 md:flex-col  lg:space-y-3">

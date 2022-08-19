@@ -40,12 +40,16 @@ const IconSlider = () => {
   const renderSlides = () =>
     icons.map((el, i) => (
       <motion.div
-        whileHover={{ scale: 1.03, y: -10, transition: { duration: 0.3 } }}
+        whileHover={{
+          scale: 1.03,
+          y: -10,
+          transition: { duration: 0.3 },
+        }}
         whileTap={{ scale: 0.97 }}
         key={i}
         className="lg:scale-115 flex cursor-pointer flex-col items-center justify-center p-4 sm:scale-75 sm:p-3 md:scale-90 md:p-4 lg:p-3 xl:scale-100"
       >
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center rounded-2xl hover:drop-shadow-md">
           <Image src={el.image} width={100} height={100} alt="icons" />
         </div>
         <p className="pt-2 text-center  text-slate-600 xl:text-lg">

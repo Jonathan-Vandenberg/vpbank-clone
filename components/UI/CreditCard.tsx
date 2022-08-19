@@ -44,8 +44,8 @@ const CreditCard: React.FC<IProps> = ({ data }) => {
         <Image
           src={data!.image}
           layout="responsive"
-          width={450}
-          height={270}
+          width={800}
+          height={507}
           alt="vpBank - Card"
         />
       </div>

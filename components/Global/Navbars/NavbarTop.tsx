@@ -15,18 +15,18 @@ const NavbarTop = ({ onMouseEnter }: any) => {
       <div className="hidden lg:grid lg:grid-cols-3">
         <div className="flex items-center justify-evenly  whitespace-nowrap text-sm ">
           <Link href="/about">
-            <a className="cursor-pointer text-topNavColor hover:text-white">
+            <p className="cursor-pointer text-topNavColor hover:text-white">
               About Us
-            </a>
+            </p>
           </Link>
 
-          <a className="text-topNavColor hover:text-white">Lorem</a>
+          <p className="text-topNavColor hover:text-white">Lorem</p>
 
           <Link href="./news">
-            <a className=" text-topNavColor hover:text-white">News</a>
+            <p className=" text-topNavColor hover:text-white">News</p>
           </Link>
 
-          <a className="text-topNavColor hover:text-white">Lorem</a>
+          <p className="text-topNavColor hover:text-white">Lorem</p>
         </div>
 
         <input
@@ -36,27 +36,27 @@ const NavbarTop = ({ onMouseEnter }: any) => {
 
         <div className="flex items-center justify-evenly whitespace-nowrap">
           <Link href="/favorites">
-            <a className="flex cursor-pointer items-center text-topNavColor hover:text-white">
+            <div className="flex cursor-pointer items-center text-topNavColor hover:text-white">
               <div className="px-2 text-white">
                 <FaHeart />
               </div>
-              Favorites
-            </a>
+              <p>Favorites</p>
+            </div>
           </Link>
 
-          <a className="flex items-center text-topNavColor hover:text-white">
+          <div className="flex items-center text-topNavColor hover:text-white">
             <div className="p-2 text-lg text-white">
               <FaRegQuestionCircle />
             </div>
-            Lorem
-          </a>
+            <p>Lorem</p>
+          </div>
 
-          <a className="flex items-center justify-center text-topNavColor hover:text-white">
+          <div className="flex items-center justify-center text-topNavColor hover:text-white">
             <div className="p-2 text-xl text-white">
               <HiOutlineLocationMarker />
             </div>
-            Lorem
-          </a>
+            <p>Lorem</p>
+          </div>
 
           <div className="p-2 text-xl text-white">
             <FaMobileAlt />

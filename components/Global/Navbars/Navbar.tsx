@@ -67,7 +67,7 @@ const NavbarBottom: NextPage = () => {
           </div>
           <div className="flex items-center justify-evenly space-x-16">
             <div className="relative flex flex-col items-center justify-center">
-              <a
+              <div
                 id="retailLink"
                 key="retail"
                 className="cursor-pointer text-lg font-medium hover:text-hoverTextColor"
@@ -85,7 +85,7 @@ const NavbarBottom: NextPage = () => {
                 }}
               >
                 Retail
-              </a>
+              </div>
               {retailDrodown && (
                 <div
                   id="diamond1"
@@ -94,7 +94,7 @@ const NavbarBottom: NextPage = () => {
               )}
             </div>
             <div className="relative flex flex-col items-center justify-center">
-              <a
+              <div
                 id="householdLink"
                 key="household"
                 className="cursor-pointer text-lg font-medium hover:text-hoverTextColor"
@@ -112,7 +112,7 @@ const NavbarBottom: NextPage = () => {
                 }}
               >
                 Lorem
-              </a>
+              </div>
               {householdDropdown && (
                 <div
                   id="diamond2"
@@ -121,7 +121,7 @@ const NavbarBottom: NextPage = () => {
               )}
             </div>
             <div className="relative flex flex-col items-center justify-center">
-              <a
+              <div
                 id="smeLink"
                 key="sme"
                 className="cursor-pointer text-lg font-medium hover:text-hoverTextColor"
@@ -139,7 +139,7 @@ const NavbarBottom: NextPage = () => {
                 }}
               >
                 Lorem
-              </a>
+              </div>
               {sMEDropdown && (
                 <div
                   id="diamond3"
@@ -148,7 +148,7 @@ const NavbarBottom: NextPage = () => {
               )}
             </div>
             <div className="relative flex flex-col items-center justify-center">
-              <a
+              <div
                 id="corporateLink"
                 key="corporate"
                 className="cursor-pointer text-lg font-medium hover:text-hoverTextColor"
@@ -166,7 +166,7 @@ const NavbarBottom: NextPage = () => {
                 }}
               >
                 Lorem
-              </a>
+              </div>
               {corporateDropdown && (
                 <div
                   id="diamond4"

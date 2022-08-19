@@ -38,7 +38,7 @@ const CompareMain: NextPage = () => {
     <>
       <div className="flex flex-col items-center justify-center space-y-2 pt-10">
         <p className="text-5xl font-semibold text-gray-600">Compare Cards</p>
-        <p className="text-2xl text-gray-400">
+        <p className="text-2xl text-gray-700">
           Add and remove cards to compare
         </p>
       </div>

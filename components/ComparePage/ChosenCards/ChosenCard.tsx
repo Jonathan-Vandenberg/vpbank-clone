@@ -51,8 +51,8 @@ const ChosenCard = ({
         <div className="relative">
           <Image
             src={singleCardData!.image}
-            height={270}
-            width={430}
+            height={406}
+            width={640}
             alt="Credit Card"
           />
           <div className="absolute top-0 left-0 m-3 rounded-md bg-white p-1 text-gray-600">
@@ -96,7 +96,7 @@ const ChosenCard = ({
               }}
               className="flex cursor-pointer flex-col items-center justify-center px-5 pt-2"
             >
-              <div className="flex items-center justify-center space-x-2 rounded-full border-[1px] border-red-200 p-3 text-sm text-red-400">
+              <div className="flex items-center justify-center space-x-2 rounded-full border-[1px] border-red-300 p-3 text-sm text-red-600">
                 <p>Remove</p>
                 <FaMinus />
               </div>
@@ -117,7 +117,7 @@ const ChosenCard = ({
           </div>
         )}
         <div className="flex w-full items-center justify-between p-4">
-          <div className="flex cursor-pointer items-center justify-center space-x-2 p-1 text-iwanttoColor">
+          <div className="flex cursor-pointer items-center justify-center space-x-2 p-1 text-green-500">
             <p>Apply Now</p>
             <div>
               <FaArrowRight />

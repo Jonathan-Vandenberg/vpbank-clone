@@ -65,7 +65,7 @@ const HomeMain = ({ weather }: any) => {
         </div>
       </div>
 
-      <div className="my-8 space-y-8 md:mx-auto md:px-12 xl:container xl:mx-auto">
+      <div className="mx-4 my-8 space-y-8 md:mx-auto md:px-12 xl:container xl:mx-auto">
         <div className="space-y-8 lg:grid lg:grid-cols-5 lg:space-x-8 lg:space-y-0">
           <div className="lg:col-span-2">
             <RatesTable />

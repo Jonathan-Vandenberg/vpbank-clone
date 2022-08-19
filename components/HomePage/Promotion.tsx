@@ -65,7 +65,7 @@ const Promotion: NextPage = ({ weather }: any) => {
   return (
     <section className="mx-auto">
       <PromotionsHeader />
-      <div className="md:h-promotionHeight grid-cols-3 space-y-8 md:flex-col lg:grid lg:space-y-0">
+      <div className="md:h-promotionHeight grid-cols-3 space-y-8 px-4 md:flex-col md:px-0 lg:grid lg:space-y-0">
         <div className="md-space-x-4 space-y-8 md:col-span-2 md:flex-col  lg:space-y-3">
           <MonthlyDealSlider data={data} />
           <div className="flex flex-col divide-y-[1px] bg-white md:flex-row md:divide-y-0 md:divide-x-[1px]">

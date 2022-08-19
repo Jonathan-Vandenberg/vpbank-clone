@@ -193,7 +193,7 @@ const ScrollableAds = ({ handleLocalStorage, localStorageKeys }: AdsProps) => {
   const { data, loading, error } = usePromotionsQuery();
 
   return (
-    <div className="flex h-96 flex-col space-y-3 pr-2">
+    <div className="flex flex-col space-y-3 pr-2 md:h-96">
       {data?.promotions?.map((el, i) => (
         <div className="contain relative" key={i}>
           <Image

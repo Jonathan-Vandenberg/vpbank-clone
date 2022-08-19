@@ -19,11 +19,6 @@ import Link from "next/link";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { useState } from "react";
 
-interface Props {
-  menuRef: React.RefObject<HTMLDivElement>;
-  onClick: () => void;
-}
-
 const style = {
   position: "absolute" as "absolute",
   top: 0,
@@ -36,37 +31,27 @@ const style = {
 
 const SideNavModal: NextPage = () => {
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => {
-    setOpen(false),
-      openMenu(),
-      setShowCorporate(false),
-      setShowRetail(false),
-      setShowHouseholdMenu(false),
-      setShowSMEMenu(false);
-  };
 
   const [showRetail, setShowRetail] = useState(false);
   const [showHouseholdMenu, setShowHouseholdMenu] = useState(false);
   const [showSMEMenu, setShowSMEMenu] = useState(false);
   const [showCorporate, setShowCorporate] = useState(false);
 
-  React.useEffect(() => {
-    const menuButton = document.getElementById(
-      "menu-btn"
-    ) as HTMLButtonElement | null;
-    const menu = document.getElementById("menu") as HTMLDivElement | null;
-    menuButton?.addEventListener("click", () => {
-      menuButton?.classList.toggle("open");
-      handleOpen();
-    });
-  }, []);
-
   const btnRef = React.useRef<HTMLButtonElement>();
   const menuRef = React.useRef<HTMLDivElement>();
 
   const openMenu = () => {
+    setOpen(true);
     btnRef?.current?.classList.toggle("open");
+  };
+
+  const handleClose = () => {
+    btnRef?.current?.classList.toggle("open");
+    setOpen(false),
+      setShowCorporate(false),
+      setShowRetail(false),
+      setShowHouseholdMenu(false),
+      setShowSMEMenu(false);
   };
 
   const MainMenu = () => (
@@ -380,7 +365,6 @@ const SideNavModal: NextPage = () => {
                   duration: 0.3,
                 },
               }}
-              ref={menuRef as any}
               id="menu"
               className="items-left mt-4 flex flex-col justify-center space-y-4 overflow-y-auto"
             >

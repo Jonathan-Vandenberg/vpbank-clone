@@ -41,19 +41,21 @@ const MonthlyDealSlider = ({ data }: IProps) => {
             layout="responsive"
             className="object-cover"
           />
-          <div className="absolute top-0 left-0 flex h-full w-1/2 flex-col items-start justify-between p-5">
-            <div className="flex flex-col items-start justify-between space-y-12">
+          <div className="absolute top-0 left-0 flex h-full w-3/5 flex-col items-start justify-between p-2 md:p-5">
+            <div className="flex flex-col items-start justify-between md:space-y-5">
               {deal?.darkImage ? (
-                <p className="text-xl text-white">{deal?.title}</p>
+                <p className="text-white ">{deal?.title}</p>
               ) : (
-                <p className="text-xl ">{deal?.title}</p>
+                <p className="">{deal?.title}</p>
               )}
               {deal?.darkImage ? (
-                <p className="text-xl font-bold text-white md:text-3xl">
+                <p className="text-lg font-bold leading-[20px] text-white md:text-3xl">
                   {deal?.content}
                 </p>
               ) : (
-                <p className="text-xl font-bold md:text-3xl">{deal?.content}</p>
+                <p className="text-lg font-bold leading-[20px] md:text-3xl">
+                  {deal?.content}
+                </p>
               )}
             </div>
             <div className="flex items-center justify-end space-x-3">
@@ -73,11 +75,9 @@ const MonthlyDealSlider = ({ data }: IProps) => {
                 />
               </div>
               {deal?.darkImage ? (
-                <p className="text-xl text-white md:text-2xl">
-                  {deal?.customer}
-                </p>
+                <p className=" text-white md:text-2xl">{deal?.customer}</p>
               ) : (
-                <p className="text-xl md:text-2xl">{deal?.customer}</p>
+                <p className="md:text-2xl">{deal?.customer}</p>
               )}
             </div>
           </div>
@@ -86,20 +86,18 @@ const MonthlyDealSlider = ({ data }: IProps) => {
     ));
 
   return (
-    <div className="">
-      <Slider
-        slidesToShow={1}
-        slidesToScroll={1}
-        autoplay={true}
-        autoplaySpeed={6000}
-        arrows={false}
-        dots={true}
-        dotsClass="slick-dots"
-        className="mx-auto"
-      >
-        {renderSlides()}
-      </Slider>
-    </div>
+    <Slider
+      slidesToShow={1}
+      slidesToScroll={1}
+      autoplay={true}
+      autoplaySpeed={6000}
+      arrows={false}
+      dots={true}
+      dotsClass="slick-dots"
+      className="mx-auto"
+    >
+      {renderSlides()}
+    </Slider>
   );
 };
 

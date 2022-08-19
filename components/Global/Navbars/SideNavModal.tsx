@@ -180,7 +180,7 @@ const SideNavModal: NextPage = () => {
           onClick={() => handleClose()}
           className="w-full p-3 pl-6 pt-6 font-semibold"
         >
-          <Link href={"/cardservices"}>
+          <Link href={"/card-services"}>
             <p className="font-semibold">Card Services</p>
           </Link>
         </div>

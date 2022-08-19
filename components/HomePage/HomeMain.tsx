@@ -60,7 +60,7 @@ const HomeMain = ({ weather }: any) => {
       </div>
 
       <div className="bg-body">
-        <div className="pb-8 md:px-12 xl:container xl:mx-auto">
+        <div className="mb-8 md:px-12 xl:container xl:mx-auto">
           <Promotion />
         </div>
       </div>

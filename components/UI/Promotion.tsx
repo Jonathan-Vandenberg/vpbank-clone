@@ -7,9 +7,14 @@ import { NextPage } from "next/types";
 import { useEffect, useState } from "react";
 import { FaHeart, FaSun } from "react-icons/fa";
 import { getFromStorage, setToStorage } from "../../lib/localStorageHelper";
-import { useMonthlyDealsQuery, usePromotionsQuery } from "../../types";
+import {
+  PromotionsQuery,
+  useMonthlyDealsQuery,
+  usePromotionsQuery,
+} from "../../types";
 import MonthlyDealSlider from "./MonthlyDealSlider";
 import PromotionCard from "./PromotionCard";
+import SectionHeader from "./SectionHeader";
 
 const weekday = [
   "Sunday",
@@ -44,7 +49,8 @@ const Promotion: NextPage = ({ weather }: any) => {
   const [localStorageChange, setLocalStorageChange] = useState(false);
   const [localStorageKeys, setLocalStorageKeys] = useState([""]);
 
-  const { data, loading, error } = useMonthlyDealsQuery();
+  const { data: monlthDealsData } = useMonthlyDealsQuery();
+  const { data: promotionsData } = usePromotionsQuery();
 
   useEffect(() => {
     const allKeys = Object.keys(localStorage);
@@ -64,10 +70,10 @@ const Promotion: NextPage = ({ weather }: any) => {
 
   return (
     <section className="mx-auto pb-10">
-      <PromotionsHeader />
+      <SectionHeader title="Promotions" />
       <div className="md:h-promotionHeight grid-cols-3 space-y-8 px-4 md:flex-col md:px-0 lg:grid lg:space-y-0">
         <div className="md-space-x-4 space-y-8 md:col-span-2 md:flex-col  lg:space-y-3">
-          <MonthlyDealSlider data={data} />
+          <MonthlyDealSlider data={monlthDealsData} />
           <div className="flex flex-col divide-y-[1px] bg-white md:flex-row md:divide-y-0 md:divide-x-[1px]">
             <Weather />
             <ShareYourStory />
@@ -79,10 +85,11 @@ const Promotion: NextPage = ({ weather }: any) => {
             <ScrollableAds
               handleLocalStorage={handleLocalStorage}
               localStorageKeys={localStorageKeys}
+              promotionsData={promotionsData}
             />
           </div>
           <div className="block lg:hidden">
-            <StaticAds />
+            <StaticAds promotionsData={promotionsData} />
           </div>
         </div>
       </div>
@@ -91,19 +98,6 @@ const Promotion: NextPage = ({ weather }: any) => {
 };
 
 export default Promotion;
-
-const PromotionsHeader: React.FC = () => {
-  return (
-    <div className="flex-col py-4 px-4 md:flex md:flex-row md:items-center md:justify-between md:px-0">
-      <h2 className="indexTitle bg-gradient-to-r from-startColor to-endColor  bg-clip-text py-2 text-3xl  font-bold text-transparent md:py-4">
-        Promotions
-      </h2>
-      <div className="text-iwanttoColor">
-        <Link href="/">see more</Link>
-      </div>
-    </div>
-  );
-};
 
 const ContactUs: React.FC = () => {
   return (
@@ -187,14 +181,17 @@ const Weather: React.FC = () => {
 interface AdsProps {
   handleLocalStorage: (data: string) => void;
   localStorageKeys: string[] | undefined;
+  promotionsData: PromotionsQuery | undefined | null;
 }
 
-const ScrollableAds = ({ handleLocalStorage, localStorageKeys }: AdsProps) => {
-  const { data, loading, error } = usePromotionsQuery();
-
+const ScrollableAds = ({
+  handleLocalStorage,
+  localStorageKeys,
+  promotionsData,
+}: AdsProps) => {
   return (
     <div className="flex flex-col space-y-3 pr-2 md:h-96">
-      {data?.promotions?.map((el, i) => (
+      {promotionsData?.promotions?.map((el, i) => (
         <div className="contain relative" key={i}>
           <Image
             src={el!.image}
@@ -250,12 +247,12 @@ const ScrollableAds = ({ handleLocalStorage, localStorageKeys }: AdsProps) => {
   );
 };
 
-const StaticAds = () => {
-  const { data } = usePromotionsQuery();
-
+const StaticAds: React.FC<{
+  promotionsData: PromotionsQuery | undefined | null;
+}> = ({ promotionsData }) => {
   return (
     <div className="space-y-5 md:grid md:grid-cols-2 md:gap-5 md:space-y-0">
-      {data?.promotions
+      {promotionsData?.promotions
         ?.map((el, i) => (
           <div key={i}>
             <PromotionCard data={el} />

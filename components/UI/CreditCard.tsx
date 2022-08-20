@@ -47,6 +47,7 @@ const CreditCard: React.FC<IProps> = ({ data }) => {
           width={800}
           height={507}
           alt="vpBank - Card"
+          priority
         />
       </div>
       <div className="flex flex-col items-center justify-start">

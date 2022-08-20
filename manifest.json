@@ -1,6 +1,7 @@
 {
-  "short_name": "VPBank",
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "name": "VPBank: Prosper with Us!",
+  "short_name": "VPBank",
   "icons": [
     {
       "src": "/public/neoLogo-192.png",

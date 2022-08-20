@@ -32,6 +32,13 @@
       "description": "View your favorite cards and promotions",
       "url": "https://vpbank-clone.vercel.app/favorites",
       "icons": [{ "src": "neoLogo-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Card Services",
+      "short_name": "Services",
+      "description": "Browse our wide variety of cards and services",
+      "url": "https://vpbank-clone.vercel.app/card-services",
+      "icons": [{ "src": "neoLogo-192.png", "sizes": "192x192" }]
     }
   ],
   "description": "VPBanking Application",

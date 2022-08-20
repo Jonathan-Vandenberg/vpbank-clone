@@ -16,7 +16,7 @@ const App: React.FC<{ temperature: string }> = ({ temperature }) => {
 
 export default App;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const options = {
     method: "GET",
     url: "https://weatherbit-v1-mashape.p.rapidapi.com/current",

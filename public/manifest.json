@@ -6,8 +6,7 @@
     {
       "src": "./neoLogo-192.png",
       "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "maskable"
+      "sizes": "192x192"
     },
     {
       "src": "./neoLogo-512.png",
@@ -38,7 +37,7 @@
   "description": "VPBanking Application",
   "screenshots": [
     {
-      "src": "./screenshot.png",
+      "src": "./ScreenShot.png",
       "type": "image/png",
       "sizes": "502x627"
     }

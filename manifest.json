@@ -1,0 +1,45 @@
+{
+  "short_name": "VPBank",
+  "name": "VPBank: Prosper with Us!",
+  "icons": [
+    {
+      "src": "/public/neoLogo-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/public/neoLogo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://vpbank-clone.vercel.app/",
+  "background_color": "#fff",
+  "display": "standalone",
+  "theme_color": "#3367D6",
+  "shortcuts": [
+    {
+      "name": "Compare Cards",
+      "short_name": "Cards",
+      "description": "Find the best cards for you",
+      "url": "https://vpbank-clone.vercel.app/compare",
+      "icons": [{ "src": "/public/neoLogo-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "My Favorites",
+      "short_name": "Favorites",
+      "description": "View your favorite cards and promotions",
+      "url": "https://vpbank-clone.vercel.app/favorites",
+      "icons": [{ "src": "/public/neoLogo-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "description": "VPBanking Application",
+  "screenshots": [
+    {
+      "src": "/public/screenshot.png",
+      "type": "image/png",
+      "sizes": "502x627"
+    }
+  ]
+}

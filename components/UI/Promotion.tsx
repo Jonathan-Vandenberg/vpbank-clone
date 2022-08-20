@@ -1,7 +1,6 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { IconButton } from "@mui/material";
 import Image from "next/image";
-import Link from "next/link";
 import { NextPage } from "next/types";
 import { useEffect, useState } from "react";
 import { FaHeart, FaSun } from "react-icons/fa";
@@ -102,9 +101,9 @@ const ContactUs: React.FC = () => {
       <p className="whitespace-nowrap pb-2 text-lg font-semibold">
         Contact us hotline
       </p>
-      <Link href={"/"}>
+      <div>
         <p className="text-3xl text-iwanttoColor lg:text-2xl">0872348273</p>
-      </Link>
+      </div>
     </div>
   );
 };

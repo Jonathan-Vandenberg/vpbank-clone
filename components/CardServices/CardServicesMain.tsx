@@ -1,20 +1,19 @@
 import { motion } from "framer-motion";
-import Head from "next/head";
+import { useRouter } from "next/router";
 import { useState } from "react";
+import { useServicesCardsQuery } from "../../types";
 import CreditCard from "../UI/CreditCard";
 import HeroStatic from "../UI/HeroStatic";
-import PaginationCards from "../UI/PaginationCards";
-import { useServicesCardsQuery } from "../../types";
-import { useRouter } from "next/router";
 import IconSlider from "../UI/IconSlider";
+import PaginationCards from "../UI/PaginationCards";
 import Promotion from "../UI/Promotion";
 
-const CardServices = () => {
+const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   const [pageValue, setPageValue] = useState(1);
 
   const { asPath } = useRouter();
 
-  const { data, loading, error } = useServicesCardsQuery();
+  const { data } = useServicesCardsQuery();
 
   const heroData = {
     title: "Card Services",
@@ -59,7 +58,7 @@ const CardServices = () => {
         </div>
       </div>
       <div className="mb-8 bg-body px-5 md:px-28 xl:container xl:mx-auto">
-        <Promotion />
+        <Promotion temperature={temp} />
       </div>
     </>
   );

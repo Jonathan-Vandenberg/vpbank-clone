@@ -1,9 +1,4 @@
-import dynamic from "next/dynamic";
-
-const IconSlider = dynamic(
-  () => import("../UI/IconSlider"),
-  { ssr: false } // <-- not including this component on server-side
-);
+import IconSlider from "../UI/IconSlider";
 
 const IndividualCustomers = () => {
   return (

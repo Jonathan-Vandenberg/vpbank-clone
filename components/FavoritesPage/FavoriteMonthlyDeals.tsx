@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useMonthlyDealsQuery } from "../../types";
 import MonthlyDealCard from "../UI/MonthlyDealCard";
-import PromotionCard from "../UI/PromotionCard";
 import FavoritesHeader from "./FavoritesHeader";
 
 const FavoriteMonthlyDeals = () => {
@@ -18,7 +17,7 @@ const FavoriteMonthlyDeals = () => {
     setLocalStorageKeys(favoriteCards);
   }, []);
 
-  const { data, loading, error } = useMonthlyDealsQuery();
+  const { data } = useMonthlyDealsQuery();
 
   return (
     <>

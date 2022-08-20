@@ -17,7 +17,7 @@ const FavoriteServicesCards = () => {
     setLocalStorageKeys(favoriteCards);
   }, []);
 
-  const { data, loading, error } = useServicesCardsQuery();
+  const { data } = useServicesCardsQuery();
 
   return (
     <>

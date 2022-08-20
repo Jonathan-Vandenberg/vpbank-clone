@@ -8,27 +8,19 @@ import ResultsCollapsible from "./Results/ResultsCollapsible";
 const CompareMain: NextPage = () => {
   const { cardId } = useAppSelector((state) => state.cardId);
 
-  const { data, loading, error } = useServicesCardQuery({
+  const { data } = useServicesCardQuery({
     variables: {
       id: cardId[0],
     },
   });
 
-  const {
-    data: data1,
-    loading: loading1,
-    error: error1,
-  } = useServicesCardQuery({
+  const { data: data1 } = useServicesCardQuery({
     variables: {
       id: cardId[1],
     },
   });
 
-  const {
-    data: data2,
-    loading: loading2,
-    error: error2,
-  } = useServicesCardQuery({
+  const { data: data2 } = useServicesCardQuery({
     variables: {
       id: cardId[2],
     },

@@ -12,13 +12,9 @@ import image3 from "../../public/hero/vpHero3.jpeg";
 import image4 from "../../public/hero/vpHero4.jpeg";
 import image5 from "../../public/hero/vpHero5.jpeg";
 
-import { useAddPromotionMutation } from "../../types";
-
 export const images = [image1, image2, image3, image4, image5];
 
-const HomeMain = ({ weather }: any) => {
-  const [addPromotion] = useAddPromotionMutation();
-
+const HomeMain: React.FC<{ temp: string }> = ({ temp }) => {
   return (
     <>
       <div>
@@ -34,34 +30,13 @@ const HomeMain = ({ weather }: any) => {
         <IWantTo />
       </div>
 
-      {/* <button
-        onClick={() => {
-          addPromotion({
-            variables: {
-              input: {
-                title: "From our sponsors",
-                content:
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quod molestias fugiat assumenda nam. Nam pariatur at esse tempora, facere excepturi maxime, dolorem eaque doloribus ab dolor impedit nihil qui?",
-                image: "/vpPromotions/ad1.jpeg",
-                darkImage: true,
-                type: FavoritesEnum[FavoritesEnum.PROMOTION],
-                customer: "individual",
-                id: uuidv4(),
-              },
-            },
-          });
-        }}
-      >
-        SEND TO DB
-      </button> */}
-
       <div className="mx-auto md:mt-4 lg:mt-6 lg:pb-0 xl:container">
         <IconSlider />
       </div>
 
       <div className="bg-body">
         <div className="mb-8 md:px-12 xl:container xl:mx-auto">
-          <Promotion />
+          <Promotion temperature={temp} />
         </div>
       </div>
 

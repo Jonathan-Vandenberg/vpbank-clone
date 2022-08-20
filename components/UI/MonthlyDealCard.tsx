@@ -1,7 +1,6 @@
-import { PlusOneOutlined } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaHeart, FaPlus } from "react-icons/fa";
 import { getFromStorage, setToStorage } from "../../lib/localStorageHelper";
 import { MonthlyDeal } from "../../types";

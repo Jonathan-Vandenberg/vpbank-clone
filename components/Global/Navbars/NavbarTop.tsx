@@ -2,10 +2,6 @@ import Link from "next/link";
 import { FaHeart, FaMobileAlt, FaRegQuestionCircle } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 
-const style = {
-  color: "rgb(196,245,208)",
-};
-
 const NavbarTop = ({ onMouseEnter }: any) => {
   return (
     <div

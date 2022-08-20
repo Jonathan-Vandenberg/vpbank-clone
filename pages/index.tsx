@@ -1,7 +1,30 @@
 import Head from "next/head";
+import { useEffect } from "react";
 import HomeMain from "../components/HomePage/HomeMain";
 
 const App: React.FC<{ temperature: string }> = ({ temperature = "28" }) => {
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("sw.js?v3", {
+          scope: ".", // <--- THIS BIT IS REQUIRED
+        })
+        .then(
+          function (registration) {
+            // Registration was successful
+            console.log(
+              "ServiceWorker registration successful with scope: ",
+              registration.scope
+            );
+          },
+          function (err) {
+            // registration failed :(
+            console.log("ServiceWorker registration failed: ", err);
+          }
+        );
+    }
+  }, []);
+
   return (
     <main>
       <Head>

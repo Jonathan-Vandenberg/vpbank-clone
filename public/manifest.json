@@ -4,17 +4,17 @@
   "lang": "en-GB",
   "icons": [
     {
-      "src": "neoLogo-192.png",
+      "src": "neoLogo-192.png?v3",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "neoLogo-512.png",
+      "src": "neoLogo-512.png?v3",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "/",
+  "start_url": "./?v3&utm_source=web_app_manifest",
   "background_color": "#fff",
   "display": "standalone",
   "theme_color": "#3367D6",
@@ -35,9 +35,13 @@
     }
   ],
   "description": "VPBanking Application",
+  "related_applications": [{
+    "platform": "web",
+    "url": "https://vpbank-clone.vercel.app/?v3"
+  }],
   "screenshots": [
     {
-      "src": "ScreenShot.png",
+      "src": "ScreenShot.png?v3",
       "type": "image/png",
       "sizes": "502x627"
     }

@@ -2,7 +2,7 @@ import axios from "axios";
 import Head from "next/head";
 import HomeMain from "../components/HomePage/HomeMain";
 
-const App: React.FC<{ temperature: string }> = ({ temperature = "23" }) => {
+const App: React.FC<{ temperature: string }> = ({ temperature = "28" }) => {
   return (
     <main>
       <Head>

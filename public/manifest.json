@@ -1,15 +1,15 @@
 {
-  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "name": "VPBank: Prosper with Us!",
   "short_name": "VPBank",
+  "lang": "en-GB",
   "icons": [
     {
-      "src": "./neoLogo-192.png",
+      "src": "neoLogo-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "./neoLogo-512.png",
+      "src": "neoLogo-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -37,7 +37,7 @@
   "description": "VPBanking Application",
   "screenshots": [
     {
-      "src": "./ScreenShot.png",
+      "src": "ScreenShot.png",
       "type": "image/png",
       "sizes": "502x627"
     }

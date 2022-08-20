@@ -15,7 +15,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://vpbank-clone.vercel.app/",
+  "start_url": "/",
   "background_color": "#fff",
   "display": "standalone",
   "theme_color": "#3367D6",

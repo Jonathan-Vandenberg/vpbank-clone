@@ -1,4 +1,3 @@
-import axios from "axios";
 import Head from "next/head";
 import HomeMain from "../components/HomePage/HomeMain";
 
@@ -7,10 +6,14 @@ const App: React.FC<{ temperature: string }> = ({ temperature = "28" }) => {
     <main>
       <Head>
         <title>VPBank home page</title>
-        <link rel="manifest" href="/manifest.json"></link>
         <meta
           name="description"
           content="VPBank is a leading Vietnamese bank that provides a wide range of services and products to its customers"
+        />
+        <link
+          rel="manifest"
+          crossOrigin="use-credentials"
+          href="/manifest.json"
         />
       </Head>
       <HomeMain temp={temperature} />

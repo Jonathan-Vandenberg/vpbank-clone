@@ -1,5 +1,4 @@
 import axios from "axios";
-import { GetServerSideProps, NextApiRequest, NextApiResponse } from "next";
 import Head from "next/head";
 import HomeMain from "../components/HomePage/HomeMain";
 

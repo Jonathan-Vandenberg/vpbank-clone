@@ -4,13 +4,13 @@
   "short_name": "VPBank",
   "icons": [
     {
-      "src": "/public/neoLogo-192.png",
+      "src": "./neoLogo-192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "maskable"
     },
     {
-      "src": "/public/neoLogo-512.png",
+      "src": "./neoLogo-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -38,7 +38,7 @@
   "description": "VPBanking Application",
   "screenshots": [
     {
-      "src": "/public/screenshot.png",
+      "src": "./screenshot.png",
       "type": "image/png",
       "sizes": "502x627"
     }

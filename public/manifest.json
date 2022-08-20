@@ -24,14 +24,14 @@
       "short_name": "Cards",
       "description": "Find the best cards for you",
       "url": "https://vpbank-clone.vercel.app/compare",
-      "icons": [{ "src": "/public/neoLogo-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "neoLogo-192.png", "sizes": "192x192" }]
     },
     {
       "name": "My Favorites",
       "short_name": "Favorites",
       "description": "View your favorite cards and promotions",
       "url": "https://vpbank-clone.vercel.app/favorites",
-      "icons": [{ "src": "/public/neoLogo-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "neoLogo-192.png", "sizes": "192x192" }]
     }
   ],
   "description": "VPBanking Application",

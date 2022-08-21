@@ -34,6 +34,11 @@ const App: React.FC<{ temperature: string }> = ({ temperature = "28" }) => {
           crossOrigin="use-credentials"
           href="/manifest.json"
         />
+        <link rel="preload" as="image" href="vpHero1.jpeg" />
+        <link rel="preload" as="image" href="vpHero2.jpeg" />
+        <link rel="preload" as="image" href="vpHero3.jpeg" />
+        <link rel="preload" as="image" href="vpHero4.jpeg" />
+        <link rel="preload" as="image" href="vpHero5.jpeg" />
         <link rel="apple-touch-icon" href="/logo-96x96.png" />
         <meta
           name="description"

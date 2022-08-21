@@ -47,6 +47,10 @@ module.exports = {
   basePath: "/vpbank-clone",
 };
 
+module.exports = (phase, defaultConfig) => {
+  return withBundleAnalyzer(defaultConfig);
+};
+
 const withImages = require("next-images");
 module.exports = withImages();
 

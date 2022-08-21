@@ -1,3 +1,4 @@
+import Skeleton from "@mui/material/Skeleton";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaHeart } from "react-icons/fa";
@@ -32,14 +33,18 @@ const MonthlyDealSlider = ({ data }: IProps) => {
     data?.monthlyDeals?.map((deal, i) => (
       <div key={i}>
         <div key={deal?.id} className="cover relative">
-          <Image
-            src={deal!.image}
-            alt="VPBank Hero Image"
-            width={650}
-            height={300}
-            layout="responsive"
-            className="object-cover"
-          />
+          {deal ? (
+            <Image
+              src={deal!.image}
+              alt="VPBank Hero Image"
+              width={650}
+              height={300}
+              layout="responsive"
+              className="object-cover"
+            />
+          ) : (
+            <Skeleton variant="rectangular" width={650} height={300} />
+          )}
           <div className="absolute top-0 left-0 flex h-full w-3/5 flex-col items-start justify-between p-2 md:p-5">
             <div className="flex flex-col items-start justify-between md:space-y-5">
               {deal?.darkImage ? (

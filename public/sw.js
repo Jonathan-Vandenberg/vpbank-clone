@@ -4,7 +4,10 @@ try {
 
   // A list of local resources we always want to be cached.
   const PRECACHE_URLS = [
-    `any url`, // Alias for index.html
+    "https://vpbank-clone.vercel.app/",
+    "https://vpbank-clone.vercel.app/card-services",
+    "https://vpbank-clone.vercel.app/favorites",
+    "https://vpbank-clone.vercel.app/compare",
   ];
 
   // The install handler takes care of precaching the resources we always need.

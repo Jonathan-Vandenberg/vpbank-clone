@@ -1,5 +1,4 @@
 import { ApolloProvider } from "@apollo/client";
-import { motion } from "framer-motion";
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 import Head from "next/head";
@@ -10,7 +9,6 @@ import Footer from "../components/Global/Footer/Footer";
 import SideNavModal from "../components/Global/Navbars/SideNavModal";
 import "../styles/input.css";
 import store from "../store/store";
-import { useEffect } from "react";
 
 const ScrollToTop = dynamic(
   () => import("../components/Global/ScrollToTopArrow"),

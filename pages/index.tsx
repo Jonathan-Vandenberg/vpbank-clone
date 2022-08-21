@@ -1,30 +1,7 @@
 import Head from "next/head";
-import { useEffect } from "react";
 import HomeMain from "../components/HomePage/HomeMain";
 
 const App: React.FC<{ temperature: string }> = ({ temperature = "28" }) => {
-  useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("sw.js?v3", {
-          scope: ".", // <--- THIS BIT IS REQUIRED
-        })
-        .then(
-          function (registration) {
-            // Registration was successful
-            console.log(
-              "ServiceWorker registration successful with scope: ",
-              registration.scope
-            );
-          },
-          function (err) {
-            // registration failed :(
-            console.log("ServiceWorker registration failed: ", err);
-          }
-        );
-    }
-  }, []);
-
   return (
     <main>
       <Head>
@@ -47,33 +24,3 @@ const App: React.FC<{ temperature: string }> = ({ temperature = "28" }) => {
 };
 
 export default App;
-
-// export async function getServerSideProps() {
-//   const options = {
-//     method: "GET",
-//     url: "https://weatherbit-v1-mashape.p.rapidapi.com/current",
-//     params: { lon: "106.6297", lat: "10.823" },
-//     headers: {
-//       //@ts-ignore
-//       "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY!,
-//       "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
-//     },
-//   };
-
-//   let temperature;
-
-//   await axios
-//     .request(options)
-//     .then(function (response: any) {
-//       temperature = JSON.stringify(response.data.data[0].temp);
-//     })
-//     .catch(function (error: any) {
-//       console.error(error);
-//     });
-
-//   return {
-//     props: {
-//       temperature,
-//     },
-//   };
-// }

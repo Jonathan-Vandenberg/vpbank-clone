@@ -18,12 +18,19 @@ const ArrowRight = () => (
 
 interface IProps {
   children: ReactNode;
-  data: ServicesCardsQuery | undefined;
+  cardAmount: number | undefined;
   pageValue: number;
   setPageValue: React.Dispatch<React.SetStateAction<number>>;
+  allCardsShown: boolean;
 }
 
-const App: React.FC<IProps> = ({ data, children, pageValue, setPageValue }) => {
+const App: React.FC<IProps> = ({
+  cardAmount,
+  children,
+  pageValue,
+  setPageValue,
+  allCardsShown,
+}) => {
   let scroll = Scroll.animateScroll;
 
   const handleScroll = () => {
@@ -35,9 +42,7 @@ const App: React.FC<IProps> = ({ data, children, pageValue, setPageValue }) => {
       <div className="grid-favorites overflow-hidden">{children}</div>
       <div className="flex items-center justify-center p-6">
         <Pagination
-          count={Math.ceil(
-            data?.servicesCards ? data?.servicesCards?.length / 6 : 3
-          )}
+          count={Math.ceil(cardAmount ? cardAmount / 6 : 3)}
           page={pageValue}
           onChange={(event, val) => {
             setPageValue(val), handleScroll();

@@ -39,6 +39,7 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   };
 
   const handleIndividual = () => {
+    setPageValue(1);
     setIndividual(true);
     setTitanium(false);
     setClassic(false);
@@ -52,6 +53,7 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   };
 
   const handleTitanium = () => {
+    setPageValue(1);
     setIndividual(false);
     setTitanium(true);
     setClassic(false);
@@ -65,6 +67,7 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   };
 
   const handleClassic = () => {
+    setPageValue(1);
     setIndividual(false);
     setTitanium(false);
     setClassic(true);
@@ -78,6 +81,7 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   };
 
   const handlePlatinum = () => {
+    setPageValue(1);
     setIndividual(false);
     setTitanium(false);
     setClassic(false);
@@ -91,6 +95,7 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   };
 
   const handleGold = () => {
+    setPageValue(1);
     setIndividual(false);
     setTitanium(false);
     setClassic(false);
@@ -104,6 +109,7 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   };
 
   const handleLow = () => {
+    setPageValue(1);
     setLow(true);
     setMedium(false);
     setHigh(false);
@@ -117,6 +123,7 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   };
 
   const handleMedium = () => {
+    setPageValue(1);
     setLow(false);
     setMedium(true);
     setHigh(false);
@@ -130,6 +137,7 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   };
 
   const handleHigh = () => {
+    setPageValue(1);
     setLow(false);
     setMedium(false);
     setHigh(true);
@@ -143,6 +151,7 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   };
 
   const handleVeryHigh = () => {
+    setPageValue(1);
     setLow(false);
     setMedium(false);
     setHigh(false);
@@ -184,6 +193,8 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
       return card?.interestRate === "3.99%/month";
     }
   });
+
+  let cardAmount = filteredData?.length;
 
   const heroData = {
     title: "Card Services",
@@ -233,7 +244,8 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
         </div>
         <div className="pb-8">
           <PaginationCards
-            data={data}
+            allCardsShown={all}
+            cardAmount={cardAmount}
             pageValue={pageValue}
             setPageValue={setPageValue}
           >

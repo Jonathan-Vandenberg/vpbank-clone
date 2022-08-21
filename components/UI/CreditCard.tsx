@@ -38,7 +38,7 @@ const CreditCard: React.FC<IProps> = ({ data }) => {
   return (
     <div className="items-left relative flex h-full flex-col justify-start bg-body">
       <div className="absolute left-[10px] top-[10px] z-10 rounded bg-white p-2 text-sm">
-        <p>Cashback</p>
+        <p>{data?.cardType}</p>
       </div>
       <div>
         <Image

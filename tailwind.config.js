@@ -22,6 +22,7 @@ module.exports = {
         iwanttoColor: "rgb(60,190,99)",
         body: "rgb(244,247,248)",
         cardBg: "rgb(244, 247, 248)",
+        filterDropdown: "rgb(196, 245, 208)",
       },
       spacing: {
         promotionsHeight: "565px",

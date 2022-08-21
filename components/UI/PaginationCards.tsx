@@ -42,6 +42,7 @@ const App: React.FC<IProps> = ({
       <div className="grid-favorites overflow-hidden">{children}</div>
       <div className="flex items-center justify-center p-6">
         <Pagination
+          hidden={cardAmount! < 7 ? true : false}
           count={Math.ceil(cardAmount ? cardAmount / 6 : 3)}
           page={pageValue}
           onChange={(event, val) => {

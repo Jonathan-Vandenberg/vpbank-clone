@@ -337,6 +337,7 @@ const SideNavModal: NextPage = () => {
           onClick={() => openMenu()}
           id="menu-btn"
           className="hamburger align-center top-1 right-1 z-50 flex flex-col justify-center focus:outline-none lg:hidden"
+          aria-label="Menu Dropdown"
         >
           <span className="hamburger-top z-50"></span>
           <span className="hamburger-middle"></span>

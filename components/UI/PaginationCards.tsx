@@ -1,12 +1,8 @@
-import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import { ArrowBackIos, ArrowForwardIos, Pages } from "@mui/icons-material";
 import { Pagination, PaginationItem } from "@mui/material";
 import { ReactNode } from "react";
 import * as Scroll from "react-scroll";
-import {
-  ServicesCard,
-  ServicesCardQuery,
-  ServicesCardsQuery,
-} from "../../types";
+import { ServicesCardsQuery } from "../../types";
 
 const ArrowLeft = () => (
   <div className="text-iwanttoColor">

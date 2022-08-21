@@ -1,12 +1,7 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import {
-  ServicesCard,
-  ServicesCardQuery,
-  ServicesCardsQuery,
-  useServicesCardsQuery,
-} from "../../types";
+import { useServicesCardsQuery } from "../../types";
 import CreditCard from "../UI/CreditCard";
 import Filter from "../UI/Filter";
 import HeroStatic from "../UI/HeroStatic";
@@ -16,12 +11,32 @@ import Promotion from "../UI/Promotion";
 
 const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   // Card type
-  const [all, setAll] = useState(false);
+  const [all, setAll] = useState(true);
   const [individual, setIndividual] = useState(false);
   const [titanium, setTitanium] = useState(false);
   const [classic, setClassic] = useState(false);
   const [platinum, setPlatinum] = useState(false);
   const [gold, setGold] = useState(false);
+
+  // Interest rate
+  // 2.79%, 2.99%, 3.49%, 3.99%
+  const [low, setLow] = useState(false);
+  const [medium, setMedium] = useState(false);
+  const [high, setHigh] = useState(false);
+  const [veryHigh, setVeryHigh] = useState(false);
+
+  const handleAllCards = () => {
+    setAll(true);
+    setIndividual(false);
+    setTitanium(false);
+    setClassic(false);
+    setPlatinum(false);
+    setGold(false);
+    setLow(false);
+    setMedium(false);
+    setHigh(false);
+    setVeryHigh(false);
+  };
 
   const handleIndividual = () => {
     setIndividual(true);
@@ -29,6 +44,11 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
     setClassic(false);
     setPlatinum(false);
     setGold(false);
+    setLow(false);
+    setMedium(false);
+    setHigh(false);
+    setVeryHigh(false);
+    setAll(false);
   };
 
   const handleTitanium = () => {
@@ -37,6 +57,11 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
     setClassic(false);
     setPlatinum(false);
     setGold(false);
+    setLow(false);
+    setMedium(false);
+    setHigh(false);
+    setVeryHigh(false);
+    setAll(false);
   };
 
   const handleClassic = () => {
@@ -45,6 +70,11 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
     setClassic(true);
     setPlatinum(false);
     setGold(false);
+    setLow(false);
+    setMedium(false);
+    setHigh(false);
+    setVeryHigh(false);
+    setAll(false);
   };
 
   const handlePlatinum = () => {
@@ -53,6 +83,11 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
     setClassic(false);
     setPlatinum(true);
     setGold(false);
+    setLow(false);
+    setMedium(false);
+    setHigh(false);
+    setVeryHigh(false);
+    setAll(false);
   };
 
   const handleGold = () => {
@@ -61,6 +96,63 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
     setClassic(false);
     setPlatinum(false);
     setGold(true);
+    setLow(false);
+    setMedium(false);
+    setHigh(false);
+    setVeryHigh(false);
+    setAll(false);
+  };
+
+  const handleLow = () => {
+    setLow(true);
+    setMedium(false);
+    setHigh(false);
+    setVeryHigh(false);
+    setIndividual(false);
+    setTitanium(false);
+    setClassic(false);
+    setPlatinum(false);
+    setGold(false);
+    setAll(false);
+  };
+
+  const handleMedium = () => {
+    setLow(false);
+    setMedium(true);
+    setHigh(false);
+    setVeryHigh(false);
+    setIndividual(false);
+    setTitanium(false);
+    setClassic(false);
+    setPlatinum(false);
+    setGold(false);
+    setAll(false);
+  };
+
+  const handleHigh = () => {
+    setLow(false);
+    setMedium(false);
+    setHigh(true);
+    setVeryHigh(false);
+    setIndividual(false);
+    setTitanium(false);
+    setClassic(false);
+    setPlatinum(false);
+    setGold(false);
+    setAll(false);
+  };
+
+  const handleVeryHigh = () => {
+    setLow(false);
+    setMedium(false);
+    setHigh(false);
+    setVeryHigh(true);
+    setIndividual(false);
+    setTitanium(false);
+    setClassic(false);
+    setPlatinum(false);
+    setGold(false);
+    setAll(false);
   };
 
   const [pageValue, setPageValue] = useState(1);
@@ -70,7 +162,9 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   const { data } = useServicesCardsQuery();
 
   const filteredData = data?.servicesCards?.filter((card) => {
-    if (individual) {
+    if (all) {
+      return card;
+    } else if (individual) {
       return card?.cardType === "Individual";
     } else if (titanium) {
       return card?.cardType === "Titanium";
@@ -80,8 +174,14 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
       return card?.cardType === "Platinum";
     } else if (gold) {
       return card?.cardType === "Gold";
-    } else {
-      return card;
+    } else if (low) {
+      return card?.interestRate === "2.79%/month";
+    } else if (medium) {
+      return card?.interestRate === "2.99%/month";
+    } else if (high) {
+      return card?.interestRate === "3.49%/month";
+    } else if (veryHigh) {
+      return card?.interestRate === "3.99%/month";
     }
   });
 
@@ -124,6 +224,11 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
             handleIndividual={handleIndividual}
             handlePlatinum={handlePlatinum}
             handleTitanium={handleTitanium}
+            handleLow={handleLow}
+            handleMedium={handleMedium}
+            handleHigh={handleHigh}
+            handleVeryHigh={handleVeryHigh}
+            handleAllCards={handleAllCards}
           />
         </div>
         <div className="pb-8">

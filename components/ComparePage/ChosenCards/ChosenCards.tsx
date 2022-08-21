@@ -15,7 +15,7 @@ const ChosenCards = ({
 }) => {
   return (
     <div className="md:px-6  md:py-3 xl:container xl:mx-auto">
-      <div className="hidden gap-2 lg:grid lg:grid-flow-col">
+      <div className="hidden gap-2 lg:grid lg:grid-cols-3">
         {data ? <ChosenCard singleCardData={data} /> : <CardPlaceholder />}
         {data1 ? <ChosenCard singleCardData={data1} /> : <CardPlaceholder />}
         {data2 ? <ChosenCard singleCardData={data2} /> : <CardPlaceholder />}

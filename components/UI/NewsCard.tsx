@@ -85,7 +85,7 @@ const NewsCard = () => {
                 <h3 className="text-md cursor-pointer pt-2 font-semibold hover:text-iwanttoColor">
                   {el.title}
                 </h3>
-                <p className="pb-6 text-sm text-gray-600">{el.content}</p>
+                <p className="pb-6 text-gray-600">{el.content}</p>
               </div>
             ))}
           </div>

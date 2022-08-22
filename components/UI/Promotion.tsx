@@ -113,14 +113,14 @@ const ShareYourStory: React.FC = () => {
     <div className="flex flex-col items-center justify-between p-4 text-lg md:w-1/3">
       <p className="pb-2 font-semibold">Share your story</p>
       <div className="flex items-center  justify-center">
-        <p className="font-lighter lg:text-md px-5 py-3 text-slate-600 md:px-0 md:text-sm xl:text-xl">
-          VPBank luôn lắng nghe và trân trọng mọi ý kiến chia sẻ từ Khách hàng
-          để có cơ hội và động lực mang tới những trải nghiệm giao dịch ngày một
-          tuyệt vời hơn.
+        <p className="lg:text-md px-5 py-3 leading-relaxed text-slate-600  line-clamp-6 md:px-0 xl:text-xl">
+          What I am most confused about when saving is the interest rate, term
+          and choosing the right bank. However, all those worries disappeared
+          when I chose VPBank.
         </p>
       </div>
       <IconButton className="gap-1 whitespace-nowrap text-xl text-iwanttoColor">
-        Share Now <ArrowForwardIcon />
+        Read More <ArrowForwardIcon />
       </IconButton>
     </div>
   );

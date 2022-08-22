@@ -270,7 +270,7 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
         </div>
       </div>
       <div className="mb-8 px-5 lg:px-28 xl:container xl:mx-auto">
-        <CardHeader title="What our customers say..." className={"mb-8"} />
+        <CardHeader title="What our customers say . . ." className={"mb-8"} />
         <ReviewSlider />
       </div>
     </>

@@ -43,13 +43,13 @@ const Filter = ({
         <p
           onMouseOver={() => handleCloseAll()}
           onClick={() => handleAllCards()}
-          className="rounded-md border-[1px] border-gray-300 p-3 px-7 font-semibold hover:text-iwanttoColor hover:shadow-lg"
+          className="rounded-md border-[1px] border-gray-200 p-3 px-7 font-semibold hover:text-iwanttoColor hover:shadow-lg"
         >
           All
         </p>
         <div className="relative">
           <p
-            className="rounded-md border-[1px] border-gray-300 p-3 font-semibold hover:text-iwanttoColor hover:shadow-lg"
+            className="rounded-md border-[1px] border-gray-200 p-3 font-semibold hover:text-iwanttoColor hover:shadow-lg"
             onMouseOver={() => {
               setShowCardType(true), setShowInterest(false);
             }}
@@ -72,7 +72,7 @@ const Filter = ({
             onMouseOver={() => {
               setShowInterest(true), setShowCardType(false);
             }}
-            className="rounded-md border-[1px] border-gray-300 p-3 px-7 font-semibold hover:text-iwanttoColor hover:shadow-lg"
+            className="rounded-md border-[1px] border-gray-200 p-3 px-7 font-semibold hover:text-iwanttoColor hover:shadow-lg"
           >
             Interest Rate
           </p>
@@ -86,14 +86,8 @@ const Filter = ({
             />
           )}
         </div>
-        <p
-          className="rounded-md border-[1px] border-gray-300 p-3 px-7 font-semibold hover:text-iwanttoColor hover:shadow-lg"
-          onMouseOver={() => handleCloseAll()}
-        >
-          Appreciate
-        </p>
       </div>
-      <p className="rounded-full border-2 p-3 px-7">Utility</p>
+      <p className="rounded-full border-[1px] p-3 px-7">Utility</p>
     </div>
   );
 };

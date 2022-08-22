@@ -17,20 +17,18 @@ export const images = [image1, image2, image3, image4, image5];
 const HomeMain: React.FC<{ temp: string }> = ({ temp }) => {
   return (
     <>
-      <div>
-        <HeroSlideshow
-          imageData={images}
-          width={800}
-          height={300}
-          scaleOnHover={false}
-        />
-      </div>
+      <HeroSlideshow
+        imageData={images}
+        width={800}
+        height={300}
+        scaleOnHover={false}
+      />
 
       <div className="z-50 -mt-12">
         <IWantTo />
       </div>
 
-      <div className="mx-auto md:mt-4 lg:mt-6 lg:pb-0 xl:container">
+      <div className="my-10 lg:my-14 xl:my-20">
         <IconSlider />
       </div>
 

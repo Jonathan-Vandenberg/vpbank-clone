@@ -224,10 +224,10 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
   return (
     <>
       <HeroStatic heroData={heroData} />
+      <div className="my-10 lg:my-14 xl:my-20">
+        <IconSlider />
+      </div>
       <div className="mb-8 px-5 md:px-28 xl:container xl:mx-auto">
-        <div className="py-12">
-          <IconSlider />
-        </div>
         <div className="mb-10 hidden lg:block">
           <Filter
             handleClassic={handleClassic}
@@ -253,8 +253,10 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
           </PaginationCards>
         </div>
       </div>
-      <div className="mb-8 bg-body px-5 md:px-28 xl:container xl:mx-auto">
-        <Promotion temperature={temp} />
+      <div className="bg-body">
+        <div className="mb-8  px-5 md:px-28 xl:container xl:mx-auto">
+          <Promotion temperature={temp} />
+        </div>
       </div>
     </>
   );

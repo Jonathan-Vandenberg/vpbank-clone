@@ -47,10 +47,10 @@ const IconSlider = () => {
         }}
         whileTap={{ scale: 0.97 }}
         key={i}
-        className="lg:scale-115 flex cursor-pointer flex-col items-center justify-center p-4 sm:scale-75 sm:p-3 md:scale-90 md:p-4 lg:p-3 xl:scale-100"
+        className="flex cursor-pointer flex-col items-center justify-center p-4"
       >
         <div className="flex items-center justify-center rounded-2xl hover:drop-shadow-md">
-          <Image src={el.image} width={100} height={100} alt="icons" />
+          <Image src={el.image} width={60} height={60} alt="icons" />
         </div>
         <p className="pt-2 text-center  text-slate-600 xl:text-lg">
           {el.title}
@@ -60,7 +60,7 @@ const IconSlider = () => {
 
   return (
     <Slider
-      slidesToShow={width < 768 ? 3 : width < 1024 ? 6 : 9}
+      slidesToShow={width < 768 ? 3 : width < 1024 ? 6 : width < 1440 ? 8 : 10}
       slidesToScroll={width < 768 ? 3 : 2}
       autoplay={false}
       autoplaySpeed={3000}

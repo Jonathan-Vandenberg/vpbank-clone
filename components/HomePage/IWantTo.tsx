@@ -10,7 +10,7 @@ const IWantTo = () => {
   const handleClose = () => setOpen(false);
 
   return (
-    <div className="iwantto left-12 right-12 scale-75 md:scale-90 lg:scale-100">
+    <div className="iwantto left-12 right-12">
       <div className="relative z-30 flex items-center justify-center space-x-0 drop-shadow">
         <div className="z-30 h-20 self-center whitespace-nowrap bg-white p-6 text-lg font-bold md:text-xl">
           <p>I want</p>

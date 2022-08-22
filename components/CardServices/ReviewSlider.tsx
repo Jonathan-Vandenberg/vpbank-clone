@@ -23,7 +23,7 @@ const reviews = [
 
 const IconSlider = () => {
   return (
-    <div className="flex flex-col items-center justify-between space-y-5 md:mx-auto md:flex-row md:space-y-0">
+    <div className="flex flex-col items-center justify-between space-y-5 md:mx-auto md:flex-row md:space-x-5 md:space-y-0">
       {reviews.map((el, i) => (
         <div key={i} className="">
           <ReviewCard customer={el} />

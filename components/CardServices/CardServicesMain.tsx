@@ -9,7 +9,6 @@ import HeroStatic from "../UI/HeroStatic";
 import IconSlider from "../UI/IconSlider";
 import PaginationCards from "../UI/PaginationCards";
 import Promotion from "../UI/Promotion";
-import ReviewCard from "../UI/ReviewCard";
 import ReviewSlider from "./ReviewSlider";
 
 const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
@@ -233,7 +232,9 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
 
   return (
     <>
-      <HeroStatic heroData={heroData} />
+      <div className="hidden md:block">
+        <HeroStatic heroData={heroData} />
+      </div>
       <div className="my-10 lg:my-14 xl:my-20">
         <IconSlider />
       </div>

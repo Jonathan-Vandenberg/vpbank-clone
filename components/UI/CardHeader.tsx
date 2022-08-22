@@ -8,7 +8,7 @@ interface IProps {
 const App: React.FC<IProps> = ({ className, title }) => {
   return (
     <div className={className}>
-      <div className="flex items-center justify-between border-b-2 p-5">
+      <div className="flex items-center justify-between border-b-[1px] p-5">
         <h2 className="bg-gradient-to-r from-startColor to-endColor bg-clip-text text-xl font-bold text-transparent md:text-2xl">
           {title}
         </h2>

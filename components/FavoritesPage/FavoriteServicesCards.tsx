@@ -24,7 +24,7 @@ const FavoriteServicesCards = () => {
       <FavoritesHeader
         localStorageKeys={localStorageKeys}
         favoriteType="Services and Card Favorite"
-        findMoreLink="/cardservices"
+        findMoreLink="/card-services"
       />
       <div className="md:px-12 lg:container lg:mx-auto lg:px-0">
         {localStorageKeys.length > 0 ? (

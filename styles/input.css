@@ -5,13 +5,12 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 @font-face {
-  font-family: 'VarelaRound';
+  font-family: 'Karla';
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: local('VarelaRound'), url(../public/fonts/VarelaRound-Regular.ttf) format('woff2');
+  src: local('Karla'), url(/fonts/Karla-VariableFont_wght.ttf) format('woff2');
 }
 
 
@@ -28,7 +27,8 @@
 }
 
 *{
-  font-family: "Quicksand", sans-serif;
+  font-family: "Karla", sans-serif;
+  letter-spacing: -0.04em;
 }
 
 .input-icons i {

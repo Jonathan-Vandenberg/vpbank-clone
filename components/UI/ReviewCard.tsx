@@ -13,7 +13,7 @@ interface ICustomerReview {
 
 export default function MediaCard({ customer }: { customer: ICustomerReview }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className="shadow-card">
       <CardContent>
         <div className="flex items-center justify-between py-4">
           <Avatar src={customer.image} />

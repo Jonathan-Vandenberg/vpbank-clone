@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useServicesCardsQuery } from "../../types";
+import CardPlaceholder from "../ComparePage/ChosenCards/CardPlaceholder";
 import CardHeader from "../UI/CardHeader";
 import CreditCard from "../UI/CreditCard";
 import Filter from "../UI/Filter";
@@ -254,14 +255,18 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
           />
         </div>
         <div className="pb-8">
-          <PaginationCards
-            allCardsShown={all}
-            cardAmount={cardAmount}
-            pageValue={pageValue}
-            setPageValue={setPageValue}
-          >
-            <CreditCards />
-          </PaginationCards>
+          {filteredData ? (
+            <PaginationCards
+              allCardsShown={all}
+              cardAmount={cardAmount}
+              pageValue={pageValue}
+              setPageValue={setPageValue}
+            >
+              <CreditCards />
+            </PaginationCards>
+          ) : (
+            <CardPlaceholder />
+          )}
         </div>
       </div>
       <div className="bg-body">

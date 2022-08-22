@@ -245,71 +245,108 @@ const SideNavModal: NextPage = () => {
 
   const HouseholdMenu = () => (
     <div className="w-[415px]">
-      <div className="flex items-center justify-start">
-        <div
-          onClick={() => setShowHouseholdMenu(!showHouseholdMenu)}
-          className="p-2"
-        >
+      <div
+        className="flex w-full"
+        onClick={() => setShowHouseholdMenu(!showHouseholdMenu)}
+      >
+        <div className="p-3">
           <MdOutlineArrowBackIos />
         </div>
-        <div className="p-2 font-semibold text-iwanttoColor">
+        <div className="p-2 text-xl font-semibold text-iwanttoColor">
           Lorem Household
         </div>
       </div>
 
       <div className="space-y-3 px-5">
-        <div className="ml-3">Lorem Unsecured Loan</div>
-        <div className="ml-3">Lorem Secured Loans</div>
-        <div className="ml-3">Lorem Bank Assurance</div>
-        <div className="ml-3">Lorem Card Services</div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Unsecured Loan
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">Lorem Secured Loans</div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Bank Assurance
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">Lorem Card Services</div>
       </div>
     </div>
   );
 
   const SMEMenu = () => (
     <div className="w-[415px]">
-      <div className="flex items-center justify-start">
-        <div onClick={() => setShowSMEMenu(!showSMEMenu)} className="p-2">
+      <div className="flex w-full" onClick={() => setShowSMEMenu(!showSMEMenu)}>
+        <div className="p-3">
           <MdOutlineArrowBackIos />
         </div>
-        <div className="p-2 font-semibold text-iwanttoColor">Lorem SME</div>
+        <div className="p-2 text-xl font-semibold text-iwanttoColor">
+          Lorem SME
+        </div>
       </div>
 
       <div className="space-y-3 px-5">
-        <div className="ml-3">Lorem Account Service</div>
-        <div className="ml-3">Lorem Business Loans</div>
-        <div className="ml-3">Lorem VPBIZ Payment Card</div>
-        <div className="ml-3">Lorem Card Payment Services</div>
-        <div className="ml-3">Lorem Payment Service</div>
-        <div className="ml-3">Lorem Trade Finance</div>
-        <div className="ml-3">Lorem Deposit Products</div>
-        <div className="ml-3">Lorem Online Chiropractic</div>
-        <div className="ml-3">Lorem Online Disbursement</div>
-        <div className="ml-3">Lorem Business Account Online</div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Account Service
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Business Loans
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem VPBIZ Payment Card
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Card Payment Services
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Payment Service
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">Lorem Trade Finance</div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Deposit Products
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Online Chiropractic
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Online Disbursement
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Business Account Online
+        </div>
       </div>
     </div>
   );
 
   const CorporateMenu = () => (
     <div className="w-[415px]">
-      <div className="flex items-center justify-start">
-        <div onClick={() => setShowCorporate(!showCorporate)} className="p-2">
+      <div
+        className="justify-startflex flex w-full items-center"
+        onClick={() => setShowCorporate(!showCorporate)}
+      >
+        <div className="p-3">
           <MdOutlineArrowBackIos />
         </div>
-        <div className="p-2 font-semibold text-iwanttoColor">
+        <div className="p-2 text-xl font-semibold text-iwanttoColor">
           Lorem Corporate
         </div>
       </div>
 
       <div className="space-y-3 px-5">
-        <div className="ml-3">Lorem Guarantee</div>
-        <div className="ml-3">Lorem Loans</div>
-        <div className="ml-3">Lorem Services and Trade Finance</div>
-        <div className="ml-3">Lorem Account services</div>
-        <div className="ml-3">Lorem Card Services</div>
-        <div className="ml-3">Lorem Financial Market Products</div>
-        <div className="ml-3">Lorem Internet Banking</div>
-        <div className="ml-3">Lorem Email Transactions</div>
+        <div className="w-full p-3 pl-6 font-semibold">Lorem Guarantee</div>
+        <div className="w-full p-3 pl-6 font-semibold">Lorem Loans</div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Services and Trade Finance
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Account services
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">Lorem Card Services</div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Financial Market Products
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Internet Banking
+        </div>
+        <div className="w-full p-3 pl-6 font-semibold">
+          Lorem Email Transactions
+        </div>
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ const navLinks = [
 const CorporateDropdown: NextPage<Props> = ({ leave }) => (
   <motion.div
     onMouseLeave={leave}
-    className="sm:-w-full z-100 h-dropdownHeight container absolute top-16 flex bg-white p-6 shadow-lg sm:mx-auto md:left-52 md:w-2/3 "
+    className="sm:-w-full z-100 h-dropdownHeight container absolute top-16 flex bg-white p-6 shadow-lg sm:mx-auto md:left-52 md:w-2/3 xl:left-[600px] xl:w-2/5 "
     initial={{ y: 50, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ ease: "easeOut" }}

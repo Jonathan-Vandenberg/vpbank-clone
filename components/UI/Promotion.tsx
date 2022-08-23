@@ -135,7 +135,7 @@ const ShareYourStory: React.FC = () => {
 
 const Weather: React.FC<{ temp: string }> = ({ temp }) => {
   return (
-    <div className="bg-gray-200 md:h-full md:w-1/3">
+    <div className="md:h-full md:w-1/3">
       <div className="p-4">
         <p className="text-xl font-semibold">Ho Chi Minh City</p>
         <p className="text-sm text-slate-600">

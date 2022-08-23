@@ -73,7 +73,7 @@ const Promotion: NextPage<{ temperature: string }> = ({ temperature }) => {
           {monlthyDealsData ? (
             <MonthlyDealSlider data={monlthyDealsData} />
           ) : (
-            <div className="flex max-h-96 items-center justify-center overflow-hidden">
+            <div className="flex h-60 items-center justify-center overflow-hidden md:max-h-96">
               <Skeleton width={850} height={800} variant="rectangular" />
             </div>
           )}

@@ -9,6 +9,7 @@ const nextConfig = {
       "trolyao.vpbank.com.vn",
       "openweathermap.org",
       "localhost",
+      "vpbank-clone.vercel.app",
     ],
   },
 };

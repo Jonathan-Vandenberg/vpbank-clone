@@ -1,5 +1,5 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { IconButton } from "@mui/material";
+import { IconButton, Skeleton } from "@mui/material";
 import Image from "next/image";
 import { NextPage } from "next/types";
 import { useEffect, useState } from "react";
@@ -10,6 +10,7 @@ import {
   useMonthlyDealsQuery,
   usePromotionsQuery,
 } from "../../types";
+import AdvertSkeleton from "./AdvertSkeleton";
 import MonthlyDealSlider from "./MonthlyDealSlider";
 import PromotionCard from "./PromotionCard";
 import SectionHeader from "./SectionHeader";
@@ -47,7 +48,7 @@ const Promotion: NextPage<{ temperature: string }> = ({ temperature }) => {
   const [localStorageChange, setLocalStorageChange] = useState(false);
   const [localStorageKeys, setLocalStorageKeys] = useState([""]);
 
-  const { data: monlthDealsData } = useMonthlyDealsQuery();
+  const { data: monlthyDealsData } = useMonthlyDealsQuery();
   const { data: promotionsData } = usePromotionsQuery();
 
   useEffect(() => {
@@ -69,7 +70,13 @@ const Promotion: NextPage<{ temperature: string }> = ({ temperature }) => {
       <SectionHeader title="Promotions" />
       <div className="md:h-promotionHeight grid-cols-3 space-y-8 px-4 md:flex-col md:px-0 lg:grid lg:space-y-0">
         <div className="md-space-x-4 space-y-8 md:col-span-2 md:flex-col  lg:space-y-3">
-          <MonthlyDealSlider data={monlthDealsData} />
+          {monlthyDealsData ? (
+            <MonthlyDealSlider data={monlthyDealsData} />
+          ) : (
+            <div className="flex max-h-96 items-center justify-center overflow-hidden">
+              <Skeleton width={850} height={800} variant="rectangular" />
+            </div>
+          )}
           <div className="flex flex-col divide-y-[1px] bg-white md:flex-row md:divide-y-0 md:divide-x-[1px]">
             <Weather temp={temperature} />
             <ShareYourStory />
@@ -113,7 +120,7 @@ const ShareYourStory: React.FC = () => {
     <div className="flex flex-col items-center justify-between p-4 text-lg md:w-1/3">
       <p className="pb-2 font-semibold">Share your story</p>
       <div className="flex items-center  justify-center">
-        <p className="lg:text-md px-5 py-3 leading-relaxed text-slate-600  line-clamp-6 md:px-0 xl:text-xl">
+        <p className="lg:text-md px-5 py-3 leading-relaxed text-slate-600 md:px-0 xl:text-xl">
           What I am most confused about when saving is the interest rate, term
           and choosing the right bank. However, all those worries disappeared
           when I chose VPBank.
@@ -164,57 +171,69 @@ const ScrollableAds = ({
 }: AdsProps) => {
   return (
     <div className="flex flex-col space-y-3 pr-2 md:h-96">
-      {promotionsData?.promotions?.map((el, i) => (
-        <div className="contain relative" key={i}>
-          <Image
-            src={el!.image}
-            width={600}
-            height={300}
-            alt="VPBank Image"
-            layout="responsive"
-          />
-          <div className="absolute top-0 left-0 right-0 bottom-0 h-full w-full">
-            <div className="flex h-full flex-col items-start justify-between p-2">
-              {el?.darkImage ? (
-                <p className="text-sm font-semibold text-white">{el!.title}</p>
-              ) : (
-                <p className="text-sm font-semibold">{el!.title}</p>
-              )}
-              {el?.darkImage ? (
-                <h2 className="w-1/2 font-semibold text-white xl:text-lg">
-                  {el!.content}
-                </h2>
-              ) : (
-                <h2 className="w-1/2 font-semibold xl:text-lg">
-                  {el!.content}
-                </h2>
-              )}
-              <div className="flex items-end justify-start space-x-3">
-                <div
-                  onClick={() => {
-                    handleLocalStorage(`${el!.type} - ${el!.id}`);
-                  }}
-                  className="cursor-pointer rounded-full bg-white p-2 "
-                >
-                  <FaHeart
-                    size={20}
-                    color={
-                      localStorageKeys?.includes(`${el!.type} - ${el!.id}`)
-                        ? "red"
-                        : "green"
-                    }
-                  />
+      {promotionsData ? (
+        <>
+          {promotionsData?.promotions?.map((el, i) => (
+            <div className="contain relative" key={i}>
+              <Image
+                src={el!.image}
+                width={600}
+                height={300}
+                alt="VPBank Image"
+                layout="responsive"
+              />
+              <div className="absolute top-0 left-0 right-0 bottom-0 h-full w-full">
+                <div className="flex h-full flex-col items-start justify-between p-2">
+                  {el?.darkImage ? (
+                    <p className="text-sm font-semibold text-white">
+                      {el!.title}
+                    </p>
+                  ) : (
+                    <p className="text-sm font-semibold">{el!.title}</p>
+                  )}
+                  {el?.darkImage ? (
+                    <h2 className="w-1/2 font-semibold text-white xl:text-lg">
+                      {el!.content}
+                    </h2>
+                  ) : (
+                    <h2 className="w-1/2 font-semibold xl:text-lg">
+                      {el!.content}
+                    </h2>
+                  )}
+                  <div className="flex items-end justify-start space-x-3">
+                    <div
+                      onClick={() => {
+                        handleLocalStorage(`${el!.type} - ${el!.id}`);
+                      }}
+                      className="cursor-pointer rounded-full bg-white p-2 "
+                    >
+                      <FaHeart
+                        size={20}
+                        color={
+                          localStorageKeys?.includes(`${el!.type} - ${el!.id}`)
+                            ? "red"
+                            : "green"
+                        }
+                      />
+                    </div>
+                    {el?.darkImage ? (
+                      <p className="text-sm text-white">{el!.customer}</p>
+                    ) : (
+                      <p className="text-sm">{el!.customer}</p>
+                    )}
+                  </div>
                 </div>
-                {el?.darkImage ? (
-                  <p className="text-sm text-white">{el!.customer}</p>
-                ) : (
-                  <p className="text-sm">{el!.customer}</p>
-                )}
               </div>
             </div>
-          </div>
+          ))}
+        </>
+      ) : (
+        <div className="space-y-3">
+          <AdvertSkeleton />
+          <AdvertSkeleton />
+          <AdvertSkeleton />
         </div>
-      ))}
+      )}
     </div>
   );
 };
@@ -224,13 +243,21 @@ const StaticAds: React.FC<{
 }> = ({ promotionsData }) => {
   return (
     <div className="space-y-5 md:grid md:grid-cols-2 md:gap-5 md:space-y-0">
-      {promotionsData?.promotions
-        ?.map((el, i) => (
-          <div key={i}>
-            <PromotionCard data={el} />
-          </div>
-        ))
-        .slice(0, 2)}
+      {promotionsData ? (
+        <>
+          {promotionsData?.promotions
+            ?.map((el, i) => (
+              <div key={i}>
+                <PromotionCard data={el} />
+              </div>
+            ))
+            .slice(0, 2)}
+        </>
+      ) : (
+        <div className="flex items-center justify-center">
+          <AdvertSkeleton />
+        </div>
+      )}
     </div>
   );
 };

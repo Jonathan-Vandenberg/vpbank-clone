@@ -119,9 +119,9 @@ const ShareYourStory: React.FC = () => {
           when I chose VPBank.
         </p>
       </div>
-      <IconButton className="gap-1 whitespace-nowrap text-xl text-iwanttoColor">
+      <div className="gap-1 text-lg text-iwanttoColor">
         Read More <ArrowForwardIcon />
-      </IconButton>
+      </div>
     </div>
   );
 };

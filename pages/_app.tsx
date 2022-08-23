@@ -47,6 +47,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta charSet="utf-8" />
         <meta name="author" content="Jonathan van den berg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <ApolloProvider client={client}>
         <Navbar />

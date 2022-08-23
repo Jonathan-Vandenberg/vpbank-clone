@@ -48,7 +48,7 @@ const HomeMain: React.FC<{ temp: string }> = ({ temp }) => {
           </div>
         </div>
 
-        <div className="space-y-8 lg:grid lg:grid-cols-5 lg:space-x-8 lg:space-y-0">
+        <div className="space-y-8 overflow-hidden lg:grid lg:max-h-[380px] lg:grid-cols-5 lg:space-x-8 lg:space-y-0">
           <div className="lg:col-span-3">
             <NewsCard />
           </div>

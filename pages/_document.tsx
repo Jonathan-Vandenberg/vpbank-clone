@@ -7,6 +7,7 @@ class _Document extends Document {
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <link rel="preload" as="font" />
+          <link rel="manifest" href="/manifest.json"></link>
         </Head>
         <body>
           <Main />

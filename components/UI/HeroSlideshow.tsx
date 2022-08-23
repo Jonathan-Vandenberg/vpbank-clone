@@ -38,7 +38,6 @@ const HeroSlideshow: NextPage<Props> = ({
             height={height}
             layout="responsive"
             className="object-cover"
-            priority={true}
           />
         </motion.div>
       </div>

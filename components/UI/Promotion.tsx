@@ -172,7 +172,6 @@ const ScrollableAds = ({
             height={300}
             alt="VPBank Image"
             layout="responsive"
-            priority
           />
           <div className="absolute top-0 left-0 right-0 bottom-0 h-full w-full">
             <div className="flex h-full flex-col items-start justify-between p-2">

@@ -6,7 +6,6 @@ const App = () => {
   return (
     <div className="divide-y-2 border-b-2 md:hidden">
       <Collapsible
-        id="creditCard"
         transitionTime={200}
         trigger={
           <div className="flex items-center justify-between">
@@ -34,7 +33,6 @@ const App = () => {
         </p>
       </Collapsible>
       <Collapsible
-        id="personalLoans"
         transitionTime={200}
         trigger={
           <div className="flex items-center justify-between">
@@ -53,7 +51,6 @@ const App = () => {
         </p>
       </Collapsible>
       <Collapsible
-        id="securedLoans"
         transitionTime={200}
         trigger={
           <div className="flex items-center justify-between">
@@ -75,7 +72,6 @@ const App = () => {
         </p>
       </Collapsible>
       <Collapsible
-        id="savings"
         transitionTime={200}
         trigger={
           <div className="flex items-center justify-between">
@@ -94,7 +90,6 @@ const App = () => {
         </p>
       </Collapsible>
       <Collapsible
-        id="other"
         transitionTime={200}
         trigger={
           <div className="flex items-center justify-between">
@@ -117,7 +112,6 @@ const App = () => {
         </p>
       </Collapsible>
       <Collapsible
-        id="thingsyoushouldknow"
         transitionTime={200}
         trigger={
           <div className="flex items-center justify-between">

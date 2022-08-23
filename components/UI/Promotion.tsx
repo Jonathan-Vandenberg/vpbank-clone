@@ -77,7 +77,7 @@ const Promotion: NextPage<{ temperature: string }> = ({ temperature }) => {
               <Skeleton width={850} height={800} variant="rectangular" />
             </div>
           )}
-          <div className="flex flex-col divide-y-[1px] bg-white md:flex-row md:divide-y-0 md:divide-x-[1px]">
+          <div className="flex flex-col divide-y-[1px] bg-white md:flex-row md:items-center md:divide-y-0 md:divide-x-[1px]">
             <Weather temp={temperature} />
             <ShareYourStory />
             <ContactUs />
@@ -135,14 +135,14 @@ const ShareYourStory: React.FC = () => {
 
 const Weather: React.FC<{ temp: string }> = ({ temp }) => {
   return (
-    <div className="p-2 md:w-1/3">
-      <div className="w-full p-4">
+    <div className="bg-gray-200 md:h-full md:w-1/3">
+      <div className="p-4">
         <p className="text-xl font-semibold">Ho Chi Minh City</p>
         <p className="text-sm text-slate-600">
           {day}, {month} {d.getDate()} {d.getFullYear()}
         </p>
       </div>
-      <div className="mt-2 flex items-center justify-evenly">
+      <div className="flex items-center justify-evenly">
         <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col">
           <FaSun className="text-5xl text-yellow-300" />
           <p className="p-1 text-center text-2xl font-bold">{temp}˚C</p>

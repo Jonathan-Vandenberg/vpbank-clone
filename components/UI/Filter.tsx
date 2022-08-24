@@ -49,7 +49,7 @@ const Filter = ({
         </p>
         <div className="relative">
           <p
-            className="rounded-md border-[1px] border-gray-200 p-1 px-4  font-semibold hover:text-iwanttoColor hover:shadow-lg md:p-3"
+            className="rounded-md border-[1px] border-gray-200 p-1 px-4 font-semibold hover:text-iwanttoColor hover:shadow-lg md:p-3"
             onMouseOver={() => {
               setShowCardType(true), setShowInterest(false);
             }}
@@ -108,13 +108,13 @@ const SelectCardType = ({
       className="absolute z-20"
       onMouseLeave={() => handleCloseAll()}
     >
-      <div className="absolute -left-32 -bottom-[68px] flex scale-90 items-center justify-center bg-filterDropdown px-5 md:-bottom-20 md:scale-100">
+      <div className="absolute -left-32 -bottom-[74px] flex scale-90 items-center justify-center bg-filterDropdown px-5 md:-bottom-20 md:scale-100">
         <div className="relative">
           <p
             onClick={() => {
               handleCloseAll(), handleIndividual();
             }}
-            className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+            className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 font-semibold hover:text-iwanttoColor"
           >
             Individual
           </p>
@@ -124,7 +124,7 @@ const SelectCardType = ({
           onClick={() => {
             handleCloseAll(), handleTitanium();
           }}
-          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 font-semibold hover:text-iwanttoColor"
         >
           Titanium
         </p>
@@ -132,7 +132,7 @@ const SelectCardType = ({
           onClick={() => {
             handleClassic(), handleCloseAll();
           }}
-          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 font-semibold hover:text-iwanttoColor"
         >
           Classic
         </p>
@@ -140,7 +140,7 @@ const SelectCardType = ({
           onClick={() => {
             handlePlatinum(), handleCloseAll();
           }}
-          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 font-semibold hover:text-iwanttoColor"
         >
           Platinum
         </p>
@@ -148,7 +148,7 @@ const SelectCardType = ({
           onClick={() => {
             handleGold(true), handleCloseAll();
           }}
-          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 font-semibold hover:text-iwanttoColor"
         >
           Gold
         </p>
@@ -173,13 +173,13 @@ const SelectInterestRate = ({
         handleCloseAll(), handleCloseAll();
       }}
     >
-      <div className="absolute -left-36 -bottom-[68px] flex scale-90 items-center justify-center bg-filterDropdown px-5 md:-left-24 md:-bottom-20 md:scale-100">
+      <div className="absolute -left-36 -bottom-[74px] flex scale-90 items-center justify-center bg-filterDropdown px-5 md:-left-24 md:-bottom-20 md:scale-100">
         <div className="relative">
           <p
             onClick={() => {
               handleLow(), handleCloseAll();
             }}
-            className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+            className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 font-semibold hover:text-iwanttoColor"
           >
             2.79%
           </p>
@@ -189,7 +189,7 @@ const SelectInterestRate = ({
           onClick={() => {
             handleMedium(), handleCloseAll();
           }}
-          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 font-semibold hover:text-iwanttoColor"
         >
           2.99%
         </p>
@@ -197,7 +197,7 @@ const SelectInterestRate = ({
           onClick={() => {
             handleHigh(), handleCloseAll();
           }}
-          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 font-semibold hover:text-iwanttoColor"
         >
           3.49%
         </p>
@@ -205,7 +205,7 @@ const SelectInterestRate = ({
           onClick={() => {
             handleVeryHigh(), handleCloseAll();
           }}
-          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 font-semibold hover:text-iwanttoColor"
         >
           3.99%
         </p>

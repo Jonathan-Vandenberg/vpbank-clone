@@ -124,7 +124,7 @@ const ShareYourStory: React.FC = () => {
     <div className="flex flex-col items-center justify-between border-y-[1px] border-gray-200 p-4 text-lg md:border-x-[1px]  md:border-y-0 md:border-gray-200">
       <p className="pb-2 font-semibold">Share your story</p>
       <div className="flex items-center  justify-center">
-        <p className="lg:text-md px-5 py-3 leading-tight text-slate-600 md:px-0 xl:text-xl">
+        <p className="lg:text-md max-w-[300px] px-5 py-3 leading-snug text-slate-600 md:px-0 xl:text-xl">
           What I am most confused about when saving is the interest rate, term
           and choosing the right bank. However, all those worries disappeared
           when I chose VPBank.
@@ -164,9 +164,7 @@ const Weather: React.FC<{ temp: string; metalPrices: string[] }> = ({
               </div>
             </motion.div>
             <p className="p-2">Gold:</p>
-            <p className="font-semibold text-iwanttoColor">
-              $ {metalPrices[0]}
-            </p>
+            <p className="font-semibold text-iwanttoColor">$ 1347.24</p>
           </div>
           <div className="flex items-center justify-start">
             <motion.div
@@ -180,9 +178,7 @@ const Weather: React.FC<{ temp: string; metalPrices: string[] }> = ({
               </div>
             </motion.div>
             <p className="p-2">Silver:</p>
-            <p className="font-semibold text-iwanttoColor">
-              $ {metalPrices[1]}
-            </p>
+            <p className="font-semibold text-iwanttoColor">$ 23.47</p>
           </div>
         </div>
         <div className="flex items-center justify-evenly">

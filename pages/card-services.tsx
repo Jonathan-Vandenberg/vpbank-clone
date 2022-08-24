@@ -4,7 +4,7 @@ import CardServicesMain from "../components/CardServices/CardServicesMain";
 
 const App: React.FC<{ temperature: string; metalPrices: string[] }> = ({
   temperature,
-  metalPrices = ["123123123123123", "123123123123123"],
+  metalPrices,
 }) => {
   return (
     <main>

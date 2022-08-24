@@ -235,7 +235,7 @@ const CardServices: React.FC<{ temp: string; metalPrices: string[] }> = ({
       <div className="my-10 lg:my-14 xl:my-20">
         <IconSlider />
       </div>
-      <div className="mb-8 px-5 md:px-28 xl:container xl:mx-auto">
+      <div className="mb-8 px-5 md:px-12 xl:container xl:mx-auto">
         <div className="mb-10 hidden lg:block">
           <Filter
             handleClassic={handleClassic}
@@ -250,7 +250,7 @@ const CardServices: React.FC<{ temp: string; metalPrices: string[] }> = ({
             handleAllCards={handleAllCards}
           />
         </div>
-        <div className="pb-8">
+        <div className="mb-8">
           {filteredData ? (
             <PaginationCards
               allCardsShown={all}
@@ -266,7 +266,7 @@ const CardServices: React.FC<{ temp: string; metalPrices: string[] }> = ({
         </div>
       </div>
       <div className="bg-body">
-        <div className="mb-8  px-5 md:px-28 xl:container xl:mx-auto">
+        <div className="mb-8 md:px-12 xl:container xl:mx-auto">
           <Promotion temperature={temp} metalPrices={metalPrices} />
         </div>
       </div>

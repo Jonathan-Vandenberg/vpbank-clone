@@ -22,7 +22,7 @@ const icons = [
   { image: icon3, title: "Loans" },
   { image: icon4, title: "Savings" },
   { image: icon5, title: "Account" },
-  { image: icon6, title: "E-Banking" },
+  { image: icon6, title: "Banking" },
   { image: icon7, title: "Insurance" },
   { image: icon8, title: "Personal Services" },
   { image: icon9, title: "VPBank Loyalty" },

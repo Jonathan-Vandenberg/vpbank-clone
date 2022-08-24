@@ -49,7 +49,9 @@ export default function CardPlaceholder() {
             onClick={() => dispatch(changeDrawerState(true))}
             className="flex cursor-pointer items-center justify-center space-x-3 p-3 text-iwanttoColor"
           >
-            <p className="whitespace-nowrap text-sm">Add</p>
+            <button type="button" className="whitespace-nowrap text-sm">
+              Add
+            </button>
             <FaPlus />
           </div>
         </div>

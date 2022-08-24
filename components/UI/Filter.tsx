@@ -108,7 +108,7 @@ const SelectCardType = ({
       className="absolute z-20"
       onMouseLeave={() => handleCloseAll()}
     >
-      <div className="absolute -left-32 -bottom-[68px] flex scale-75 items-center justify-center bg-filterDropdown px-5 md:-bottom-20 md:scale-100">
+      <div className="absolute -left-32 -bottom-[68px] flex scale-90 items-center justify-center bg-filterDropdown px-5 md:-bottom-20 md:scale-100">
         <div className="relative">
           <p
             onClick={() => {
@@ -173,7 +173,7 @@ const SelectInterestRate = ({
         handleCloseAll(), handleCloseAll();
       }}
     >
-      <div className="absolute -left-36 -bottom-[68px] flex scale-75 items-center justify-center bg-filterDropdown px-5 md:-left-24 md:-bottom-20 md:scale-100">
+      <div className="absolute -left-36 -bottom-[68px] flex scale-90 items-center justify-center bg-filterDropdown px-5 md:-left-24 md:-bottom-20 md:scale-100">
         <div className="relative">
           <p
             onClick={() => {

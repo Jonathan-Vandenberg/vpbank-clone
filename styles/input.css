@@ -13,12 +13,14 @@
   src: local('Karla'), url(/fonts/Karla-VariableFont_wght.ttf) format('woff2');
 }
 
-
-
-* {
-  outline: none !important;
+input,
+textarea,
+button,
+select,
+a {
   -webkit-tap-highlight-color: transparent !important;
   -webkit-touch-callout: none !important;
+  outline: none !important;
 }
 
 *{

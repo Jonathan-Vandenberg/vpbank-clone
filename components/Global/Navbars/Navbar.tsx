@@ -4,7 +4,7 @@ import { NextPage } from "next/types";
 import { useEffect, useState } from "react";
 import VPBankNeo_Logo from "../../../public/neoLogo.png";
 import VPBank_Logo from "../../../public/vpLogo.svg";
-import CorporateDropdown from "./Dropdowns/CorporateDropdown";
+import CompareDropdown from "./Dropdowns/CompareDropdown";
 import HouseholdDropdown from "./Dropdowns/HouseholdDropdown";
 import RetailDropdown from "./Dropdowns/RetailDropdown";
 import SMEDropdown from "./Dropdowns/SMEDropdown";
@@ -146,6 +146,18 @@ const NavbarBottom: NextPage = () => {
                   className="unhidden4 absolute z-20 h-3 w-3 translate-y-8 rotate-45 bg-gray-100 "
                 />
               )}
+              {retailDrodown && (
+                <RetailDropdown leave={() => setRetailDropdown(false)} />
+              )}
+              {householdDropdown && (
+                <HouseholdDropdown leave={() => setHouseholdDropdown(false)} />
+              )}
+              {sMEDropdown && (
+                <SMEDropdown leave={() => setSMEDropdown(false)} />
+              )}
+              {corporateDropdown && (
+                <CompareDropdown leave={() => setCorporateDropdown(false)} />
+              )}
             </div>
             <div className="relative flex flex-col items-center justify-center">
               <div
@@ -223,18 +235,7 @@ const NavbarBottom: NextPage = () => {
             </div>
           )}
         </div>
-        <div className="w-1/4">
-          {retailDrodown && (
-            <RetailDropdown leave={() => setRetailDropdown(false)} />
-          )}
-          {householdDropdown && (
-            <HouseholdDropdown leave={() => setHouseholdDropdown(false)} />
-          )}
-          {sMEDropdown && <SMEDropdown leave={() => setSMEDropdown(false)} />}
-          {corporateDropdown && (
-            <CorporateDropdown leave={() => setCorporateDropdown(false)} />
-          )}
-        </div>
+        <div className="w-1/4"></div>
       </div>
     </>
   );

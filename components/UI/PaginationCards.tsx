@@ -34,7 +34,7 @@ const App: React.FC<IProps> = ({
   let scroll = Scroll.animateScroll;
 
   const handleScroll = () => {
-    scroll.scrollTo(600);
+    scroll.scrollTo(0);
   };
 
   return (

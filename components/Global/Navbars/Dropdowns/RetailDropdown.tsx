@@ -24,24 +24,26 @@ const RetailDropdown: NextPage<Props> = ({ leave }) => (
   <motion.div
     id="retailDropdown"
     onMouseLeave={leave}
-    className="sm:-w-full z-100 h-dropdownHeight aspect- absolute top-16 flex bg-white p-6 shadow-lg sm:mx-auto md:left-52 md:w-2/3 xl:left-[600px] xl:w-2/5 "
+    className="h-dropdownHeight absolute top-[46px] grid w-[600px] grid-cols-2 bg-white p-5"
     initial={{ y: 50, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ ease: "easeOut" }}
   >
-    <div className="block w-1/2 space-y-3">
+    <div className="col-span-1 space-y-2">
       {navLinks.map((link, i) => (
-        <div key={i} onClick={leave}>
-          <Link href={`/${link.href}`}>
-            <a className="block whitespace-nowrap text-lg font-medium hover:text-hoverTextColor">
-              {link.title}
-            </a>
+        <div
+          key={i}
+          onClick={leave}
+          className="pointer-cursor hover:text-iwanttoColor"
+        >
+          <Link href={`${link.href}`}>
+            <p className="text-lg font-semibold">{link.title}</p>
           </Link>
         </div>
       ))}
     </div>
-    <div className="flex.col h-full w-1/2 items-center justify-center space-y-0.5 border-l-2">
-      <div className=" h-3/4  p-6">
+    <div className="col-span-1 flex flex-col">
+      <div>
         <Image
           src={"https://picsum.photos/id/391/600/600"}
           width="600"
@@ -51,7 +53,7 @@ const RetailDropdown: NextPage<Props> = ({ leave }) => (
         />
       </div>
 
-      <div className="h-1/4 p-6">
+      <div className="text-md block py-5 text-gray-500">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit rem
         blanditiis distinctio officiis laudantium doloribus eligendi saepe ad?
       </div>

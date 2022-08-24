@@ -9,7 +9,6 @@ import Footer from "../components/Global/Footer/Footer";
 import SideNavModal from "../components/Global/Navbars/SideNavModal";
 import "../styles/input.css";
 import store from "../store/store";
-import { useEffect } from "react";
 
 const ScrollToTop = dynamic(
   () => import("../components/Global/ScrollToTopArrow"),

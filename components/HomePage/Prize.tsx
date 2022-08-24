@@ -1,5 +1,4 @@
 import CardHeader from "../UI/CardHeader";
-import HeroSlideshow from "../UI/HeroSlideshow";
 import Image from "next/image";
 
 const imageData = [

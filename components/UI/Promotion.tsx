@@ -141,7 +141,6 @@ const Weather: React.FC<{ temp: string; metalPrices: string[] }> = ({
   temp,
   metalPrices,
 }) => {
-  console.log(metalPrices);
   return (
     <div className="">
       <div className="p-4">

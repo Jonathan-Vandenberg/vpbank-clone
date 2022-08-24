@@ -2,7 +2,10 @@ import axios from "axios";
 import Head from "next/head";
 import HomeMain from "../components/HomePage/HomeMain";
 
-const App: React.FC<{ temperature: string }> = ({ temperature }) => {
+const App: React.FC<{ temperature: string; metalPrices: string[] }> = ({
+  temperature,
+  metalPrices,
+}) => {
   return (
     <main>
       <Head>
@@ -12,7 +15,7 @@ const App: React.FC<{ temperature: string }> = ({ temperature }) => {
           content="VPBank is a leading Vietnamese bank that provides a wide range of services and products to its customers"
         />
       </Head>
-      <HomeMain temp={temperature} />
+      <HomeMain temp={temperature} metalPrices={metalPrices} />
     </main>
   );
 };
@@ -20,7 +23,7 @@ const App: React.FC<{ temperature: string }> = ({ temperature }) => {
 export default App;
 
 export async function getStaticProps() {
-  const options = {
+  const optionsWeather = {
     method: "GET",
     url: "https://weatherbit-v1-mashape.p.rapidapi.com/current",
     params: { lon: "106.6297", lat: "10.823" },
@@ -30,10 +33,29 @@ export async function getStaticProps() {
     },
   };
 
+  const options = {
+    method: "GET",
+    url: "https://gold-price-live.p.rapidapi.com/get_metal_prices",
+    headers: {
+      "X-RapidAPI-Key": "238f019ceamsh555090a8d52cec6p1178e5jsn2e7cd458b6c3",
+      "X-RapidAPI-Host": "gold-price-live.p.rapidapi.com",
+    },
+  };
+
   let temperature;
+  let metalPrices;
 
   await axios
     .request(options)
+    .then(function (response: any) {
+      metalPrices = JSON.stringify(response.data);
+    })
+    .catch(function (error: any) {
+      console.error(error);
+    });
+
+  await axios
+    .request(optionsWeather)
     .then(function (response: any) {
       temperature = JSON.stringify(response.data.data[0].temp);
     })
@@ -44,6 +66,7 @@ export async function getStaticProps() {
   return {
     props: {
       temperature,
+      metalPrices,
     },
   };
 }

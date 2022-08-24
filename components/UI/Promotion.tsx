@@ -1,5 +1,6 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { IconButton, Skeleton } from "@mui/material";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { NextPage } from "next/types";
 import { useEffect, useState } from "react";
@@ -44,7 +45,10 @@ const d = new Date();
 let day = weekday[d.getDay()];
 let month = months[d.getMonth()];
 
-const Promotion: NextPage<{ temperature: string }> = ({ temperature }) => {
+const Promotion: NextPage<{ temperature: string; metalPrices: string[] }> = ({
+  temperature,
+  metalPrices,
+}) => {
   const [localStorageChange, setLocalStorageChange] = useState(false);
   const [localStorageKeys, setLocalStorageKeys] = useState([""]);
 
@@ -77,8 +81,8 @@ const Promotion: NextPage<{ temperature: string }> = ({ temperature }) => {
               <Skeleton width={850} height={800} variant="rectangular" />
             </div>
           )}
-          <div className="flex flex-col divide-y-[1px] bg-white md:flex-row md:items-center md:divide-y-0 md:divide-x-[1px]">
-            <Weather temp={temperature} />
+          <div className="flex flex-col bg-white md:grid md:grid-cols-3">
+            <Weather temp={temperature} metalPrices={metalPrices} />
             <ShareYourStory />
             <ContactUs />
           </div>
@@ -104,7 +108,7 @@ export default Promotion;
 
 const ContactUs: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center p-4 md:w-1/3">
+    <div className="flex flex-col items-center justify-center p-4">
       <p className="whitespace-nowrap pb-2 text-lg font-semibold">
         Contact us hotline
       </p>
@@ -117,10 +121,10 @@ const ContactUs: React.FC = () => {
 
 const ShareYourStory: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-between p-4 text-lg md:w-1/3">
+    <div className="flex flex-col items-center justify-between border-y-[1px] border-gray-200 p-4 text-lg md:border-x-[1px]  md:border-y-0 md:border-gray-200">
       <p className="pb-2 font-semibold">Share your story</p>
       <div className="flex items-center  justify-center">
-        <p className="lg:text-md px-5 py-3 leading-relaxed text-slate-600 md:px-0 xl:text-xl">
+        <p className="lg:text-md px-5 py-3 leading-tight text-slate-600 md:px-0 xl:text-xl">
           What I am most confused about when saving is the interest rate, term
           and choosing the right bank. However, all those worries disappeared
           when I chose VPBank.
@@ -133,25 +137,65 @@ const ShareYourStory: React.FC = () => {
   );
 };
 
-const Weather: React.FC<{ temp: string }> = ({ temp }) => {
+const Weather: React.FC<{ temp: string; metalPrices: string[] }> = ({
+  temp,
+  metalPrices,
+}) => {
+  console.log(metalPrices);
   return (
-    <div className="md:h-full md:w-1/3">
+    <div className="">
       <div className="p-4">
         <p className="text-xl font-semibold">Ho Chi Minh City</p>
         <p className="text-sm text-slate-600">
           {day}, {month} {d.getDate()} {d.getFullYear()}
         </p>
       </div>
-      <div className="flex items-center justify-evenly">
-        <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col">
-          <FaSun className="text-5xl text-yellow-300" />
-          <p className="p-1 text-center text-2xl font-bold">{temp}˚C</p>
+      <div className="flex items-center justify-evenly md:block">
+        <div className="flex flex-col items-start justify-center p-3">
+          <div className="flex items-center justify-start">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [1.1, 0, 1.1] }}
+              transition={{ repeat: Infinity, duration: 1 }}
+              className="mr-1"
+            >
+              <div className="flex items-center justify-center">
+                <span className="h-2 w-2 rounded-full bg-green-500" />
+              </div>
+            </motion.div>
+            <p className="p-2">Gold:</p>
+            <p className="font-semibold text-iwanttoColor">
+              ${metalPrices.slice(8, 15)}
+            </p>
+          </div>
+          <div className="flex items-center justify-start">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [1.1, 0, 1.1] }}
+              transition={{ repeat: Infinity, duration: 1 }}
+              className="mr-1"
+            >
+              <div className="flex items-center justify-center">
+                <span className="h-2 w-2 rounded-full bg-green-500" />
+              </div>
+            </motion.div>
+            <p className="p-2">Silver:</p>
+            <p className="font-semibold text-iwanttoColor">
+              ${metalPrices.slice(25, 30)}
+            </p>
+          </div>
         </div>
-        <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col md:items-center md:justify-center md:space-x-0">
-          <p className="border-r-[1px] p-5 text-xl font-thin md:border-r-0 md:border-b-[1px] md:p-[6px] md:text-2xl">
-            AQI
-          </p>
-          <p className="p-1 text-center text-2xl font-bold">50</p>
+        <div className="flex items-center justify-evenly">
+          <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col">
+            <FaSun className="text-5xl text-yellow-300" />
+            <p className="p-1 text-center text-2xl font-bold">{temp}˚C</p>
+          </div>
+          <div className="flex items-center justify-center space-x-3 p-3 md:w-1/3 md:flex-col md:items-center md:justify-center md:space-x-0">
+            <p className="border-r-[1px] p-5 text-xl font-thin md:border-r-0 md:border-b-[1px] md:p-[6px] md:text-2xl">
+              AQI
+            </p>
+            <p className="p-1 text-center text-2xl font-bold">50</p>
+          </div>
         </div>
       </div>
     </div>

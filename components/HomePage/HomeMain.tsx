@@ -14,7 +14,10 @@ import image5 from "../../public/hero/vpHero5.jpeg";
 
 export const images = [image1, image2, image3, image4, image5];
 
-const HomeMain: React.FC<{ temp: string }> = ({ temp }) => {
+const HomeMain: React.FC<{ temp: string; metalPrices: string[] }> = ({
+  temp,
+  metalPrices,
+}) => {
   return (
     <>
       <HeroSlideshow
@@ -34,7 +37,7 @@ const HomeMain: React.FC<{ temp: string }> = ({ temp }) => {
 
       <div className="bg-body">
         <div className="mb-8 md:px-12 xl:container xl:mx-auto">
-          <Promotion temperature={temp} />
+          <Promotion temperature={temp} metalPrices={metalPrices} />
         </div>
       </div>
 

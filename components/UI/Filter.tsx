@@ -37,19 +37,19 @@ const Filter = ({
   };
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-start">
       <div className="flex items-center justify-between space-x-5">
-        <p className="text-xs">FILTER</p>
+        <p className="hidden text-xs md:block">FILTER</p>
         <p
           onMouseOver={() => handleCloseAll()}
           onClick={() => handleAllCards()}
-          className="rounded-md border-[1px] border-gray-200 p-3 px-7 font-semibold hover:text-iwanttoColor hover:shadow-lg"
+          className="rounded-md border-[1px] border-gray-200 p-1 px-4 font-semibold hover:text-iwanttoColor hover:shadow-lg md:p-3 md:px-7"
         >
           All
         </p>
         <div className="relative">
           <p
-            className="rounded-md border-[1px] border-gray-200 p-3 font-semibold hover:text-iwanttoColor hover:shadow-lg"
+            className="rounded-md border-[1px] border-gray-200 p-1 px-4  font-semibold hover:text-iwanttoColor hover:shadow-lg md:p-3"
             onMouseOver={() => {
               setShowCardType(true), setShowInterest(false);
             }}
@@ -72,7 +72,7 @@ const Filter = ({
             onMouseOver={() => {
               setShowInterest(true), setShowCardType(false);
             }}
-            className="rounded-md border-[1px] border-gray-200 p-3 px-7 font-semibold hover:text-iwanttoColor hover:shadow-lg"
+            className="rounded-md border-[1px] border-gray-200 p-1 px-4 font-semibold hover:text-iwanttoColor  hover:shadow-lg md:p-3 md:px-7"
           >
             Interest Rate
           </p>
@@ -87,7 +87,6 @@ const Filter = ({
           )}
         </div>
       </div>
-      <p className="rounded-full border-[1px] p-3 px-7">Utility</p>
     </div>
   );
 };
@@ -106,16 +105,16 @@ const SelectCardType = ({
     <motion.div
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1, transition: { duration: 0.2 } }}
-      className="absolute z-20"
+      className="absolute z-20 "
       onMouseLeave={() => handleCloseAll()}
     >
-      <div className="justify center absolute -bottom-20 -left-8 flex items-center bg-filterDropdown px-5">
+      <div className="absolute -bottom-20 -left-8 flex items-center justify-center bg-filterDropdown px-5">
         <div className="relative">
           <p
             onClick={() => {
               handleCloseAll(), handleIndividual();
             }}
-            className="test-sm whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+            className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
           >
             Individual
           </p>
@@ -125,7 +124,7 @@ const SelectCardType = ({
           onClick={() => {
             handleCloseAll(), handleTitanium();
           }}
-          className="test-sm whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
         >
           Titanium
         </p>
@@ -133,7 +132,7 @@ const SelectCardType = ({
           onClick={() => {
             handleClassic(), handleCloseAll();
           }}
-          className="test-sm whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
         >
           Classic
         </p>
@@ -141,7 +140,7 @@ const SelectCardType = ({
           onClick={() => {
             handlePlatinum(), handleCloseAll();
           }}
-          className="test-sm whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
         >
           Platinum
         </p>
@@ -149,7 +148,7 @@ const SelectCardType = ({
           onClick={() => {
             handleGold(true), handleCloseAll();
           }}
-          className="test-sm whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
         >
           Gold
         </p>
@@ -169,7 +168,7 @@ const SelectInterestRate = ({
     <motion.div
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1, transition: { duration: 0.2 } }}
-      className="absolute z-20"
+      className="absolute z-20 scale-75 md:scale-90 lg:scale-100"
       onMouseLeave={() => {
         handleCloseAll(), handleCloseAll();
       }}
@@ -180,7 +179,7 @@ const SelectInterestRate = ({
             onClick={() => {
               handleLow(), handleCloseAll();
             }}
-            className="test-sm whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+            className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
           >
             2.79%
           </p>
@@ -190,7 +189,7 @@ const SelectInterestRate = ({
           onClick={() => {
             handleMedium(), handleCloseAll();
           }}
-          className="test-sm whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
         >
           2.99%
         </p>
@@ -198,7 +197,7 @@ const SelectInterestRate = ({
           onClick={() => {
             handleHigh(), handleCloseAll();
           }}
-          className="test-sm whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
         >
           3.49%
         </p>
@@ -206,7 +205,7 @@ const SelectInterestRate = ({
           onClick={() => {
             handleVeryHigh(), handleCloseAll();
           }}
-          className="test-sm whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
+          className="test-sm cursor-pointer whitespace-nowrap px-3 py-5 hover:text-iwanttoColor"
         >
           3.99%
         </p>

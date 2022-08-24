@@ -236,7 +236,7 @@ const CardServices: React.FC<{ temp: string; metalPrices: string[] }> = ({
         <IconSlider />
       </div>
       <div className="mb-8 px-5 md:px-12 xl:container xl:mx-auto">
-        <div className="mb-10 hidden lg:block">
+        <div className="mb-10">
           <Filter
             handleClassic={handleClassic}
             handleGold={handleGold}

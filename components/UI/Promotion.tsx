@@ -150,7 +150,7 @@ const Weather: React.FC<{ temp: string; metalPrices: string[] }> = ({
           {day}, {month} {d.getDate()} {d.getFullYear()}
         </p>
       </div>
-      <div className="flex items-center justify-evenly md:block">
+      <div className="flex flex-col items-center justify-evenly">
         <div className="flex flex-col items-start justify-center p-3">
           <div className="flex items-center justify-start">
             <motion.div
@@ -165,7 +165,7 @@ const Weather: React.FC<{ temp: string; metalPrices: string[] }> = ({
             </motion.div>
             <p className="p-2">Gold:</p>
             <p className="font-semibold text-iwanttoColor">
-              ${metalPrices.slice(8, 15)}
+              $ {metalPrices[0]}
             </p>
           </div>
           <div className="flex items-center justify-start">
@@ -181,7 +181,7 @@ const Weather: React.FC<{ temp: string; metalPrices: string[] }> = ({
             </motion.div>
             <p className="p-2">Silver:</p>
             <p className="font-semibold text-iwanttoColor">
-              ${metalPrices.slice(25, 30)}
+              $ {metalPrices[1]}
             </p>
           </div>
         </div>

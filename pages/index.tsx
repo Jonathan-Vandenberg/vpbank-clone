@@ -4,7 +4,7 @@ import HomeMain from "../components/HomePage/HomeMain";
 
 const App: React.FC<{ temperature: string; metalPrices: string[] }> = ({
   temperature,
-  metalPrices = ["21312124123123123", "123412342323123123123123123123"],
+  metalPrices = ["1372.24", "23.28"],
 }) => {
   return (
     <main>

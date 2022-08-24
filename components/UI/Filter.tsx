@@ -105,10 +105,10 @@ const SelectCardType = ({
     <motion.div
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1, transition: { duration: 0.2 } }}
-      className="absolute z-20 "
+      className="absolute z-20"
       onMouseLeave={() => handleCloseAll()}
     >
-      <div className="absolute -bottom-20 -left-8 flex items-center justify-center bg-filterDropdown px-5">
+      <div className="absolute -left-24 -bottom-20 flex items-center justify-center bg-filterDropdown px-5">
         <div className="relative">
           <p
             onClick={() => {
@@ -118,7 +118,7 @@ const SelectCardType = ({
           >
             Individual
           </p>
-          <span className="absolute top-0 left-[70px] -mt-2 h-4 w-4 rotate-45 bg-filterDropdown" />
+          <span className="absolute top-0 left-[90px] -mt-2 h-4 w-4 rotate-45 bg-filterDropdown" />
         </div>
         <p
           onClick={() => {
@@ -168,12 +168,12 @@ const SelectInterestRate = ({
     <motion.div
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1, transition: { duration: 0.2 } }}
-      className="absolute z-20 scale-75 md:scale-90 lg:scale-100"
+      className="absolute z-20"
       onMouseLeave={() => {
         handleCloseAll(), handleCloseAll();
       }}
     >
-      <div className="justify center absolute -bottom-20 -left-8 flex items-center bg-filterDropdown px-5">
+      <div className="justify center absolute -bottom-20 -left-24 flex items-center bg-filterDropdown px-5">
         <div className="relative">
           <p
             onClick={() => {
@@ -183,7 +183,7 @@ const SelectInterestRate = ({
           >
             2.79%
           </p>
-          <span className="absolute top-0 left-[70px] -mt-2 h-4 w-4 rotate-45 bg-filterDropdown" />
+          <span className="absolute top-0 left-[90px] -mt-2 h-4 w-4 rotate-45 bg-filterDropdown" />
         </div>
         <p
           onClick={() => {

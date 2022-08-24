@@ -37,7 +37,7 @@ export async function getStaticProps() {
     method: "GET",
     url: "https://gold-price-live.p.rapidapi.com/get_metal_prices",
     headers: {
-      "X-RapidAPI-Key": "238f019ceamsh555090a8d52cec6p1178e5jsn2e7cd458b6c3",
+      "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY!,
       "X-RapidAPI-Host": "gold-price-live.p.rapidapi.com",
     },
   };

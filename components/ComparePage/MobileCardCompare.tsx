@@ -53,7 +53,7 @@ const MobileCardCompare = ({
       : "flex items-center justify-center space-x-2 rounded-full border-[1px] border-iwanttoColor p-3 text-sm font-semibold text-iwanttoColor";
 
   return (
-    <div className="container mx-auto md:mt-4">
+    <div className="container mx-auto md:mt-8">
       <motion.div className="">
         {data?.pureCardImage ? (
           <>
@@ -95,7 +95,7 @@ const MobileCardCompare = ({
               onClick={() => {
                 handleLocalStorage(`${data?.type} - ${data?.id}`);
               }}
-              className="cursor-pointer rounded-full bg-white py-2"
+              className="cursor-pointer rounded-full bg-white p-2 hover:scale-105 hover:drop-shadow"
             >
               <FaHeart
                 size={20}

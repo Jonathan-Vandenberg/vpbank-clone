@@ -59,15 +59,13 @@ const HeroSlideshow: NextPage<Props> = ({
                 scale: scaleOnHover ? 1.02 : 1,
                 transition: { duration: 0.3 },
               }}
-              className=""
             >
-              <div className="flex items-center justify-center">
+              <div className="object-fit flex items-center py-5">
                 <Image
                   src={el.image}
                   alt="VPBank Hero Image"
                   width={width}
                   height={height}
-                  className=" object-cover"
                 />
               </div>
             </motion.div>

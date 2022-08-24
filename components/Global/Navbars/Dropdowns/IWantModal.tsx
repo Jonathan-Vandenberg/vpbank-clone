@@ -15,16 +15,17 @@ interface Props {
 
 const IWantModal: NextPage<Props> = ({ open, handleClose }) => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="">
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        className="grid place-items-center"
       >
         <div
           id="iWantDropdown"
-          className="absolute top-36 z-50 w-full items-center rounded bg-white outline-none md:left-1/4 md:right-1/4  md:w-1/2"
+          className="absolute z-50 rounded bg-white py-2 pr-16 outline-none"
         >
           <div className="justify-left flex h-14 cursor-pointer  items-center space-x-8 rounded p-1 pt-2 hover:bg-slate-100 hover:text-iwanttoColor">
             <div className="flex items-center justify-center pl-3">

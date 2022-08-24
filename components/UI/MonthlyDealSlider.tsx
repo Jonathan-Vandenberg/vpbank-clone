@@ -64,7 +64,7 @@ const MonthlyDealSlider = ({ data }: IProps) => {
             </div>
             <div className="flex items-center justify-end space-x-3">
               <div
-                className="cursor-pointer rounded-full bg-white p-2"
+                className="cursor-pointer rounded-full bg-white p-2 hover:scale-105 hover:drop-shadow"
                 onClick={() => {
                   handleLocalStorage(`${deal!.type} - ${deal!.id}`);
                 }}

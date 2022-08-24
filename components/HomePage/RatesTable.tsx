@@ -297,15 +297,15 @@ const Nav: NextPage<Props> = ({
     : "font-semibold text-gray-400 text-center w-1/3 p-2 cursor-pointer whitespace-nowrap";
 
   return (
-    <div className="flex items-center justify-evenly md:text-sm">
+    <div className="flex items-center justify-evenly py-4 md:text-sm">
       <div className={styleInterest} onClick={handleInterest}>
-        <p>Interest</p>
+        <p className="text-lg">Interest</p>
       </div>
       <div className={styleExchange} onClick={handleExchange}>
-        <p>Exchange Rate</p>
+        <p className="text-lg">Exchange Rate</p>
       </div>
       <div className={styleGold} onClick={handleGold}>
-        <p>Gold Rate</p>
+        <p className="text-lg">Gold Rate</p>
       </div>
     </div>
   );

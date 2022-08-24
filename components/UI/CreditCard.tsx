@@ -60,7 +60,7 @@ const CreditCard: React.FC<IProps> = ({ data }) => {
               onClick={() => {
                 handleLocalStorage(`${data!.type} - ${data!.id}`);
               }}
-              className="cursor-pointer rounded-full bg-white p-2"
+              className="cursor-pointer rounded-full bg-white p-2 hover:scale-105 hover:drop-shadow"
             >
               <FaHeart
                 size={20}

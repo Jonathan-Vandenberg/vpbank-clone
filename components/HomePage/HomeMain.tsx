@@ -27,7 +27,7 @@ const HomeMain: React.FC<{ temp: string; metalPrices: string[] }> = ({
         scaleOnHover={false}
       />
 
-      <div className="z-50 -mt-3 md:-mt-12">
+      <div className="z-50 mt-4 md:-mt-12">
         <IWantTo />
       </div>
 

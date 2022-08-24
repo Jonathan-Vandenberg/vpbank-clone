@@ -10,17 +10,13 @@ const NavbarTop = ({ onMouseEnter }: any) => {
     >
       <div className="hidden lg:grid lg:grid-cols-3">
         <div className="flex items-center justify-evenly  whitespace-nowrap text-sm ">
-          <Link href="/about">
-            <p className="cursor-pointer text-topNavColor hover:text-white">
-              About Us
-            </p>
-          </Link>
+          <p className="cursor-pointer text-topNavColor hover:text-white">
+            Lorem
+          </p>
 
           <p className="text-topNavColor hover:text-white">Lorem</p>
 
-          <Link href="./news">
-            <p className=" text-topNavColor hover:text-white">News</p>
-          </Link>
+          <p className=" text-topNavColor hover:text-white">Lorem</p>
 
           <p className="text-topNavColor hover:text-white">Lorem</p>
         </div>

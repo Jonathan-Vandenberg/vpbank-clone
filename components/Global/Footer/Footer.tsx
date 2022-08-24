@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <>
       <motion.div
-        className="pt-12"
+        className="hidden pt-12 md:block"
         initial={{ opacity: 0 }}
         whileInView={{
           opacity: 1,
@@ -53,6 +53,7 @@ const Footer = () => {
           </div>
         </div>
       </motion.div>
+      <MobileFooterHeader />
       <div className="bg-body">
         <div className="">
           <CollapseMenus />
@@ -137,3 +138,31 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const MobileFooterHeader = () => (
+  <div className="pt-12 md:hidden">
+    <div className="h-[2px] bg-gradient-to-r from-startColor to-endColor"></div>
+    <div className="drop-shadow lg:flex lg:items-center lg:justify-evenly">
+      <div className="flex items-center justify-center p-6">
+        <div className="p-3 text-2xl">
+          <BsFillTelephoneOutboundFill />
+        </div>
+        <p className="p-3 text-xl font-bold text-iwanttoColor">1900545415</p>
+      </div>
+      <div className="flex items-center justify-center bg-gradient-to-r from-startColor to-endColor p-6">
+        <div className="rounded-full bg-white p-3 text-3xl">
+          <GrMapLocation />
+        </div>
+        <p className="p-3 text-xl font-semibold text-white">
+          Find ATMs and Branches
+        </p>
+      </div>
+      <div className="flex items-center justify-center p-6">
+        <div className="p-3 text-3xl">
+          <AiOutlineMail />
+        </div>
+        <p className="p-3 text-xl font-bold text-iwanttoColor">Email Us</p>
+      </div>
+    </div>
+  </div>
+);

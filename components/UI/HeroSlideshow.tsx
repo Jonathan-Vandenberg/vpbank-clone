@@ -50,7 +50,7 @@ const HeroSlideshow: NextPage<Props> = ({
         autoplay={true}
         autoplaySpeed={3000}
         arrows={false}
-        dots={true}
+        dots={false}
         dotsClass="slick-dots"
         className="mx-auto"
       >

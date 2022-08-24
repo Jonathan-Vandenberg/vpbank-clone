@@ -29,16 +29,16 @@ const IWantTo = () => {
             className="z-30 overflow-hidden bg-white px-2"
           >
             <div className="p-6 text-lg font-bold text-iwanttoColor md:text-xl">
-              Register a Card
+              to Register
             </div>
             <div className="p-6 text-lg font-bold text-iwanttoColor md:text-xl ">
-              Martgage a Loan
+              a Loan
             </div>
             <div className="p-6 text-lg font-bold text-iwanttoColor md:text-xl ">
-              Unsecured Loans
+              unsecured Loans
             </div>
             <div className="p-6 text-lg font-bold text-iwanttoColor md:text-xl ">
-              Register an Account
+              an Account
             </div>
             <div className="p-6 text-lg font-bold text-iwanttoColor md:text-xl ">
               Support Now

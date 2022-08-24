@@ -4,7 +4,7 @@ import HomeMain from "../components/HomePage/HomeMain";
 
 const App: React.FC<{ temperature: string; metalPrices: string[] }> = ({
   temperature,
-  metalPrices,
+  metalPrices = ["21312124123123123", "123412342323123123123123123123"],
 }) => {
   return (
     <main>
@@ -33,26 +33,26 @@ export async function getStaticProps() {
     },
   };
 
-  const options = {
-    method: "GET",
-    url: "https://gold-price-live.p.rapidapi.com/get_metal_prices",
-    headers: {
-      "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY!,
-      "X-RapidAPI-Host": "gold-price-live.p.rapidapi.com",
-    },
-  };
+  // const options = {
+  //   method: "GET",
+  //   url: "https://gold-price-live.p.rapidapi.com/get_metal_prices",
+  //   headers: {
+  //     "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY!,
+  //     "X-RapidAPI-Host": "gold-price-live.p.rapidapi.com",
+  //   },
+  // };
 
   let temperature;
-  let metalPrices;
+  // let metalPrices;
 
-  await axios
-    .request(options)
-    .then(function (response: any) {
-      metalPrices = JSON.stringify(response.data);
-    })
-    .catch(function (error: any) {
-      console.error(error);
-    });
+  // await axios
+  //   .request(options)
+  //   .then(function (response: any) {
+  //     metalPrices = JSON.stringify(response.data);
+  //   })
+  //   .catch(function (error: any) {
+  //     console.error(error);
+  //   });
 
   await axios
     .request(optionsWeather)
@@ -66,7 +66,7 @@ export async function getStaticProps() {
   return {
     props: {
       temperature,
-      metalPrices,
+      // metalPrices,
     },
   };
 }

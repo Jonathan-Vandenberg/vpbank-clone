@@ -60,7 +60,7 @@ const HeroSlideshow: NextPage<Props> = ({
                 transition: { duration: 0.3 },
               }}
             >
-              <div className="object-fit flex items-center py-5">
+              <div className="object-fit flex items-center justify-center py-5">
                 <Image
                   src={el.image}
                   alt="VPBank Hero Image"

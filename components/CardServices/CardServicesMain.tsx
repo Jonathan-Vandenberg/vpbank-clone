@@ -261,7 +261,11 @@ const CardServices: React.FC<{ temp: string; metalPrices: string[] }> = ({
               <CreditCards />
             </PaginationCards>
           ) : (
-            <CardPlaceholder />
+            <div className="grid-favorites">
+              <CardPlaceholder inactive={true} />
+              <CardPlaceholder inactive={true} />
+              <CardPlaceholder inactive={true} />
+            </div>
           )}
         </div>
       </div>

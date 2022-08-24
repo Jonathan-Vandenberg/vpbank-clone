@@ -16,9 +16,21 @@ const ChosenCards = ({
   return (
     <div className="md:px-6  md:py-3 xl:container xl:mx-auto">
       <div className="hidden gap-2 lg:grid lg:grid-cols-3">
-        {data ? <ChosenCard singleCardData={data} /> : <CardPlaceholder />}
-        {data1 ? <ChosenCard singleCardData={data1} /> : <CardPlaceholder />}
-        {data2 ? <ChosenCard singleCardData={data2} /> : <CardPlaceholder />}
+        {data ? (
+          <ChosenCard singleCardData={data} />
+        ) : (
+          <CardPlaceholder inactive={false} />
+        )}
+        {data1 ? (
+          <ChosenCard singleCardData={data1} />
+        ) : (
+          <CardPlaceholder inactive={false} />
+        )}
+        {data2 ? (
+          <ChosenCard singleCardData={data2} />
+        ) : (
+          <CardPlaceholder inactive={false} />
+        )}
       </div>
       <div className="flex scale-90 flex-col gap-4 md:scale-100 md:flex-row lg:hidden">
         {data ? <MobileCardCompare data={data} /> : <MobileCardPlaceholder />}

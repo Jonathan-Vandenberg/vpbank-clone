@@ -6,8 +6,20 @@ import creditcardPlaceholder from "../../../public/placeholder.png";
 import { useAppDispatch } from "../../../redux-hooks/hooks";
 import { changeDrawerState } from "../../../slices/compareDrawerSlice";
 
-export default function CardPlaceholder() {
+interface IProps {
+  inactive: boolean;
+}
+
+export default function CardPlaceholder({ inactive }: IProps) {
   const dispatch = useAppDispatch();
+
+  const style = inactive
+    ? "flex cursor-pointer items-center justify-center space-x-3 p-3 text-gray-200"
+    : "flex cursor-pointer items-center justify-center space-x-3 p-3 text-iwanttoColor";
+
+  const borderStyle = inactive
+    ? "z-10 mx-12 my-2 block w-auto rounded-full border-[1px] border-gray-200"
+    : "z-10 mx-12 my-2 block w-auto rounded-full border-[1px] border-iwanttoColor";
 
   return (
     <Stack className="items-left relative flex flex-col justify-start bg-body outline-none">
@@ -44,12 +56,16 @@ export default function CardPlaceholder() {
           <Skeleton variant="rectangular" className="h-5 w-1/2" />
         </div>
 
-        <div className="z-10 mx-12 my-2 block w-auto rounded-full border-[1px] border-iwanttoColor  ">
+        <div className={borderStyle}>
           <div
             onClick={() => dispatch(changeDrawerState(true))}
-            className="flex cursor-pointer items-center justify-center space-x-3 p-3 text-iwanttoColor"
+            className={style}
           >
-            <button type="button" className="whitespace-nowrap text-sm">
+            <button
+              type="button"
+              className="whitespace-nowrap text-sm"
+              disabled={inactive}
+            >
               Add
             </button>
             <FaPlus />

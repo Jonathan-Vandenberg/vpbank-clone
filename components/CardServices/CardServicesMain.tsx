@@ -12,7 +12,10 @@ import PaginationCards from "../UI/PaginationCards";
 import Promotion from "../UI/Promotion";
 import ReviewSlider from "./ReviewSlider";
 
-const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
+const CardServices: React.FC<{ temp: string; metalPrices: string[] }> = ({
+  temp,
+  metalPrices,
+}) => {
   // Card type
   const [all, setAll] = useState(true);
   const [individual, setIndividual] = useState(false);
@@ -264,7 +267,7 @@ const CardServices: React.FC<{ temp: string }> = ({ temp }) => {
       </div>
       <div className="bg-body">
         <div className="mb-8  px-5 md:px-28 xl:container xl:mx-auto">
-          <Promotion temperature={temp} />
+          <Promotion temperature={temp} metalPrices={metalPrices} />
         </div>
       </div>
       <div className="mb-8 px-5 lg:px-28 xl:container xl:mx-auto">

@@ -163,7 +163,9 @@ const Weather: React.FC<{ temp: string; metalPrices: string[] }> = ({
               </div>
             </motion.div>
             <p className="p-2">Gold:</p>
-            <p className="font-semibold text-iwanttoColor">$ 1347.24</p>
+            <p className="font-semibold text-iwanttoColor">
+              $ {metalPrices.slice(8, 15)}
+            </p>
           </div>
           <div className="flex items-center justify-start">
             <motion.div
@@ -177,7 +179,9 @@ const Weather: React.FC<{ temp: string; metalPrices: string[] }> = ({
               </div>
             </motion.div>
             <p className="p-2">Silver:</p>
-            <p className="font-semibold text-iwanttoColor">$ 23.47</p>
+            <p className="font-semibold text-iwanttoColor">
+              $ {metalPrices.slice(25, 30)}
+            </p>
           </div>
         </div>
         <div className="flex items-center justify-evenly">

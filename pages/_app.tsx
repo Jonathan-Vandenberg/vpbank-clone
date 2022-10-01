@@ -1,3 +1,4 @@
+import "../styles/input.css";
 import { ApolloProvider } from "@apollo/client";
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
@@ -7,7 +8,6 @@ import { useClient } from "../lib/client";
 import ChatIcon from "../components/Global/ChatIcon";
 import Footer from "../components/Global/Footer/Footer";
 import SideNavModal from "../components/Global/Navbars/SideNavModal";
-import "../styles/input.css";
 import store from "../store/store";
 
 const ScrollToTop = dynamic(

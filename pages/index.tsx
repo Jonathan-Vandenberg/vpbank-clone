@@ -12,7 +12,7 @@ const App: React.FC<{ temperature: string; metalPrices: string[] }> = ({
         <title>VPBank home page</title>
         <meta
           name="description"
-          content="VPBank is a leading Vietnamese bank that provides a wide range of services and products to its customers"
+          content="VPBank is the leading Vietnamese bank that provides a wide range of services and products to its customers"
         />
       </Head>
       <HomeMain temp={temperature} metalPrices={metalPrices} />

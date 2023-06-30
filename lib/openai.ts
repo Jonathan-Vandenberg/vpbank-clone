@@ -25,7 +25,9 @@ export async function generateResponse(
     {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
+        Authorization: process.env.OPENAI_API_KEY
+          ? process.env.OPENAI_API_KEY
+          : "",
       },
     }
   );

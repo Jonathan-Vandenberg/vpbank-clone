@@ -11,6 +11,7 @@ import image2 from "../../public/hero/vpHero2.jpeg";
 import image3 from "../../public/hero/vpHero3.jpeg";
 import image4 from "../../public/hero/vpHero4.jpeg";
 import image5 from "../../public/hero/vpHero5.jpeg";
+import Ai from "../../components/Global/Ai";
 
 export const images = [image1, image2, image3, image4, image5];
 
@@ -59,6 +60,7 @@ const HomeMain: React.FC<{ temp: string; metalPrices: string[] }> = ({
             <Prize />
           </div>
         </div>
+        <Ai />
       </div>
     </>
   );

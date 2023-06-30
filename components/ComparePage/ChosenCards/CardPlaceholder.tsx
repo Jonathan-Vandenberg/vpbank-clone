@@ -63,7 +63,7 @@ export default function CardPlaceholder({ inactive }: IProps) {
           >
             <button
               type="button"
-              className="whitespace-nowrap text-sm"
+              className="whitespace-nowrap bg-white text-sm text-iwanttoColor hover:bg-white"
               disabled={inactive}
             >
               Add

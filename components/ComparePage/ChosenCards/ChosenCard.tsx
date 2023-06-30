@@ -39,7 +39,7 @@ const ChosenCard = ({
 
   const styles =
     cardId.length > 2
-      ? "flex items-center justify-center space-x-2 rounded-full border-[1px] border-gray-300 p-3 text-sm text-gray-300"
+      ? "flex items-center justify-center space-x-2 rounded-full border-[1px] border-gray-300 p-3 text-sm text-gray-300 "
       : "flex items-center justify-center space-x-2 rounded-full border-[1px] border-iwanttoColor p-3 text-sm font-semibold text-iwanttoColor";
 
   return (
@@ -94,9 +94,9 @@ const ChosenCard = ({
               onClick={() => {
                 dispatch(removeCard(singleCardData!.id));
               }}
-              className="flex cursor-pointer flex-col items-center justify-center px-5 pt-2"
+              className="flex cursor-pointer flex-col items-center justify-center bg-white px-5 pt-2 hover:bg-white"
             >
-              <div className="flex items-center justify-center space-x-2 rounded-full border-[1px] border-red-300 p-3 text-sm text-red-600">
+              <div className="flex items-center justify-center space-x-2 rounded-full border-[1px] border-red-300 bg-white p-3 text-sm text-red-600">
                 <p>Remove</p>
                 <FaMinus />
               </div>
@@ -110,7 +110,7 @@ const ChosenCard = ({
               disabled={cardId.length > 2}
             >
               <div className={styles}>
-                <p>COMPARE</p>
+                <p className="bg-white">COMPARE</p>
                 <FaPlus />
               </div>
             </button>

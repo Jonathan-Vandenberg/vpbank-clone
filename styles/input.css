@@ -4,14 +4,14 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap");
 
 @font-face {
-  font-family: 'Karla';
+  font-family: "Karla";
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: local('Karla'), url(/fonts/Karla-VariableFont_wght.ttf) format('woff2');
+  src: local("Karla"), url(/fonts/Karla-VariableFont_wght.ttf) format("woff2");
 }
 
 input,
@@ -24,7 +24,7 @@ a {
   outline: none !important;
 }
 
-*{
+* {
   font-family: "Karla", sans-serif;
   letter-spacing: -0.04em;
 }
@@ -57,11 +57,10 @@ a {
 }
 
 .iwantto {
-  z-index: '100';
-  
+  z-index: "100";
 }
 
-.bgImageWhite{
+.bgImageWhite {
   background-image: rgb(255, 255, 255);
   top: 0;
   left: 0;
@@ -70,16 +69,16 @@ a {
 }
 
 .slick-prev:before {
-  color: rgb(60,190,99)!important;
+  color: rgb(60, 190, 99) !important;
 }
 
-.slick-prev-character{
-  background-image: url('/Users/jonathanvandenberg/2022/VPBank/public/right-arrow.png');
+.slick-prev-character {
+  background-image: url("/Users/jonathanvandenberg/2022/VPBank/public/right-arrow.png");
   cursor: pointer;
-} 
+}
 
 .slick-next:before {
-  color: rgb(60,190,99)!important;
+  color: rgb(60, 190, 99) !important;
   cursor: pointer;
 }
 
@@ -108,7 +107,6 @@ a {
   border-radius: 100%;
   background-color: rgb(185, 228, 193);
 
-
   text-indent: -9999px;
 }
 
@@ -124,15 +122,14 @@ a {
   width: 24px;
   height: 24px;
   transition: all 0.25s;
-  position: relative; 
+  position: relative;
   outline: none;
   border: none;
 }
 
 .hamburger-top,
 .hamburger-middle,
-.hamburger-bottom
- {
+.hamburger-bottom {
   width: 24px;
   height: 2px;
   top: 0;
@@ -156,10 +153,9 @@ a {
 .open {
   transform: rotate(90deg);
   transform: translateY(0px);
-
 }
 
-.open .hamburger-top{
+.open .hamburger-top {
   transform: rotate(45deg) translateY(6px) translate(6px);
 }
 
@@ -180,7 +176,7 @@ a {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  border-radius:100px;
+  border-radius: 100px;
   background: #ffffff;
 }
 
@@ -222,4 +218,71 @@ a {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.6);
   z-index: 1;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AI ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.chat-message {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.user {
+  background-color: #e1e9ff;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.assistant {
+  background-color: #e4e4e4;
+  align-self: flex-start;
+  text-align: left;
+}
+
+.message-content {
+  font-size: 14px;
+  line-height: 1.5;
+  font-size: large;
+}
+
+.input-container {
+  display: flex;
+  margin-top: 16px;
+}
+
+textarea {
+  flex-grow: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  line-height: 1.5;
+  background-color: rgb(255, 255, 255);
+}
+
+button {
+  margin-left: 8px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #388e3c;
 }
